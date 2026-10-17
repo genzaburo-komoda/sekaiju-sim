@@ -1,0 +1,8 @@
+# 改行コードを LF に統一する（Windows・WSL・コンテナのどこで作業しても差分が出ないように）
+* text=auto eol=lf
+
+# 画像などは改行の変換をしない
+*.png binary
+*.jpg binary
+*.ico binary
+*.svg text eol=lf

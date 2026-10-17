@@ -1,0 +1,72 @@
+{
+  "maxLevel": 70,
+  "initialSp": 3,
+  "spPerLevel": 1,
+  "retireMinLevel": 30,
+  "retireSpBonus": [
+    {
+      "minLevel": 30,
+      "maxLevel": 39,
+      "value": 2
+    },
+    {
+      "minLevel": 40,
+      "maxLevel": 49,
+      "value": 3
+    },
+    {
+      "minLevel": 50,
+      "maxLevel": 59,
+      "value": 4
+    },
+    {
+      "minLevel": 60,
+      "maxLevel": 69,
+      "value": 5
+    },
+    {
+      "minLevel": 70,
+      "maxLevel": 70,
+      "value": 6
+    }
+  ],
+  "retireStatBonus": [
+    {
+      "minLevel": 30,
+      "maxLevel": 49,
+      "value": 1
+    },
+    {
+      "minLevel": 50,
+      "maxLevel": 69,
+      "value": 2
+    },
+    {
+      "minLevel": 70,
+      "maxLevel": 70,
+      "value": 3
+    }
+  ],
+  "statCap": 127,
+  "sources": [
+    {
+      "kind": "in-game",
+      "confidence": "confirmed",
+      "note": "新規キャラの Lv1 時点の SP が 3 であることを確認（Steam版）",
+      "checkedAt": "2026-09-30"
+    },
+    {
+      "kind": "atwiki",
+      "confidence": "unverified",
+      "url": "https://w.atwiki.jp/sekaiju_maze/pages/74.html",
+      "note": "最高Lv70、引退しない場合のSPは72、引退・休養はLv30から、引退ボーナスの表（DS版の記述）"
+    },
+    {
+      "kind": "atwiki",
+      "confidence": "unverified",
+      "url": "https://w.atwiki.jp/sekaiju_maze/pages/9.html",
+      "note": "ステータスの上限は HP・TP・攻撃力・防御力を除き127"
+    }
+  ],
+  "notes": "initialSp は 2026-09-30 にゲーム内で 3 と確認（既存ツール Pokachi の 2 は誤り）。引退ボーナスは未確認"
+}

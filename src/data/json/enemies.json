@@ -1,0 +1,5460 @@
+{
+  "items": [
+    {
+      "id": "treerat",
+      "name": "森ネズミ",
+      "nameEn": "Treerat",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 2,
+      "hp": 19,
+      "str": 10,
+      "tec": 7,
+      "vit": 14,
+      "agi": 9,
+      "luc": 9,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 200,
+        "ice": 100,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "woodfly",
+      "name": "シンリンチョウ",
+      "nameEn": "Woodfly",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 2,
+      "hp": 19,
+      "str": 11,
+      "tec": 7,
+      "vit": 14,
+      "agi": 9,
+      "luc": 9,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 200,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "mole",
+      "name": "ひっかきモグラ",
+      "nameEn": "Mole",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 3,
+      "hp": 23,
+      "str": 12,
+      "tec": 7,
+      "vit": 15,
+      "agi": 10,
+      "luc": 10,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 200,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "clawbug",
+      "name": "はさみカブト",
+      "nameEn": "Clawbug",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 4,
+      "hp": 45,
+      "str": 25,
+      "tec": 8,
+      "vit": 16,
+      "agi": 9,
+      "luc": 10,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 250,
+        "ice": 250,
+        "volt": 250,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "venomfly",
+      "name": "毒吹きアゲハ",
+      "nameEn": "Venomfly",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 6,
+      "hp": 41,
+      "str": 22,
+      "tec": 13,
+      "vit": 18,
+      "agi": 13,
+      "luc": 13,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "hare",
+      "name": "森ウサギ",
+      "nameEn": "Hare",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 7,
+      "hp": 38,
+      "str": 23,
+      "tec": 14,
+      "vit": 19,
+      "agi": 14,
+      "luc": 14,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "fender",
+      "name": "フィンドホーン",
+      "nameEn": "Fender",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 10,
+      "hp": 55,
+      "str": 36,
+      "tec": 12,
+      "vit": 23,
+      "agi": 13,
+      "luc": 15,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 200,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "mandrake",
+      "name": "マンドレイク",
+      "nameEn": "Mandrake",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 10,
+      "hp": 51,
+      "str": 27,
+      "tec": 16,
+      "vit": 23,
+      "agi": 16,
+      "luc": 16,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 50,
+        "volt": 50,
+        "death": 1,
+        "ailment": 50,
+        "head": 100,
+        "arm": 100,
+        "leg": 50,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "roller",
+      "name": "ボールアニマル",
+      "nameEn": "Roller",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 11,
+      "hp": 40,
+      "str": 28,
+      "tec": 17,
+      "vit": 25,
+      "agi": 17,
+      "luc": 17,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 100,
+        "ice": 150,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "clawfly",
+      "name": "羽ばたきカブト",
+      "nameEn": "Clawfly",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 14,
+      "hp": 65,
+      "str": 45,
+      "tec": 14,
+      "vit": 29,
+      "agi": 16,
+      "luc": 18,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 0,
+        "ice": 300,
+        "volt": 300,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "warbull",
+      "name": "暴れ野牛",
+      "nameEn": "Warbull",
+      "kind": "normal",
+      "stratum": 1,
+      "level": 16,
+      "hp": 140,
+      "str": 52,
+      "tec": 16,
+      "vit": 33,
+      "agi": 18,
+      "luc": 20,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 150,
+        "volt": 150,
+        "death": 200,
+        "ailment": 200,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "sleepgel",
+      "name": "スリーパーウーズ",
+      "nameEn": "Sleepgel",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 18,
+      "hp": 88,
+      "str": 48,
+      "tec": 24,
+      "vit": 37,
+      "agi": 48,
+      "luc": 48,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 100,
+        "ice": 200,
+        "volt": 200,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "venomgel",
+      "name": "ポイズンウーズ",
+      "nameEn": "Venomgel",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 18,
+      "hp": 106,
+      "str": 63,
+      "tec": 17,
+      "vit": 38,
+      "agi": 20,
+      "luc": 22,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 100,
+        "ice": 200,
+        "volt": 200,
+        "death": 100,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "waspior",
+      "name": "軍隊バチ",
+      "nameEn": "Waspior",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 19,
+      "hp": 88,
+      "str": 52,
+      "tec": 25,
+      "vit": 39,
+      "agi": 25,
+      "luc": 25,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "spider",
+      "name": "ベノムスパイダー",
+      "nameEn": "Spider",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 20,
+      "hp": 88,
+      "str": 56,
+      "tec": 26,
+      "vit": 41,
+      "agi": 26,
+      "luc": 26,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "sloth",
+      "name": "大ナマケモノ",
+      "nameEn": "Sloth",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 22,
+      "hp": 212,
+      "str": 84,
+      "tec": 20,
+      "vit": 44,
+      "agi": 23,
+      "luc": 26,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 50,
+        "ice": 200,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "fangleaf",
+      "name": "かみつき草",
+      "nameEn": "Fangleaf",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 21,
+      "hp": 225,
+      "str": 78,
+      "tec": 19,
+      "vit": 42,
+      "agi": 22,
+      "luc": 25,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 50,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "maneater",
+      "name": "人喰い草",
+      "nameEn": "Maneater",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 24,
+      "hp": 230,
+      "str": 89,
+      "tec": 21,
+      "vit": 49,
+      "agi": 24,
+      "luc": 27,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 50,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "petaloid",
+      "name": "危険な花びら",
+      "nameEn": "Petaloid",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 22,
+      "hp": 135,
+      "str": 64,
+      "tec": 28,
+      "vit": 44,
+      "agi": 28,
+      "luc": 28,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 50,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "firebird",
+      "name": "火喰い鳥",
+      "nameEn": "Firebird",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 23,
+      "hp": 135,
+      "str": 66,
+      "tec": 29,
+      "vit": 44,
+      "agi": 58,
+      "luc": 58,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 125,
+        "fire": 10,
+        "ice": 125,
+        "volt": 50,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ],
+      "notes": "耐性が資料で食い違う：atwiki は突×1.3（シートは125%）"
+    },
+    {
+      "id": "scorpion",
+      "name": "デススコーピオン",
+      "nameEn": "Scorpion",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 25,
+      "hp": 122,
+      "str": 63,
+      "tec": 47,
+      "vit": 52,
+      "agi": 28,
+      "luc": 28,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 200,
+        "death": 100,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "eviloid",
+      "name": "邪悪な花びら",
+      "nameEn": "Eviloid",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 23,
+      "hp": 142,
+      "str": 66,
+      "tec": 29,
+      "vit": 46,
+      "agi": 29,
+      "luc": 29,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 50,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "glowbird",
+      "name": "シャインバード",
+      "nameEn": "Glowbird",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 26,
+      "hp": 142,
+      "str": 75,
+      "tec": 32,
+      "vit": 52,
+      "agi": 64,
+      "luc": 64,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 150,
+        "fire": 100,
+        "ice": 150,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "stingmaw",
+      "name": "ニードルタイガー",
+      "nameEn": "Stingmaw",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 25,
+      "hp": 171,
+      "str": 94,
+      "tec": 20,
+      "vit": 49,
+      "agi": 30,
+      "luc": 28,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 150,
+        "volt": 0,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "sprout",
+      "name": "世界樹の芽",
+      "nameEn": "Sprout",
+      "kind": "normal",
+      "stratum": 2,
+      "level": 1,
+      "hp": 2000,
+      "str": 20,
+      "tec": 20,
+      "vit": 20,
+      "agi": 20,
+      "luc": 20,
+      "accuracy": 90,
+      "resist": {
+        "slash": 300,
+        "bash": 300,
+        "pierce": 300,
+        "fire": 300,
+        "ice": 300,
+        "volt": 300,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "madworm",
+      "name": "マッドワーム",
+      "nameEn": "Madworm",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 29,
+      "hp": 240,
+      "str": 116,
+      "tec": 24,
+      "vit": 58,
+      "agi": 28,
+      "luc": 31,
+      "accuracy": 90,
+      "resist": {
+        "slash": 150,
+        "bash": 50,
+        "pierce": 150,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "treefrog",
+      "name": "森林ガエル",
+      "nameEn": "Treefrog",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 30,
+      "hp": 180,
+      "str": 84,
+      "tec": 53,
+      "vit": 61,
+      "agi": 32,
+      "luc": 32,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 150,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "deathant",
+      "name": "キラーアント",
+      "nameEn": "Deathant",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 30,
+      "hp": 180,
+      "str": 84,
+      "tec": 53,
+      "vit": 61,
+      "agi": 32,
+      "luc": 32,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 50,
+        "ice": 150,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "guardant",
+      "name": "ガードアント",
+      "nameEn": "Guardant",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 29,
+      "hp": 222,
+      "str": 81,
+      "tec": 51,
+      "vit": 58,
+      "agi": 31,
+      "luc": 31,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 50,
+        "ice": 150,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "hexfrog",
+      "name": "呪いガエル",
+      "nameEn": "Hexfrog",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 31,
+      "hp": 222,
+      "str": 89,
+      "tec": 54,
+      "vit": 64,
+      "agi": 33,
+      "luc": 33,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 150,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 1,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "woodbat",
+      "name": "フォレストバット",
+      "nameEn": "Woodbat",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 33,
+      "hp": 274,
+      "str": 107,
+      "tec": 38,
+      "vit": 68,
+      "agi": 38,
+      "luc": 38,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 110,
+        "ice": 110,
+        "volt": 110,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ],
+      "notes": "耐性が資料で食い違う：atwiki は属性の補正なし（シートは炎・氷・雷 110%）"
+    },
+    {
+      "id": "meltworm",
+      "name": "メルトワーム",
+      "nameEn": "Meltworm",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 34,
+      "hp": 329,
+      "str": 145,
+      "tec": 28,
+      "vit": 70,
+      "agi": 32,
+      "luc": 36,
+      "accuracy": 90,
+      "resist": {
+        "slash": 150,
+        "bash": 50,
+        "pierce": 150,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "moriyana",
+      "name": "モリヤンマ",
+      "nameEn": "Moriyana",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 35,
+      "hp": 247,
+      "str": 105,
+      "tec": 60,
+      "vit": 72,
+      "agi": 36,
+      "luc": 36,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "redclaw",
+      "name": "クリムゾンネイル",
+      "nameEn": "Redclaw",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 36,
+      "hp": 371,
+      "str": 155,
+      "tec": 29,
+      "vit": 76,
+      "agi": 33,
+      "luc": 37,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 50,
+        "ice": 150,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "vampbat",
+      "name": "バンパイアバット",
+      "nameEn": "Vampbat",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 35,
+      "hp": 301,
+      "str": 116,
+      "tec": 40,
+      "vit": 72,
+      "agi": 40,
+      "luc": 40,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "cutcrab",
+      "name": "シザースクラブ",
+      "nameEn": "Cutcrab",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 36,
+      "hp": 301,
+      "str": 119,
+      "tec": 41,
+      "vit": 76,
+      "agi": 41,
+      "luc": 41,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 150,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "sworder",
+      "name": "ソードフィッシュ",
+      "nameEn": "Sworder",
+      "kind": "normal",
+      "stratum": 3,
+      "level": 37,
+      "hp": 301,
+      "str": 122,
+      "tec": 42,
+      "vit": 84,
+      "agi": 42,
+      "luc": 42,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 50,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "flamerat",
+      "name": "火炎ネズミ",
+      "nameEn": "Flamerat",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 39,
+      "hp": 333,
+      "str": 128,
+      "tec": 44,
+      "vit": 88,
+      "agi": 44,
+      "luc": 44,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 0,
+        "ice": 150,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "goldeer",
+      "name": "ゴールドホーン",
+      "nameEn": "Goldeer",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 35,
+      "hp": 419,
+      "str": 167,
+      "tec": 31,
+      "vit": 88,
+      "agi": 36,
+      "luc": 40,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 50,
+        "ice": 50,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "mantis",
+      "name": "デスマンティス",
+      "nameEn": "Mantis",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 39,
+      "hp": 400,
+      "str": 167,
+      "tec": 31,
+      "vit": 88,
+      "agi": 36,
+      "luc": 40,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 100,
+        "pierce": 50,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 25,
+        "ailment": 25,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "sabremaw",
+      "name": "サーベルタイガー",
+      "nameEn": "Sabremaw",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 40,
+      "hp": 333,
+      "str": 130,
+      "tec": 44,
+      "vit": 89,
+      "agi": 44,
+      "luc": 44,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 0,
+        "volt": 100,
+        "death": 10,
+        "ailment": 25,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "hexroot",
+      "name": "災厄の木の根",
+      "nameEn": "Hexroot",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 43,
+      "hp": 369,
+      "str": 140,
+      "tec": 47,
+      "vit": 96,
+      "agi": 47,
+      "luc": 47,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 50,
+        "volt": 50,
+        "death": 1,
+        "ailment": 50,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "immoa",
+      "name": "ヒュージモア",
+      "nameEn": "Immoa",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 42,
+      "hp": 429,
+      "str": 177,
+      "tec": 33,
+      "vit": 93,
+      "agi": 37,
+      "luc": 42,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 10,
+        "ailment": 100,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "soldier",
+      "name": "グリンソルジャー",
+      "nameEn": "Soldier",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 39,
+      "hp": 400,
+      "str": 167,
+      "tec": 31,
+      "vit": 88,
+      "agi": 36,
+      "luc": 40,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 150,
+        "pierce": 50,
+        "fire": 150,
+        "ice": 50,
+        "volt": 50,
+        "death": 50,
+        "ailment": 50,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "mystic",
+      "name": "グリンヴァルド",
+      "nameEn": "Mystic",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 39,
+      "hp": 300,
+      "str": 116,
+      "tec": 66,
+      "vit": 88,
+      "agi": 40,
+      "luc": 40,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 150,
+        "pierce": 50,
+        "fire": 150,
+        "ice": 50,
+        "volt": 50,
+        "death": 50,
+        "ailment": 50,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "warrior",
+      "name": "グリンウォリアー",
+      "nameEn": "Warrior",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 44,
+      "hp": 467,
+      "str": 190,
+      "tec": 34,
+      "vit": 100,
+      "agi": 39,
+      "luc": 44,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 150,
+        "pierce": 50,
+        "fire": 150,
+        "ice": 50,
+        "volt": 50,
+        "death": 50,
+        "ailment": 50,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "druid",
+      "name": "グリンドルイド",
+      "nameEn": "Druid",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 44,
+      "hp": 351,
+      "str": 132,
+      "tec": 72,
+      "vit": 100,
+      "agi": 44,
+      "luc": 44,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 150,
+        "pierce": 50,
+        "fire": 150,
+        "ice": 50,
+        "volt": 50,
+        "death": 50,
+        "ailment": 50,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "pixie",
+      "name": "ピクシー",
+      "nameEn": "Pixie",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 43,
+      "hp": 333,
+      "str": 126,
+      "tec": 71,
+      "vit": 96,
+      "agi": 43,
+      "luc": 43,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 0,
+        "ice": 0,
+        "volt": 0,
+        "death": 1,
+        "ailment": 0,
+        "head": 0,
+        "arm": 0,
+        "leg": 0,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "faerie",
+      "name": "アークピクシー",
+      "nameEn": "Faerie",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 44,
+      "hp": 351,
+      "str": 132,
+      "tec": 72,
+      "vit": 100,
+      "agi": 44,
+      "luc": 44,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 0,
+        "ice": 0,
+        "volt": 0,
+        "death": 1,
+        "ailment": 0,
+        "head": 0,
+        "arm": 0,
+        "leg": 0,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "redbeak",
+      "name": "カーマインビーク",
+      "nameEn": "Redbeak",
+      "kind": "normal",
+      "stratum": 4,
+      "level": 45,
+      "hp": 389,
+      "str": 159,
+      "tec": 49,
+      "vit": 97,
+      "agi": 98,
+      "luc": 98,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 150,
+        "fire": 0,
+        "ice": 150,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 0,
+        "leg": 0,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "darkhare",
+      "name": "首狩りウサギ",
+      "nameEn": "Darkhare",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 47,
+      "hp": 476,
+      "str": 171,
+      "tec": 51,
+      "vit": 107,
+      "agi": 51,
+      "luc": 51,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 1,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "maul",
+      "name": "かぎづめモグラ",
+      "nameEn": "Maul",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 47,
+      "hp": 572,
+      "str": 223,
+      "tec": 36,
+      "vit": 107,
+      "agi": 41,
+      "luc": 46,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 50,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 50,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "burstgel",
+      "name": "バーストウーズ",
+      "nameEn": "Burstgel",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 47,
+      "hp": 476,
+      "str": 171,
+      "tec": 51,
+      "vit": 102,
+      "agi": 102,
+      "luc": 102,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 0,
+        "ice": 200,
+        "volt": 200,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "kingfrog",
+      "name": "大王ガエル",
+      "nameEn": "Kingfrog",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 52,
+      "hp": 429,
+      "str": 195,
+      "tec": 84,
+      "vit": 118,
+      "agi": 51,
+      "luc": 51,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 150,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "silker",
+      "name": "バインドスレッド",
+      "nameEn": "Silker",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 53,
+      "hp": 429,
+      "str": 200,
+      "tec": 86,
+      "vit": 120,
+      "agi": 52,
+      "luc": 52,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "direwolf",
+      "name": "ダイアーウルフ",
+      "nameEn": "Direwolf",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 51,
+      "hp": 464,
+      "str": 189,
+      "tec": 83,
+      "vit": 116,
+      "agi": 50,
+      "luc": 50,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 0,
+        "ice": 150,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "clawlord",
+      "name": "ビートルロード",
+      "nameEn": "Clawlord",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 53,
+      "hp": 618,
+      "str": 289,
+      "tec": 40,
+      "vit": 120,
+      "agi": 46,
+      "luc": 52,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 200,
+        "ice": 200,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "muskoid",
+      "name": "破滅の花びら",
+      "nameEn": "Muskoid",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 51,
+      "hp": 555,
+      "str": 210,
+      "tec": 55,
+      "vit": 116,
+      "agi": 55,
+      "luc": 55,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 50,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "varaha",
+      "name": "グリンブルスティ",
+      "nameEn": "Varaha",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 54,
+      "hp": 555,
+      "str": 226,
+      "tec": 58,
+      "vit": 122,
+      "agi": 58,
+      "luc": 58,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "hellbull",
+      "name": "ドゥームバイソン",
+      "nameEn": "Hellbull",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 55,
+      "hp": 850,
+      "str": 298,
+      "tec": 42,
+      "vit": 124,
+      "agi": 48,
+      "luc": 54,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 150,
+        "volt": 150,
+        "death": 200,
+        "ailment": 200,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "kingapis",
+      "name": "神蜂",
+      "nameEn": "Kingapis",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 52,
+      "hp": 594,
+      "str": 216,
+      "tec": 56,
+      "vit": 118,
+      "agi": 56,
+      "luc": 56,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "armoroll",
+      "name": "アーマービースト",
+      "nameEn": "Armoroll",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 55,
+      "hp": 713,
+      "str": 298,
+      "tec": 42,
+      "vit": 124,
+      "agi": 48,
+      "luc": 54,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 150,
+        "ice": 50,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "kingyana",
+      "name": "大王ヤンマ",
+      "nameEn": "Kingyana",
+      "kind": "normal",
+      "stratum": 5,
+      "level": 56,
+      "hp": 535,
+      "str": 209,
+      "tec": 90,
+      "vit": 126,
+      "agi": 54,
+      "luc": 54,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "hellfly",
+      "name": "ヘルパピヨン",
+      "nameEn": "Hellfly",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 65,
+      "hp": 794,
+      "str": 250,
+      "tec": 65,
+      "vit": 143,
+      "agi": 65,
+      "luc": 65,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "monocyte",
+      "name": "ルーカサイト",
+      "nameEn": "Monocyte",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 65,
+      "hp": 715,
+      "str": 225,
+      "tec": 98,
+      "vit": 143,
+      "agi": 59,
+      "luc": 59,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "rockwood",
+      "name": "メデューサツリー",
+      "nameEn": "Rockwood",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 68,
+      "hp": 738,
+      "str": 233,
+      "tec": 101,
+      "vit": 134,
+      "agi": 61,
+      "luc": 61,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 100,
+        "volt": 100,
+        "death": 50,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "ironcrab",
+      "name": "メタルシザース",
+      "nameEn": "Ironcrab",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 70,
+      "hp": 1030,
+      "str": 349,
+      "tec": 48,
+      "vit": 136,
+      "agi": 55,
+      "luc": 62,
+      "accuracy": 90,
+      "resist": {
+        "slash": 0,
+        "bash": 0,
+        "pierce": 0,
+        "fire": 0,
+        "ice": 0,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "blader",
+      "name": "切り裂きトビウオ",
+      "nameEn": "Blader",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 65,
+      "hp": 794,
+      "str": 250,
+      "tec": 65,
+      "vit": 143,
+      "agi": 65,
+      "luc": 65,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 50,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "largeant",
+      "name": "ヒュージアント",
+      "nameEn": "Largeant",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 66,
+      "hp": 723,
+      "str": 228,
+      "tec": 99,
+      "vit": 132,
+      "agi": 60,
+      "luc": 60,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 50,
+        "ice": 150,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "hazefly",
+      "name": "アヤカシアゲハ",
+      "nameEn": "Hazefly",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 64,
+      "hp": 773,
+      "str": 245,
+      "tec": 65,
+      "vit": 141,
+      "agi": 65,
+      "luc": 65,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "lucifird",
+      "name": "ルシファーホーク",
+      "nameEn": "Lucifird",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 70,
+      "hp": 858,
+      "str": 268,
+      "tec": 68,
+      "vit": 130,
+      "agi": 136,
+      "luc": 136,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 150,
+        "fire": 75,
+        "ice": 75,
+        "volt": 75,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "flamegel",
+      "name": "フレイムウーズ",
+      "nameEn": "Flamegel",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 63,
+      "hp": 768,
+      "str": 243,
+      "tec": 64,
+      "vit": 133,
+      "agi": 128,
+      "luc": 128,
+      "accuracy": 90,
+      "resist": {
+        "slash": 0,
+        "bash": 0,
+        "pierce": 0,
+        "fire": 0,
+        "ice": 150,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "evilroot",
+      "name": "デモンドレイク",
+      "nameEn": "Evilroot",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 67,
+      "hp": 811,
+      "str": 255,
+      "tec": 66,
+      "vit": 132,
+      "agi": 66,
+      "luc": 66,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 50,
+        "volt": 50,
+        "death": 1,
+        "ailment": 50,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "clover",
+      "name": "世界樹の四つ葉",
+      "nameEn": "Clover",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 1,
+      "hp": 8000,
+      "str": 20,
+      "tec": 20,
+      "vit": 20,
+      "agi": 20,
+      "luc": 20,
+      "accuracy": 90,
+      "resist": {
+        "slash": 300,
+        "bash": 300,
+        "pierce": 300,
+        "fire": 300,
+        "ice": 300,
+        "volt": 300,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "red-cell",
+      "name": "レッドコーパスル",
+      "nameEn": "Red Cell",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 66,
+      "hp": 723,
+      "str": 228,
+      "tec": 99,
+      "vit": 132,
+      "agi": 60,
+      "luc": 60,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 50,
+        "ice": 50,
+        "volt": 50,
+        "death": 200,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ],
+      "notes": "耐性が資料で食い違う：atwiki は炎氷雷×0.4（シートは50%）"
+    },
+    {
+      "id": "metalion",
+      "name": "メタルニードル",
+      "nameEn": "Metalion",
+      "kind": "normal",
+      "stratum": 6,
+      "level": 69,
+      "hp": 1005,
+      "str": 341,
+      "tec": 47,
+      "vit": 134,
+      "agi": 54,
+      "luc": 61,
+      "accuracy": 90,
+      "resist": {
+        "slash": 0,
+        "bash": 0,
+        "pierce": 0,
+        "fire": 0,
+        "ice": 0,
+        "volt": 200,
+        "death": 1,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名と階層。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "id": "ragelope",
+      "name": "狂える角鹿",
+      "nameEn": "Ragelope",
+      "kind": "foe",
+      "floors": [
+        1,
+        2,
+        3
+      ],
+      "stratum": 1,
+      "level": 12,
+      "hp": 330,
+      "str": 45,
+      "tec": 18,
+      "vit": 26,
+      "agi": 27,
+      "luc": 27,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 100,
+        "ice": 100,
+        "volt": 200,
+        "death": 5,
+        "ailment": 25,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "kuyutha",
+      "name": "怒れる野牛",
+      "nameEn": "Kuyutha",
+      "kind": "foe",
+      "floors": [
+        2,
+        3
+      ],
+      "stratum": 1,
+      "level": 13,
+      "hp": 350,
+      "str": 48,
+      "tec": 19,
+      "vit": 27,
+      "agi": 29,
+      "luc": 29,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 150,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 5,
+        "ailment": 25,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "stalker",
+      "name": "全てを刈る影",
+      "nameEn": "Stalker",
+      "kind": "foe",
+      "floors": [
+        3
+      ],
+      "stratum": 1,
+      "level": 18,
+      "hp": 600,
+      "str": 72,
+      "tec": 24,
+      "vit": 38,
+      "agi": 36,
+      "luc": 36,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 100,
+        "pierce": 50,
+        "fire": 125,
+        "ice": 100,
+        "volt": 100,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 25
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "wolf",
+      "name": "フォレストウルフ",
+      "nameEn": "Wolf",
+      "kind": "foe",
+      "floors": [
+        4,
+        5
+      ],
+      "stratum": 1,
+      "level": 14,
+      "hp": 260,
+      "str": 51,
+      "tec": 20,
+      "vit": 29,
+      "agi": 30,
+      "luc": 30,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 50,
+        "volt": 100,
+        "death": 10,
+        "ailment": 25,
+        "head": 20,
+        "arm": 20,
+        "leg": 20,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "moa",
+      "name": "ジャイアントモア",
+      "nameEn": "Moa",
+      "kind": "foe",
+      "floors": [
+        6,
+        9,
+        10
+      ],
+      "stratum": 2,
+      "level": 25,
+      "hp": 900,
+      "str": 90,
+      "tec": 31,
+      "vit": 52,
+      "agi": 47,
+      "luc": 47,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 10,
+        "ailment": 25,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "cutter",
+      "name": "森の破壊者",
+      "nameEn": "Cutter",
+      "kind": "foe",
+      "floors": [
+        4,
+        6,
+        9
+      ],
+      "stratum": 2,
+      "level": 27,
+      "hp": 790,
+      "str": 119,
+      "tec": 33,
+      "vit": 57,
+      "agi": 50,
+      "luc": 50,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 10,
+        "ailment": 25,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "assassin",
+      "name": "密林の殺し屋",
+      "nameEn": "Assassin",
+      "kind": "foe",
+      "floors": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "stratum": 2,
+      "level": 26,
+      "hp": 950,
+      "str": 121,
+      "tec": 32,
+      "vit": 54,
+      "agi": 40,
+      "luc": 48,
+      "accuracy": 90,
+      "resist": {
+        "slash": 90,
+        "bash": 90,
+        "pierce": 90,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 5,
+        "ailment": 25,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "armoth",
+      "name": "災いの巨神",
+      "nameEn": "Armoth",
+      "kind": "foe",
+      "floors": [
+        3,
+        8,
+        9,
+        10
+      ],
+      "stratum": 2,
+      "level": 27,
+      "hp": 1200,
+      "str": 119,
+      "tec": 33,
+      "vit": 57,
+      "agi": 50,
+      "luc": 50,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 25
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "shelltor",
+      "name": "永劫の玄王",
+      "nameEn": "Shelltor",
+      "kind": "foe",
+      "floors": [
+        11
+      ],
+      "stratum": 3,
+      "level": 37,
+      "hp": 2000,
+      "str": 183,
+      "tec": 42,
+      "vit": 84,
+      "agi": 63,
+      "luc": 63,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 100,
+        "ice": 125,
+        "volt": 100,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 25
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bloodant",
+      "name": "ハイキラーアント",
+      "nameEn": "Bloodant",
+      "kind": "foe",
+      "floors": [
+        11,
+        12
+      ],
+      "stratum": 3,
+      "level": 29,
+      "hp": 800,
+      "str": 134,
+      "tec": 34,
+      "vit": 58,
+      "agi": 51,
+      "luc": 51,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 50,
+        "ice": 125,
+        "volt": 100,
+        "death": 5,
+        "ailment": 25,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "servant",
+      "name": "ハイガードアント",
+      "nameEn": "Servant",
+      "kind": "foe",
+      "floors": [
+        12
+      ],
+      "stratum": 3,
+      "level": 30,
+      "hp": 1300,
+      "str": 140,
+      "tec": 35,
+      "vit": 61,
+      "agi": 53,
+      "luc": 53,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 50,
+        "ice": 125,
+        "volt": 100,
+        "death": 5,
+        "ailment": 25,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "muckdile",
+      "name": "這い寄りし暗殺者",
+      "nameEn": "Muckdile",
+      "kind": "foe",
+      "floors": [
+        11,
+        13,
+        14
+      ],
+      "stratum": 3,
+      "level": 38,
+      "hp": 2000,
+      "str": 200,
+      "tec": 43,
+      "vit": 92,
+      "agi": 58,
+      "luc": 65,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 50,
+        "fire": 100,
+        "ice": 125,
+        "volt": 100,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 25
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "killclaw",
+      "name": "水辺の処刑者",
+      "nameEn": "Killclaw",
+      "kind": "foe",
+      "floors": [
+        8,
+        13,
+        14
+      ],
+      "stratum": 3,
+      "level": 36,
+      "hp": 1900,
+      "str": 179,
+      "tec": 41,
+      "vit": 76,
+      "agi": 62,
+      "luc": 62,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 125,
+        "ice": 125,
+        "volt": 125,
+        "death": 5,
+        "ailment": 25,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "sickwood",
+      "name": "うごめく毒樹",
+      "nameEn": "Sickwood",
+      "kind": "foe",
+      "floors": [
+        16,
+        17,
+        19
+      ],
+      "stratum": 4,
+      "level": 40,
+      "hp": 2000,
+      "str": 195,
+      "tec": 44,
+      "vit": 89,
+      "agi": 66,
+      "luc": 66,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 125,
+        "ice": 100,
+        "volt": 100,
+        "death": 10,
+        "ailment": 25,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "cruella",
+      "name": "冷酷なる貴婦人",
+      "nameEn": "Cruella",
+      "kind": "foe",
+      "floors": [
+        18,
+        19,
+        20
+      ],
+      "stratum": 4,
+      "level": 43,
+      "hp": 2300,
+      "str": 210,
+      "tec": 47,
+      "vit": 96,
+      "agi": 71,
+      "luc": 71,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 5,
+        "ailment": 25,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "diabolix",
+      "name": "禍乱の姫君",
+      "nameEn": "Diabolix",
+      "kind": "foe",
+      "floors": [
+        18,
+        19,
+        20
+      ],
+      "stratum": 4,
+      "level": 43,
+      "hp": 3200,
+      "str": 210,
+      "tec": 47,
+      "vit": 96,
+      "agi": 71,
+      "luc": 71,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 5,
+        "ailment": 25,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bud",
+      "name": "世界樹の双葉",
+      "nameEn": "Bud",
+      "kind": "foe",
+      "floors": [
+        18
+      ],
+      "stratum": 4,
+      "level": 1,
+      "hp": 4000,
+      "str": 20,
+      "tec": 20,
+      "vit": 20,
+      "agi": 20,
+      "luc": 20,
+      "accuracy": 90,
+      "resist": {
+        "slash": 300,
+        "bash": 300,
+        "pierce": 300,
+        "fire": 300,
+        "ice": 300,
+        "volt": 300,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ogre",
+      "name": "フォレストオウガ",
+      "nameEn": "Ogre",
+      "kind": "foe",
+      "floors": [
+        20
+      ],
+      "stratum": 4,
+      "level": 46,
+      "hp": 5000,
+      "str": 252,
+      "tec": 40,
+      "vit": 110,
+      "agi": 75,
+      "luc": 75,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 125,
+        "ice": 125,
+        "volt": 125,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 25
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hunter",
+      "name": "フォレストデモン",
+      "nameEn": "Hunter",
+      "kind": "foe",
+      "floors": [
+        20
+      ],
+      "stratum": 4,
+      "level": 46,
+      "hp": 4600,
+      "str": 239,
+      "tec": 65,
+      "vit": 104,
+      "agi": 85,
+      "luc": 75,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 50,
+        "ice": 50,
+        "volt": 50,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 25
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dinolich",
+      "name": "死を呼ぶ骨竜",
+      "nameEn": "Dinolich",
+      "kind": "foe",
+      "floors": [
+        21,
+        22,
+        24
+      ],
+      "stratum": 5,
+      "level": 55,
+      "hp": 6200,
+      "str": 344,
+      "tec": 59,
+      "vit": 124,
+      "agi": 89,
+      "luc": 89,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 125,
+        "ice": 100,
+        "volt": 50,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 25
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "desouler",
+      "name": "魂の裁断者",
+      "nameEn": "Desouler",
+      "kind": "foe",
+      "floors": [
+        17,
+        22,
+        23,
+        24,
+        25
+      ],
+      "stratum": 5,
+      "level": 50,
+      "hp": 4500,
+      "str": 306,
+      "tec": 54,
+      "vit": 116,
+      "agi": 81,
+      "luc": 81,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 125,
+        "ice": 50,
+        "volt": 100,
+        "death": 10,
+        "ailment": 25,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "kingdile",
+      "name": "深海の王者",
+      "nameEn": "Kingdile",
+      "kind": "foe",
+      "floors": [
+        21,
+        22,
+        23,
+        25
+      ],
+      "stratum": 5,
+      "level": 53,
+      "hp": 4500,
+      "str": 333,
+      "tec": 57,
+      "vit": 120,
+      "agi": 86,
+      "luc": 86,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 50,
+        "fire": 100,
+        "ice": 125,
+        "volt": 100,
+        "death": 10,
+        "ailment": 25,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "treetusk",
+      "name": "樹の下の大王",
+      "nameEn": "Treetusk",
+      "kind": "foe",
+      "floors": [
+        25
+      ],
+      "stratum": 5,
+      "level": 54,
+      "hp": 5500,
+      "str": 339,
+      "tec": 58,
+      "vit": 122,
+      "agi": 87,
+      "luc": 87,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 25
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "songbird",
+      "name": "鮮血の担い手",
+      "nameEn": "Songbird",
+      "kind": "foe",
+      "floors": [
+        26,
+        27,
+        30
+      ],
+      "stratum": 6,
+      "level": 68,
+      "hp": 5500,
+      "str": 387,
+      "tec": 67,
+      "vit": 134,
+      "agi": 101,
+      "luc": 101,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 125,
+        "fire": 75,
+        "ice": 125,
+        "volt": 100,
+        "death": 10,
+        "ailment": 25,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "shellord",
+      "name": "魔界の武王",
+      "nameEn": "Shellord",
+      "kind": "foe",
+      "floors": [
+        26,
+        27
+      ],
+      "stratum": 6,
+      "level": 69,
+      "hp": 7500,
+      "str": 402,
+      "tec": 67,
+      "vit": 160,
+      "agi": 94,
+      "luc": 101,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 0,
+        "ice": 125,
+        "volt": 50,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "teralich",
+      "name": "とこしえの魔竜",
+      "nameEn": "Teralich",
+      "kind": "foe",
+      "floors": [
+        26,
+        30
+      ],
+      "stratum": 6,
+      "level": 69,
+      "hp": 7500,
+      "str": 405,
+      "tec": 67,
+      "vit": 134,
+      "agi": 101,
+      "luc": 101,
+      "accuracy": 90,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 125,
+        "ice": 100,
+        "volt": 50,
+        "death": 1,
+        "ailment": 15,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 25
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "macabre",
+      "name": "深淵を舞う者",
+      "nameEn": "Macabre",
+      "kind": "foe",
+      "floors": [
+        28
+      ],
+      "stratum": 6,
+      "level": 69,
+      "hp": 5000,
+      "str": 393,
+      "tec": 67,
+      "vit": 134,
+      "agi": 101,
+      "luc": 101,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 100,
+        "fire": 75,
+        "ice": 75,
+        "volt": 75,
+        "death": 10,
+        "ailment": 25,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "drakoid",
+      "name": "氷竜クローン",
+      "nameEn": "Drakoid",
+      "kind": "foe",
+      "floors": [
+        30
+      ],
+      "stratum": 6,
+      "level": 70,
+      "hp": 8500,
+      "str": 402,
+      "tec": 68,
+      "vit": 136,
+      "agi": 102,
+      "luc": 102,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 125,
+        "ice": 0,
+        "volt": 100,
+        "death": 10,
+        "ailment": 1,
+        "head": 1,
+        "arm": 1,
+        "leg": 1,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dragoid",
+      "name": "雷竜クローン",
+      "nameEn": "Dragoid",
+      "kind": "foe",
+      "floors": [
+        30
+      ],
+      "stratum": 6,
+      "level": 70,
+      "hp": 8500,
+      "str": 402,
+      "tec": 68,
+      "vit": 136,
+      "agi": 102,
+      "luc": 102,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 125,
+        "fire": 100,
+        "ice": 100,
+        "volt": 0,
+        "death": 10,
+        "ailment": 1,
+        "head": 1,
+        "arm": 1,
+        "leg": 1,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "wyrmoid",
+      "name": "炎竜クローン",
+      "nameEn": "Wyrmoid",
+      "kind": "foe",
+      "floors": [
+        30
+      ],
+      "stratum": 6,
+      "level": 70,
+      "hp": 8500,
+      "str": 402,
+      "tec": 68,
+      "vit": 136,
+      "agi": 102,
+      "luc": 102,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 0,
+        "ice": 125,
+        "volt": 100,
+        "death": 10,
+        "ailment": 1,
+        "head": 1,
+        "arm": 1,
+        "leg": 1,
+        "stun": 50
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "golem",
+      "name": "ゴーレム",
+      "nameEn": "Golem",
+      "kind": "foe",
+      "floors": [
+        3
+      ],
+      "level": 30,
+      "hp": 7000,
+      "str": 200,
+      "tec": 30,
+      "vit": 120,
+      "agi": 30,
+      "luc": 30,
+      "accuracy": 95,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 125,
+        "ice": 125,
+        "volt": 125,
+        "death": 10,
+        "ailment": 5,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 10
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "特殊FOE（クエストなどで戦う）。出現階はクエストの階"
+    },
+    {
+      "id": "wyvern",
+      "name": "ワイバーン",
+      "nameEn": "Wyvern",
+      "kind": "foe",
+      "floors": [
+        8,
+        10
+      ],
+      "level": 40,
+      "hp": 8000,
+      "str": 260,
+      "tec": 88,
+      "vit": 107,
+      "agi": 88,
+      "luc": 44,
+      "accuracy": 95,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 50,
+        "ice": 75,
+        "volt": 0,
+        "death": 0,
+        "ailment": 5,
+        "head": 10,
+        "arm": 10,
+        "leg": 10,
+        "stun": 10
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "特殊FOE（クエストなどで戦う）。出現階はクエストの階"
+    },
+    {
+      "id": "manticor",
+      "name": "マンティコア",
+      "nameEn": "Manticor",
+      "kind": "foe",
+      "floors": [
+        17
+      ],
+      "level": 45,
+      "hp": 8500,
+      "str": 333,
+      "tec": 98,
+      "vit": 123,
+      "agi": 98,
+      "luc": 49,
+      "accuracy": 95,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 50,
+        "ice": 50,
+        "volt": 50,
+        "death": 0,
+        "ailment": 5,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 10
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "特殊FOE（クエストなどで戦う）。出現階はクエストの階"
+    },
+    {
+      "id": "alraune",
+      "name": "アルルーナ",
+      "nameEn": "Alraune",
+      "kind": "foe",
+      "floors": [
+        7
+      ],
+      "level": 55,
+      "hp": 16000,
+      "str": 470,
+      "tec": 125,
+      "vit": 160,
+      "agi": 120,
+      "luc": 59,
+      "accuracy": 95,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 125,
+        "ice": 0,
+        "volt": 0,
+        "death": 0,
+        "ailment": 5,
+        "head": 10,
+        "arm": 10,
+        "leg": 10,
+        "stun": 10
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "特殊FOE（クエストなどで戦う）。出現階はクエストの階"
+    },
+    {
+      "id": "wyrm",
+      "name": "偉大なる赤竜",
+      "nameEn": "Wyrm",
+      "kind": "foe",
+      "floors": [
+        8
+      ],
+      "level": 70,
+      "hp": 35000,
+      "str": 530,
+      "tec": 140,
+      "vit": 164,
+      "agi": 136,
+      "luc": 68,
+      "accuracy": 95,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 0,
+        "ice": 150,
+        "volt": 75,
+        "death": 0,
+        "ailment": 1,
+        "head": 10,
+        "arm": 10,
+        "leg": 10,
+        "stun": 10
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "特殊FOE（クエストなどで戦う）。出現階はクエストの階"
+    },
+    {
+      "id": "drake",
+      "name": "氷嵐の支配者",
+      "nameEn": "Drake",
+      "kind": "foe",
+      "floors": [
+        15
+      ],
+      "level": 70,
+      "hp": 35000,
+      "str": 540,
+      "tec": 136,
+      "vit": 164,
+      "agi": 142,
+      "luc": 68,
+      "accuracy": 95,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 150,
+        "ice": 0,
+        "volt": 75,
+        "death": 0,
+        "ailment": 1,
+        "head": 10,
+        "arm": 10,
+        "leg": 10,
+        "stun": 10
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "特殊FOE（クエストなどで戦う）。出現階はクエストの階"
+    },
+    {
+      "id": "dragon",
+      "name": "雷鳴と共に現る者",
+      "nameEn": "Dragon",
+      "kind": "foe",
+      "floors": [
+        25
+      ],
+      "level": 70,
+      "hp": 35000,
+      "str": 550,
+      "tec": 121,
+      "vit": 164,
+      "agi": 120,
+      "luc": 68,
+      "accuracy": 95,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 75,
+        "ice": 75,
+        "volt": 0,
+        "death": 0,
+        "ailment": 1,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 10
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "特殊FOE（クエストなどで戦う）。出現階はクエストの階"
+    },
+    {
+      "id": "skoll",
+      "name": "スノーウルフ",
+      "nameEn": "Skoll",
+      "kind": "normal",
+      "floors": [
+        5
+      ],
+      "stratum": 1,
+      "level": 15,
+      "hp": 400,
+      "str": 54,
+      "tec": 21,
+      "vit": 30,
+      "agi": 32,
+      "luc": 32,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 50,
+        "volt": 100,
+        "death": 10,
+        "ailment": 25,
+        "head": 20,
+        "arm": 20,
+        "leg": 20,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "ボス戦の取り巻き（atwiki のボスのページに掲載）"
+    },
+    {
+      "id": "fenrir",
+      "name": "スノードリフト",
+      "nameEn": "Fenrir",
+      "kind": "boss",
+      "floors": [
+        5
+      ],
+      "stratum": 1,
+      "level": 18,
+      "hp": 1200,
+      "str": 96,
+      "tec": 48,
+      "vit": 46,
+      "agi": 48,
+      "luc": 24,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 150,
+        "ice": 0,
+        "volt": 100,
+        "death": 0,
+        "ailment": 5,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 15
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "cernunos",
+      "name": "ケルヌンノス",
+      "nameEn": "Cernunos",
+      "kind": "boss",
+      "floors": [
+        10
+      ],
+      "stratum": 2,
+      "level": 28,
+      "hp": 2750,
+      "str": 170,
+      "tec": 68,
+      "vit": 69,
+      "agi": 68,
+      "luc": 34,
+      "accuracy": 95,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 50,
+        "ice": 100,
+        "volt": 150,
+        "death": 0,
+        "ailment": 5,
+        "head": 65,
+        "arm": 65,
+        "leg": 65,
+        "stun": 15
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "curoller",
+      "name": "ヒーラーボール",
+      "nameEn": "Curoller",
+      "kind": "normal",
+      "floors": [
+        10
+      ],
+      "stratum": 2,
+      "level": 26,
+      "hp": 142,
+      "str": 75,
+      "tec": 32,
+      "vit": 54,
+      "agi": 32,
+      "luc": 32,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 125,
+        "volt": 125,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "ボス戦の取り巻き（atwiki のボスのページに掲載）"
+    },
+    {
+      "id": "royalant",
+      "name": "クイーンアント",
+      "nameEn": "Royalant",
+      "kind": "boss",
+      "floors": [
+        12
+      ],
+      "stratum": 3,
+      "level": 32,
+      "hp": 5500,
+      "str": 204,
+      "tec": 74,
+      "vit": 80,
+      "agi": 74,
+      "luc": 37,
+      "accuracy": 95,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 0,
+        "ailment": 5,
+        "head": 65,
+        "arm": 65,
+        "leg": 65,
+        "stun": 15
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "cotrangl",
+      "name": "コロトラングル",
+      "nameEn": "Cotrangl",
+      "kind": "boss",
+      "floors": [
+        15
+      ],
+      "stratum": 3,
+      "level": 38,
+      "hp": 7000,
+      "str": 250,
+      "tec": 86,
+      "vit": 104,
+      "agi": 86,
+      "luc": 43,
+      "accuracy": 95,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 125,
+        "ice": 0,
+        "volt": 75,
+        "death": 0,
+        "ailment": 5,
+        "head": 65,
+        "arm": 65,
+        "leg": 65,
+        "stun": 15
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "iwaopeln",
+      "name": "イワオロペネレプ",
+      "nameEn": "Iwaopeln",
+      "kind": "boss",
+      "floors": [
+        20
+      ],
+      "stratum": 4,
+      "level": 46,
+      "hp": 9000,
+      "str": 330,
+      "tec": 100,
+      "vit": 125,
+      "agi": 100,
+      "luc": 50,
+      "accuracy": 95,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 50,
+        "ice": 125,
+        "volt": 50,
+        "death": 0,
+        "ailment": 5,
+        "head": 65,
+        "arm": 65,
+        "leg": 65,
+        "stun": 15
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "日本語名・出現階。Lv・HP・攻・防がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    }
+  ]
+}

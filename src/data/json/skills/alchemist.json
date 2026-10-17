@@ -1,0 +1,2577 @@
+{
+  "jobId": "alchemist",
+  "skills": [
+    {
+      "id": "alchemist-tp-boost",
+      "jobId": "alchemist",
+      "name": "TPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大TP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxTp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 130%（atwiki）"
+    },
+    {
+      "id": "alchemist-fire-mastery",
+      "jobId": "alchemist",
+      "name": "炎マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "炎の術式の攻撃力を上げるパッシブ。炎の術式の前提"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "数で表せない項目（atwiki）… 術式攻撃力：各属性の威力が微増"
+    },
+    {
+      "id": "alchemist-ice-mastery",
+      "jobId": "alchemist",
+      "name": "氷マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "氷の術式の攻撃力を上げるパッシブ。氷の術式の前提"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "数で表せない項目（atwiki）… 術式攻撃力：各属性の威力が微増"
+    },
+    {
+      "id": "alchemist-volt-mastery",
+      "jobId": "alchemist",
+      "name": "雷マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "雷の術式の攻撃力を上げるパッシブ。雷の術式の前提"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "数で表せない項目（atwiki）… 術式攻撃力：各属性の威力が微増"
+    },
+    {
+      "id": "alchemist-poison-mastery",
+      "jobId": "alchemist",
+      "name": "毒マスタリー",
+      "status": "entered",
+      "maxLevel": 5,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "毒の術式の攻撃力を上げるパッシブ。毒の術式の前提"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/1214.html",
+          "note": "最大レベル 5（リマスター版の変更）",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げても効果は変わらない（atwiki）。リマスター版で最大レベルが 5 になった。毒の術式・毒霧の術式の習得にだけ使う"
+    },
+    {
+      "id": "alchemist-erudition",
+      "jobId": "alchemist",
+      "name": "博識",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "drop上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "戦闘後のアイテム入手率が上がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 10
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 11
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 12
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 13
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 19
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 20
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 21
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 22
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 23
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-tp-recovery",
+      "jobId": "alchemist",
+      "name": "TPリカバリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-tp-boost",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "TP回復量",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "戦闘中、毎ターン自分の TP が少し回復する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 1
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 1
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 2
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 2
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 3
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 3
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 4
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 4
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 4
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 5
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-fire",
+      "jobId": "alchemist",
+      "name": "火の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.6,
+        "boostFactor": 0.8
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-fire-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "tec",
+          "element": "fire",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 160
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 170
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 180
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 200
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 210
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 220
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 230
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 240
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 250
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 260
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 270
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 280
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 290
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 300
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 310
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-flame",
+      "jobId": "alchemist",
+      "name": "火炎の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.4,
+        "boostFactor": 0.6
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-fire-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "alchemist-fire",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "tec",
+          "element": "fire",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {
+            "dmg": 280
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 11,
+          "values": {
+            "dmg": 320
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 12,
+          "values": {
+            "dmg": 360
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 13,
+          "values": {
+            "dmg": 400
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 14,
+          "values": {
+            "dmg": 460
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "dmg": 500
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 14,
+          "values": {
+            "dmg": 540
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 14,
+          "values": {
+            "dmg": 580
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 14,
+          "values": {
+            "dmg": 620
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {
+            "dmg": 700
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 14,
+          "values": {
+            "dmg": 740
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 14,
+          "values": {
+            "dmg": 780
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 14,
+          "values": {
+            "dmg": 820
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 14,
+          "values": {
+            "dmg": 860
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 14,
+          "values": {
+            "dmg": 960
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-inferno",
+      "jobId": "alchemist",
+      "name": "大爆炎の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-fire-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "tec",
+          "element": "fire",
+          "target": "enemy-all",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 16,
+          "values": {
+            "dmg": 224
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 17,
+          "values": {
+            "dmg": 256
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 18,
+          "values": {
+            "dmg": 288
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 19,
+          "values": {
+            "dmg": 320
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 20,
+          "values": {
+            "dmg": 368
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 20,
+          "values": {
+            "dmg": 400
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 20,
+          "values": {
+            "dmg": 432
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 20,
+          "values": {
+            "dmg": 464
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 20,
+          "values": {
+            "dmg": 496
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 20,
+          "values": {
+            "dmg": 560
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 20,
+          "values": {
+            "dmg": 592
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 20,
+          "values": {
+            "dmg": 624
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 20,
+          "values": {
+            "dmg": 656
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 20,
+          "values": {
+            "dmg": 688
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 20,
+          "values": {
+            "dmg": 768
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-ice",
+      "jobId": "alchemist",
+      "name": "氷の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.6,
+        "boostFactor": 0.8
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-ice-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "tec",
+          "element": "ice",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 160
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 170
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 180
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 200
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 210
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 220
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 230
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 240
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 250
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 260
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 270
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 280
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 290
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 300
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 310
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-freeze",
+      "jobId": "alchemist",
+      "name": "氷結の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.4,
+        "boostFactor": 0.6
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-ice-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "alchemist-ice",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "tec",
+          "element": "ice",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {
+            "dmg": 280
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 11,
+          "values": {
+            "dmg": 320
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 12,
+          "values": {
+            "dmg": 360
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 13,
+          "values": {
+            "dmg": 400
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 14,
+          "values": {
+            "dmg": 460
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "dmg": 500
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 14,
+          "values": {
+            "dmg": 540
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 14,
+          "values": {
+            "dmg": 580
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 14,
+          "values": {
+            "dmg": 620
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {
+            "dmg": 700
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 14,
+          "values": {
+            "dmg": 740
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 14,
+          "values": {
+            "dmg": 780
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 14,
+          "values": {
+            "dmg": 820
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 14,
+          "values": {
+            "dmg": 860
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 14,
+          "values": {
+            "dmg": 960
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-blizzard",
+      "jobId": "alchemist",
+      "name": "大氷嵐の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-ice-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "tec",
+          "element": "ice",
+          "target": "enemy-all",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 16,
+          "values": {
+            "dmg": 224
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 17,
+          "values": {
+            "dmg": 256
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 18,
+          "values": {
+            "dmg": 288
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 19,
+          "values": {
+            "dmg": 320
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 20,
+          "values": {
+            "dmg": 368
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 20,
+          "values": {
+            "dmg": 400
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 20,
+          "values": {
+            "dmg": 432
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 20,
+          "values": {
+            "dmg": 464
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 20,
+          "values": {
+            "dmg": 496
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 20,
+          "values": {
+            "dmg": 560
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 20,
+          "values": {
+            "dmg": 592
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 20,
+          "values": {
+            "dmg": 624
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 20,
+          "values": {
+            "dmg": 656
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 20,
+          "values": {
+            "dmg": 688
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 20,
+          "values": {
+            "dmg": 768
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-volt",
+      "jobId": "alchemist",
+      "name": "雷の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.6,
+        "boostFactor": 0.8
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-volt-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "tec",
+          "element": "volt",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 160
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 170
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 180
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 200
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 210
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 220
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 230
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 240
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 250
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 260
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 270
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 280
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 290
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 300
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 310
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-shock",
+      "jobId": "alchemist",
+      "name": "電撃の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.4,
+        "boostFactor": 0.6
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-volt-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "alchemist-volt",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "tec",
+          "element": "volt",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {
+            "dmg": 280
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 11,
+          "values": {
+            "dmg": 320
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 12,
+          "values": {
+            "dmg": 360
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 13,
+          "values": {
+            "dmg": 400
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 14,
+          "values": {
+            "dmg": 460
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "dmg": 500
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 14,
+          "values": {
+            "dmg": 540
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 14,
+          "values": {
+            "dmg": 580
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 14,
+          "values": {
+            "dmg": 620
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {
+            "dmg": 700
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 14,
+          "values": {
+            "dmg": 740
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 14,
+          "values": {
+            "dmg": 780
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 14,
+          "values": {
+            "dmg": 820
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 14,
+          "values": {
+            "dmg": 860
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 14,
+          "values": {
+            "dmg": 960
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-thunder",
+      "jobId": "alchemist",
+      "name": "大雷嵐の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-volt-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "tec",
+          "element": "volt",
+          "target": "enemy-all",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 16,
+          "values": {
+            "dmg": 224
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 17,
+          "values": {
+            "dmg": 256
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 18,
+          "values": {
+            "dmg": 288
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 19,
+          "values": {
+            "dmg": 320
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 20,
+          "values": {
+            "dmg": 368
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 20,
+          "values": {
+            "dmg": 400
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 20,
+          "values": {
+            "dmg": 432
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 20,
+          "values": {
+            "dmg": 464
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 20,
+          "values": {
+            "dmg": 496
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 20,
+          "values": {
+            "dmg": 560
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 20,
+          "values": {
+            "dmg": 592
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 20,
+          "values": {
+            "dmg": 624
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 20,
+          "values": {
+            "dmg": 656
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 20,
+          "values": {
+            "dmg": 688
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 20,
+          "values": {
+            "dmg": 768
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-poison",
+      "jobId": "alchemist",
+      "name": "毒の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.6,
+        "boostFactor": 0.8
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-poison-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "poison",
+          "label": "毒判定値",
+          "unit": "number"
+        },
+        {
+          "id": "poisonDmg",
+          "label": "毒ダメージ",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "ailment",
+          "ailment": "poison",
+          "target": "enemy-single",
+          "chanceParam": "poison",
+          "damageParam": "poisonDmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "poison": 200,
+            "poisonDmg": 23
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "poison": 202,
+            "poisonDmg": 43
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "poison": 204,
+            "poisonDmg": 63
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "poison": 206,
+            "poisonDmg": 83
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "poison": 220,
+            "poisonDmg": 123
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "poison": 222,
+            "poisonDmg": 163
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "poison": 224,
+            "poisonDmg": 203
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "poison": 226,
+            "poisonDmg": 243
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "poison": 228,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "poison": 250,
+            "poisonDmg": 255
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "poison": 252,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "poison": 254,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "poison": 256,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "poison": 258,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "poison": 280,
+            "poisonDmg": 255
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-poison-mist",
+      "jobId": "alchemist",
+      "name": "毒霧の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-poison-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "poison",
+          "label": "毒判定値",
+          "unit": "number"
+        },
+        {
+          "id": "poisonDmg",
+          "label": "毒ダメージ",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "ailment",
+          "ailment": "poison",
+          "target": "enemy-all",
+          "chanceParam": "poison",
+          "damageParam": "poisonDmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {
+            "poison": 200,
+            "poisonDmg": 23
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 11,
+          "values": {
+            "poison": 202,
+            "poisonDmg": 43
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 12,
+          "values": {
+            "poison": 204,
+            "poisonDmg": 63
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 13,
+          "values": {
+            "poison": 206,
+            "poisonDmg": 83
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 14,
+          "values": {
+            "poison": 220,
+            "poisonDmg": 123
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "poison": 222,
+            "poisonDmg": 163
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 14,
+          "values": {
+            "poison": 224,
+            "poisonDmg": 203
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 14,
+          "values": {
+            "poison": 226,
+            "poisonDmg": 243
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 14,
+          "values": {
+            "poison": 228,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {
+            "poison": 250,
+            "poisonDmg": 255
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 14,
+          "values": {
+            "poison": 252,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 14,
+          "values": {
+            "poison": 254,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 14,
+          "values": {
+            "poison": 256,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 14,
+          "values": {
+            "poison": 258,
+            "poisonDmg": 255
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 14,
+          "values": {
+            "poison": 280,
+            "poisonDmg": 255
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-clairvoyance",
+      "jobId": "alchemist",
+      "name": "千里眼の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-tp-boost",
+          "level": 5
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "other",
+          "description": "探索用。フロア全体の FOE の位置が分かる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-return",
+      "jobId": "alchemist",
+      "name": "帰還の術式",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "alchemist-tp-boost",
+          "level": 7
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "other",
+          "description": "探索用。直前に使った転送地点へ移動する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "alchemist-logging",
+      "jobId": "alchemist",
+      "name": "伐採",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "logging",
+          "description": "探索用。伐採ポイントで伐採できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると伐採の成功率が上がり、1日にできる回数が2増える（atwiki）"
+    }
+  ]
+}

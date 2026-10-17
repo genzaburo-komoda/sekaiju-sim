@@ -1,0 +1,3495 @@
+{
+  "jobId": "swordsman",
+  "skills": [
+    {
+      "id": "hp-boost",
+      "jobId": "swordsman",
+      "name": "HPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxHp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベルをスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "tp-boost",
+      "jobId": "swordsman",
+      "name": "TPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大TP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxTp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベルをスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "atk-boost",
+      "jobId": "swordsman",
+      "name": "ATKブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "STR倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "str",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベルをスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "DS版の名称は ATCブースト"
+    },
+    {
+      "id": "def-boost",
+      "jobId": "swordsman",
+      "name": "DEFブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "物理耐性上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "physResist",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 5
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 6
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 7
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 8
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 9
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 10
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 11
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 12
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 13
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 15
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベルをスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "axe-mastery",
+      "jobId": "swordsman",
+      "name": "斧マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "武器攻撃力倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "weaponAtk",
+          "param": "rate",
+          "weapon": "axe"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベルをスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "sword-mastery",
+      "jobId": "swordsman",
+      "name": "剣マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "武器攻撃力倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "weaponAtk",
+          "param": "rate",
+          "weapon": "sword"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベルをスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "double-attack",
+      "jobId": "swordsman",
+      "name": "ダブルアタック",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "sword-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "axe-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "chance",
+          "label": "発動率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-proc",
+          "trigger": "normal-attack",
+          "chanceParam": "chance",
+          "description": "通常攻撃のあと、同じ対象にもう一度通常攻撃する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "chance": 10
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "chance": 11
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "chance": 12
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "chance": 13
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "chance": 16
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "chance": 17
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "chance": 18
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "chance": 19
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "chance": 20
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "chance": 23
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベルをスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "war-cry",
+      "jobId": "swordsman",
+      "name": "ウォークライ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.6
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "atk-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dealt",
+          "label": "与ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "taken",
+          "label": "被ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "self",
+          "modifiers": [
+            {
+              "stat": "damageDealt",
+              "param": "dealt"
+            },
+            {
+              "stat": "damageTaken",
+              "param": "taken"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {
+            "dealt": 110,
+            "taken": 120
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {
+            "dealt": 113,
+            "taken": 120
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 2,
+          "values": {
+            "dealt": 116,
+            "taken": 120
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 2,
+          "values": {
+            "dealt": 119,
+            "taken": 120
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 3,
+          "values": {
+            "dealt": 125,
+            "taken": 120
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 3,
+          "values": {
+            "dealt": 127,
+            "taken": 118
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 3,
+          "values": {
+            "dealt": 129,
+            "taken": 116
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 3,
+          "values": {
+            "dealt": 131,
+            "taken": 114
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 3,
+          "values": {
+            "dealt": 133,
+            "taken": 112
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 3,
+          "values": {
+            "dealt": 140,
+            "taken": 110
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 3,
+          "values": {
+            "dealt": 141,
+            "taken": 110
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 3,
+          "values": {
+            "dealt": 142,
+            "taken": 110
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 3,
+          "values": {
+            "dealt": 143,
+            "taken": 110
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 3,
+          "values": {
+            "dealt": 144,
+            "taken": 110
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 3,
+          "values": {
+            "dealt": 152,
+            "taken": 110
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "hells-cry",
+      "jobId": "swordsman",
+      "name": "ヘルズクライ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.6
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "atk-boost",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "dealt",
+          "label": "与ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "taken",
+          "label": "被ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "maxHp",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "self",
+          "durationTurns": 5,
+          "modifiers": [
+            {
+              "stat": "damageDealt",
+              "param": "dealt"
+            },
+            {
+              "stat": "damageTaken",
+              "param": "taken"
+            },
+            {
+              "stat": "maxHp",
+              "param": "maxHp"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {
+            "dealt": 120,
+            "taken": 120,
+            "maxHp": 80
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {
+            "dealt": 123,
+            "taken": 120,
+            "maxHp": 80
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 2,
+          "values": {
+            "dealt": 126,
+            "taken": 120,
+            "maxHp": 80
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 2,
+          "values": {
+            "dealt": 129,
+            "taken": 120,
+            "maxHp": 80
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 3,
+          "values": {
+            "dealt": 135,
+            "taken": 120,
+            "maxHp": 80
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 3,
+          "values": {
+            "dealt": 137,
+            "taken": 118,
+            "maxHp": 82
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 3,
+          "values": {
+            "dealt": 139,
+            "taken": 116,
+            "maxHp": 84
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 3,
+          "values": {
+            "dealt": 141,
+            "taken": 114,
+            "maxHp": 86
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 3,
+          "values": {
+            "dealt": 143,
+            "taken": 112,
+            "maxHp": 88
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 3,
+          "values": {
+            "dealt": 150,
+            "taken": 110,
+            "maxHp": 90
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 3,
+          "values": {
+            "dealt": 151,
+            "taken": 110,
+            "maxHp": 90
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 3,
+          "values": {
+            "dealt": 152,
+            "taken": 110,
+            "maxHp": 90
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 3,
+          "values": {
+            "dealt": 153,
+            "taken": 110,
+            "maxHp": 90
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 3,
+          "values": {
+            "dealt": 154,
+            "taken": 110,
+            "maxHp": 90
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 3,
+          "values": {
+            "dealt": 162,
+            "taken": 110,
+            "maxHp": 90
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "arm-recovery",
+      "jobId": "swordsman",
+      "name": "アームリカバリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.6
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "def-boost",
+          "level": 1
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "cure",
+          "target": "self",
+          "cures": [
+            "bind-arm"
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "tp": 0,
+          "values": {}
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 0,
+          "values": {}
+        },
+        {
+          "lv": 12,
+          "tp": 0,
+          "values": {}
+        },
+        {
+          "lv": 13,
+          "tp": 0,
+          "values": {}
+        },
+        {
+          "lv": 14,
+          "tp": 0,
+          "values": {}
+        },
+        {
+          "lv": 15,
+          "tp": 0,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "レベルで変わるのは消費TPのみ。Lv10 の消費TPは 0（ゲーム内で確認。既存ツールの 1 は誤り）"
+    },
+    {
+      "id": "flee",
+      "jobId": "swordsman",
+      "name": "猛進逃走",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "def-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "chance",
+          "label": "逃走成功率",
+          "unit": "percent"
+        },
+        {
+          "id": "hpLoss",
+          "label": "パーティのHP減少率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "escape",
+          "chanceParam": "chance",
+          "hpCostParam": "hpLoss"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "chance": 60,
+            "hpLoss": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "chance": 64,
+            "hpLoss": 50
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "chance": 68,
+            "hpLoss": 50
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "chance": 72,
+            "hpLoss": 50
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 4,
+          "values": {
+            "chance": 80,
+            "hpLoss": 50
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "chance": 82,
+            "hpLoss": 45
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "chance": 84,
+            "hpLoss": 40
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "chance": 86,
+            "hpLoss": 35
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "chance": 88,
+            "hpLoss": 30
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "chance": 98,
+            "hpLoss": 25
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "chance": 100,
+            "hpLoss": 20
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "chance": 100,
+            "hpLoss": 15
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "chance": 100,
+            "hpLoss": 10
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "chance": 100,
+            "hpLoss": 5
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "chance": 100,
+            "hpLoss": 0
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "全員の HP を犠牲にして逃走し、1フロア前に移動する"
+    },
+    {
+      "id": "raging-edge",
+      "jobId": "swordsman",
+      "name": "レイジングエッジ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "sword-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "accuracy",
+          "label": "命中補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg",
+          "accuracyParam": "accuracy"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 140,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 145,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 150,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 155,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 165,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 167,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 170,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 173,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 176,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 190,
+            "accuracy": 120
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 192,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 194,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 196,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 198,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 216,
+            "accuracy": 120
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "命中補正は Pokachi EtrianStuff の EO1 データ（DS版）による。ライセンス表示がないため数値のみ出典付きで参照",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "tornado",
+      "jobId": "swordsman",
+      "name": "トルネード",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "sword-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "dmgAdjacent",
+          "label": "ダメージ倍率（左右）",
+          "unit": "percent"
+        },
+        {
+          "id": "accuracy",
+          "label": "命中補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single-splash",
+          "powerParam": "dmg",
+          "splashPowerParam": "dmgAdjacent",
+          "accuracyParam": "accuracy"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "dmg": 140,
+            "dmgAdjacent": 100,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "dmg": 145,
+            "dmgAdjacent": 102,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "dmg": 150,
+            "dmgAdjacent": 104,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "dmg": 155,
+            "dmgAdjacent": 106,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "dmg": 165,
+            "dmgAdjacent": 118,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "dmg": 167,
+            "dmgAdjacent": 120,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "dmg": 170,
+            "dmgAdjacent": 122,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "dmg": 173,
+            "dmgAdjacent": 124,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "dmg": 176,
+            "dmgAdjacent": 126,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "dmg": 190,
+            "dmgAdjacent": 140,
+            "accuracy": 120
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "dmg": 192,
+            "dmgAdjacent": 142,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "dmg": 194,
+            "dmgAdjacent": 144,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "dmg": 196,
+            "dmgAdjacent": 146,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "dmg": 198,
+            "dmgAdjacent": 148,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "dmg": 216,
+            "dmgAdjacent": 164,
+            "accuracy": 120
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "命中補正は Pokachi EtrianStuff の EO1 データ（DS版）による。ライセンス表示がないため数値のみ出典付きで参照",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "hayabusa",
+      "jobId": "swordsman",
+      "name": "ハヤブサ駆け",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "double-attack",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "minTargets",
+          "label": "攻撃対象数（最小）",
+          "unit": "count"
+        },
+        {
+          "id": "maxTargets",
+          "label": "攻撃対象数（最大）",
+          "unit": "count"
+        },
+        {
+          "id": "accuracy",
+          "label": "命中補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-random",
+          "powerParam": "dmg",
+          "minTargetsParam": "minTargets",
+          "maxTargetsParam": "maxTargets",
+          "accuracyParam": "accuracy"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "dmg": 140,
+            "minTargets": 2,
+            "maxTargets": 3,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "dmg": 145,
+            "minTargets": 2,
+            "maxTargets": 3,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "dmg": 150,
+            "minTargets": 2,
+            "maxTargets": 3,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "dmg": 155,
+            "minTargets": 2,
+            "maxTargets": 3,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "dmg": 165,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "dmg": 167,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "dmg": 170,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "dmg": 173,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "dmg": 176,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "dmg": 190,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "dmg": 192,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "dmg": 194,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "dmg": 196,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "dmg": 198,
+            "minTargets": 3,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "dmg": 216,
+            "minTargets": 4,
+            "maxTargets": 4,
+            "accuracy": 120
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "命中補正は Pokachi EtrianStuff の EO1 データ（DS版）による。ライセンス表示がないため数値のみ出典付きで参照",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "攻撃対象数の確率（Pokachi、DS版）：Lv1-2 は2体70%・3体30%、Lv3-4 は各50%、Lv5-6 は3体70%・4体30%、Lv7-8 は60%・40%、Lv9-10 は各50%。BOOST 時 Lv15 は4体99%・5体1%（atwiki は最大4体としており食い違う）。確率分布（B3）で使う"
+    },
+    {
+      "id": "chase-fire",
+      "jobId": "swordsman",
+      "name": "チェイスファイア",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "sword-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "accuracy",
+          "label": "命中補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "chase",
+          "triggerElement": "fire",
+          "powerParam": "dmg",
+          "accuracyParam": "accuracy"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "dmg": 140,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 8,
+          "values": {
+            "dmg": 145,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 9,
+          "values": {
+            "dmg": 150,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "dmg": 155,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "dmg": 165,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "dmg": 167,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "dmg": 170,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "dmg": 173,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "dmg": 176,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "dmg": 190,
+            "accuracy": 200
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "dmg": 192,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "dmg": 194,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "dmg": 196,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "dmg": 198,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "dmg": 216,
+            "accuracy": 200
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "命中補正は Pokachi EtrianStuff の EO1 データ（DS版）による。ライセンス表示がないため数値のみ出典付きで参照",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "使用ターン、味方の対応属性の攻撃に反応して1度だけ追撃する。威力は STR のみに依存"
+    },
+    {
+      "id": "chase-freeze",
+      "jobId": "swordsman",
+      "name": "チェイスフリーズ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "sword-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "accuracy",
+          "label": "命中補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "chase",
+          "triggerElement": "ice",
+          "powerParam": "dmg",
+          "accuracyParam": "accuracy"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "dmg": 140,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 8,
+          "values": {
+            "dmg": 145,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 9,
+          "values": {
+            "dmg": 150,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "dmg": 155,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "dmg": 165,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "dmg": 167,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "dmg": 170,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "dmg": 173,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "dmg": 176,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "dmg": 190,
+            "accuracy": 200
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "dmg": 192,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "dmg": 194,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "dmg": 196,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "dmg": 198,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "dmg": 216,
+            "accuracy": 200
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "命中補正は Pokachi EtrianStuff の EO1 データ（DS版）による。ライセンス表示がないため数値のみ出典付きで参照",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "使用ターン、味方の対応属性の攻撃に反応して1度だけ追撃する。威力は STR のみに依存"
+    },
+    {
+      "id": "chase-shock",
+      "jobId": "swordsman",
+      "name": "チェイスショック",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "sword-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "accuracy",
+          "label": "命中補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "chase",
+          "triggerElement": "volt",
+          "powerParam": "dmg",
+          "accuracyParam": "accuracy"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "dmg": 140,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 8,
+          "values": {
+            "dmg": 145,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 9,
+          "values": {
+            "dmg": 150,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "dmg": 155,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "dmg": 165,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "dmg": 167,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "dmg": 170,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "dmg": 173,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "dmg": 176,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "dmg": 190,
+            "accuracy": 200
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "dmg": 192,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "dmg": 194,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "dmg": 196,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "dmg": 198,
+            "accuracy": 200
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "dmg": 216,
+            "accuracy": 200
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "命中補正は Pokachi EtrianStuff の EO1 データ（DS版）による。ライセンス表示がないため数値のみ出典付きで参照",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "使用ターン、味方の対応属性の攻撃に反応して1度だけ追撃する。威力は STR のみに依存"
+    },
+    {
+      "id": "power-crush",
+      "jobId": "swordsman",
+      "name": "パワークラッシュ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "weapons": [
+        "axe"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "axe-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "accuracy",
+          "label": "命中補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "bash",
+          "target": "enemy-single",
+          "powerParam": "dmg",
+          "accuracyParam": "accuracy"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 160,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 165,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 170,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 175,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 185,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 187,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 190,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 193,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 196,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 210,
+            "accuracy": 120
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 212,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 214,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 216,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 218,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 236,
+            "accuracy": 120
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "命中補正は Pokachi EtrianStuff の EO1 データ（DS版）による。ライセンス表示がないため数値のみ出典付きで参照",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "stun-smash",
+      "jobId": "swordsman",
+      "name": "スタンスマッシュ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "weapons": [
+        "axe"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "axe-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "stun",
+          "label": "スタン判定値",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "bash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "ailment",
+          "ailment": "stun",
+          "target": "enemy-single",
+          "chanceParam": "stun"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "dmg": 140,
+            "stun": 15,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "dmg": 145,
+            "stun": 20,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "dmg": 150,
+            "stun": 25,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "dmg": 155,
+            "stun": 30,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "dmg": 165,
+            "stun": 40,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "dmg": 167,
+            "stun": 45,
+            "speed": 0.92
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "dmg": 170,
+            "stun": 50,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "dmg": 173,
+            "stun": 55,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "dmg": 176,
+            "stun": 60,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "dmg": 190,
+            "stun": 75,
+            "speed": 1.02
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "dmg": 192,
+            "stun": 76,
+            "speed": 1.04
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "dmg": 194,
+            "stun": 77,
+            "speed": 1.06
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "dmg": 196,
+            "stun": 78,
+            "speed": 1.08
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "dmg": 198,
+            "stun": 79,
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "dmg": 216,
+            "stun": 80,
+            "speed": 1.18
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "命中補正は資料になし（Pokachi に記載なし）"
+    },
+    {
+      "id": "head-bash",
+      "jobId": "swordsman",
+      "name": "ヘッドバッシュ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.6,
+        "boostFactor": 0.8
+      },
+      "boostable": true,
+      "weapons": [
+        "axe"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "axe-mastery",
+          "level": 7
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "headBind",
+          "label": "頭封じ判定値",
+          "unit": "number"
+        },
+        {
+          "id": "accuracy",
+          "label": "命中補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "bash",
+          "target": "enemy-single",
+          "powerParam": "dmg",
+          "accuracyParam": "accuracy"
+        },
+        {
+          "type": "bind",
+          "bind": "head",
+          "target": "enemy-single",
+          "chanceParam": "headBind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "dmg": 130,
+            "headBind": 20,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "dmg": 131,
+            "headBind": 21,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "dmg": 132,
+            "headBind": 22,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "dmg": 133,
+            "headBind": 23,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "dmg": 134,
+            "headBind": 29,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "dmg": 135,
+            "headBind": 30,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "dmg": 136,
+            "headBind": 31,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "dmg": 137,
+            "headBind": 32,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "dmg": 138,
+            "headBind": 33,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "dmg": 140,
+            "headBind": 40,
+            "accuracy": 120
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "dmg": 141,
+            "headBind": 41,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "dmg": 142,
+            "headBind": 42,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "dmg": 143,
+            "headBind": 43,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "dmg": 144,
+            "headBind": 44,
+            "accuracy": 120
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "dmg": 150,
+            "headBind": 52,
+            "accuracy": 120
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "レベル別の値は atwiki の表から入力（2026-09-30）。ゲーム内で未確認",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "命中補正は Pokachi EtrianStuff の EO1 データ（DS版）による。ライセンス表示がないため数値のみ出典付きで参照",
+          "checkedAt": "2026-09-30"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベル、消費TP（Lv1〜10）をスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "【要確認】行動速度：atwiki の職業ページは AGI×0.6（BOOST 時 0.8）、Pokachi（DS版）は 0.8（1.0）。実測で確認する"
+    },
+    {
+      "id": "mining",
+      "jobId": "swordsman",
+      "name": "採掘",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "mining",
+          "description": "採掘ポイントで鉱石などを採る。レベルで成功率と1日の採掘数が上がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/115.html",
+          "note": "構造（前提・部位・速度・効果の種類）のみ。数値はステップ1-1でゲーム内確認しながら入力"
+        },
+        {
+          "kind": "in-game",
+          "confidence": "confirmed",
+          "note": "スキル名・前提スキル・最大レベルをスキルツリーで確認。ダメージ倍率などの数値はゲーム内に表示されないため未確認",
+          "checkedAt": "2026-09-30"
+        }
+      ],
+      "notes": "数値の表は atwiki にない。探索スキルなので計算には使わない"
+    }
+  ]
+}

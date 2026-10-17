@@ -1,0 +1,2650 @@
+{
+  "jobId": "ranger",
+  "skills": [
+    {
+      "id": "ranger-hp-boost",
+      "jobId": "ranger",
+      "name": "HPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxHp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 150%（atwiki）"
+    },
+    {
+      "id": "ranger-tp-boost",
+      "jobId": "ranger",
+      "name": "TPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大TP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxTp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 150%（atwiki）"
+    },
+    {
+      "id": "ranger-agi-boost",
+      "jobId": "ranger",
+      "name": "AGIブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "AGI倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "agi",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-bow-mastery",
+      "jobId": "ranger",
+      "name": "弓マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "攻撃力上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "weaponAtk",
+          "param": "rate",
+          "weapon": "bow"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "atwiki の表の「攻撃力上昇率」。他職のマスタリーと同じく武器攻撃力にかかるとみなした。Lv10 で 150%（atwiki）"
+    },
+    {
+      "id": "ranger-preemptive-boost",
+      "jobId": "ranger",
+      "name": "先制ブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "ranger-agi-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "発動率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "味方が先制する確率が上がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 16
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 17
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 18
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 19
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 22
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 23
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 24
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 25
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 26
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-preemptive-block",
+      "jobId": "ranger",
+      "name": "先制ブロック",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "ranger-preemptive-boost",
+          "level": 2
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "発動率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "敵の先制攻撃を中確率で防ぐ"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 16
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 17
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 18
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 19
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 22
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 23
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 24
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 25
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 26
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-act-first",
+      "jobId": "ranger",
+      "name": "アクトファースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "ranger-agi-boost",
+          "level": 5
+        },
+        {
+          "skillId": "ranger-others-step",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "発動率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "中確率で、行動順に関係なくターンの最初に動ける"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 16
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 17
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 18
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 19
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 22
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 23
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 24
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 25
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 26
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-trick-step",
+      "jobId": "ranger",
+      "name": "トリックステップ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "ranger-agi-boost",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "敵命中率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "debuff",
+          "target": "enemy-all",
+          "modifiers": [
+            {
+              "stat": "accuracy",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {
+            "m1": 85
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {
+            "m1": 83
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 2,
+          "values": {
+            "m1": 81
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 2,
+          "values": {
+            "m1": 79
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 3,
+          "values": {
+            "m1": 75
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 3,
+          "values": {
+            "m1": 74
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 3,
+          "values": {
+            "m1": 73
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 3,
+          "values": {
+            "m1": 72
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 3,
+          "values": {
+            "m1": 71
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 3,
+          "values": {
+            "m1": 70
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 3,
+          "values": {
+            "m1": 69
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 3,
+          "values": {
+            "m1": 68
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 3,
+          "values": {
+            "m1": 67
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 3,
+          "values": {
+            "m1": 66
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 3,
+          "values": {
+            "m1": 65
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-fast-step",
+      "jobId": "ranger",
+      "name": "ファストステップ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "ranger-agi-boost",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "AGI上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "agi",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {
+            "m1": 10
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {
+            "m1": 15
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 2,
+          "values": {
+            "m1": 20
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 2,
+          "values": {
+            "m1": 25
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 3,
+          "values": {
+            "m1": 30
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 3,
+          "values": {
+            "m1": 31
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 3,
+          "values": {
+            "m1": 32
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 3,
+          "values": {
+            "m1": 33
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 3,
+          "values": {
+            "m1": 34
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 3,
+          "values": {
+            "m1": 40
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 3,
+          "values": {
+            "m1": 41
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 3,
+          "values": {
+            "m1": 42
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 3,
+          "values": {
+            "m1": 43
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 3,
+          "values": {
+            "m1": 44
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 3,
+          "values": {
+            "m1": 50
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-shadow-entry",
+      "jobId": "ranger",
+      "name": "シャドウエントリ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "ranger-trick-step",
+          "level": 3
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "自分が敵に狙われにくくなる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "tp": 3,
+          "values": {}
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 12,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 13,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 14,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 15,
+          "tp": 3,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "DS版では効果がかなり小さく、リマスター版で強化された（atwiki）"
+    },
+    {
+      "id": "ranger-escape-prep",
+      "jobId": "ranger",
+      "name": "逃走準備",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "ranger-fast-step",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "防御上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "逃走率加算",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "physDef",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        },
+        {
+          "type": "other",
+          "description": "逃走の成功率が上がる。高レベルでは逃走時に防御も上がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "m1": 0,
+            "p2": 20
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "m1": 0,
+            "p2": 21
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "m1": 0,
+            "p2": 22
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "m1": 0,
+            "p2": 23
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "m1": 10,
+            "p2": 29
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "m1": 11,
+            "p2": 30
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "m1": 12,
+            "p2": 31
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "m1": 13,
+            "p2": 32
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "m1": 14,
+            "p2": 33
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "m1": 19,
+            "p2": 40
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "m1": 20,
+            "p2": 41
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "m1": 21,
+            "p2": 42
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "m1": 22,
+            "p2": 43
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "m1": 23,
+            "p2": 44
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "m1": 29,
+            "p2": 47
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-others-step",
+      "jobId": "ranger",
+      "name": "アザーズステップ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "ranger-fast-step",
+          "level": 3
+        },
+        {
+          "skillId": "ranger-trick-step",
+          "level": 3
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "選んだ味方を、ターンの最初に動けるようにする"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "tp": 9,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "tp": 4,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "tp": 1,
+          "values": {}
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 12,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 13,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 14,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 15,
+          "tp": 1,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/1214.html",
+          "note": "成功率の削除（リマスター版の変更）",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "リマスター版では成功率の表記が削除され、スキルレベルは消費TPにだけ影響する"
+    },
+    {
+      "id": "ranger-power-shot",
+      "jobId": "ranger",
+      "name": "パワーショット",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "weapons": [
+        "bow"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "ranger-bow-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 140
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 145
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 150
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 155
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 165
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 167
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 170
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 173
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 176
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 190
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 192
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 194
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 196
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 198
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 216
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-double-shot",
+      "jobId": "ranger",
+      "name": "ダブルショット",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "weapons": [
+        "bow"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "ranger-bow-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "minHits",
+          "label": "攻撃回数（最小）",
+          "unit": "count"
+        },
+        {
+          "id": "maxHits",
+          "label": "攻撃回数（最大）",
+          "unit": "count"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-random",
+          "powerParam": "dmg",
+          "minHitsParam": "minHits",
+          "maxHitsParam": "maxHits"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "dmg": 100,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 8,
+          "values": {
+            "dmg": 103,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 9,
+          "values": {
+            "dmg": 106,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "dmg": 109,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "dmg": 115,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "dmg": 116,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "dmg": 117,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "dmg": 118,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "dmg": 119,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "dmg": 125,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "dmg": 126,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "dmg": 127,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "dmg": 128,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "dmg": 129,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "dmg": 135,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 3回攻撃（atwiki）"
+    },
+    {
+      "id": "ranger-aiming-foot",
+      "jobId": "ranger",
+      "name": "エイミングフット",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "weapons": [
+        "bow"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "ranger-bow-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "bind",
+          "label": "脚封じ判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "bind",
+          "bind": "leg",
+          "target": "enemy-single",
+          "chanceParam": "bind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "dmg": 130,
+            "bind": 20
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "dmg": 131,
+            "bind": 21
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "dmg": 132,
+            "bind": 22
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "dmg": 133,
+            "bind": 23
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "dmg": 134,
+            "bind": 29
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "dmg": 135,
+            "bind": 30
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "dmg": 136,
+            "bind": 31
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "dmg": 137,
+            "bind": 32
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "dmg": 138,
+            "bind": 33
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "dmg": 140,
+            "bind": 40
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "dmg": 141,
+            "bind": 41
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "dmg": 142,
+            "bind": 42
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "dmg": 143,
+            "bind": 43
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "dmg": 144,
+            "bind": 44
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "dmg": 150,
+            "bind": 52
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-sagittarius",
+      "jobId": "ranger",
+      "name": "サジタリウスの矢",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "weapons": [
+        "bow"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "ranger-bow-mastery",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "stun",
+          "label": "スタン判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "ailment",
+          "ailment": "stun",
+          "target": "enemy-single",
+          "chanceParam": "stun"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "dmg": 300,
+            "stun": 0
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 9,
+          "values": {
+            "dmg": 310,
+            "stun": 0
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {
+            "dmg": 320,
+            "stun": 0
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 11,
+          "values": {
+            "dmg": 330,
+            "stun": 0
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 12,
+          "values": {
+            "dmg": 390,
+            "stun": 10
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 12,
+          "values": {
+            "dmg": 400,
+            "stun": 15
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 12,
+          "values": {
+            "dmg": 410,
+            "stun": 20
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 12,
+          "values": {
+            "dmg": 420,
+            "stun": 25
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 12,
+          "values": {
+            "dmg": 430,
+            "stun": 30
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 12,
+          "values": {
+            "dmg": 500,
+            "stun": 40
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 12,
+          "values": {
+            "dmg": 510,
+            "stun": 45
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 12,
+          "values": {
+            "dmg": 520,
+            "stun": 50
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 12,
+          "values": {
+            "dmg": 530,
+            "stun": 55
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 12,
+          "values": {
+            "dmg": 540,
+            "stun": 60
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 12,
+          "values": {
+            "dmg": 620,
+            "stun": 75
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "2ターン後の開始時に攻撃する。Lv5 からスタンの効果が付く（atwiki）"
+    },
+    {
+      "id": "ranger-owl-eye",
+      "jobId": "ranger",
+      "name": "オウルアイ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "ranger-preemptive-boost",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "有効歩数",
+          "unit": "number"
+        },
+        {
+          "id": "p2",
+          "label": "範囲(周囲)",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "other",
+          "description": "探索用。見えない所の FOE の位置が分かる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 16,
+            "p2": 2
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 18,
+            "p2": 2
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 20,
+            "p2": 3
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 22,
+            "p2": 3
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 30,
+            "p2": 4
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 32,
+            "p2": 4
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 34,
+            "p2": 4
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 36,
+            "p2": 4
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 38,
+            "p2": 4
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 50,
+            "p2": 4
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-cautious-walk",
+      "jobId": "ranger",
+      "name": "警戒歩行",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "ranger-preemptive-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "有効歩数",
+          "unit": "number"
+        },
+        {
+          "id": "p2",
+          "label": "エンカウント率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "other",
+          "description": "探索用。敵との遭遇率が下がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 30,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 35,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 40,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 45,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 60,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 65,
+            "p2": 65
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 70,
+            "p2": 65
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 75,
+            "p2": 60
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 80,
+            "p2": 60
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 100,
+            "p2": 50
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "ranger-logging",
+      "jobId": "ranger",
+      "name": "伐採",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "logging",
+          "description": "探索用。伐採ポイントで伐採できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると成功率が上がり、1日にできる回数が2増える（atwiki）"
+    },
+    {
+      "id": "ranger-mining",
+      "jobId": "ranger",
+      "name": "採掘",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "mining",
+          "description": "探索用。採掘ポイントで採掘できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると成功率が上がり、1日にできる回数が2増える（atwiki）"
+    },
+    {
+      "id": "ranger-gathering",
+      "jobId": "ranger",
+      "name": "採取",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "gathering",
+          "description": "探索用。採取ポイントで採取できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると成功率が上がり、1日にできる回数が2増える（atwiki）"
+    }
+  ]
+}

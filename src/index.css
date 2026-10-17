@@ -1,0 +1,894 @@
+/* 色はここで一括管理する。ダークモードでは下の上書きが効く */
+:root {
+  --bg: #f7f6f2;
+  --text: #1f2421;
+  --muted: #5d665f;
+  --accent: #2f6b4f;
+  --border: #d9d6cc;
+  --surface: #ffffff;
+  --accent-soft: #e3efe8;
+  --danger: #b3261e;
+  --warn-soft: #f6ecd2;
+  --warn-text: #7a5a12;
+  font-family: 'Hiragino Sans', 'Yu Gothic UI', 'Meiryo', system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161a18;
+    --text: #e6e9e6;
+    --muted: #9aa39c;
+    --accent: #7fc4a0;
+    --border: #2e3531;
+    --surface: #1d2320;
+    --accent-soft: #23352c;
+    --danger: #f2b8b5;
+    --warn-soft: #3a3120;
+    --warn-text: #e8cf8f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.header {
+  padding: 24px 0 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.main {
+  flex: 1;
+  padding: 24px 0;
+}
+
+.footer {
+  padding: 16px 0 24px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.footer p {
+  margin: 4px 0;
+}
+
+/* ---- 共通の部品 ---- */
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+input,
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.note {
+  margin: 4px 0 12px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ---- 全体のレイアウト：左にパーティ、右に編集画面 ---- */
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- パーティ一覧 ---- */
+.party-panel h2 {
+  font-size: 1rem;
+  margin: 16px 0 8px;
+}
+
+.party-panel .count {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.difficulty {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.member-list {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.member-list li {
+  display: flex;
+  gap: 4px;
+}
+
+.member-card {
+  flex: 1;
+  display: grid;
+  text-align: left;
+  padding: 8px 10px;
+}
+
+.member-list li.selected .member-card {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.member-name {
+  font-weight: bold;
+}
+
+.member-meta,
+.member-sp {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.over {
+  color: var(--danger) !important;
+}
+
+.remove {
+  padding: 0 10px;
+}
+
+.add {
+  width: 100%;
+}
+
+/* ---- メンバー編集 ---- */
+.member-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.member-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.member-fields input[type='number'] {
+  width: 5em;
+}
+
+.row-toggle {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.row-toggle legend {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.row-toggle label {
+  flex-direction: row;
+  align-items: center;
+  color: var(--text);
+}
+
+.row-toggle label.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.stats {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+.stats th,
+.stats td {
+  border: 1px solid var(--border);
+  padding: 4px;
+}
+
+.stats th {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.sp-counter {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 12px;
+  margin: 8px 0 12px;
+  background: var(--accent-soft);
+  border-radius: 8px;
+}
+
+.sp-counter strong {
+  font-size: 1.3rem;
+}
+
+.sp-left {
+  color: var(--muted);
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+/* ---- スキル振り分け ---- */
+.skill-tree h3 {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 16px 0 6px;
+}
+
+.skill-tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 6px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-row.learned .skill-name {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.skill-row.locked .skill-name {
+  color: var(--muted);
+}
+
+.skill-pre {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.skill-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.skill-control button {
+  min-width: 32px;
+}
+
+.skill-lv {
+  min-width: 3.2em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.skill-max {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.skill-tp,
+.skill-cost {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.skill-maxbtn {
+  font-size: 0.8rem;
+}
+
+/* ---- お知らせ ---- */
+.notice {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  font-size: 0.9rem;
+}
+
+.notice.error {
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  background: transparent;
+}
+
+.notice ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+/* ---- 保存・共有 ---- */
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.share-tools h2 {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.share-buttons,
+.save-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.share-buttons button {
+  flex: 1;
+}
+
+.save-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.share-message {
+  min-height: 1.2em;
+  margin: 4px 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.manual-copy {
+  width: 100%;
+  font: inherit;
+  font-size: 0.75rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.saved-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.saved-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.saved-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.saved-date {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* ---- ダメージ計算 ---- */
+.damage-panel {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.damage-panel h2 {
+  font-size: 1.05rem;
+  margin: 0 0 12px;
+}
+
+.damage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.damage-grid fieldset {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px 12px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: end;
+  min-width: 0;
+}
+
+.damage-grid legend {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 0 4px;
+}
+
+.damage-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  min-width: 0;
+}
+
+.damage-grid select {
+  max-width: 100%;
+}
+
+.damage-grid input[type='number'] {
+  width: 5em;
+}
+
+.damage-grid label.check {
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.damage-grid label.disabled {
+  opacity: 0.5;
+}
+
+.vuln-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.vuln-grid input[type='number'] {
+  width: 4.2em;
+}
+
+.damage-result {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+}
+
+.damage-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin: 0;
+}
+
+.damage-range {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.damage-expected,
+.damage-element {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.basis {
+  margin-top: 8px;
+}
+
+.basis summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.basis ol {
+  margin: 8px 0;
+  padding-left: 1.4em;
+}
+
+.basis li {
+  margin-bottom: 8px;
+}
+
+.basis-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.basis-formula {
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+
+.basis-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0 6px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.badge.unverified,
+.badge.estimated {
+  background: var(--warn-soft);
+  color: var(--warn-text);
+  border-color: transparent;
+}
+
+.badge.confirmed {
+  color: var(--accent);
+}
+
+.damage-grid .wide,
+.record-fields .wide {
+  width: 100%;
+}
+
+/* ---- 実測の記録 ---- */
+.record-form {
+  margin-top: 12px;
+}
+
+.record-form summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.record-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: end;
+}
+
+.record-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  min-width: 0;
+}
+
+.record-fields input {
+  min-width: 0;
+}
+
+.measure-panel {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.measure-panel h2 {
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+.measure-summary .danger,
+.danger {
+  color: var(--danger);
+}
+
+.measure-list {
+  list-style: none;
+  margin: 8px 0 12px;
+  padding: 0;
+}
+
+.measure-list li {
+  border-top: 1px solid var(--border);
+  padding: 8px 0;
+}
+
+.measure-list li.has-outlier {
+  border-left: 3px solid var(--danger);
+  padding-left: 8px;
+}
+
+.measure-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+}
+
+.measure-head button {
+  margin-left: auto;
+}
+
+.measure-cond,
+.measure-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.measure-values {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.measure-values .value {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.measure-values .value.outside {
+  color: var(--danger);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.import-box textarea {
+  width: 100%;
+  margin: 6px 0;
+}
+
+/* ---- 最適化 ---- */
+.optimize {
+  margin-top: 12px;
+}
+
+.optimize summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.optimize-result.stale .optimize-list {
+  opacity: 0.5;
+}
+
+.optimize-list {
+  margin: 8px 0;
+  padding-left: 1.4em;
+}
+
+.optimize-list li {
+  margin-bottom: 10px;
+}
+
+.optimize-list button {
+  margin-top: 4px;
+}
+
+/* ---- 採点 ---- */
+.score-total {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin: 8px 0;
+}
+
+.score-total strong {
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.weight-field input {
+  width: 5em;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.score-table {
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 100%;
+}
+
+.score-table th,
+.score-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 4px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.score-table td.own-role {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.score-h {
+  font-size: 0.95rem;
+  margin: 16px 0 4px;
+  color: var(--text);
+}
+
+.score-reasons {
+  margin: 4px 0;
+  padding-left: 1.4em;
+  font-size: 0.85rem;
+}
+
+.score-ideas {
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+
+.radar-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: flex-start;
+}
+
+.radar {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+}
+
+.radar-grid {
+  fill: none;
+  stroke: var(--border);
+}
+
+.radar-threshold {
+  fill: none;
+  stroke: var(--danger);
+  stroke-dasharray: 3 3;
+  opacity: 0.6;
+}
+
+.radar-shape {
+  fill: var(--accent);
+  fill-opacity: 0.25;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.radar-label {
+  fill: var(--text);
+  font-size: 12px;
+}
+
+.radar-label.off {
+  fill: var(--muted);
+}
+
+.radar-value {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+/* ---- ヘルプ ---- */
+.help-button {
+  margin-left: 12px;
+}
+
+.help-panel {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.help-panel p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.help-steps {
+  margin: 4px 0;
+  padding-left: 1.4em;
+  font-size: 0.9rem;
+}
+
+.help-panel a,
+.footer a {
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}

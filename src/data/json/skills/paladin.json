@@ -1,0 +1,3122 @@
+{
+  "jobId": "paladin",
+  "skills": [
+    {
+      "id": "paladin-hp-boost",
+      "jobId": "paladin",
+      "name": "HPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxHp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 130%（atwiki）"
+    },
+    {
+      "id": "paladin-tp-boost",
+      "jobId": "paladin",
+      "name": "TPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大TP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxTp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 150%（atwiki）"
+    },
+    {
+      "id": "paladin-def-boost",
+      "jobId": "paladin",
+      "name": "DEFブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "physResist",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 5
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 6
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 7
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 8
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 9
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 10
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 11
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 12
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 13
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 15
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "耐性の上昇率（%）。計算エンジンではまだ扱わない"
+    },
+    {
+      "id": "paladin-shield-mastery",
+      "jobId": "paladin",
+      "name": "盾マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "elemResist",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 5
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 6
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 7
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 8
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 9
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 10
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 11
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 12
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 13
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 15
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "耐性の上昇率（%）。計算エンジンではまだ扱わない"
+    },
+    {
+      "id": "paladin-last-stand",
+      "jobId": "paladin",
+      "name": "決死の覚悟",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "paladin-def-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "発動率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "戦闘不能になるダメージを受けても、中確率で HP1 で残る"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 20
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 21
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 22
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 23
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 29
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 30
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 31
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 32
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 33
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 40
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "paladin-auto-guard",
+      "jobId": "paladin",
+      "name": "オートガード",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "paladin-def-boost",
+          "level": 7
+        },
+        {
+          "skillId": "paladin-shield-mastery",
+          "level": 7
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "発動率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "攻撃されたとき、中確率で自動的に防御してダメージを減らす"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 10
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 11
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 12
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 13
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 16
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 17
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 18
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 19
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 20
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 23
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "paladin-provoke",
+      "jobId": "paladin",
+      "name": "挑発",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "paladin-def-boost",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "防御上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "m2",
+          "label": "狙われ率(HD版)",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "self",
+          "modifiers": [
+            {
+              "stat": "physDef",
+              "param": "m1"
+            },
+            {
+              "stat": "aggro",
+              "param": "m2"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {
+            "m1": 0,
+            "m2": 20,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {
+            "m1": 0,
+            "m2": 25,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 2,
+          "values": {
+            "m1": 0,
+            "m2": 35,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 2,
+          "values": {
+            "m1": 0,
+            "m2": 50,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 3,
+          "values": {
+            "m1": 0,
+            "m2": 70,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 3,
+          "values": {
+            "m1": 10,
+            "m2": 95,
+            "speed": 0.92
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 3,
+          "values": {
+            "m1": 11,
+            "m2": 100,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 3,
+          "values": {
+            "m1": 12,
+            "m2": 100,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 3,
+          "values": {
+            "m1": 13,
+            "m2": 100,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 3,
+          "values": {
+            "m1": 15,
+            "m2": 100,
+            "speed": 1.02
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 3,
+          "values": {
+            "m1": 16,
+            "m2": 100,
+            "speed": 1.04
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 3,
+          "values": {
+            "m1": 17,
+            "m2": 100,
+            "speed": 1.06
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 3,
+          "values": {
+            "m1": 18,
+            "m2": 100,
+            "speed": 1.08
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 3,
+          "values": {
+            "m1": 19,
+            "m2": 100,
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 3,
+          "values": {
+            "m1": 22,
+            "m2": 100,
+            "speed": 1.18
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "DS版では効果がかなり小さく、リマスター版で強化された（atwiki）"
+    },
+    {
+      "id": "paladin-flee",
+      "jobId": "paladin",
+      "name": "猛進逃走",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "paladin-def-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "逃走成功率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "HP減少率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "戦闘から逃げて前のフロアに戻る"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "p1": 60,
+            "p2": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "p1": 64,
+            "p2": 50
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "p1": 68,
+            "p2": 50
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "p1": 72,
+            "p2": 50
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 4,
+          "values": {
+            "p1": 80,
+            "p2": 50
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "p1": 82,
+            "p2": 45
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "p1": 84,
+            "p2": 40
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "p1": 86,
+            "p2": 35
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "p1": 88,
+            "p2": 30
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "p1": 98,
+            "p2": 25
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "p1": 100,
+            "p2": 20
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "p1": 100,
+            "p2": 15
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "p1": 100,
+            "p2": 10
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "p1": 100,
+            "p2": 5
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "p1": 100,
+            "p2": 0
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "paladin-parry",
+      "jobId": "paladin",
+      "name": "パリング",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "paladin-def-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "成功率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "連続発動率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "自分への攻撃を待ち構えて無効にする"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "p1": 70,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "p1": 75,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "p1": 80,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "p1": 85,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 10
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 15
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 20
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 25
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 35
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 40
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 45
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 50
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 55
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "p1": 100,
+            "p2": 70
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "paladin-full-defense",
+      "jobId": "paladin",
+      "name": "渾身ディフェンス",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "paladin-def-boost",
+          "level": 3
+        },
+        {
+          "skillId": "paladin-shield-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "self",
+          "modifiers": [
+            {
+              "stat": "physDef",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "m1": 23,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "m1": 26,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "m1": 29,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "m1": 32,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "m1": 33,
+            "speed": 0.92
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "m1": 34,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "m1": 35,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "m1": 35,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "m1": 36,
+            "speed": 1.02
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "m1": 37,
+            "speed": 1.04
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "m1": 38,
+            "speed": 1.06
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "m1": 39,
+            "speed": 1.08
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "m1": 40,
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "m1": 41,
+            "speed": 1.18
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "paladin-defense-formation",
+      "jobId": "paladin",
+      "name": "防御陣形",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "paladin-front-guard",
+          "level": 3
+        },
+        {
+          "skillId": "paladin-back-guard",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "physDef",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "m1": 20,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 9,
+          "values": {
+            "m1": 23,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {
+            "m1": 26,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 11,
+          "values": {
+            "m1": 29,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 12,
+          "values": {
+            "m1": 32,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 12,
+          "values": {
+            "m1": 33,
+            "speed": 0.92
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 12,
+          "values": {
+            "m1": 34,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 12,
+          "values": {
+            "m1": 35,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 12,
+          "values": {
+            "m1": 35,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 12,
+          "values": {
+            "m1": 36,
+            "speed": 1.02
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 12,
+          "values": {
+            "m1": 37,
+            "speed": 1.04
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 12,
+          "values": {
+            "m1": 38,
+            "speed": 1.06
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 12,
+          "values": {
+            "m1": 39,
+            "speed": 1.08
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 12,
+          "values": {
+            "m1": 40,
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 12,
+          "values": {
+            "m1": 41,
+            "speed": 1.18
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "paladin-front-guard",
+      "jobId": "paladin",
+      "name": "フロントガード",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "shield"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "paladin-shield-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "被dam倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-row",
+          "modifiers": [
+            {
+              "stat": "damageTaken",
+              "param": "m1"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "m1": 80
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "m1": 77
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "m1": 74
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "m1": 71
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "m1": 65
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "m1": 64
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "m1": 63
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "m1": 62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "m1": 61
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "m1": 60
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "m1": 59
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "m1": 58
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "m1": 57
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "m1": 56
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "m1": 55
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "盾がなくても使え、属性攻撃のダメージも減らす（atwiki）。使ったターンに前列への攻撃を1回だけ軽減する（atwiki）"
+    },
+    {
+      "id": "paladin-back-guard",
+      "jobId": "paladin",
+      "name": "バックガード",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "shield"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "paladin-shield-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "被dam倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-row",
+          "modifiers": [
+            {
+              "stat": "damageTaken",
+              "param": "m1"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "m1": 80
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "m1": 77
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "m1": 74
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "m1": 71
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "m1": 65
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "m1": 64
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "m1": 63
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "m1": 62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "m1": 61
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "m1": 60
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "m1": 59
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "m1": 58
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "m1": 57
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "m1": 56
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "m1": 55
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "盾がなくても使え、属性攻撃のダメージも減らす（atwiki）。使ったターンに後列への攻撃を1回だけ軽減する（atwiki）"
+    },
+    {
+      "id": "paladin-fire-guard",
+      "jobId": "paladin",
+      "name": "ファイアガード",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "shield"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "paladin-shield-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "paladin-tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "吸収率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "elemDef",
+              "param": "m1"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "m1": 50,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "m1": 60,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "m1": 70,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "m1": 80,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 2
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 4
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 6
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 8
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 10
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 12
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 14
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 16
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 18
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 20
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "耐性上昇率は Lv5 で「無効」、Lv6 以降は「吸収」（数値は 100 として入力）。DS版では Lv6 以降に注意点があったが、リマスター版では問題ない（atwiki）"
+    },
+    {
+      "id": "paladin-shock-guard",
+      "jobId": "paladin",
+      "name": "ショックガード",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "shield"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "paladin-shield-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "paladin-tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "吸収率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "elemDef",
+              "param": "m1"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "m1": 50,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "m1": 60,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "m1": 70,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "m1": 80,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 2
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 4
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 6
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 8
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 10
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 12
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 14
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 16
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 18
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 20
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "耐性上昇率は Lv5 で「無効」、Lv6 以降は「吸収」（数値は 100 として入力）。DS版では Lv6 以降に注意点があったが、リマスター版では問題ない（atwiki）"
+    },
+    {
+      "id": "paladin-freeze-guard",
+      "jobId": "paladin",
+      "name": "フリーズガード",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "shield"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "paladin-shield-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "paladin-tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "吸収率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "elemDef",
+              "param": "m1"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "m1": 50,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "m1": 60,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "m1": 70,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "m1": 80,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 0
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 2
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 4
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 6
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 8
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 10
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 12
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 14
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 16
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 18
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "m1": 100,
+            "p2": 20
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "耐性上昇率は Lv5 で「無効」、Lv6 以降は「吸収」（数値は 100 として入力）。DS版では Lv6 以降に注意点があったが、リマスター版では問題ない（atwiki）"
+    },
+    {
+      "id": "paladin-shield-smite",
+      "jobId": "paladin",
+      "name": "シールドスマイト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "weapons": [
+        "shield"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "paladin-shield-mastery",
+          "level": 10
+        },
+        {
+          "skillId": "paladin-full-defense",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "bind",
+          "label": "腕封じ判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "bash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "bind",
+          "bind": "arm",
+          "target": "enemy-single",
+          "chanceParam": "bind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {
+            "dmg": 210,
+            "bind": 0
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 11,
+          "values": {
+            "dmg": 215,
+            "bind": 0
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 12,
+          "values": {
+            "dmg": 220,
+            "bind": 0
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 13,
+          "values": {
+            "dmg": 225,
+            "bind": 0
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 14,
+          "values": {
+            "dmg": 235,
+            "bind": 10
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "dmg": 237,
+            "bind": 11
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 14,
+          "values": {
+            "dmg": 240,
+            "bind": 12
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 14,
+          "values": {
+            "dmg": 242,
+            "bind": 13
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 14,
+          "values": {
+            "dmg": 245,
+            "bind": 14
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {
+            "dmg": 260,
+            "bind": 20
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 14,
+          "values": {
+            "dmg": 262,
+            "bind": 21
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 14,
+          "values": {
+            "dmg": 264,
+            "bind": 22
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 14,
+          "values": {
+            "dmg": 266,
+            "bind": 23
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 14,
+          "values": {
+            "dmg": 268,
+            "bind": 24
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 14,
+          "values": {
+            "dmg": 286,
+            "bind": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "装備した盾の防御力が攻撃力に加わる（計算エンジンではまだ扱わない）。盾は今のアプリでは装備できない（防具は未対応）ため、ダメージ計算・最適化ではまだ使えない"
+    },
+    {
+      "id": "paladin-cure",
+      "jobId": "paladin",
+      "name": "キュア",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "paladin-hp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "HP回復量",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-single",
+          "scaling": "fixed",
+          "amountParam": "heal"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "heal": 20,
+            "speed": 0.7
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "heal": 26,
+            "speed": 0.72
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "heal": 32,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "heal": 38,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "heal": 50,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "heal": 56,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "heal": 62,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "heal": 68,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "heal": 74,
+            "speed": 0.88
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "heal": 92,
+            "speed": 0.92
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "heal": 98,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "heal": 104,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "heal": 110,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "heal": 116,
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "heal": 140,
+            "speed": 1.08
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "paladin-cure-2",
+      "jobId": "paladin",
+      "name": "キュアII",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "paladin-hp-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "HP回復量",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-single",
+          "scaling": "fixed",
+          "amountParam": "heal"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {
+            "heal": 75,
+            "speed": 0.2
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 11,
+          "values": {
+            "heal": 81,
+            "speed": 0.22
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 12,
+          "values": {
+            "heal": 87,
+            "speed": 0.24
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 13,
+          "values": {
+            "heal": 93,
+            "speed": 0.26
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 14,
+          "values": {
+            "heal": 111,
+            "speed": 0.3
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "heal": 117,
+            "speed": 0.32
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 14,
+          "values": {
+            "heal": 123,
+            "speed": 0.34
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 14,
+          "values": {
+            "heal": 129,
+            "speed": 0.36
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 14,
+          "values": {
+            "heal": 135,
+            "speed": 0.38
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {
+            "heal": 159,
+            "speed": 0.42
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 14,
+          "values": {
+            "heal": 165,
+            "speed": 0.44
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 14,
+          "values": {
+            "heal": 171,
+            "speed": 0.46
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 14,
+          "values": {
+            "heal": 177,
+            "speed": 0.48
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 14,
+          "values": {
+            "heal": 183,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 14,
+          "values": {
+            "heal": 213,
+            "speed": 0.58
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "paladin-cautious-walk",
+      "jobId": "paladin",
+      "name": "警戒歩行",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "paladin-def-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "有効歩数",
+          "unit": "number"
+        },
+        {
+          "id": "p2",
+          "label": "エンカウント率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "other",
+          "description": "探索用。敵との遭遇率が下がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 30,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 35,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 40,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 45,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 60,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 65,
+            "p2": 65
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 70,
+            "p2": 65
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 75,
+            "p2": 60
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 80,
+            "p2": 60
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 100,
+            "p2": 50
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "paladin-mining",
+      "jobId": "paladin",
+      "name": "採掘",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "mining",
+          "description": "探索用。採掘ポイントで採掘できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/117.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると採掘の成功率が上がり、1日にできる回数が2増える（atwiki）"
+    }
+  ]
+}

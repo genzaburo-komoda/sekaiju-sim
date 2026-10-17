@@ -1,0 +1,3143 @@
+{
+  "jobId": "bard",
+  "skills": [
+    {
+      "id": "bard-hp-boost",
+      "jobId": "bard",
+      "name": "HPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxHp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 150%（atwiki）"
+    },
+    {
+      "id": "bard-tp-boost",
+      "jobId": "bard",
+      "name": "TPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大TP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxTp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 150%（atwiki）"
+    },
+    {
+      "id": "bard-song-mastery",
+      "jobId": "bard",
+      "name": "歌マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "歌の行動速度を上げるパッシブ。歌スキルの前提"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "speed": 1.11
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "speed": 1.12
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "speed": 1.13
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "speed": 1.19
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "speed": 1.2
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "speed": 1.21
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "speed": 1.22
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "speed": 1.23
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "speed": 1.3
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-holy-gift",
+      "jobId": "bard",
+      "name": "ホーリーギフト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 10
+        },
+        {
+          "skillId": "bard-recovery-song",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "EXP上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "パーティ全員の獲得経験値が増える"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 10
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 11
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 12
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 13
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 19
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 20
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 21
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 22
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 23
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-attack-song",
+      "jobId": "bard",
+      "name": "猛き戦いの舞曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "攻撃力上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "physAtk",
+              "param": "m1"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "m1": 10,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "m1": 15,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "m1": 25,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "m1": 30,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "m1": 31,
+            "speed": 0.92
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "m1": 32,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "m1": 33,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "m1": 34,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "m1": 40,
+            "speed": 1.02
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "m1": 41,
+            "speed": 1.04
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "m1": 42,
+            "speed": 1.06
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "m1": 43,
+            "speed": 1.08
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "m1": 44,
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "m1": 50,
+            "speed": 1.18
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-defense-song",
+      "jobId": "bard",
+      "name": "聖なる守護の舞曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "防御力上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "physDef",
+              "param": "m1"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "m1": 10,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "m1": 15,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "m1": 25,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "m1": 30,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "m1": 31,
+            "speed": 0.92
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "m1": 32,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "m1": 33,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "m1": 34,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "m1": 40,
+            "speed": 1.02
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "m1": 41,
+            "speed": 1.04
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "m1": 42,
+            "speed": 1.06
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "m1": 43,
+            "speed": 1.08
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "m1": 44,
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "m1": 50,
+            "speed": 1.18
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-speed-song",
+      "jobId": "bard",
+      "name": "韋駄天の舞曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "AGI上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "agi",
+              "param": "m1"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "m1": 10,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "m1": 15,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "m1": 25,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "m1": 30,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "m1": 31,
+            "speed": 0.92
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "m1": 32,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "m1": 33,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "m1": 34,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "m1": 40,
+            "speed": 1.02
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "m1": 41,
+            "speed": 1.04
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "m1": 42,
+            "speed": 1.06
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "m1": 43,
+            "speed": 1.08
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "m1": 44,
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "m1": 50,
+            "speed": 1.18
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-dispel-song",
+      "jobId": "bard",
+      "name": "沈静なる奇想曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "強化消滅数",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "敵1体の強化を消す"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "p1": 1,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "p1": 1,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "p1": 2,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "p1": 2,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 0.92
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 1.02
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 1.04
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 1.06
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 1.08
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 1.1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 1.18
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-recovery-song",
+      "jobId": "bard",
+      "name": "破邪の鎮魂歌",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "回復率補正",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "味方全体の状態異常の持続を短くする"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "p1": 1.1,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "p1": 1.3,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "p1": 1.5,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "p1": 1.7,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "p1": 2,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "p1": 2.2,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "p1": 2.4,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "p1": 2.6,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "p1": 2.8,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "p1": 3.2,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "p1": 3.4,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "p1": 3.6,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "p1": 3.8,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "p1": 4,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "p1": 4.5,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-hp-song",
+      "jobId": "bard",
+      "name": "蛮族の行進曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "maxHp",
+              "param": "m1"
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "m1": 120,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "m1": 123,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "m1": 126,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "m1": 129,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "m1": 135,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "m1": 137,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "m1": 139,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "m1": 141,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "m1": 143,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "m1": 150,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "m1": 151,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "m1": 152,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "m1": 153,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "m1": 154,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "m1": 160,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-fire-overture",
+      "jobId": "bard",
+      "name": "火劇の序曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "bard-attack-song",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "味方1人の攻撃に炎属性を付ける"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 15,
+          "values": {
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 14,
+          "values": {
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 13,
+          "values": {
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 12,
+          "values": {
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 9,
+          "values": {
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 7,
+          "values": {
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-ice-overture",
+      "jobId": "bard",
+      "name": "氷劇の序曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "bard-attack-song",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "味方1人の攻撃に氷属性を付ける"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 15,
+          "values": {
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 14,
+          "values": {
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 13,
+          "values": {
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 12,
+          "values": {
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 9,
+          "values": {
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 7,
+          "values": {
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-volt-overture",
+      "jobId": "bard",
+      "name": "雷劇の序曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "bard-attack-song",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "味方1人の攻撃に雷属性を付ける"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 15,
+          "values": {
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 14,
+          "values": {
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 13,
+          "values": {
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 12,
+          "values": {
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 9,
+          "values": {
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 7,
+          "values": {
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-fire-fantasia",
+      "jobId": "bard",
+      "name": "火幕の幻想曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 7
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "耐性低下率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "elemDef",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "m1": 20,
+            "p2": 10,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "m1": 25,
+            "p2": 15,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "m1": 30,
+            "p2": 20,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "m1": 35,
+            "p2": 25,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "m1": 40,
+            "p2": 30,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "m1": 45,
+            "p2": 31,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "m1": 50,
+            "p2": 32,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "m1": 55,
+            "p2": 33,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "m1": 60,
+            "p2": 34,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "m1": 65,
+            "p2": 40,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "m1": 70,
+            "p2": 41,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "m1": 75,
+            "p2": 42,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "m1": 80,
+            "p2": 43,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "m1": 85,
+            "p2": 44,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "m1": 90,
+            "p2": 50,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-ice-fantasia",
+      "jobId": "bard",
+      "name": "氷幕の幻想曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 7
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "耐性低下率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "elemDef",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "m1": 20,
+            "p2": 10,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "m1": 25,
+            "p2": 15,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "m1": 30,
+            "p2": 20,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "m1": 35,
+            "p2": 25,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "m1": 40,
+            "p2": 30,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "m1": 45,
+            "p2": 31,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "m1": 50,
+            "p2": 32,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "m1": 55,
+            "p2": 33,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "m1": 60,
+            "p2": 34,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "m1": 65,
+            "p2": 40,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "m1": 70,
+            "p2": 41,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "m1": 75,
+            "p2": 42,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "m1": 80,
+            "p2": 43,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "m1": 85,
+            "p2": 44,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "m1": 90,
+            "p2": 50,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-volt-fantasia",
+      "jobId": "bard",
+      "name": "雷幕の幻想曲",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 7
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "耐性低下率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "elemDef",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "m1": 20,
+            "p2": 10,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "m1": 25,
+            "p2": 15,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "m1": 30,
+            "p2": 20,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "m1": 35,
+            "p2": 25,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "m1": 40,
+            "p2": 30,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "m1": 45,
+            "p2": 31,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "m1": 50,
+            "p2": 32,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "m1": 55,
+            "p2": 33,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "m1": 60,
+            "p2": 34,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "m1": 65,
+            "p2": 40,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "m1": 70,
+            "p2": 41,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "m1": 75,
+            "p2": 42,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "m1": 80,
+            "p2": 43,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "m1": 85,
+            "p2": 44,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "m1": 90,
+            "p2": 50,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-hp-lullaby",
+      "jobId": "bard",
+      "name": "癒しの子守唄",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "bard-hp-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "回復量(最大HP×)",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-all",
+          "scaling": "max-hp-ratio",
+          "amountParam": "heal",
+          "timing": "per-turn"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "heal": 2,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "heal": 3,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "heal": 4,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "heal": 5,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "heal": 7,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "heal": 8,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "heal": 9,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "heal": 10,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "heal": 11,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "heal": 13,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "heal": 14,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "heal": 15,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "heal": 16,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "heal": 17,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "heal": 20,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-tp-lullaby",
+      "jobId": "bard",
+      "name": "安らぎの子守唄",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bard-song-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "bard-tp-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "回復量(最大TP×)",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "味方全体の TP が毎ターン少し回復する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "p1": 1,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "p1": 1,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "p1": 2,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "p1": 2,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "p1": 3,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "p1": 4,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "p1": 4,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "p1": 4,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "p1": 5,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "p1": 7,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "p1": 7,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "p1": 8,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "p1": 8,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "p1": 10,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-cautious-walk",
+      "jobId": "bard",
+      "name": "警戒歩行",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "bard-tp-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "有効歩数",
+          "unit": "number"
+        },
+        {
+          "id": "p2",
+          "label": "エンカウント率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "other",
+          "description": "探索用。敵との遭遇率が下がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 30,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 35,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 40,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 45,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 60,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 65,
+            "p2": 65
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 70,
+            "p2": 65
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 75,
+            "p2": 60
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 80,
+            "p2": 60
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 100,
+            "p2": 50
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-rewind",
+      "jobId": "bard",
+      "name": "糸巻き戻り",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "bard-cautious-walk",
+          "level": 3
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "other",
+          "description": "探索用。前のフロアに戻る"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bard-gathering",
+      "jobId": "bard",
+      "name": "採取",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "gathering",
+          "description": "探索用。採取ポイントで採取できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/122.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると採取の成功率が上がり、1日にできる回数が2増える（atwiki）"
+    }
+  ]
+}

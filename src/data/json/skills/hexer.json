@@ -1,0 +1,2736 @@
+{
+  "jobId": "hexer",
+  "skills": [
+    {
+      "id": "hexer-hp-boost",
+      "jobId": "hexer",
+      "name": "HPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxHp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 150%（atwiki）"
+    },
+    {
+      "id": "hexer-tp-boost",
+      "jobId": "hexer",
+      "name": "TPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大TP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxTp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 130%（atwiki）"
+    },
+    {
+      "id": "hexer-curse-mastery",
+      "jobId": "hexer",
+      "name": "呪言マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "成功率補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "ailmentRate",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-preemptive-stun",
+      "jobId": "hexer",
+      "name": "先制スタナー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "hexer-sleep-curse",
+          "level": 5
+        },
+        {
+          "skillId": "hexer-sin-curse",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "発動率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "戦闘開始時、低確率で敵全体をスタンさせる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 16
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 17
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 18
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 19
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 22
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 23
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 24
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 25
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 26
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-weaken-curse",
+      "jobId": "hexer",
+      "name": "力祓いの呪言",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "敵ATC低下率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "debuff",
+          "target": "enemy-all",
+          "modifiers": [
+            {
+              "stat": "physAtk",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "m1": 20
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "m1": 23
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "m1": 26
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "m1": 29
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "m1": 32
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "m1": 33
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "m1": 34
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "m1": 35
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "m1": 36
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "m1": 40
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "m1": 41
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "m1": 42
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "m1": 43
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "m1": 44
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "m1": 45
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-soften-curse",
+      "jobId": "hexer",
+      "name": "軟身の呪言",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "敵DEF低下率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "debuff",
+          "target": "enemy-all",
+          "modifiers": [
+            {
+              "stat": "physDef",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "m1": 20
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "m1": 23
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "m1": 26
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "m1": 29
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "m1": 32
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "m1": 33
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "m1": 34
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "m1": 35
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "m1": 36
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "m1": 40
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "m1": 41
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "m1": 42
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "m1": 43
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "m1": 44
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "m1": 45
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-slow-curse",
+      "jobId": "hexer",
+      "name": "足違えの呪言",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "敵AGI低下率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "debuff",
+          "target": "enemy-all",
+          "modifiers": [
+            {
+              "stat": "agi",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "m1": 20
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "m1": 23
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "m1": 26
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "m1": 29
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "m1": 32
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "m1": 33
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "m1": 34
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "m1": 35
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "m1": 36
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "m1": 40
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "m1": 41
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "m1": 42
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "m1": 43
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "m1": 44
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "m1": 45
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-blind-curse",
+      "jobId": "hexer",
+      "name": "幻惑の呪言",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 2
+        }
+      ],
+      "params": [
+        {
+          "id": "blind",
+          "label": "盲目判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "ailment",
+          "ailment": "blind",
+          "target": "enemy-all",
+          "chanceParam": "blind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "blind": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 7,
+          "values": {
+            "blind": 51
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {
+            "blind": 52
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "blind": 53
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "blind": 59
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "blind": 60
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "blind": 61
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "blind": 62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "blind": 63
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "blind": 70
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "blind": 71
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "blind": 72
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "blind": 73
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "blind": 74
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "blind": 82
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-burden-curse",
+      "jobId": "hexer",
+      "name": "重苦の呪言",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 3
+        },
+        {
+          "skillId": "hexer-tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "敵回復率補正",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "敵全体の状態異常の持続を長くする"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "p1": 0.9
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "p1": 0.87
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "p1": 0.84
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "p1": 0.81
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "p1": 0.72
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "p1": 0.68
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "p1": 0.65
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "p1": 0.62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "p1": 0.59
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "p1": 0.5
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "p1": 0.47
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "p1": 0.44
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "p1": 0.41
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "p1": 0.38
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "p1": 0.35
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-head-seal",
+      "jobId": "hexer",
+      "name": "封の呪言：頭首",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 1,
+        "boostFactor": 1.2
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "bind",
+          "label": "封じ判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "bind",
+          "bind": "head",
+          "target": "enemy-single",
+          "chanceParam": "bind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "bind": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "bind": 51
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "bind": 52
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "bind": 53
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "bind": 59
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "bind": 60
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "bind": 61
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "bind": 62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "bind": 63
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "bind": 70
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "bind": 71
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "bind": 72
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "bind": 73
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "bind": 74
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "bind": 82
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-arm-seal",
+      "jobId": "hexer",
+      "name": "封の呪言：上肢",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 1,
+        "boostFactor": 1.2
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "bind",
+          "label": "封じ判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "bind",
+          "bind": "arm",
+          "target": "enemy-single",
+          "chanceParam": "bind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "bind": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "bind": 51
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "bind": 52
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "bind": 53
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "bind": 59
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "bind": 60
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "bind": 61
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "bind": 62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "bind": 63
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "bind": 70
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "bind": 71
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "bind": 72
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "bind": 73
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "bind": 74
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "bind": 82
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-leg-seal",
+      "jobId": "hexer",
+      "name": "封の呪言：下肢",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 1,
+        "boostFactor": 1.2
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "bind",
+          "label": "封じ判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "bind",
+          "bind": "leg",
+          "target": "enemy-single",
+          "chanceParam": "bind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "bind": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "bind": 51
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "bind": 52
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "bind": 53
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "bind": 59
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "bind": 60
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "bind": 61
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "bind": 62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "bind": 63
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "bind": 70
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "bind": 71
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "bind": 72
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "bind": 73
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "bind": 74
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "bind": 82
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-sleep-curse",
+      "jobId": "hexer",
+      "name": "昏睡の呪言",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 6
+        }
+      ],
+      "params": [
+        {
+          "id": "sleep",
+          "label": "睡眠判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "ailment",
+          "ailment": "sleep",
+          "target": "enemy-all",
+          "chanceParam": "sleep"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "sleep": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 7,
+          "values": {
+            "sleep": 51
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {
+            "sleep": 52
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "sleep": 53
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "sleep": 59
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "sleep": 60
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "sleep": 61
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "sleep": 62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "sleep": 63
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "sleep": 70
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "sleep": 71
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "sleep": 72
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "sleep": 73
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "sleep": 74
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "sleep": 82
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-sin-curse",
+      "jobId": "hexer",
+      "name": "罪咎の呪言",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 7
+        }
+      ],
+      "params": [
+        {
+          "id": "curse",
+          "label": "呪い判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "ailment",
+          "ailment": "curse",
+          "target": "enemy-all",
+          "chanceParam": "curse"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "curse": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 7,
+          "values": {
+            "curse": 51
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {
+            "curse": 52
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "curse": 53
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "curse": 59
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "curse": 60
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "curse": 61
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "curse": 62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "curse": 63
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "curse": 70
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "curse": 71
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "curse": 72
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "curse": 73
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "curse": 74
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "curse": 82
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-pain-trade",
+      "jobId": "hexer",
+      "name": "ペイントレード",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "hexer-sin-curse",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "スキル倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "自分の減った HP に応じたダメージを敵全体に与える"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "p1": 100
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 7,
+          "values": {
+            "p1": 102
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {
+            "p1": 104
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "p1": 106
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "p1": 120
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "p1": 122
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "p1": 124
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "p1": 126
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "p1": 128
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "p1": 150
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "p1": 152
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "p1": 154
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "p1": 156
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "p1": 158
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "p1": 170
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "自身の減っている HP に応じた特殊な攻撃。計算エンジンではまだ扱わない"
+    },
+    {
+      "id": "hexer-fear-me",
+      "jobId": "hexer",
+      "name": "畏れよ、我を",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "hexer-curse-mastery",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "terror",
+          "label": "テラー判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "ailment",
+          "ailment": "terror",
+          "target": "enemy-single",
+          "chanceParam": "terror"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "terror": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 9,
+          "values": {
+            "terror": 51
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {
+            "terror": 52
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 11,
+          "values": {
+            "terror": 53
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 12,
+          "values": {
+            "terror": 59
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 12,
+          "values": {
+            "terror": 60
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 12,
+          "values": {
+            "terror": 61
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 12,
+          "values": {
+            "terror": 62
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 12,
+          "values": {
+            "terror": 63
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 12,
+          "values": {
+            "terror": 70
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 12,
+          "values": {
+            "terror": 71
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 12,
+          "values": {
+            "terror": 72
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 12,
+          "values": {
+            "terror": 73
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 12,
+          "values": {
+            "terror": 74
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 12,
+          "values": {
+            "terror": 82
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-command-freeze",
+      "jobId": "hexer",
+      "name": "命ず、言動能わず",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "hexer-fear-me",
+          "level": 3
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "テラー状態の敵を行動させない"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "tp": 1,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "atwiki にレベル別の表がない。消費TPは Lv1 10・Lv10 1 だけが分かり、Lv2〜9 は仮に Lv1 と同じにした。atwiki の表記は「命ず、言動能ず」。ゲーム内の表記に合わせた"
+    },
+    {
+      "id": "hexer-command-attack-ally",
+      "jobId": "hexer",
+      "name": "命ず、輩を喰らえ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "hexer-fear-me",
+          "level": 5
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "テラー状態の敵に、敵の仲間を攻撃させる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "tp": 1,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "atwiki にレベル別の表がない。消費TPは Lv1 10・Lv10 1 だけが分かり、Lv2〜9 は仮に Lv1 と同じにした"
+    },
+    {
+      "id": "hexer-command-suicide",
+      "jobId": "hexer",
+      "name": "命ず、自ら裁せよ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "hexer-fear-me",
+          "level": 10
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "テラー状態の敵に、自分自身を攻撃させる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "atwiki にレベル別の表がない。消費TPは Lv1 10・Lv10 14 だけが分かり、Lv2〜9 は仮に Lv1 と同じにした"
+    },
+    {
+      "id": "hexer-bloodlust",
+      "jobId": "hexer",
+      "name": "殺気解放",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "hexer-fear-me",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "有効歩数",
+          "unit": "number"
+        },
+        {
+          "id": "p2",
+          "label": "エンカウント率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "other",
+          "description": "探索用。敵との遭遇率が上がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 16,
+            "p2": 130
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 18,
+            "p2": 130
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 20,
+            "p2": 130
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 22,
+            "p2": 130
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 30,
+            "p2": 130
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 32,
+            "p2": 135
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 34,
+            "p2": 135
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 36,
+            "p2": 140
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 38,
+            "p2": 145
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 50,
+            "p2": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "hexer-mining",
+      "jobId": "hexer",
+      "name": "採掘",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "mining",
+          "description": "探索用。採掘ポイントで採掘できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると採掘の成功率が上がり、1日にできる回数が2増える（atwiki）"
+    }
+  ]
+}

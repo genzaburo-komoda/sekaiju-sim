@@ -1,0 +1,3153 @@
+{
+  "jobId": "bushido",
+  "skills": [
+    {
+      "id": "bushido-hp-boost",
+      "jobId": "bushido",
+      "name": "HPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxHp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 130%（atwiki）"
+    },
+    {
+      "id": "bushido-tp-boost",
+      "jobId": "bushido",
+      "name": "TPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大TP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxTp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 130%（atwiki）"
+    },
+    {
+      "id": "bushido-atk-boost",
+      "jobId": "bushido",
+      "name": "ATKブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "STR倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "str",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "atwiki の表記は「ATCブースト」。ゲーム内の表記に合わせた"
+    },
+    {
+      "id": "bushido-katana-mastery",
+      "jobId": "bushido",
+      "name": "刀マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "武器攻撃力",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "weaponAtk",
+          "param": "rate",
+          "weapon": "katana"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-mumyo",
+      "jobId": "bushido",
+      "name": "無明の極",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "bushido-atk-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "STR倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "夜間または盲目のとき、攻撃力が上がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "頭封じのときも効果がある（atwiki）"
+    },
+    {
+      "id": "bushido-issen-boost",
+      "jobId": "bushido",
+      "name": "一閃ブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "bushido-atk-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "rate",
+          "label": "CRI率上昇値",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "critRate",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 1
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 2
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 3
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 4
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 5
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 6
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 7
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 8
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 9
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 10
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-ibuki",
+      "jobId": "bushido",
+      "name": "息吹",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "bushido-hp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "HP回復量",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "self",
+          "scaling": "fixed",
+          "amountParam": "heal"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "heal": 20,
+            "speed": 0.7
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "heal": 26,
+            "speed": 0.72
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "heal": 32,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "heal": 38,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "heal": 50,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "heal": 56,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "heal": 62,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "heal": 68,
+            "speed": 0.88
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "heal": 74,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "heal": 92,
+            "speed": 0.96
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "heal": 98,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "heal": 104,
+            "speed": 1
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "heal": 110,
+            "speed": 1.02
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "heal": 116,
+            "speed": 1.04
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "heal": 140,
+            "speed": 1.12
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-fumikesa",
+      "jobId": "bushido",
+      "name": "踏み袈裟",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 130
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 135
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 140
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 145
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 150
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 155
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 160
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 165
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 170
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 180
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 185
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 190
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 195
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 200
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 210
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-jodan",
+      "jobId": "bushido",
+      "name": "上段の構え",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "agi",
+        "factor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "jodan",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "攻撃力上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "m2",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "self",
+          "modifiers": [
+            {
+              "stat": "physAtk",
+              "param": "m1"
+            },
+            {
+              "stat": "physDef",
+              "param": "m2"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {
+            "m1": 10,
+            "m2": 5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {
+            "m1": 11,
+            "m2": 6
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 3,
+          "values": {
+            "m1": 12,
+            "m2": 7
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 3,
+          "values": {
+            "m1": 13,
+            "m2": 8
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 4,
+          "values": {
+            "m1": 19,
+            "m2": 9
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "m2": 10
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 4,
+          "values": {
+            "m1": 21,
+            "m2": 11
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 4,
+          "values": {
+            "m1": 22,
+            "m2": 12
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 4,
+          "values": {
+            "m1": 23,
+            "m2": 13
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 4,
+          "values": {
+            "m1": 30,
+            "m2": 15
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 4,
+          "values": {
+            "m1": 30,
+            "m2": 15
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 4,
+          "values": {
+            "m1": 30,
+            "m2": 15
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 4,
+          "values": {
+            "m1": 30,
+            "m2": 15
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 4,
+          "values": {
+            "m1": 30,
+            "m2": 15
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 4,
+          "values": {
+            "m1": 30,
+            "m2": 15
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-zanba",
+      "jobId": "bushido",
+      "name": "斬馬",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "jodan",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "bushido-jodan",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 140
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 145
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 150
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 155
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 165
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 167
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 170
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 173
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 176
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 190
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 192
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 194
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 196
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 198
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 216
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-tsubame-gaeshi",
+      "jobId": "bushido",
+      "name": "ツバメがえし",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "jodan",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "bushido-jodan",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "minHits",
+          "label": "攻撃回数（最小）",
+          "unit": "count"
+        },
+        {
+          "id": "maxHits",
+          "label": "攻撃回数（最大）",
+          "unit": "count"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg",
+          "minHitsParam": "minHits",
+          "maxHitsParam": "maxHits"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "dmg": 100,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 9,
+          "values": {
+            "dmg": 103,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {
+            "dmg": 106,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 11,
+          "values": {
+            "dmg": 109,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 12,
+          "values": {
+            "dmg": 115,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 12,
+          "values": {
+            "dmg": 116,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 12,
+          "values": {
+            "dmg": 117,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 12,
+          "values": {
+            "dmg": 118,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 12,
+          "values": {
+            "dmg": 119,
+            "minHits": 2,
+            "maxHits": 2
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 12,
+          "values": {
+            "dmg": 125,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 12,
+          "values": {
+            "dmg": 126,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 12,
+          "values": {
+            "dmg": 127,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 12,
+          "values": {
+            "dmg": 128,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 12,
+          "values": {
+            "dmg": 129,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 12,
+          "values": {
+            "dmg": 135,
+            "minHits": 3,
+            "maxHits": 3
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で3回攻撃が出るようになる（atwiki）"
+    },
+    {
+      "id": "bushido-oroshi-homura",
+      "jobId": "bushido",
+      "name": "卸し焔",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "jodan",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 10
+        },
+        {
+          "skillId": "bushido-jodan",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率（斬）",
+          "unit": "percent"
+        },
+        {
+          "id": "elemDmg",
+          "label": "ダメージ倍率（炎）",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "hybrid",
+          "element": "slash",
+          "hybridElement": "fire",
+          "target": "enemy-single",
+          "powerParam": "dmg",
+          "hybridPowerParam": "elemDmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "dmg": 130,
+            "elemDmg": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 7,
+          "values": {
+            "dmg": 131,
+            "elemDmg": 55
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {
+            "dmg": 132,
+            "elemDmg": 65
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "dmg": 133,
+            "elemDmg": 70
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "dmg": 134,
+            "elemDmg": 75
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "dmg": 135,
+            "elemDmg": 80
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "dmg": 136,
+            "elemDmg": 85
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "dmg": 137,
+            "elemDmg": 90
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "dmg": 138,
+            "elemDmg": 95
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "dmg": 140,
+            "elemDmg": 100
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "dmg": 141,
+            "elemDmg": 105
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "dmg": 142,
+            "elemDmg": 110
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "dmg": 143,
+            "elemDmg": 115
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "dmg": 144,
+            "elemDmg": 120
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "dmg": 150,
+            "elemDmg": 125
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-seigan",
+      "jobId": "bushido",
+      "name": "青眼の構え",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "agi",
+        "factor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "seigan",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "攻撃力上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "m2",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "self",
+          "modifiers": [
+            {
+              "stat": "physAtk",
+              "param": "m1"
+            },
+            {
+              "stat": "physDef",
+              "param": "m2"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {
+            "m1": 0,
+            "m2": 15
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {
+            "m1": 1,
+            "m2": 16
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 3,
+          "values": {
+            "m1": 2,
+            "m2": 17
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 3,
+          "values": {
+            "m1": 3,
+            "m2": 18
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 4,
+          "values": {
+            "m1": 9,
+            "m2": 19
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 4,
+          "values": {
+            "m1": 10,
+            "m2": 20
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 4,
+          "values": {
+            "m1": 11,
+            "m2": 21
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 4,
+          "values": {
+            "m1": 12,
+            "m2": 22
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 4,
+          "values": {
+            "m1": 13,
+            "m2": 23
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "m2": 25
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "m2": 25
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "m2": 25
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "m2": 25
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "m2": 25
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 4,
+          "values": {
+            "m1": 20,
+            "m2": 25
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/1214.html",
+          "note": "Lv9 の攻撃力上昇率 13%（リマスター版の修正）",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "リマスター版で Lv9 の攻撃力上昇率が 23% から 13% に修正された"
+    },
+    {
+      "id": "bushido-issun-no-mikiri",
+      "jobId": "bushido",
+      "name": "一寸の見切り",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "seigan",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "bushido-seigan",
+          "level": 1
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "刀が必要。敵の攻撃を1回だけ無効にする"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "tp": 9,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "tp": 4,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "tp": 1,
+          "values": {}
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 12,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 13,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 14,
+          "tp": 1,
+          "values": {}
+        },
+        {
+          "lv": 15,
+          "tp": 1,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-kote-uchi",
+      "jobId": "bushido",
+      "name": "小手討ち",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "seigan",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "bushido-seigan",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "bind",
+          "label": "腕封じ判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "bind",
+          "bind": "arm",
+          "target": "enemy-single",
+          "chanceParam": "bind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 130,
+            "bind": 20
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 131,
+            "bind": 21
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 132,
+            "bind": 22
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 133,
+            "bind": 23
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 134,
+            "bind": 29
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 135,
+            "bind": 30
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 136,
+            "bind": 31
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 137,
+            "bind": 32
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 138,
+            "bind": 33
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 140,
+            "bind": 40
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 141,
+            "bind": 41
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 142,
+            "bind": 42
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 143,
+            "bind": 43
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 144,
+            "bind": 44
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 150,
+            "bind": 52
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-raiyo-tsuki",
+      "jobId": "bushido",
+      "name": "雷耀突き",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "seigan",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 10
+        },
+        {
+          "skillId": "bushido-seigan",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率（突）",
+          "unit": "percent"
+        },
+        {
+          "id": "elemDmg",
+          "label": "ダメージ倍率（雷）",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "hybrid",
+          "element": "pierce",
+          "hybridElement": "volt",
+          "target": "enemy-single",
+          "powerParam": "dmg",
+          "hybridPowerParam": "elemDmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "dmg": 130,
+            "elemDmg": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 7,
+          "values": {
+            "dmg": 131,
+            "elemDmg": 55
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {
+            "dmg": 132,
+            "elemDmg": 65
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "dmg": 133,
+            "elemDmg": 70
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "dmg": 134,
+            "elemDmg": 75
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "dmg": 135,
+            "elemDmg": 80
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "dmg": 136,
+            "elemDmg": 85
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "dmg": 137,
+            "elemDmg": 90
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "dmg": 138,
+            "elemDmg": 95
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "dmg": 140,
+            "elemDmg": 100
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "dmg": 141,
+            "elemDmg": 105
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "dmg": 142,
+            "elemDmg": 110
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "dmg": 143,
+            "elemDmg": 115
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "dmg": 144,
+            "elemDmg": 120
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "dmg": 150,
+            "elemDmg": 125
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-iai",
+      "jobId": "bushido",
+      "name": "居合の構え",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "agi",
+        "factor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "iai",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "AGI上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "self",
+          "modifiers": [
+            {
+              "stat": "agi",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {
+            "m1": 10
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {
+            "m1": 11
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 3,
+          "values": {
+            "m1": 12
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 3,
+          "values": {
+            "m1": 13
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 4,
+          "values": {
+            "m1": 19
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 4,
+          "values": {
+            "m1": 20
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 4,
+          "values": {
+            "m1": 21
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 4,
+          "values": {
+            "m1": 22
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 4,
+          "values": {
+            "m1": 23
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 4,
+          "values": {
+            "m1": 30
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 4,
+          "values": {
+            "m1": 30
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 4,
+          "values": {
+            "m1": 30
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 4,
+          "values": {
+            "m1": 30
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 4,
+          "values": {
+            "m1": 30
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 4,
+          "values": {
+            "m1": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "bushido-kubi-uchi",
+      "jobId": "bushido",
+      "name": "首討ち",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "iai",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "bushido-iai",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "death",
+          "label": "即死判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "ailment",
+          "ailment": "death",
+          "target": "enemy-single",
+          "chanceParam": "death"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "dmg": 130,
+            "death": 40
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 7,
+          "values": {
+            "dmg": 131,
+            "death": 41
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {
+            "dmg": 132,
+            "death": 42
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "dmg": 133,
+            "death": 43
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "dmg": 134,
+            "death": 49
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "dmg": 135,
+            "death": 50
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "dmg": 136,
+            "death": 51
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "dmg": 137,
+            "death": 52
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "dmg": 138,
+            "death": 53
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "dmg": 140,
+            "death": 60
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "dmg": 141,
+            "death": 61
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "dmg": 142,
+            "death": 62
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "dmg": 143,
+            "death": 63
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "dmg": 144,
+            "death": 64
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "dmg": 150,
+            "death": 72
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "行動速度は居合の構えのレベルで決まる（atwiki「スキル速度」）。ここでは仮に AGI×1.0"
+    },
+    {
+      "id": "bushido-kantotsu",
+      "jobId": "bushido",
+      "name": "貫突",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "iai",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "bushido-iai",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 170
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 171
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 172
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 173
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 189
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 190
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 191
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 192
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 193
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 210
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 211
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 212
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 213
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 214
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 232
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/1214.html",
+          "note": "属性が突（リマスター版の変更）",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "行動速度は居合の構えのレベルで決まる（atwiki「スキル速度」）。ここでは仮に AGI×1.0。DS版はゲーム内の表記と違い実際は斬属性で、リマスター版で突属性に変更された（atwiki）"
+    },
+    {
+      "id": "bushido-batto-hyosetsu",
+      "jobId": "bushido",
+      "name": "抜刀氷雪",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "katana"
+      ],
+      "stance": "iai",
+      "prerequisites": [
+        {
+          "skillId": "bushido-katana-mastery",
+          "level": 10
+        },
+        {
+          "skillId": "bushido-iai",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率（斬）",
+          "unit": "percent"
+        },
+        {
+          "id": "elemDmg",
+          "label": "ダメージ倍率（氷）",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "hybrid",
+          "element": "slash",
+          "hybridElement": "ice",
+          "target": "enemy-single",
+          "powerParam": "dmg",
+          "hybridPowerParam": "elemDmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "dmg": 130,
+            "elemDmg": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 7,
+          "values": {
+            "dmg": 131,
+            "elemDmg": 55
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {
+            "dmg": 132,
+            "elemDmg": 65
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "dmg": 133,
+            "elemDmg": 70
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "dmg": 134,
+            "elemDmg": 75
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "dmg": 135,
+            "elemDmg": 80
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "dmg": 136,
+            "elemDmg": 85
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "dmg": 137,
+            "elemDmg": 90
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "dmg": 138,
+            "elemDmg": 95
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "dmg": 140,
+            "elemDmg": 100
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "dmg": 141,
+            "elemDmg": 105
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "dmg": 142,
+            "elemDmg": 110
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "dmg": 143,
+            "elemDmg": 115
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "dmg": 144,
+            "elemDmg": 120
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "dmg": 150,
+            "elemDmg": 125
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "行動速度は居合の構えのレベルで決まる（atwiki「スキル速度」）。ここでは仮に AGI×1.0"
+    },
+    {
+      "id": "bushido-mining",
+      "jobId": "bushido",
+      "name": "採掘",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "mining",
+          "description": "探索用。採掘ポイントで採掘できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると採掘の成功率が上がり、1日にできる回数が2増える（atwiki）"
+    }
+  ]
+}

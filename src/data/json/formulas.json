@@ -1,0 +1,258 @@
+{
+  "id": "eo-wiki-ds",
+  "name": "EO Wiki の式と DS版ゲームデータ（HD版では未検証）",
+  "levelCorrection": [
+    {
+      "levelDiff": -20,
+      "playerDealt": 44,
+      "enemyDealt": 60
+    },
+    {
+      "levelDiff": -19,
+      "playerDealt": 46,
+      "enemyDealt": 62
+    },
+    {
+      "levelDiff": -18,
+      "playerDealt": 48,
+      "enemyDealt": 64
+    },
+    {
+      "levelDiff": -17,
+      "playerDealt": 50,
+      "enemyDealt": 66
+    },
+    {
+      "levelDiff": -16,
+      "playerDealt": 52,
+      "enemyDealt": 68
+    },
+    {
+      "levelDiff": -15,
+      "playerDealt": 54,
+      "enemyDealt": 70
+    },
+    {
+      "levelDiff": -14,
+      "playerDealt": 56,
+      "enemyDealt": 72
+    },
+    {
+      "levelDiff": -13,
+      "playerDealt": 59,
+      "enemyDealt": 74
+    },
+    {
+      "levelDiff": -12,
+      "playerDealt": 61,
+      "enemyDealt": 76
+    },
+    {
+      "levelDiff": -11,
+      "playerDealt": 64,
+      "enemyDealt": 78
+    },
+    {
+      "levelDiff": -10,
+      "playerDealt": 66,
+      "enemyDealt": 80
+    },
+    {
+      "levelDiff": -9,
+      "playerDealt": 69,
+      "enemyDealt": 82
+    },
+    {
+      "levelDiff": -8,
+      "playerDealt": 72,
+      "enemyDealt": 84
+    },
+    {
+      "levelDiff": -7,
+      "playerDealt": 75,
+      "enemyDealt": 86
+    },
+    {
+      "levelDiff": -6,
+      "playerDealt": 78,
+      "enemyDealt": 88
+    },
+    {
+      "levelDiff": -5,
+      "playerDealt": 82,
+      "enemyDealt": 90
+    },
+    {
+      "levelDiff": -4,
+      "playerDealt": 85,
+      "enemyDealt": 90
+    },
+    {
+      "levelDiff": -3,
+      "playerDealt": 88,
+      "enemyDealt": 100
+    },
+    {
+      "levelDiff": -2,
+      "playerDealt": 92,
+      "enemyDealt": 100
+    },
+    {
+      "levelDiff": -1,
+      "playerDealt": 96,
+      "enemyDealt": 100
+    },
+    {
+      "levelDiff": 0,
+      "playerDealt": 100,
+      "enemyDealt": 100
+    },
+    {
+      "levelDiff": 1,
+      "playerDealt": 100,
+      "enemyDealt": 104
+    },
+    {
+      "levelDiff": 2,
+      "playerDealt": 100,
+      "enemyDealt": 108
+    },
+    {
+      "levelDiff": 3,
+      "playerDealt": 100,
+      "enemyDealt": 112
+    },
+    {
+      "levelDiff": 4,
+      "playerDealt": 100,
+      "enemyDealt": 117
+    },
+    {
+      "levelDiff": 5,
+      "playerDealt": 101,
+      "enemyDealt": 122
+    },
+    {
+      "levelDiff": 6,
+      "playerDealt": 102,
+      "enemyDealt": 127
+    },
+    {
+      "levelDiff": 7,
+      "playerDealt": 103,
+      "enemyDealt": 132
+    },
+    {
+      "levelDiff": 8,
+      "playerDealt": 104,
+      "enemyDealt": 137
+    },
+    {
+      "levelDiff": 9,
+      "playerDealt": 105,
+      "enemyDealt": 142
+    },
+    {
+      "levelDiff": 10,
+      "playerDealt": 106,
+      "enemyDealt": 148
+    },
+    {
+      "levelDiff": 11,
+      "playerDealt": 107,
+      "enemyDealt": 154
+    },
+    {
+      "levelDiff": 12,
+      "playerDealt": 108,
+      "enemyDealt": 160
+    },
+    {
+      "levelDiff": 13,
+      "playerDealt": 109,
+      "enemyDealt": 167
+    },
+    {
+      "levelDiff": 14,
+      "playerDealt": 110,
+      "enemyDealt": 173
+    },
+    {
+      "levelDiff": 15,
+      "playerDealt": 110,
+      "enemyDealt": 180
+    },
+    {
+      "levelDiff": 16,
+      "playerDealt": 110,
+      "enemyDealt": 187
+    },
+    {
+      "levelDiff": 17,
+      "playerDealt": 110,
+      "enemyDealt": 195
+    },
+    {
+      "levelDiff": 18,
+      "playerDealt": 110,
+      "enemyDealt": 203
+    },
+    {
+      "levelDiff": 19,
+      "playerDealt": 110,
+      "enemyDealt": 211
+    },
+    {
+      "levelDiff": 20,
+      "playerDealt": 110,
+      "enemyDealt": 219
+    }
+  ],
+  "difficulty": {
+    "expert": {
+      "damageDealt": 100,
+      "damageTaken": 100,
+      "ailmentInflict": 100,
+      "ailmentVulnerability": 100,
+      "healing": 100,
+      "partyAccuracy": 100,
+      "enemyAccuracy": 100,
+      "partySpeed": 100
+    },
+    "basic": {
+      "damageDealt": 120,
+      "damageTaken": 80,
+      "ailmentInflict": 120,
+      "ailmentVulnerability": 80,
+      "healing": 100,
+      "partyAccuracy": 100,
+      "enemyAccuracy": 100,
+      "partySpeed": 100
+    },
+    "picnic": {
+      "damageDealt": 500,
+      "damageTaken": 10,
+      "ailmentInflict": 200,
+      "ailmentVulnerability": 10,
+      "healing": 300,
+      "partyAccuracy": 120,
+      "enemyAccuracy": 80,
+      "partySpeed": 200
+    }
+  },
+  "sources": [
+    {
+      "kind": "enemy-data-sheet",
+      "confidence": "unverified",
+      "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+      "note": "LevelCorrection.tbb タブ（DS版のゲームデータ）。levelDiff = 攻撃側レベル − 防御側レベル"
+    },
+    {
+      "kind": "eo-wiki",
+      "confidence": "unverified",
+      "url": "https://etrianodyssey.wiki/wiki/EO1/Formulas",
+      "note": "Difficulty Modifiers の表（HD版）。atwiki の表とも一致",
+      "checkedAt": "2026-09-27"
+    }
+  ]
+}

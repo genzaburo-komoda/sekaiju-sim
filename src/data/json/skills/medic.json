@@ -1,0 +1,3075 @@
+{
+  "jobId": "medic",
+  "skills": [
+    {
+      "id": "medic-hp-boost",
+      "jobId": "medic",
+      "name": "HPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxHp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 150%（atwiki）"
+    },
+    {
+      "id": "medic-tp-boost",
+      "jobId": "medic",
+      "name": "TPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大TP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxTp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 130%（atwiki）"
+    },
+    {
+      "id": "medic-atk-boost",
+      "jobId": "medic",
+      "name": "ATKブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "STR倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "str",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 125
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 145
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 190
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 205
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 220
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 235
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 250
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 300
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で STR300%。atwiki（atwiki） の表記は「ATCブースト」。ゲーム内の表記に合わせた（atwiki「リマスター版の変更点」：ATCブーストの表記は ATKブーストに変更）"
+    },
+    {
+      "id": "medic-heal-mastery",
+      "jobId": "medic",
+      "name": "回復マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "HP回復倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "healing",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 102
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 107
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 117
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 138
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 144
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 148
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 154
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 175
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "medic-after-care",
+      "jobId": "medic",
+      "name": "戦後手当",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 2
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "HP回復率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "戦闘後、TP を使わずに HP が一定量回復する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 3
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 4
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 5
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 6
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 8
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 9
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 10
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 11
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 12
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 15
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "リマスター版の値（atwiki。DS版は 1%〜12%）"
+    },
+    {
+      "id": "medic-erudition",
+      "jobId": "medic",
+      "name": "博識",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "medic-tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "drop上昇率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "戦闘後のアイテム入手率が上がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 10
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 11
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 12
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 13
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 19
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 20
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 21
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 22
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 23
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "medic-tp-recovery",
+      "jobId": "medic",
+      "name": "TPリカバリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "medic-tp-boost",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "回復値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "戦闘中、毎ターン自分の TP が少し回復する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 1
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 1
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 2
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 2
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 3
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 3
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 4
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 4
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 4
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 5
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "medic-cure",
+      "jobId": "medic",
+      "name": "キュア",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "回復量/マスタリー1",
+          "unit": "number"
+        },
+        {
+          "id": "healMax",
+          "label": "回復量/マスタリー10",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-single",
+          "scaling": "fixed",
+          "amountParam": "heal",
+          "maxMasteryParam": "healMax"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "heal": 18,
+            "healMax": 31,
+            "speed": 0.7
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "heal": 24,
+            "healMax": 43,
+            "speed": 0.72
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "heal": 30,
+            "healMax": 52,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "heal": 36,
+            "healMax": 63,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "heal": 48,
+            "healMax": 84,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "heal": 54,
+            "healMax": 94,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "heal": 61,
+            "healMax": 105,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "heal": 67,
+            "healMax": 115,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "heal": 73,
+            "healMax": 126,
+            "speed": 0.88
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "heal": 91,
+            "healMax": 157,
+            "speed": 0.92
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "heal": 97,
+            "healMax": 168,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "heal": 103,
+            "healMax": 178,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "heal": 109,
+            "healMax": 189,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "heal": 115,
+            "healMax": 199,
+            "speed": 1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "heal": 140,
+            "healMax": 241,
+            "speed": 1.08
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "回復量は回復マスタリーで変わる（「回復量/マスタリー1」と「回復量/マスタリー10」の2つを入力）"
+    },
+    {
+      "id": "medic-cure-2",
+      "jobId": "medic",
+      "name": "キュアII",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "回復量/マスタリー3",
+          "unit": "number"
+        },
+        {
+          "id": "healMax",
+          "label": "回復量/マスタリー10",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-single",
+          "scaling": "fixed",
+          "amountParam": "heal",
+          "maxMasteryParam": "healMax"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {
+            "heal": 80,
+            "healMax": 126,
+            "speed": 0.2
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 11,
+          "values": {
+            "heal": 87,
+            "healMax": 136,
+            "speed": 0.22
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 12,
+          "values": {
+            "heal": 93,
+            "healMax": 147,
+            "speed": 0.24
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 13,
+          "values": {
+            "heal": 100,
+            "healMax": 157,
+            "speed": 0.26
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 14,
+          "values": {
+            "heal": 120,
+            "healMax": 189,
+            "speed": 0.3
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "heal": 127,
+            "healMax": 199,
+            "speed": 0.32
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 14,
+          "values": {
+            "heal": 134,
+            "healMax": 210,
+            "speed": 0.34
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 14,
+          "values": {
+            "heal": 140,
+            "healMax": 220,
+            "speed": 0.36
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 14,
+          "values": {
+            "heal": 147,
+            "healMax": 231,
+            "speed": 0.38
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {
+            "heal": 174,
+            "healMax": 273,
+            "speed": 0.42
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 14,
+          "values": {
+            "heal": 180,
+            "healMax": 283,
+            "speed": 0.44
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 14,
+          "values": {
+            "heal": 187,
+            "healMax": 294,
+            "speed": 0.46
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 14,
+          "values": {
+            "heal": 194,
+            "healMax": 304,
+            "speed": 0.48
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 14,
+          "values": {
+            "heal": 201,
+            "healMax": 315,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 14,
+          "values": {
+            "heal": 234,
+            "healMax": 367,
+            "speed": 0.58
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "回復量は回復マスタリーで変わる（「回復量/マスタリー3」と「回復量/マスタリー10」の2つを入力）"
+    },
+    {
+      "id": "medic-cure-3",
+      "jobId": "medic",
+      "name": "キュアIII",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "回復量/マスタリー5",
+          "unit": "number"
+        },
+        {
+          "id": "healMax",
+          "label": "回復量/マスタリー10",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-single",
+          "scaling": "fixed",
+          "amountParam": "heal",
+          "maxMasteryParam": "healMax"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 20,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.05
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 19,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.08
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 18,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.11
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 17,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.14
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 15,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.2
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.23
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 13,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.26
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 12,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.29
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 11,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.32
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.4
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.43
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.46
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.49
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "heal": 800,
+            "healMax": 1050,
+            "speed": 0.62
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "回復量は回復マスタリーで変わる（「回復量/マスタリー5」と「回復量/マスタリー10」の2つを入力）。回復マスタリー5 で HP800 回復（atwiki）"
+    },
+    {
+      "id": "medic-area-cure",
+      "jobId": "medic",
+      "name": "エリアキュア",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 3
+        },
+        {
+          "skillId": "medic-cure",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "回復量/マスタリー3",
+          "unit": "number"
+        },
+        {
+          "id": "healMax",
+          "label": "回復量/マスタリー10",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-all",
+          "scaling": "fixed",
+          "amountParam": "heal",
+          "maxMasteryParam": "healMax"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "heal": 26,
+            "healMax": 42,
+            "speed": 0.7
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 7,
+          "values": {
+            "heal": 33,
+            "healMax": 52,
+            "speed": 0.72
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 8,
+          "values": {
+            "heal": 40,
+            "healMax": 63,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 9,
+          "values": {
+            "heal": 46,
+            "healMax": 73,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 10,
+          "values": {
+            "heal": 60,
+            "healMax": 94,
+            "speed": 0.8
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 10,
+          "values": {
+            "heal": 67,
+            "healMax": 105,
+            "speed": 0.82
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 10,
+          "values": {
+            "heal": 73,
+            "healMax": 115,
+            "speed": 0.84
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 10,
+          "values": {
+            "heal": 80,
+            "healMax": 126,
+            "speed": 0.86
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 10,
+          "values": {
+            "heal": 100,
+            "healMax": 157,
+            "speed": 0.88
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 10,
+          "values": {
+            "heal": 107,
+            "healMax": 168,
+            "speed": 0.92
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 10,
+          "values": {
+            "heal": 113,
+            "healMax": 178,
+            "speed": 0.94
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 10,
+          "values": {
+            "heal": 120,
+            "healMax": 189,
+            "speed": 0.96
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 10,
+          "values": {
+            "heal": 127,
+            "healMax": 199,
+            "speed": 0.98
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 10,
+          "values": {
+            "heal": 134,
+            "healMax": 210,
+            "speed": 1
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 10,
+          "values": {
+            "heal": 160,
+            "healMax": 252,
+            "speed": 1.08
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "回復量は回復マスタリーで変わる（「回復量/マスタリー3」と「回復量/マスタリー10」の2つを入力）"
+    },
+    {
+      "id": "medic-area-cure-2",
+      "jobId": "medic",
+      "name": "エリアキュアII",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "medic-cure-2",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "回復量/マスタリー5",
+          "unit": "number"
+        },
+        {
+          "id": "healMax",
+          "label": "回復量/マスタリー10",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-all",
+          "scaling": "fixed",
+          "amountParam": "heal",
+          "maxMasteryParam": "healMax"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 16,
+          "values": {
+            "heal": 120,
+            "healMax": 157,
+            "speed": 0.2
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 17,
+          "values": {
+            "heal": 131,
+            "healMax": 172,
+            "speed": 0.22
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 18,
+          "values": {
+            "heal": 142,
+            "healMax": 186,
+            "speed": 0.24
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 19,
+          "values": {
+            "heal": 153,
+            "healMax": 201,
+            "speed": 0.26
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 20,
+          "values": {
+            "heal": 192,
+            "healMax": 252,
+            "speed": 0.3
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 20,
+          "values": {
+            "heal": 203,
+            "healMax": 266,
+            "speed": 0.32
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 20,
+          "values": {
+            "heal": 214,
+            "healMax": 281,
+            "speed": 0.34
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 20,
+          "values": {
+            "heal": 225,
+            "healMax": 296,
+            "speed": 0.36
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 20,
+          "values": {
+            "heal": 236,
+            "healMax": 310,
+            "speed": 0.38
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 20,
+          "values": {
+            "heal": 288,
+            "healMax": 378,
+            "speed": 0.42
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 20,
+          "values": {
+            "heal": 299,
+            "healMax": 392,
+            "speed": 0.44
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 20,
+          "values": {
+            "heal": 310,
+            "healMax": 407,
+            "speed": 0.46
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 20,
+          "values": {
+            "heal": 321,
+            "healMax": 422,
+            "speed": 0.48
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 20,
+          "values": {
+            "heal": 332,
+            "healMax": 436,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 20,
+          "values": {
+            "heal": 1600,
+            "healMax": 2100,
+            "speed": 0.58
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "回復量は回復マスタリーで変わる（「回復量/マスタリー5」と「回復量/マスタリー10」の2つを入力）"
+    },
+    {
+      "id": "medic-resurrection",
+      "jobId": "medic",
+      "name": "リザレクション",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 7
+        },
+        {
+          "skillId": "medic-cure-3",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "回復量/マスタリー7",
+          "unit": "number"
+        },
+        {
+          "id": "healMax",
+          "label": "回復量/マスタリー10",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-single",
+          "scaling": "fixed",
+          "amountParam": "heal",
+          "maxMasteryParam": "healMax",
+          "revive": true
+        },
+        {
+          "type": "other",
+          "description": "戦闘不能の味方1人を復帰させる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {
+            "heal": 25,
+            "healMax": 31,
+            "speed": 0.2
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 11,
+          "values": {
+            "heal": 34,
+            "healMax": 43,
+            "speed": 0.22
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 12,
+          "values": {
+            "heal": 43,
+            "healMax": 52,
+            "speed": 0.24
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 13,
+          "values": {
+            "heal": 51,
+            "healMax": 63,
+            "speed": 0.26
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 14,
+          "values": {
+            "heal": 68,
+            "healMax": 84,
+            "speed": 0.3
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "heal": 77,
+            "healMax": 94,
+            "speed": 0.32
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 14,
+          "values": {
+            "heal": 86,
+            "healMax": 105,
+            "speed": 0.34
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 14,
+          "values": {
+            "heal": 94,
+            "healMax": 115,
+            "speed": 0.36
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 14,
+          "values": {
+            "heal": 103,
+            "healMax": 126,
+            "speed": 0.38
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {
+            "heal": 129,
+            "healMax": 157,
+            "speed": 0.42
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 14,
+          "values": {
+            "heal": 137,
+            "healMax": 168,
+            "speed": 0.44
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 14,
+          "values": {
+            "heal": 146,
+            "healMax": 178,
+            "speed": 0.46
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 14,
+          "values": {
+            "heal": 154,
+            "healMax": 189,
+            "speed": 0.48
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 14,
+          "values": {
+            "heal": 430,
+            "healMax": 525,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 14,
+          "values": {
+            "heal": 1720,
+            "healMax": 2100,
+            "speed": 0.58
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "回復量は回復マスタリーで変わる（「回復量/マスタリー7」と「回復量/マスタリー10」の2つを入力）"
+    },
+    {
+      "id": "medic-bind-recovery",
+      "jobId": "medic",
+      "name": "バインドリカバリ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "解除数",
+          "unit": "number"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "味方1人の封じを治す"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "p1": 1,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "p1": 1,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 3,
+          "values": {
+            "p1": 2,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 3,
+          "values": {
+            "p1": 2,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 4,
+          "values": {
+            "p1": 3,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "medic-refresh",
+      "jobId": "medic",
+      "name": "リフレッシュ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "味方全員の状態異常を治す"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 3,
+          "values": {
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 3,
+          "values": {
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 4,
+          "values": {
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 4,
+          "values": {
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 4,
+          "values": {
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 4,
+          "values": {
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 4,
+          "values": {
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 4,
+          "values": {
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 4,
+          "values": {
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 4,
+          "values": {
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 4,
+          "values": {
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 4,
+          "values": {
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 4,
+          "values": {
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "数で表せない項目（atwiki）… 回復対象：盲目／麻痺／混乱／睡眠／毒／呪い／テラー／石化"
+    },
+    {
+      "id": "medic-medical-defense",
+      "jobId": "medic",
+      "name": "医術防御",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 3
+        },
+        {
+          "skillId": "medic-area-cure",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "m1",
+          "label": "耐性上昇率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "buff",
+          "target": "ally-all",
+          "modifiers": [
+            {
+              "stat": "elemDef",
+              "param": "m1"
+            }
+          ],
+          "durationTurns": 5
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 10,
+          "values": {
+            "m1": 15,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 11,
+          "values": {
+            "m1": 20,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 12,
+          "values": {
+            "m1": 25,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 13,
+          "values": {
+            "m1": 30,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 14,
+          "values": {
+            "m1": 35,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 14,
+          "values": {
+            "m1": 40,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 14,
+          "values": {
+            "m1": 45,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 14,
+          "values": {
+            "m1": 50,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 14,
+          "values": {
+            "m1": 55,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 14,
+          "values": {
+            "m1": 60,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 14,
+          "values": {
+            "m1": 65,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 14,
+          "values": {
+            "m1": 70,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 14,
+          "values": {
+            "m1": 75,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 14,
+          "values": {
+            "m1": 80,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 14,
+          "values": {
+            "m1": 85,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "物理攻撃のダメージも減らす（atwiki）"
+    },
+    {
+      "id": "medic-medical-defense-2",
+      "jobId": "medic",
+      "name": "医術防御II",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi-by-level",
+        "paramId": "speed"
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-medical-defense",
+          "level": 3
+        },
+        {
+          "skillId": "medic-area-cure-2",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "発動率",
+          "unit": "percent"
+        },
+        {
+          "id": "speed",
+          "label": "速度補正",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "味方全員に、戦闘不能になるダメージを受けても中確率で HP1 で残る効果を付ける"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 16,
+          "values": {
+            "p1": 30,
+            "speed": 0.5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 17,
+          "values": {
+            "p1": 31,
+            "speed": 0.52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 18,
+          "values": {
+            "p1": 32,
+            "speed": 0.54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 19,
+          "values": {
+            "p1": 33,
+            "speed": 0.56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 20,
+          "values": {
+            "p1": 39,
+            "speed": 0.6
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 20,
+          "values": {
+            "p1": 40,
+            "speed": 0.62
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 20,
+          "values": {
+            "p1": 41,
+            "speed": 0.64
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 20,
+          "values": {
+            "p1": 42,
+            "speed": 0.66
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 20,
+          "values": {
+            "p1": 43,
+            "speed": 0.68
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 20,
+          "values": {
+            "p1": 50,
+            "speed": 0.72
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 20,
+          "values": {
+            "p1": 51,
+            "speed": 0.74
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 20,
+          "values": {
+            "p1": 52,
+            "speed": 0.76
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 20,
+          "values": {
+            "p1": 53,
+            "speed": 0.78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 20,
+          "values": {
+            "p1": 54,
+            "speed": 0.9
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 20,
+          "values": {
+            "p1": 62,
+            "speed": 0.98
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "medic-regenerate",
+      "jobId": "medic",
+      "name": "リジェネレート",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "head",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.5,
+        "boostFactor": 0.7
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "medic-cure",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "heal",
+          "label": "回復量(最大HP×)",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ally-single",
+          "scaling": "max-hp-ratio",
+          "amountParam": "heal",
+          "timing": "per-turn"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "heal": 5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "heal": 6
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "heal": 7
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "heal": 8
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "heal": 10
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "heal": 11
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "heal": 12
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "heal": 13
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "heal": 14
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "heal": 16
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "heal": 17
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "heal": 18
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "heal": 19
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "heal": 20
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "heal": 22
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "medic-heavy-strike",
+      "jobId": "medic",
+      "name": "ヘヴィストライク",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "medic-atk-boost",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "stun",
+          "label": "スタン判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "bash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "ailment",
+          "ailment": "stun",
+          "target": "enemy-single",
+          "chanceParam": "stun"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "dmg": 200,
+            "stun": 15
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 9,
+          "values": {
+            "dmg": 210,
+            "stun": 20
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {
+            "dmg": 220,
+            "stun": 25
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 11,
+          "values": {
+            "dmg": 230,
+            "stun": 30
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 12,
+          "values": {
+            "dmg": 250,
+            "stun": 40
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 12,
+          "values": {
+            "dmg": 260,
+            "stun": 45
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 12,
+          "values": {
+            "dmg": 270,
+            "stun": 50
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 12,
+          "values": {
+            "dmg": 280,
+            "stun": 55
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 12,
+          "values": {
+            "dmg": 290,
+            "stun": 60
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 12,
+          "values": {
+            "dmg": 320,
+            "stun": 75
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 12,
+          "values": {
+            "dmg": 330,
+            "stun": 76
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 12,
+          "values": {
+            "dmg": 340,
+            "stun": 77
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 12,
+          "values": {
+            "dmg": 350,
+            "stun": 78
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 12,
+          "values": {
+            "dmg": 360,
+            "stun": 79
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 12,
+          "values": {
+            "dmg": 400,
+            "stun": 80
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "weapons": [
+        "staff"
+      ],
+      "notes": "杖専用・腕スキル（atwiki のリマスター版の表の下の記述）。消費TP・倍率・スタン判定値はDS版と同じ"
+    },
+    {
+      "id": "medic-camp-care",
+      "jobId": "medic",
+      "name": "キャンプ処置",
+      "status": "entered",
+      "maxLevel": 5,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "medic-heal-mastery",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "上限HP割合",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "other",
+          "description": "キャンプでのみ使える。味方全体の HP を最大 HP の一定割合まで回復する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 50
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 75
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 100
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 100
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 100
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "リマスター版の値（atwiki。最大Lv5、消費TP 3/3/3/2/1。DS版は Lv10 まで 25%〜40%）"
+    },
+    {
+      "id": "medic-logging",
+      "jobId": "medic",
+      "name": "伐採",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "logging",
+          "description": "探索用。伐採ポイントで伐採できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/119.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると伐採の成功率が上がり、1日にできる回数が2増える（atwiki）"
+    }
+  ]
+}

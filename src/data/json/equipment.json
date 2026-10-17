@@ -1,0 +1,2057 @@
+{
+  "items": [
+    {
+      "id": "sword-1",
+      "name": "ナイフ",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 6,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-2",
+      "name": "スクラマサクス",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 8,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-3",
+      "name": "ファングダガー",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 9,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-4",
+      "name": "ショートソード",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 15,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-5",
+      "name": "ボアスピアソード",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 29,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 3
+      }
+    },
+    {
+      "id": "sword-6",
+      "name": "ブロードソード",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 34,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-7",
+      "name": "レイテルパラッシュ",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 45,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-8",
+      "name": "シャムシール",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 63,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-9",
+      "name": "ヴィーキングソード",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 57,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 5,
+        "vit": 2
+      }
+    },
+    {
+      "id": "sword-10",
+      "name": "クレイモア",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 78,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-11",
+      "name": "カッツバルゲル",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 106,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-12",
+      "name": "イクスキューショナー",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 97,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 6,
+        "tec": 4
+      }
+    },
+    {
+      "id": "sword-13",
+      "name": "ダマスカスブレード",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 125,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-14",
+      "name": "ラストエストック",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 151,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-15",
+      "name": "クリシュマルド",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 139,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 8,
+        "agi": 5
+      }
+    },
+    {
+      "id": "sword-16",
+      "name": "バスタードソード",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 167,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "sword-17",
+      "name": "フランベルジュ",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 182,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 13
+      }
+    },
+    {
+      "id": "sword-18",
+      "name": "真龍の剣",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 250,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 20,
+        "tec": 20,
+        "vit": 20,
+        "agi": 20,
+        "luc": 20
+      },
+      "notes": "「全能力+20」を STR・TEC・VIT・AGI・LUC の各+20 と解釈（HP・TP を含むかは未確認）"
+    },
+    {
+      "id": "sword-19",
+      "name": "ドヴェルグの魔剣",
+      "slot": "weapon",
+      "weaponType": "sword",
+      "atk": 200,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 14,
+        "agi": 9
+      }
+    },
+    {
+      "id": "staff-1",
+      "name": "ワンド",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 3,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "staff-2",
+      "name": "スタッフ",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 3,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "tec": 1
+      }
+    },
+    {
+      "id": "staff-3",
+      "name": "ボーンステッキ",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 5,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "staff-4",
+      "name": "ボーンメイス",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 15,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "hp": 7
+      }
+    },
+    {
+      "id": "staff-5",
+      "name": "フェザースタッフ",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 22,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "tec": 2
+      }
+    },
+    {
+      "id": "staff-6",
+      "name": "ボーンフレイル",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 47,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "hp": 11
+      }
+    },
+    {
+      "id": "staff-7",
+      "name": "ジュエルスタッフ",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 53,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "tec": 4
+      }
+    },
+    {
+      "id": "staff-8",
+      "name": "バトルメイス",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 70,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "hp": 15
+      }
+    },
+    {
+      "id": "staff-9",
+      "name": "幸運の杖",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 78,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "luc": 5
+      }
+    },
+    {
+      "id": "staff-10",
+      "name": "モルゲンステルン",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 99,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "hp": 19
+      }
+    },
+    {
+      "id": "staff-11",
+      "name": "クリスタルロッド",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 109,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "tec": 10
+      }
+    },
+    {
+      "id": "staff-12",
+      "name": "ウォーハンマー",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 131,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "hp": 22
+      }
+    },
+    {
+      "id": "staff-13",
+      "name": "賢者の杖",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 150,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "tec": 20,
+        "tp": 30
+      }
+    },
+    {
+      "id": "staff-14",
+      "name": "アルカナワンド",
+      "slot": "weapon",
+      "weaponType": "staff",
+      "atk": 100,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "bard",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "tec": 15
+      }
+    },
+    {
+      "id": "axe-1",
+      "name": "ハチェット",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 9,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-2",
+      "name": "ボーンハチェット",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 11,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-3",
+      "name": "ハンドアックス",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 18,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-4",
+      "name": "セルティス",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 32,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-5",
+      "name": "ブロードアックス",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 44,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-6",
+      "name": "バトルアックス",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 58,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-7",
+      "name": "ビリオン",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 77,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 3
+      }
+    },
+    {
+      "id": "axe-8",
+      "name": "タバール",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 86,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-9",
+      "name": "グレードアックス",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 97,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-10",
+      "name": "バルディッシュ",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 104,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 6
+      }
+    },
+    {
+      "id": "axe-11",
+      "name": "ハルバード",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 116,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-12",
+      "name": "ロックブレイカー",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 151,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-13",
+      "name": "リトルラビリス",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 162,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 9
+      }
+    },
+    {
+      "id": "axe-14",
+      "name": "フランシスカ",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 179,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-15",
+      "name": "ブージ",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 198,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "axe-16",
+      "name": "ファッシアクス",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 207,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 11
+      }
+    },
+    {
+      "id": "axe-17",
+      "name": "星砕きの戦斧",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 240,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 14
+      }
+    },
+    {
+      "id": "axe-18",
+      "name": "壊炎の戦斧",
+      "slot": "weapon",
+      "weaponType": "axe",
+      "atk": 200,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "element": "fire",
+      "bonuses": {
+        "str": 9
+      },
+      "notes": "斬＋属性の複合属性（atwiki 備考）"
+    },
+    {
+      "id": "katana-1",
+      "name": "脇差",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 20,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "katana-2",
+      "name": "打刀",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 55,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "katana-3",
+      "name": "大太刀",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 90,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "katana-4",
+      "name": "キシドーブレード",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 119,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "katana-5",
+      "name": "モノホシ竿",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 149,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "katana-6",
+      "name": "斬魔刀",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 170,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "katana-7",
+      "name": "九字乃定",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 209,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "katana-8",
+      "name": "八葉七福",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 215,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "luc": 15
+      }
+    },
+    {
+      "id": "katana-9",
+      "name": "天羽々斬",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 240,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 15
+      }
+    },
+    {
+      "id": "katana-10",
+      "name": "氷雨丸",
+      "slot": "weapon",
+      "weaponType": "katana",
+      "atk": 229,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "element": "ice",
+      "notes": "斬＋属性の複合属性（atwiki 備考）"
+    },
+    {
+      "id": "bow-1",
+      "name": "ウッドボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 7,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-2",
+      "name": "エナメルボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 9,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-3",
+      "name": "ショートボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 15,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-4",
+      "name": "獣の大弓",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 24,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 2,
+        "tec": 1
+      }
+    },
+    {
+      "id": "bow-5",
+      "name": "ハードスリング",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 30,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-6",
+      "name": "ロングボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 39,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-7",
+      "name": "ヒンディ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 49,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "tec": 4
+      }
+    },
+    {
+      "id": "bow-8",
+      "name": "セルフボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 59,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-9",
+      "name": "ハンティングボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 75,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-10",
+      "name": "コンポジットボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 88,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 5,
+        "tec": 4
+      }
+    },
+    {
+      "id": "bow-11",
+      "name": "ラップドボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 97,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-12",
+      "name": "星天の長弓",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 111,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-13",
+      "name": "滋藤弓",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 123,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 8
+      }
+    },
+    {
+      "id": "bow-14",
+      "name": "ウォーボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 140,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-15",
+      "name": "アルバレスト",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 161,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "bow-16",
+      "name": "ガストラフェテース",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 181,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 7,
+        "tec": 6
+      }
+    },
+    {
+      "id": "bow-17",
+      "name": "アーチドロワー",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 220,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 12,
+        "tec": 8
+      }
+    },
+    {
+      "id": "bow-18",
+      "name": "ザミエルボウ",
+      "slot": "weapon",
+      "weaponType": "bow",
+      "atk": 202,
+      "jobs": [
+        "ranger",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "agi": 15
+      }
+    },
+    {
+      "id": "whip-1",
+      "name": "ライトウィップ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 7,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-2",
+      "name": "ファングウィップ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 10,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-3",
+      "name": "レザーウィップ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 16,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-4",
+      "name": "イバラの鞭",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 28,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 1
+      }
+    },
+    {
+      "id": "whip-5",
+      "name": "ネイルウィップ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 38,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-6",
+      "name": "エッジウィップ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 49,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-7",
+      "name": "パープルチェイン",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 57,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 4
+      }
+    },
+    {
+      "id": "whip-8",
+      "name": "ラバーウィップ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 70,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-9",
+      "name": "ワインドウィップ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 79,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-10",
+      "name": "切り裂き鞭",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 94,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 6,
+        "agi": 3
+      }
+    },
+    {
+      "id": "whip-11",
+      "name": "ハートシューター",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 103,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-12",
+      "name": "九節根",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 115,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-13",
+      "name": "クイーンズナイン",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 125,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 8,
+        "agi": 6
+      },
+      "notes": "ゲーム内表記は TEC+6だが 実際はAGI+6"
+    },
+    {
+      "id": "whip-14",
+      "name": "クヌート",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 136,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-15",
+      "name": "死者の鞭",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 157,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "whip-16",
+      "name": "ヘブンクラッパー",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 175,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 10
+      }
+    },
+    {
+      "id": "whip-17",
+      "name": "アルルーナウィップ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 195,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 13,
+        "tec": 9
+      }
+    },
+    {
+      "id": "whip-18",
+      "name": "ライトニングウィップ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 200,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "element": "volt",
+      "bonuses": {
+        "str": 11
+      },
+      "notes": "斬＋属性の複合属性（atwiki 備考）"
+    },
+    {
+      "id": "whip-19",
+      "name": "クイーンズボンテージ",
+      "slot": "weapon",
+      "weaponType": "whip",
+      "atk": 180,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "bonuses": {
+        "str": 7
+      },
+      "notes": "特性「BOOST+15」（BOOST ゲージ関係。計算エンジンでは未使用）"
+    }
+  ]
+}

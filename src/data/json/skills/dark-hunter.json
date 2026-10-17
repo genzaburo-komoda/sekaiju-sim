@@ -1,0 +1,3097 @@
+{
+  "jobId": "dark-hunter",
+  "skills": [
+    {
+      "id": "dark-hunter-hp-boost",
+      "jobId": "dark-hunter",
+      "name": "HPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大HP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxHp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 130%（atwiki）"
+    },
+    {
+      "id": "dark-hunter-tp-boost",
+      "jobId": "dark-hunter",
+      "name": "TPブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "最大TP倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "maxTp",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 114
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 116
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 128
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 130
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 132
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 134
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 136
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 150
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で 150%（atwiki）"
+    },
+    {
+      "id": "dark-hunter-atk-boost",
+      "jobId": "dark-hunter",
+      "name": "ATKブースト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "STR倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "str",
+          "param": "rate"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-whip-mastery",
+      "jobId": "dark-hunter",
+      "name": "鞭マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "武器攻撃力",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "weaponAtk",
+          "param": "rate",
+          "weapon": "whip"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-sword-mastery",
+      "jobId": "dark-hunter",
+      "name": "剣マスタリー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "武器攻撃力",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "passive-stat",
+          "stat": "weaponAtk",
+          "param": "rate",
+          "weapon": "sword"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "rate": 110
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "rate": 111
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "rate": 112
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "rate": 113
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "rate": 119
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "rate": 120
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "rate": 121
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "rate": 122
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "rate": 123
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "rate": 130
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-boost-up",
+      "jobId": "dark-hunter",
+      "name": "ブーストアップ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-atk-boost",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "ブースト判定値(リマスター版)",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "BOOST ゲージの増え方が大きくなる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 1
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 1
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 2
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 2
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 3
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 3
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 4
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 4
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 5
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 6
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv9 と Lv10 で値は同じ（atwiki）"
+    },
+    {
+      "id": "dark-hunter-rage",
+      "jobId": "dark-hunter",
+      "name": "憤怒の力",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "passive",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-atk-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "STR倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "条件HP割合",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "自分の HP が少ないほど攻撃力が上がる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {
+            "p1": 110,
+            "p2": 30
+          }
+        },
+        {
+          "lv": 2,
+          "values": {
+            "p1": 115,
+            "p2": 30
+          }
+        },
+        {
+          "lv": 3,
+          "values": {
+            "p1": 120,
+            "p2": 30
+          }
+        },
+        {
+          "lv": 4,
+          "values": {
+            "p1": 125,
+            "p2": 30
+          }
+        },
+        {
+          "lv": 5,
+          "values": {
+            "p1": 130,
+            "p2": 30
+          }
+        },
+        {
+          "lv": 6,
+          "values": {
+            "p1": 130,
+            "p2": 34
+          }
+        },
+        {
+          "lv": 7,
+          "values": {
+            "p1": 130,
+            "p2": 38
+          }
+        },
+        {
+          "lv": 8,
+          "values": {
+            "p1": 130,
+            "p2": 42
+          }
+        },
+        {
+          "lv": 9,
+          "values": {
+            "p1": 130,
+            "p2": 46
+          }
+        },
+        {
+          "lv": 10,
+          "values": {
+            "p1": 130,
+            "p2": 50
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/1214.html",
+          "note": "Lv6 以降も攻撃力ボーナスが下がらない（リマスター版の変更）",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "リマスター版では Lv6 以降も STR 倍率が下がらない（atwiki）。Lv6〜10 は Lv5 と同じ 130% と推定して入力"
+    },
+    {
+      "id": "dark-hunter-shadow-entry",
+      "jobId": "dark-hunter",
+      "name": "シャドウエントリ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "leg",
+      "speed": {
+        "kind": "agi",
+        "factor": 1.1,
+        "boostFactor": 1.3
+      },
+      "boostable": true,
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-tp-boost",
+          "level": 3
+        }
+      ],
+      "params": [],
+      "effects": [
+        {
+          "type": "other",
+          "description": "自分が敵に狙われにくくなる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "tp": 2,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "tp": 3,
+          "values": {}
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 12,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 13,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 14,
+          "tp": 3,
+          "values": {}
+        },
+        {
+          "lv": 15,
+          "tp": 3,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "効果がかなり小さいとされる（atwiki）"
+    },
+    {
+      "id": "dark-hunter-anaconda",
+      "jobId": "dark-hunter",
+      "name": "アナコンダ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "whip"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-whip-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "poison",
+          "label": "毒判定値",
+          "unit": "number"
+        },
+        {
+          "id": "poisonDmg",
+          "label": "毒ダメージ",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "ailment",
+          "ailment": "poison",
+          "target": "enemy-single",
+          "chanceParam": "poison",
+          "damageParam": "poisonDmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 130,
+            "poison": 50,
+            "poisonDmg": 11
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 135,
+            "poison": 51,
+            "poisonDmg": 17
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 140,
+            "poison": 52,
+            "poisonDmg": 23
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 145,
+            "poison": 53,
+            "poisonDmg": 29
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 150,
+            "poison": 59,
+            "poisonDmg": 39
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 155,
+            "poison": 60,
+            "poisonDmg": 45
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 160,
+            "poison": 61,
+            "poisonDmg": 51
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 165,
+            "poison": 62,
+            "poisonDmg": 57
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 170,
+            "poison": 63,
+            "poisonDmg": 63
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 180,
+            "poison": 70,
+            "poisonDmg": 77
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 185,
+            "poison": 71,
+            "poisonDmg": 79
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 190,
+            "poison": 72,
+            "poisonDmg": 81
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 195,
+            "poison": 73,
+            "poisonDmg": 83
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 200,
+            "poison": 74,
+            "poisonDmg": 85
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 210,
+            "poison": 82,
+            "poisonDmg": 103
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-head-bondage",
+      "jobId": "dark-hunter",
+      "name": "ヘッドボンデージ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "whip"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-whip-mastery",
+          "level": 2
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "bind",
+          "label": "封じ判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "bind",
+          "bind": "head",
+          "target": "enemy-single",
+          "chanceParam": "bind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "dmg": 130,
+            "bind": 35
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "dmg": 135,
+            "bind": 36
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "dmg": 140,
+            "bind": 38
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "dmg": 145,
+            "bind": 41
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "dmg": 150,
+            "bind": 44
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "dmg": 155,
+            "bind": 45
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "dmg": 160,
+            "bind": 46
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "dmg": 165,
+            "bind": 47
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "dmg": 170,
+            "bind": 48
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "dmg": 180,
+            "bind": 55
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "dmg": 185,
+            "bind": 56
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "dmg": 190,
+            "bind": 57
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "dmg": 195,
+            "bind": 58
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "dmg": 200,
+            "bind": 59
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "dmg": 210,
+            "bind": 67
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-leg-bondage",
+      "jobId": "dark-hunter",
+      "name": "レッグボンデージ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "whip"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-whip-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "bind",
+          "label": "封じ判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "bind",
+          "bind": "leg",
+          "target": "enemy-single",
+          "chanceParam": "bind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "dmg": 130,
+            "bind": 35
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "dmg": 135,
+            "bind": 36
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "dmg": 140,
+            "bind": 38
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "dmg": 145,
+            "bind": 41
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "dmg": 150,
+            "bind": 44
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "dmg": 155,
+            "bind": 45
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "dmg": 160,
+            "bind": 46
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "dmg": 165,
+            "bind": 47
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "dmg": 170,
+            "bind": 48
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "dmg": 180,
+            "bind": 55
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "dmg": 185,
+            "bind": 56
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "dmg": 190,
+            "bind": 57
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "dmg": 195,
+            "bind": 58
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "dmg": 200,
+            "bind": 59
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "dmg": 210,
+            "bind": 67
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-arm-bondage",
+      "jobId": "dark-hunter",
+      "name": "アームボンデージ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "whip"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-whip-mastery",
+          "level": 4
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "bind",
+          "label": "封じ判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "bind",
+          "bind": "arm",
+          "target": "enemy-single",
+          "chanceParam": "bind"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "dmg": 130,
+            "bind": 35
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "dmg": 135,
+            "bind": 36
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "dmg": 140,
+            "bind": 38
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "dmg": 145,
+            "bind": 41
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "dmg": 150,
+            "bind": 44
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "dmg": 155,
+            "bind": 45
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "dmg": 160,
+            "bind": 46
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "dmg": 165,
+            "bind": 47
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "dmg": 170,
+            "bind": 48
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "dmg": 180,
+            "bind": 55
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "dmg": 185,
+            "bind": 56
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "dmg": 190,
+            "bind": 57
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "dmg": 195,
+            "bind": 58
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "dmg": 200,
+            "bind": 59
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "dmg": 210,
+            "bind": 67
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-ecstasy",
+      "jobId": "dark-hunter",
+      "name": "エクスタシー",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "weapons": [
+        "whip"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-whip-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "dark-hunter-atk-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "slash",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "dmg": 500
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 9,
+          "values": {
+            "dmg": 510
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {
+            "dmg": 520
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 11,
+          "values": {
+            "dmg": 530
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 12,
+          "values": {
+            "dmg": 590
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 12,
+          "values": {
+            "dmg": 600
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 12,
+          "values": {
+            "dmg": 610
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 12,
+          "values": {
+            "dmg": 620
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 12,
+          "values": {
+            "dmg": 630
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 12,
+          "values": {
+            "dmg": 700
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 12,
+          "values": {
+            "dmg": 710
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 12,
+          "values": {
+            "dmg": 720
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 12,
+          "values": {
+            "dmg": 730
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 12,
+          "values": {
+            "dmg": 740
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 12,
+          "values": {
+            "dmg": 820
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "頭・腕・脚の3か所を封じていないとダメージが激減する（計算エンジンでは封じ済みとして扱う）"
+    },
+    {
+      "id": "dark-hunter-the-end",
+      "jobId": "dark-hunter",
+      "name": "ジエンド",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "weapons": [
+        "whip"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-whip-mastery",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "条件HP割合",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "鞭が必要な斬攻撃。HP の少ない敵を高確率で即死させ、HP を吸収する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "p1": 5
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "p1": 6
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "p1": 7
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "p1": 8
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "p1": 14
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "p1": 15
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "p1": 16
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "p1": 17
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "p1": 18
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "p1": 25
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "p1": 26
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "p1": 27
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "p1": 28
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "p1": 29
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "p1": 30
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で発動条件が敵の HP 25% 以下（atwiki）"
+    },
+    {
+      "id": "dark-hunter-hypno-bite",
+      "jobId": "dark-hunter",
+      "name": "ヒュプノバイト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-sword-mastery",
+          "level": 1
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "sleep",
+          "label": "睡眠判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "ailment",
+          "ailment": "sleep",
+          "target": "enemy-single",
+          "chanceParam": "sleep"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "dmg": 140,
+            "sleep": 40
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "dmg": 145,
+            "sleep": 41
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "dmg": 150,
+            "sleep": 42
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "dmg": 155,
+            "sleep": 43
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "dmg": 165,
+            "sleep": 49
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "dmg": 167,
+            "sleep": 50
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "dmg": 170,
+            "sleep": 51
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "dmg": 173,
+            "sleep": 52
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "dmg": 176,
+            "sleep": 53
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "dmg": 190,
+            "sleep": 60
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "dmg": 192,
+            "sleep": 61
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "dmg": 194,
+            "sleep": 62
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "dmg": 196,
+            "sleep": 63
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "dmg": 198,
+            "sleep": 64
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "dmg": 216,
+            "sleep": 72
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-shock-bite",
+      "jobId": "dark-hunter",
+      "name": "ショックバイト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-sword-mastery",
+          "level": 2
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "paralysis",
+          "label": "麻痺判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "ailment",
+          "ailment": "paralysis",
+          "target": "enemy-single",
+          "chanceParam": "paralysis"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 3,
+          "values": {
+            "dmg": 140,
+            "paralysis": 40
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 3,
+          "values": {
+            "dmg": 145,
+            "paralysis": 41
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 4,
+          "values": {
+            "dmg": 150,
+            "paralysis": 42
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 4,
+          "values": {
+            "dmg": 155,
+            "paralysis": 43
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 5,
+          "values": {
+            "dmg": 165,
+            "paralysis": 49
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 5,
+          "values": {
+            "dmg": 167,
+            "paralysis": 50
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 5,
+          "values": {
+            "dmg": 170,
+            "paralysis": 51
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 5,
+          "values": {
+            "dmg": 173,
+            "paralysis": 52
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 5,
+          "values": {
+            "dmg": 176,
+            "paralysis": 53
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 5,
+          "values": {
+            "dmg": 190,
+            "paralysis": 60
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 5,
+          "values": {
+            "dmg": 192,
+            "paralysis": 61
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 5,
+          "values": {
+            "dmg": 194,
+            "paralysis": 62
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 5,
+          "values": {
+            "dmg": 196,
+            "paralysis": 63
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 5,
+          "values": {
+            "dmg": 198,
+            "paralysis": 64
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 5,
+          "values": {
+            "dmg": 216,
+            "paralysis": 72
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-mirage-bite",
+      "jobId": "dark-hunter",
+      "name": "ミラージュバイト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-sword-mastery",
+          "level": 3
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "confusion",
+          "label": "混乱判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "ailment",
+          "ailment": "confusion",
+          "target": "enemy-single",
+          "chanceParam": "confusion"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 140,
+            "confusion": 35
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 145,
+            "confusion": 36
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 150,
+            "confusion": 38
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 155,
+            "confusion": 41
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 165,
+            "confusion": 44
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 167,
+            "confusion": 45
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 170,
+            "confusion": 46
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 173,
+            "confusion": 47
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 176,
+            "confusion": 48
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 190,
+            "confusion": 55
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 192,
+            "confusion": 56
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 194,
+            "confusion": 57
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 196,
+            "confusion": 58
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 198,
+            "confusion": 59
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 216,
+            "confusion": 67
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-drain-bite",
+      "jobId": "dark-hunter",
+      "name": "ドレインバイト",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.8,
+        "boostFactor": 1
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-sword-mastery",
+          "level": 4
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "HP吸収率",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "other",
+          "description": "与えたダメージの分、自分の HP を回復する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 4,
+          "values": {
+            "dmg": 140,
+            "p2": 50
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 4,
+          "values": {
+            "dmg": 145,
+            "p2": 52
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 5,
+          "values": {
+            "dmg": 150,
+            "p2": 54
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 5,
+          "values": {
+            "dmg": 155,
+            "p2": 56
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 6,
+          "values": {
+            "dmg": 165,
+            "p2": 68
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 6,
+          "values": {
+            "dmg": 167,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 6,
+          "values": {
+            "dmg": 170,
+            "p2": 72
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 6,
+          "values": {
+            "dmg": 173,
+            "p2": 74
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 6,
+          "values": {
+            "dmg": 176,
+            "p2": 76
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 6,
+          "values": {
+            "dmg": 190,
+            "p2": 100
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 6,
+          "values": {
+            "dmg": 192,
+            "p2": 102
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 6,
+          "values": {
+            "dmg": 194,
+            "p2": 104
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 6,
+          "values": {
+            "dmg": 196,
+            "p2": 106
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 6,
+          "values": {
+            "dmg": 198,
+            "p2": 108
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 6,
+          "values": {
+            "dmg": 216,
+            "p2": 134
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "Lv10 で吸収率 100%（atwiki）"
+    },
+    {
+      "id": "dark-hunter-trapping",
+      "jobId": "dark-hunter",
+      "name": "トラッピング",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "fastest"
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-sword-mastery",
+          "level": 5
+        },
+        {
+          "skillId": "dark-hunter-atk-boost",
+          "level": 5
+        }
+      ],
+      "params": [
+        {
+          "id": "p1",
+          "label": "dam倍率(自身)",
+          "unit": "percent"
+        },
+        {
+          "id": "p2",
+          "label": "dam倍率(左右)",
+          "unit": "percent"
+        }
+      ],
+      "effects": [
+        {
+          "type": "other",
+          "description": "剣が必要。自分と左右の味方を狙った敵に反撃する"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 8,
+          "values": {
+            "p1": 200,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 9,
+          "values": {
+            "p1": 210,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 10,
+          "values": {
+            "p1": 220,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 11,
+          "values": {
+            "p1": 230,
+            "p2": 70
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 12,
+          "values": {
+            "p1": 250,
+            "p2": 100
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 12,
+          "values": {
+            "p1": 260,
+            "p2": 110
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 12,
+          "values": {
+            "p1": 270,
+            "p2": 120
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 12,
+          "values": {
+            "p1": 280,
+            "p2": 130
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 12,
+          "values": {
+            "p1": 290,
+            "p2": 140
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 12,
+          "values": {
+            "p1": 320,
+            "p2": 160
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 12,
+          "values": {
+            "p1": 330,
+            "p2": 170
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 12,
+          "values": {
+            "p1": 340,
+            "p2": 180
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 12,
+          "values": {
+            "p1": 350,
+            "p2": 190
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 12,
+          "values": {
+            "p1": 360,
+            "p2": 200
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 12,
+          "values": {
+            "p1": 400,
+            "p2": 230
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-catastrophe",
+      "jobId": "dark-hunter",
+      "name": "カタストロフ",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "active",
+      "bodyPart": "arm",
+      "speed": {
+        "kind": "agi",
+        "factor": 0.2,
+        "boostFactor": 0.4
+      },
+      "boostable": true,
+      "weapons": [
+        "sword"
+      ],
+      "prerequisites": [
+        {
+          "skillId": "dark-hunter-sword-mastery",
+          "level": 10
+        }
+      ],
+      "params": [
+        {
+          "id": "dmg",
+          "label": "ダメージ倍率",
+          "unit": "percent"
+        },
+        {
+          "id": "petrify",
+          "label": "石化判定値",
+          "unit": "number"
+        }
+      ],
+      "effects": [
+        {
+          "type": "damage",
+          "attack": "str",
+          "element": "pierce",
+          "target": "enemy-single",
+          "powerParam": "dmg"
+        },
+        {
+          "type": "ailment",
+          "ailment": "petrify",
+          "target": "enemy-single",
+          "chanceParam": "petrify"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "tp": 6,
+          "values": {
+            "dmg": 140,
+            "petrify": 40
+          }
+        },
+        {
+          "lv": 2,
+          "tp": 6,
+          "values": {
+            "dmg": 145,
+            "petrify": 41
+          }
+        },
+        {
+          "lv": 3,
+          "tp": 7,
+          "values": {
+            "dmg": 150,
+            "petrify": 42
+          }
+        },
+        {
+          "lv": 4,
+          "tp": 7,
+          "values": {
+            "dmg": 155,
+            "petrify": 43
+          }
+        },
+        {
+          "lv": 5,
+          "tp": 8,
+          "values": {
+            "dmg": 165,
+            "petrify": 49
+          }
+        },
+        {
+          "lv": 6,
+          "tp": 8,
+          "values": {
+            "dmg": 167,
+            "petrify": 50
+          }
+        },
+        {
+          "lv": 7,
+          "tp": 8,
+          "values": {
+            "dmg": 170,
+            "petrify": 51
+          }
+        },
+        {
+          "lv": 8,
+          "tp": 8,
+          "values": {
+            "dmg": 173,
+            "petrify": 52
+          }
+        },
+        {
+          "lv": 9,
+          "tp": 8,
+          "values": {
+            "dmg": 176,
+            "petrify": 53
+          }
+        },
+        {
+          "lv": 10,
+          "tp": 8,
+          "values": {
+            "dmg": 190,
+            "petrify": 60
+          }
+        }
+      ],
+      "boostLevels": [
+        {
+          "lv": 11,
+          "tp": 8,
+          "values": {
+            "dmg": 192,
+            "petrify": 61
+          }
+        },
+        {
+          "lv": 12,
+          "tp": 8,
+          "values": {
+            "dmg": 194,
+            "petrify": 62
+          }
+        },
+        {
+          "lv": 13,
+          "tp": 8,
+          "values": {
+            "dmg": 196,
+            "petrify": 63
+          }
+        },
+        {
+          "lv": 14,
+          "tp": 8,
+          "values": {
+            "dmg": 198,
+            "petrify": 64
+          }
+        },
+        {
+          "lv": 15,
+          "tp": 8,
+          "values": {
+            "dmg": 216,
+            "petrify": 72
+          }
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dark-hunter-gathering",
+      "jobId": "dark-hunter",
+      "name": "採取",
+      "status": "entered",
+      "maxLevel": 10,
+      "category": "exploration",
+      "bodyPart": "none",
+      "speed": {
+        "kind": "none"
+      },
+      "boostable": false,
+      "prerequisites": [],
+      "params": [],
+      "effects": [
+        {
+          "type": "exploration",
+          "kind": "gathering",
+          "description": "探索用。採取ポイントで採取できる"
+        }
+      ],
+      "levels": [
+        {
+          "lv": 1,
+          "values": {}
+        },
+        {
+          "lv": 2,
+          "values": {}
+        },
+        {
+          "lv": 3,
+          "values": {}
+        },
+        {
+          "lv": 4,
+          "values": {}
+        },
+        {
+          "lv": 5,
+          "values": {}
+        },
+        {
+          "lv": 6,
+          "values": {}
+        },
+        {
+          "lv": 7,
+          "values": {}
+        },
+        {
+          "lv": 8,
+          "values": {}
+        },
+        {
+          "lv": 9,
+          "values": {}
+        },
+        {
+          "lv": 10,
+          "values": {}
+        }
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/118.html",
+          "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
+          "checkedAt": "2026-10-17"
+        }
+      ],
+      "notes": "レベルを上げると採取の成功率が上がり、1日にできる回数が2増える（atwiki）"
+    }
+  ]
+}
