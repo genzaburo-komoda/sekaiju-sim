@@ -1196,7 +1196,13 @@
           "modifiers": [
             {
               "stat": "physDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "resistance",
+              "elements": [
+                "slash",
+                "bash",
+                "pierce"
+              ]
             }
           ],
           "durationTurns": 5
@@ -1378,7 +1384,13 @@
           "modifiers": [
             {
               "stat": "physDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "resistance",
+              "elements": [
+                "slash",
+                "bash",
+                "pierce"
+              ]
             }
           ],
           "durationTurns": 5
@@ -1555,7 +1567,9 @@
               "stat": "damageTaken",
               "param": "m1"
             }
-          ]
+          ],
+          "row": "front",
+          "oneShot": true
         }
       ],
       "levels": [
@@ -1715,7 +1729,9 @@
               "stat": "damageTaken",
               "param": "m1"
             }
-          ]
+          ],
+          "row": "back",
+          "oneShot": true
         }
       ],
       "levels": [
@@ -1882,9 +1898,14 @@
           "modifiers": [
             {
               "stat": "elemDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "resistance",
+              "elements": [
+                "fire"
+              ]
             }
-          ]
+          ],
+          "oneShot": true
         }
       ],
       "levels": [
@@ -2066,9 +2087,14 @@
           "modifiers": [
             {
               "stat": "elemDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "resistance",
+              "elements": [
+                "volt"
+              ]
             }
-          ]
+          ],
+          "oneShot": true
         }
       ],
       "levels": [
@@ -2250,9 +2276,14 @@
           "modifiers": [
             {
               "stat": "elemDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "resistance",
+              "elements": [
+                "ice"
+              ]
             }
-          ]
+          ],
+          "oneShot": true
         }
       ],
       "levels": [

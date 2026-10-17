@@ -446,7 +446,8 @@
               "stat": "physAtk",
               "param": "m1"
             }
-          ]
+          ],
+          "untilBattleEnd": true
         }
       ],
       "levels": [
@@ -581,7 +582,8 @@
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
         }
-      ]
+      ],
+      "notes": "効果は打ち消し・上書きされない限り戦闘終了まで続く（atwiki）"
     },
     {
       "id": "bard-defense-song",
@@ -621,9 +623,11 @@
           "modifiers": [
             {
               "stat": "physDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "defense"
             }
-          ]
+          ],
+          "untilBattleEnd": true
         }
       ],
       "levels": [
@@ -758,7 +762,8 @@
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
         }
-      ]
+      ],
+      "notes": "効果は打ち消し・上書きされない限り戦闘終了まで続く（atwiki）"
     },
     {
       "id": "bard-speed-song",
@@ -800,7 +805,8 @@
               "stat": "agi",
               "param": "m1"
             }
-          ]
+          ],
+          "untilBattleEnd": true
         }
       ],
       "levels": [
@@ -935,7 +941,8 @@
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
         }
-      ]
+      ],
+      "notes": "効果は打ち消し・上書きされない限り戦闘終了まで続く（atwiki）"
     },
     {
       "id": "bard-dispel-song",
@@ -1319,7 +1326,8 @@
               "stat": "maxHp",
               "param": "m1"
             }
-          ]
+          ],
+          "untilBattleEnd": true
         }
       ],
       "levels": [
@@ -1454,7 +1462,8 @@
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
         }
-      ]
+      ],
+      "notes": "効果は打ち消し・上書きされない限り戦闘終了まで続く（atwiki）"
     },
     {
       "id": "bard-fire-overture",
@@ -1964,10 +1973,14 @@
           "modifiers": [
             {
               "stat": "elemDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "resistance",
+              "elements": [
+                "fire"
+              ]
             }
           ],
-          "durationTurns": 5
+          "untilBattleEnd": true
         }
       ],
       "levels": [
@@ -2117,7 +2130,8 @@
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
         }
-      ]
+      ],
+      "notes": "効果は打ち消し・上書きされない限り戦闘終了まで続く（atwiki）。敵の耐性を下げる効果（5ターン）は計算エンジンではまだ扱わない"
     },
     {
       "id": "bard-ice-fantasia",
@@ -2162,10 +2176,14 @@
           "modifiers": [
             {
               "stat": "elemDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "resistance",
+              "elements": [
+                "ice"
+              ]
             }
           ],
-          "durationTurns": 5
+          "untilBattleEnd": true
         }
       ],
       "levels": [
@@ -2315,7 +2333,8 @@
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
         }
-      ]
+      ],
+      "notes": "効果は打ち消し・上書きされない限り戦闘終了まで続く（atwiki）。敵の耐性を下げる効果（5ターン）は計算エンジンではまだ扱わない"
     },
     {
       "id": "bard-volt-fantasia",
@@ -2360,10 +2379,14 @@
           "modifiers": [
             {
               "stat": "elemDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "resistance",
+              "elements": [
+                "volt"
+              ]
             }
           ],
-          "durationTurns": 5
+          "untilBattleEnd": true
         }
       ],
       "levels": [
@@ -2513,7 +2536,8 @@
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
         }
-      ]
+      ],
+      "notes": "効果は打ち消し・上書きされない限り戦闘終了まで続く（atwiki）。敵の耐性を下げる効果（5ターン）は計算エンジンではまだ扱わない"
     },
     {
       "id": "bard-hp-lullaby",
@@ -2556,7 +2580,8 @@
           "target": "ally-all",
           "scaling": "max-hp-ratio",
           "amountParam": "heal",
-          "timing": "per-turn"
+          "timing": "per-turn",
+          "untilBattleEnd": true
         }
       ],
       "levels": [
@@ -2691,7 +2716,8 @@
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
         }
-      ]
+      ],
+      "notes": "効果は打ち消し・上書きされない限り戦闘終了まで続く（atwiki）"
     },
     {
       "id": "bard-tp-lullaby",

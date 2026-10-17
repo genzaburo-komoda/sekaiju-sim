@@ -2262,7 +2262,8 @@
           "modifiers": [
             {
               "stat": "elemDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "resistance"
             }
           ],
           "durationTurns": 5
@@ -2615,7 +2616,8 @@
           "target": "ally-single",
           "scaling": "max-hp-ratio",
           "amountParam": "heal",
-          "timing": "per-turn"
+          "timing": "per-turn",
+          "durationTurns": 5
         }
       ],
       "levels": [
@@ -2735,7 +2737,8 @@
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
         }
-      ]
+      ],
+      "notes": "5ターンの間（使ったターンを含む）、ターン終了時に回復する（atwiki）"
     },
     {
       "id": "medic-heavy-strike",

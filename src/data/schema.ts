@@ -230,13 +230,38 @@ export const SkillEffect = z.discriminatedUnion('type', [
     timing: z.enum(['instant', 'per-turn']).optional(),
     /** 戦闘不能の味方を復帰させる（リザレクション）。回復量は復帰時の HP */
     revive: z.boolean().optional(),
+    /** 継続回復の持続ターン数（使ったターンを含む）。untilBattleEnd なら戦闘終了まで（2026-10-17 追加、ステップ4-1） */
+    durationTurns: z.number().int().positive().optional(),
+    untilBattleEnd: z.boolean().optional(),
   }),
   z.object({ type: z.literal('cure'), target: Target, cures: z.array(z.union([Ailment, z.literal('bind-head'), z.literal('bind-arm'), z.literal('bind-leg')])) }),
   z.object({
     type: z.enum(['buff', 'debuff']),
     target: Target,
-    modifiers: z.array(z.object({ stat: ModifierStat, param: z.string() })).min(1),
+    modifiers: z
+      .array(
+        z.object({
+          stat: ModifierStat,
+          param: z.string(),
+          /**
+           * 防御の強化・弱体のかかり方（2026-10-17 追加、ステップ4-3）。
+           * defense=防御値 DEF にかける（説明が「防御力」のもの）、resistance=属性倍率にかける（説明が「耐性」のもの）。
+           * 省略したものは戦闘シミュレーションで使わない
+           */
+          appliesTo: z.enum(['defense', 'resistance']).optional(),
+          /** 効く属性（省略はすべて） */
+          elements: z.array(Element).optional(),
+        }),
+      )
+      .min(1),
+    /** 持続ターン数（使ったターンを含む）。省略で untilBattleEnd でもなければ、使ったターンだけ */
     durationTurns: z.number().int().positive().optional(),
+    /** 戦闘終了まで続く（バードの歌。2026-10-17 追加） */
+    untilBattleEnd: z.boolean().optional(),
+    /** 一列が対象のとき、どちらの列か（フロントガード・バックガード） */
+    row: z.enum(['front', 'back']).optional(),
+    /** 1回の敵の行動を軽減したら消える（フロントガード・属性ガード） */
+    oneShot: z.boolean().optional(),
   }),
   z.object({
     type: z.literal('passive-stat'),

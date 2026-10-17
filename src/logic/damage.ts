@@ -63,6 +63,8 @@ export interface AttackInput {
   /** 式セット（レベル差補正の表と難易度補正） */
   formulas: FormulaSet
   difficulty: 'expert' | 'basic' | 'picnic'
+  /** 誰の攻撃か。enemy なら敵から味方への攻撃（レベル差補正は敵の列、難易度は「被ダメージ」）。省略は party */
+  direction?: 'party' | 'enemy'
 }
 
 /** 計算根拠の1行（仕様書 B4） */
@@ -116,15 +118,15 @@ function distRange(dist: Map<number, number>): [number, number] {
   return [Math.min(...vs), Math.max(...vs)]
 }
 
-/** レベル差補正（%）。表は −20〜+20 で、外側は端の値 */
-export function levelCorrection(formulas: FormulaSet, attackerLevel: number, defenderLevel: number): { diff: number; rate: number } {
+/** レベル差補正（%）。表は −20〜+20 で、外側は端の値。direction が enemy なら敵の攻撃の列 */
+export function levelCorrection(formulas: FormulaSet, attackerLevel: number, defenderLevel: number, direction: 'party' | 'enemy' = 'party'): { diff: number; rate: number } {
   const diff = attackerLevel - defenderLevel
   const clamped = Math.max(-20, Math.min(20, diff))
   const row = formulas.levelCorrection.find((r) => r.levelDiff === clamped)!
-  return { diff, rate: row.playerDealt }
+  return { diff, rate: direction === 'enemy' ? row.enemyDealt : row.playerDealt }
 }
 
-/** 味方の攻撃のダメージ */
+/** 攻撃のダメージ（味方の攻撃。direction が enemy なら敵から味方への攻撃） */
 export function calcDamage(input: AttackInput): DamageResult {
   const { attacker: a, defender: d } = input
   const steps: Step[] = []
@@ -249,7 +251,7 @@ export function calcDamage(input: AttackInput): DamageResult {
     }
 
     // ---- 6. レベル差補正 ----
-    const lc = levelCorrection(input.formulas, a.level, d.level)
+    const lc = levelCorrection(input.formulas, a.level, d.level, input.direction)
     dist = mapDist(dist, (v) => Math.floor((v * lc.rate) / 100))
     {
       const [l2, h2] = distRange(dist)
@@ -257,17 +259,20 @@ export function calcDamage(input: AttackInput): DamageResult {
         label: 'レベル差補正',
         formula: `レベル差 ${lc.diff >= 0 ? '+' : ''}${lc.diff}（Lv${a.level} − Lv${d.level}）→ × ${pct(lc.rate)}（切り捨て）`,
         value: range(l2, h2),
-        confidence: 'estimated',
-        note: 'DS版のゲームデータの表。レベル差 −10〜+11 の範囲で実測と一致（2026-10-12）',
+        ...(input.direction === 'enemy'
+          ? { confidence: 'unverified' as const, note: 'DS版のゲームデータの表（敵の攻撃の列）。実測していない' }
+          : { confidence: 'estimated' as const, note: 'DS版のゲームデータの表。レベル差 −10〜+11 の範囲で実測と一致（2026-10-12）' }),
       })
     }
 
     // ---- 7. 難易度補正 ----
-    const diffRate = input.formulas.difficulty[input.difficulty].damageDealt
+    const enemySide = input.direction === 'enemy'
+    const diffMods = input.formulas.difficulty[input.difficulty]
+    const diffRate = enemySide ? diffMods.damageTaken : diffMods.damageDealt
     if (diffRate !== 100) {
       dist = mapDist(dist, (v) => Math.floor((v * diffRate) / 100))
       const [l2, h2] = distRange(dist)
-      steps.push({ label: '難易度補正', formula: `与ダメージ × ${pct(diffRate)}（切り捨て）`, value: range(l2, h2), confidence: 'unverified', note: 'かける位置と順番は未確認' })
+      steps.push({ label: '難易度補正', formula: `${enemySide ? '被ダメージ' : '与ダメージ'} × ${pct(diffRate)}（切り捨て）`, value: range(l2, h2), confidence: 'unverified', note: 'かける位置と順番は未確認' })
     }
   }
 

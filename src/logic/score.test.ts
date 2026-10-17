@@ -39,13 +39,29 @@ describe('採点（C5）', () => {
   const hexer = make('hexer', 20)
 
   it('役割の最適構築を入力すると、メンバーも総合も 100 点（受け入れ条件）', () => {
-    const members = [optimized(sword, 'damage', 3), optimized(medic, 'heal', 3), optimized(hexer, 'ailment', 3)]
-    const r = scoreParty(members, {}, boss, settings(3))
+    const paladin = make('paladin', 20)
+    const members = [optimized(sword, 'damage', 4), optimized(medic, 'heal', 4), optimized(hexer, 'ailment', 4), optimized(paladin, 'endurance', 4)]
+    const r = scoreParty(members, {}, boss, settings(4))
     for (const x of r.members) expect(x.roleScore).toBeCloseTo(100)
     expect(r.axes.damage).toBeCloseTo(100)
     expect(r.axes.heal).toBeCloseTo(100)
     expect(r.axes.ailment).toBeCloseTo(100)
+    expect(r.axes.endurance).toBeCloseTo(100)
     expect(r.total).toBeCloseTo(100)
+  })
+
+  it('耐久：HPブースト・DEFブーストを振ると耐えられる回数が増え、後列は前列より耐える', () => {
+    const p0 = make('paladin', 20)
+    const p1 = make('paladin', 20, { skills: { 'paladin-hp-boost': 5 } })
+    const p2 = make('paladin', 20, { skills: { 'paladin-hp-boost': 5, 'paladin-def-boost': 5 } })
+    const v = (m: Member) => scoreMember(m, 'endurance', settings(1)).axes.endurance.current
+    expect(v(p1)).toBeGreaterThan(v(p0))
+    expect(v(p2)).toBeGreaterThan(v(p1))
+    expect(v({ ...p0, row: 'back' })).toBeGreaterThan(v(p0))
+    // 最適値は耐久に効くパッシブを振れるだけ振ったもの
+    const opt = memberOptimum(p0, 'endurance', settings(1))
+    expect(opt.alloc['paladin-hp-boost']).toBeGreaterThan(0)
+    expect(scoreMember({ ...p0, skills: opt.alloc }, 'endurance', settings(1)).roleScore).toBeCloseTo(100)
   })
 
   it('何も振っていないソードマンの火力は、通常攻撃 ÷ 最適値 × 100', () => {
@@ -68,8 +84,8 @@ describe('採点（C5）', () => {
     expect(r.axes.explore).toBe(100)
   })
 
-  it('耐久・支援の役割は採点に入れず、理由を出す', () => {
-    const r = scoreParty([make('paladin', 20)], {}, boss, settings(1))
+  it('支援の役割は採点に入れず、理由を出す', () => {
+    const r = scoreParty([make('bard', 20)], {}, boss, settings(1))
     expect(r.total).toBeNull()
     expect(r.reasons.some((t) => t.includes('採点に入れていません'))).toBe(true)
   })
@@ -102,7 +118,7 @@ describe('次に振るスキル（B6）', () => {
     // メディック Lv1（SP3）、何も振っていない：キュアは回復マスタリー1 が前提なので 2SP
     const m = make('medic', 1)
     const s = settings(1)
-    const optima = { damage: memberOptimum(m, 'damage', s).value, ailment: 0, heal: memberOptimum(m, 'heal', s).value }
+    const optima = { damage: memberOptimum(m, 'damage', s).value, ailment: 0, heal: memberOptimum(m, 'heal', s).value, endurance: memberOptimum(m, 'endurance', s).value }
     const list = nextSkills(m, s, optima)
     const cure = list.find((x) => x.skillId === 'medic-cure')!
     expect(cure.cost).toBe(2)
@@ -113,9 +129,9 @@ describe('次に振るスキル（B6）', () => {
 })
 
 describe('役割バランス（B8）', () => {
-  it('軸ごとにメンバーの最高点。耐久は未実装', () => {
+  it('軸ごとにメンバーの最高点', () => {
     const r = scoreParty([optimized(make('medic', 20), 'heal', 1)], {}, boss, settings(1))
     expect(r.balance.heal).toBeCloseTo(100)
-    expect(r.balance.endurance).toBeNull()
+    expect(r.balance.endurance).toBeGreaterThan(0)
   })
 })

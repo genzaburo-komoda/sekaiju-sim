@@ -31,7 +31,7 @@ type Result = ScoreAll & { key: string }
 
 const pts = (v: number | null) => (v === null ? '—' : `${Math.floor(v)}点`)
 
-/** 役割バランスのレーダーチャート（B8）。値は 0〜100、null は未実装の軸 */
+/** 役割バランスのレーダーチャート（B8）。値は 0〜100、null は点数のない軸 */
 function Radar({ values }: { values: Record<Axis, number | null> }) {
   const size = 240
   const c = size / 2
@@ -57,7 +57,7 @@ function Radar({ values }: { values: Record<Axis, number | null> }) {
               {AXIS_LABELS[a]}
             </text>
             <text x={lx} y={ly + 14} textAnchor="middle" dominantBaseline="middle" className="radar-value">
-              {values[a] === null ? '未実装' : Math.floor(values[a]!)}
+              {values[a] === null ? '—' : Math.floor(values[a]!)}
             </text>
           </g>
         )
@@ -83,7 +83,7 @@ export function ScoreResultView({ result, stale, weights, selected, axisForNext,
         {stale && <p className="danger">条件が変わりました。もう一度「採点する」を押してください。</p>}
         <p className="score-total">
           総合 <strong>{pts(result.score.total)}</strong>
-          {AXES.filter((a) => a !== 'endurance').map((a) => (
+          {AXES.map((a) => (
             <span key={a} className="damage-expected">
               {AXIS_LABELS[a]} {pts(result.score.axes[a])}
               {weights[a] > 0 ? `（重み ${weights[a]}）` : '（重み 0）'}
@@ -110,7 +110,7 @@ export function ScoreResultView({ result, stale, weights, selected, axisForNext,
                     <td key={a} className={x.role === a ? 'own-role' : undefined}>{pts(x.axes[a].score)}</td>
                   ))}
                   <td>
-                    {x.role === 'damage' || x.role === 'ailment' || x.role === 'heal' ? (
+                    {x.role !== 'support' ? (
                       x.axes[x.role].optimum.value > 0 ? (
                         <button type="button" disabled={stale} onClick={() => apply(x.member.id, x.axes[x.role as MemberAxis].optimum.alloc)}>
                           {x.axes[x.role].optimum.label} にする
@@ -227,15 +227,15 @@ export function ScorePanel({ party, selectedId, onApply }: Props) {
 
   const apply = (memberId: string, alloc: Allocation) => onApply(memberId, alloc)
   const selRole = roleOf(selected)
-  const axisForNext: MemberAxis = nextAxis ?? (selRole === 'ailment' || selRole === 'heal' ? selRole : 'damage')
+  const axisForNext: MemberAxis = nextAxis ?? (selRole === 'support' ? 'damage' : selRole)
 
   return (
     <section className="measure-panel score-panel">
       <h2>採点（仮の基準）</h2>
       <p className="note">
-        メンバーごとに役割を決め、今の振り方の評価値を「同じジョブ・レベル・武器での最適値」で割って 100 点満点にします（火力＝最大ダメージ、状態異常＝最も付けやすい状態異常の付与率、回復＝1ターンの総回復量）。
-        敵は標準敵（メンバーと同じレベル、耐性はすべて等倍、VIT は近いレベルの敵の中央値）。総合点は軸ごとの点数の重み付き平均です。
-        耐久は耐久シミュレーション（開発計画 4-3）で実装します。重み・役割・標準敵・探索の項目は仮のもので、あとで見直します。
+        メンバーごとに役割を決め、今の振り方の評価値を「同じジョブ・レベル・武器での最適値」で割って 100 点満点にします（火力＝最大ダメージ、状態異常＝最も付けやすい状態異常の付与率、回復＝1ターンの総回復量、耐久＝標準敵の通常攻撃を何回耐えられるか）。
+        敵は標準敵（メンバーと同じレベル、耐性はすべて等倍、VIT・STR・AGI は近いレベルの敵の中央値）。耐久は防具を入れていません。総合点は軸ごとの点数の重み付き平均です。
+        重み・役割・標準敵・探索の項目は仮のもので、あとで見直します。
       </p>
 
       <div className="record-fields">
@@ -262,7 +262,6 @@ export function ScorePanel({ party, selectedId, onApply }: Props) {
               min={0}
               max={100}
               value={weights[a]}
-              disabled={a === 'endurance'}
               onChange={(e) => {
                 const v = e.target.valueAsNumber
                 if (!Number.isNaN(v)) setWeights({ ...weights, [a]: Math.max(0, Math.min(100, Math.round(v))) })

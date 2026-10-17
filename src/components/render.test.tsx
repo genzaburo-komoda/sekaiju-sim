@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest'
 import { jobs } from '../data/gameData'
 import { newMember } from '../logic/party'
 import { MemberEditor } from './MemberEditor'
+import { BattlePanel } from './BattlePanel'
 import { ScorePanel, ScoreResultView } from './ScorePanel'
 import { scoreAll, WEIGHT_PRESETS } from '../logic/score'
 
@@ -35,6 +36,14 @@ describe('採点の欄の表示', () => {
     const html = renderToString(
       <ScoreResultView result={result} stale={false} weights={weights} selected={members[0]} axisForNext="damage" onAxis={() => {}} onApply={() => {}} />,
     )
-    for (const text of ['総合', '点数が低い理由', '改善案', '次に振るスキル', '役割バランス']) expect(html).toContain(text)
+    for (const text of ['総合', '点数が低い理由', '改善案', '次に振るスキル', '役割バランス', '耐久']) expect(html).toContain(text)
+  })
+})
+
+describe('戦闘シミュレーションの欄の表示', () => {
+  it('全ジョブ5人のパーティで、計画の表とターンごとの記録を表示できる', () => {
+    const members = jobs.slice(0, 5).map((j) => ({ ...newMember([], j.id), level: 30 }))
+    const html = renderToString(<BattlePanel party={{ difficulty: 'expert', members }} />)
+    for (const text of ['戦闘シミュレーション', '最小ターン数を探す', '確率分布', '耐久', '1ターン目の']) expect(html).toContain(text)
   })
 })

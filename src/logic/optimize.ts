@@ -290,7 +290,7 @@ function evaluate(
 }
 
 /** ダブルアタックの発動率（0〜1） */
-function doubleAttackChance(skills: Skill[], alloc: Allocation): number {
+export function doubleAttackChance(skills: Skill[], alloc: Allocation): number {
   let p = 0
   for (const s of skills) {
     const lv = alloc[s.id] ?? 0

@@ -119,6 +119,8 @@ export interface AttackContext {
   target: TargetSpec
   formulas: FormulaSet
   difficulty: DifficultyId
+  /** 敵の防御の強化・弱体の倍率（%）。軟身の呪言など。省略は 100 */
+  defBuffRate?: number
 }
 
 /** 攻撃の入力を組み立てる。使えない攻撃なら null */
@@ -137,7 +139,7 @@ export function buildAttackInput(c: AttackContext): { input: AttackInput; elemen
       bow: weaponType === 'bow',
     },
     atkBuffRate: c.atkBuffRate,
-    defender: { level: c.target.level, vit: c.target.vit, armorDef: 0, defBuffRate: 100 },
+    defender: { level: c.target.level, vit: c.target.vit, armorDef: 0, defBuffRate: c.defBuffRate ?? 100 },
     guarding: c.target.guarding,
     formulas: c.formulas,
     difficulty: c.difficulty,

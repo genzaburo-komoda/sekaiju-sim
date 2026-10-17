@@ -3,7 +3,8 @@
 // 点数の考え方（仕様書 6.2）：今の振り方の評価値 ÷ 同じジョブ・同じレベル（・同じ武器）での最適値 × 100。
 // - 火力＝C2（1ターンの総ダメージの期待値）、状態異常＝C3（最も付けやすい状態異常の付与率）、回復＝C4（1ターンの総回復量）
 // - 探索＝探索スキルのチェックリスト（パーティ全体で1つ）
-// - 耐久は B9（ステップ4-3）が前提なので、それまでは点数を出さない（2026-10-17 本人決定）
+// - 耐久＝標準敵の通常攻撃を何回耐えられるか（最大HP ÷ 1回の期待ダメージ。命中率・クリティカル込み）。
+//   B9（耐久シミュレーション）を構築ごとに何千回も回すと重いので、1対1・1回あたりの期待値に置きかえた（2026-10-17、Claude 決定）
 //
 // D13（採点の重み・必要な探索スキル・標準敵）は Claude の案で仮に決めたもの（2026-10-17 本人了承）。あとで本人が見て直す。
 // - メンバーごとに「役割」（火力・状態異常・回復・耐久・支援）を決め、その役割の点数をそのメンバーの点数にする。
@@ -16,18 +17,19 @@ import { currentMaxDamage, optimizeMaxDamage } from './optimize'
 import type { DifficultyId, Member, Party } from './party'
 import { DEFAULT_TARGET, type TargetSettings } from './predict'
 import { retireSpBonus } from './retire'
+import { initialState, expectedEnemyDamage, SimContext, type EnemyAction } from './sim'
 import { setSkillLevel, spTotal, spUsed, type Allocation } from './skills'
 import { currentAilment, currentHeal, INFLICT_IDS, INFLICT_LABELS, optimizeAilment, optimizeHeal, type InflictId } from './support'
 
 export type Axis = 'damage' | 'ailment' | 'heal' | 'endurance' | 'explore'
 /** 点数をメンバーごとに出す軸 */
-export type MemberAxis = 'damage' | 'ailment' | 'heal'
-export type Role = MemberAxis | 'endurance' | 'support'
+export type MemberAxis = 'damage' | 'ailment' | 'heal' | 'endurance'
+export type Role = MemberAxis | 'support'
 
 export const AXES: Axis[] = ['damage', 'ailment', 'heal', 'endurance', 'explore']
-export const MEMBER_AXES: MemberAxis[] = ['damage', 'ailment', 'heal']
+export const MEMBER_AXES: MemberAxis[] = ['damage', 'ailment', 'heal', 'endurance']
 export const AXIS_LABELS: Record<Axis, string> = { damage: '火力', ailment: '状態異常', heal: '回復', endurance: '耐久', explore: '探索' }
-export const ROLE_LABELS: Record<Role, string> = { damage: '火力', ailment: '状態異常', heal: '回復', endurance: '耐久（4-3 で実装）', support: '支援（採点なし）' }
+export const ROLE_LABELS: Record<Role, string> = { damage: '火力', ailment: '状態異常', heal: '回復', endurance: '耐久', support: '支援（採点なし）' }
 export const ROLES: Role[] = ['damage', 'ailment', 'heal', 'endurance', 'support']
 
 /** ジョブごとの役割の初期値（仮。画面で変えられる） */
@@ -41,9 +43,9 @@ export type Weights = Record<Axis, number>
 
 /** 総合点の重みのプリセット（仮、6.2） */
 export const WEIGHT_PRESETS: { id: string; name: string; weights: Weights }[] = [
-  { id: 'boss', name: 'ボス戦重視', weights: { damage: 40, ailment: 30, heal: 30, endurance: 0, explore: 0 } },
-  { id: 'explore', name: '探索重視', weights: { damage: 20, ailment: 10, heal: 30, endurance: 0, explore: 40 } },
-  { id: 'even', name: '均等', weights: { damage: 25, ailment: 25, heal: 25, endurance: 0, explore: 25 } },
+  { id: 'boss', name: 'ボス戦重視', weights: { damage: 35, ailment: 25, heal: 25, endurance: 15, explore: 0 } },
+  { id: 'explore', name: '探索重視', weights: { damage: 20, ailment: 10, heal: 25, endurance: 10, explore: 35 } },
+  { id: 'even', name: '均等', weights: { damage: 20, ailment: 20, heal: 20, endurance: 20, explore: 20 } },
 ]
 
 /** 探索で必要とみなすスキル（仮）。パーティの誰かが Lv1 以上持っていれば満たす */
@@ -63,14 +65,65 @@ export const SHORTAGE_THRESHOLD = 50
  * 特定の弱点や耐性で点数が偏らないように、耐性は等倍にした
  */
 export function standardTarget(level: number): TargetSettings {
+  return { ...DEFAULT_TARGET, enemyId: null, level, vit: nearMedian(level, 'vit'), guarding: false }
+}
+
+/** レベルが ±5 以内の敵（いなければレベルが最も近い敵）の、その値の中央値 */
+function nearMedian(level: number, key: 'vit' | 'str' | 'agi'): number {
   let near = enemies.filter((e) => Math.abs(e.level - level) <= 5)
   if (near.length === 0) {
     const d = Math.min(...enemies.map((e) => Math.abs(e.level - level)))
     near = enemies.filter((e) => Math.abs(e.level - level) === d)
   }
-  const vits = near.map((e) => e.vit).sort((a, b) => a - b)
-  const vit = vits[Math.floor((vits.length - 1) / 2)]
-  return { ...DEFAULT_TARGET, enemyId: null, level, vit, guarding: false }
+  const xs = near.map((e) => e[key]).sort((a, b) => a - b)
+  return xs[Math.floor((xs.length - 1) / 2)]
+}
+
+/** 標準敵の通常攻撃（耐久の採点）。基礎命中は通常の敵の 90%（EO Wiki） */
+export const STANDARD_ATTACK: EnemyAction = { name: '通常攻撃', attack: 'str', element: 'bash', power: 100, target: 'single', weight: 1, accuracy: 90, normal: true }
+
+/**
+ * 耐久の評価値：標準敵（同じレベル、STR・AGI は近いレベルの敵の中央値）の通常攻撃を何回耐えられるか（最大HP ÷ 1回の期待ダメージ）。
+ * 防具は入れない（防具のデータがないため）。隊列（後列は物理に強い）とパッシブ（HPブースト・DEFブースト・AGIブースト）が効く
+ */
+export function enduranceValue(member: Member, difficulty: DifficultyId): number {
+  const target = standardTarget(member.level)
+  const setup = {
+    members: [member], difficulty, enemy: null, target,
+    manual: { hp: 1, str: nearMedian(member.level, 'str'), tec: 0, agi: nearMedian(member.level, 'agi') },
+    enemyActions: [STANDARD_ATTACK], armor: {},
+  }
+  const ctx = new SimContext(setup)
+  const st = initialState(setup)
+  const f = st.members[0]
+  const dmg = expectedEnemyDamage(ctx, st, STANDARD_ATTACK, f)
+  return dmg > 0 ? f.maxHp / dmg : f.maxHp
+}
+
+/** 耐久に効くパッシブ */
+const enduresBy = (s: Skill) => s.effects.some((e) => e.type === 'passive-stat' && (e.stat === 'maxHp' || e.stat === 'physResist' || e.stat === 'agi'))
+
+/** 耐久の最適値：耐久に効くパッシブのレベルの組み合わせを全部試す（前提スキルは自動で取る） */
+function enduranceOptimum(member: Member, difficulty: DifficultyId): Optimum {
+  const skills = skillsByJob[member.jobId] ?? []
+  const total = spTotal(rules, member.level, retireSpBonus(rules, member.retire))
+  const vars = skills.filter(enduresBy)
+  let best: Optimum = { value: enduranceValue({ ...member, skills: {} }, difficulty), alloc: {}, label: 'パッシブなし' }
+  const walk = (i: number, alloc: Allocation) => {
+    if (i === vars.length) {
+      const v = enduranceValue({ ...member, skills: alloc }, difficulty)
+      if (v > best.value + 1e-9 || (Math.abs(v - best.value) < 1e-9 && spUsed(alloc) < spUsed(best.alloc)))
+        best = { value: v, alloc, label: vars.filter((x) => alloc[x.id]).map((x) => `${x.name} Lv${alloc[x.id]}`).join('・') || 'パッシブなし' }
+      return
+    }
+    for (let lv = 0; lv <= vars[i].maxLevel; lv++) {
+      const next = lv > 0 ? setSkillLevel(skills, alloc, vars[i].id, lv) : alloc
+      if (spUsed(next) > total) break
+      walk(i + 1, next)
+    }
+  }
+  walk(0, {})
+  return best
 }
 
 export interface ScoreSettings {
@@ -87,6 +140,7 @@ const targetFor = (member: Member, s: ScoreSettings) => s.target ?? standardTarg
 export function memberValue(member: Member, axis: MemberAxis, s: ScoreSettings): number {
   if (axis === 'damage') return currentMaxDamage(member, targetFor(member, s), s.difficulty, DAMAGE_OPTS)?.expected ?? 0
   if (axis === 'ailment') return Math.max(0, ...INFLICT_IDS.map((id) => currentAilment(member, s.target?.enemyId ?? null, id, s.difficulty)))
+  if (axis === 'endurance') return enduranceValue(member, s.difficulty)
   return currentHeal(member, s.partySize, s.difficulty)
 }
 
@@ -112,6 +166,7 @@ export function memberOptimum(member: Member, axis: MemberAxis, s: ScoreSettings
     }
     return best
   }
+  if (axis === 'endurance') return enduranceOptimum(member, s.difficulty)
   const c = optimizeHeal(member, s.partySize, s.difficulty, { criterion: 'total', damage: 0, targets: 1 })[0]
   return c ? { value: c.value, alloc: c.alloc, label: c.skillName } : { value: 0, alloc: {}, label: '' }
 }
@@ -132,7 +187,7 @@ export interface MemberScore {
   member: Member
   role: Role
   axes: Record<MemberAxis, MemberAxisScore>
-  /** 役割の点数（耐久・支援、または役割の行動ができないときは null） */
+  /** 役割の点数（支援、または役割の行動ができないときは null） */
   roleScore: number | null
 }
 
@@ -144,7 +199,7 @@ export function scoreMember(member: Member, role: Role, s: ScoreSettings): Membe
       return [axis, { current, optimum, score: ratioScore(current, optimum.value) }]
     }),
   ) as Record<MemberAxis, MemberAxisScore>
-  const roleScore = role === 'damage' || role === 'ailment' || role === 'heal' ? axes[role].score : null
+  const roleScore = role === 'support' ? null : axes[role].score
   return { member, role, axes, roleScore }
 }
 
@@ -164,13 +219,14 @@ export interface PartyScore {
   explore: ReturnType<typeof exploreChecklist>
   /** 総合点（重みのある軸がすべて null なら null） */
   total: number | null
-  /** 役割バランス（B8）：軸ごとの、メンバーの中で最も高い点数。耐久は未実装で null */
+  /** 役割バランス（B8）：軸ごとの、メンバーの中で最も高い点数 */
   balance: Record<Axis, number | null>
   /** 点数が低い理由 */
   reasons: string[]
 }
 
-const fmt = (axis: MemberAxis, v: number) => (axis === 'ailment' ? `${(v * 100).toFixed(1)}%` : axis === 'damage' ? v.toFixed(1) : String(v))
+const fmt = (axis: MemberAxis, v: number) =>
+  axis === 'ailment' ? `${(v * 100).toFixed(1)}%` : axis === 'damage' ? v.toFixed(1) : axis === 'endurance' ? `${v.toFixed(1)}回耐える` : String(v)
 
 export function scoreParty(members: Member[], roles: Record<string, Role>, weights: Weights, s: ScoreSettings): PartyScore {
   const scored = members.map((m) => scoreMember(m, roles[m.id] ?? defaultRole(m.jobId), s))
@@ -180,7 +236,6 @@ export function scoreParty(members: Member[], roles: Record<string, Role>, weigh
     const xs = scored.filter((x) => x.role === axis && x.roleScore !== null).map((x) => x.roleScore!)
     axes[axis] = xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null
   }
-  axes.endurance = null
   axes.explore = (explore.filter((e) => e.have).length / explore.length) * 100
 
   let wsum = 0
@@ -198,12 +253,11 @@ export function scoreParty(members: Member[], roles: Record<string, Role>, weigh
     const xs = scored.map((x) => x.axes[axis].score).filter((v): v is number => v !== null)
     balance[axis] = xs.length ? Math.max(...xs) : 0
   }
-  balance.endurance = null
   balance.explore = axes.explore
 
   const reasons: string[] = []
   for (const x of scored) {
-    if (x.role === 'endurance' || x.role === 'support') {
+    if (x.role === 'support') {
       reasons.push(`${x.member.name}：役割が「${ROLE_LABELS[x.role]}」なので採点に入れていません`)
       continue
     }
@@ -236,6 +290,7 @@ function relevantSkills(member: Member, axis: MemberAxis): Skill[] {
   const usable = (s: Skill) => !s.weapons || (weaponType !== undefined && s.weapons.includes(weaponType))
   return skills.filter((s) =>
     s.effects.some((e) => {
+      if (axis === 'endurance') return enduresBy(s)
       if (e.type === 'passive-stat') {
         if (axis === 'damage') return e.stat === 'str' || (e.stat === 'weaponAtk' && e.weapon === weaponType)
         return e.stat === (axis === 'ailment' ? 'ailmentRate' : 'healing')
@@ -362,7 +417,7 @@ export function scoreAll(party: Party, roles: Record<string, Role>, weights: Wei
   const score = scoreParty(members, roles, weights, settings)
   const ideas: Record<string, Improvement[]> = {}
   for (const x of score.members) {
-    if (x.role !== 'damage' && x.role !== 'ailment' && x.role !== 'heal') continue
+    if (x.role === 'support') continue
     ideas[x.member.id] = improvements(x.member, x.role, settings, x.axes[x.role].optimum.value)
   }
   const sel = score.members.find((x) => x.member.id === selectedId) ?? score.members[0]

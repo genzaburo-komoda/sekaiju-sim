@@ -1,5 +1,6 @@
 // 画面全体。左にパーティ一覧と保存・共有、右に選んだメンバーの編集画面を置く（スマホでは縦に並ぶ）
 import { useEffect, useState } from 'react'
+import { BattlePanel } from './components/BattlePanel'
 import { HelpPanel } from './components/HelpPanel'
 import { MeasurementPanel } from './components/MeasurementPanel'
 import { MemberEditor } from './components/MemberEditor'
@@ -155,6 +156,8 @@ function App() {
         selectedId={selected.id}
         onApply={(memberId, skills) => setParty((p) => ({ ...p, members: p.members.map((m) => (m.id === memberId ? { ...m, skills } : m)) }))}
       />
+
+      <BattlePanel party={party} />
 
       <MeasurementPanel records={records} onChange={setRecords} />
 

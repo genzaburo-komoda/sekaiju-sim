@@ -892,3 +892,64 @@ select {
   color: var(--accent);
   overflow-wrap: anywhere;
 }
+
+/* ---- 戦闘シミュレーション ---- */
+.battle-enemy {
+  margin: 12px 0;
+}
+
+.battle-panel details {
+  margin-top: 16px;
+}
+
+.battle-panel summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.battle-plan select {
+  max-width: 14em;
+}
+
+.battle-table td {
+  vertical-align: top;
+}
+
+.battle-entries {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.battle-busy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.battle-member {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: end;
+}
+
+.bars {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.bar {
+  fill: var(--accent);
+  fill-opacity: 0.7;
+}
+
+.bar-axis {
+  stroke: var(--border);
+}
+
+.bar-label {
+  font-size: 10px;
+  fill: var(--muted);
+}

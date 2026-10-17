@@ -2,13 +2,15 @@
 // 選んだメンバーの攻撃を、敵データから選んだ敵（または手入力の敵）に当てたときのダメージを出し、
 // 計算の手順を開いて見られるようにする。ゲームで実際に出た値をこの条件のまま記録できる。
 import { useEffect, useState } from 'react'
-import { enemies, findEnemy, findEquipment, skillsByJob } from '../data/gameData'
+import { findEnemy, findEquipment, skillsByJob } from '../data/gameData'
 import { attackOptions, ELEMENT_LABELS, selfBuffOptions } from '../logic/attack'
 import type { ConfidenceId, ElementId } from '../logic/damage'
 import { parseValues } from '../logic/measure'
 import type { DifficultyId, Member } from '../logic/party'
 import { DEFAULT_ATTACK, DEFAULT_TARGET, predict, targetFromEnemy, type AttackSettings, type TargetSettings } from '../logic/predict'
 import type { Allocation } from '../logic/skills'
+import { EnemySelect } from './EnemySelect'
+import { NumberField } from './NumberField'
 import { OptimizePanel } from './OptimizePanel'
 import { SupportPanel } from './SupportPanel'
 
@@ -27,8 +29,6 @@ interface Props {
 
 const ELEMENTS: ElementId[] = ['slash', 'bash', 'pierce', 'fire', 'ice', 'volt']
 const CONFIDENCE_LABELS: Record<ConfidenceId, string> = { confirmed: '確認済み', estimated: '推定', unverified: '未検証' }
-const STRATA = [1, 2, 3, 4, 5, 6]
-const KIND_LABELS = { normal: '', foe: '・FOE', boss: '・ボス' } as const
 
 // 攻撃と敵の設定は、再読み込みしても続きから測れるようにこのブラウザに覚えておく
 const SETTINGS_KEY = 'sekaiju-sim:damage-settings'
@@ -43,26 +43,6 @@ function loadSettings(): { attack: AttackSettings; target: TargetSettings } {
     // 読めなければ初期値
   }
   return { attack: DEFAULT_ATTACK, target: DEFAULT_TARGET }
-}
-
-/** 数値の入力欄。空や範囲外は受け付けない */
-function NumberField({ label, value, min, max, disabled, onChange }: { label: string; value: number; min: number; max: number; disabled?: boolean; onChange: (v: number) => void }) {
-  return (
-    <label>
-      {label}
-      <input
-        type="number"
-        min={min}
-        max={max}
-        value={value}
-        disabled={disabled}
-        onChange={(e) => {
-          const v = e.target.valueAsNumber
-          if (!Number.isNaN(v)) onChange(Math.max(min, Math.min(max, Math.round(v))))
-        }}
-      />
-    </label>
-  )
 }
 
 export function DamagePanel({ member, members, difficulty, onRecord, lastGameVersion, onApplySkills }: Props) {
@@ -149,34 +129,13 @@ export function DamagePanel({ member, members, difficulty, onRecord, lastGameVer
 
         <fieldset>
           <legend>敵</legend>
-          <label className="wide">
-            敵データ
-            <select
-              value={target.enemyId ?? ''}
-              onChange={(e) => {
-                const picked = findEnemy(e.target.value)
-                setTarget(picked ? targetFromEnemy(picked, target.guarding) : { ...target, enemyId: null })
-              }}
-            >
-              <option value="">手入力</option>
-              {STRATA.map((s) => (
-                <optgroup key={s} label={`第${s}階層`}>
-                  {enemies
-                    .filter((en) => en.stratum === s)
-                    .map((en) => (
-                      <option key={en.id} value={en.id}>{`${en.name}（Lv${en.level}${KIND_LABELS[en.kind]}）`}</option>
-                    ))}
-                </optgroup>
-              ))}
-              <optgroup label="特殊FOE（クエストなど）">
-                {enemies
-                  .filter((en) => en.stratum === undefined)
-                  .map((en) => (
-                    <option key={en.id} value={en.id}>{`${en.name}（Lv${en.level}）`}</option>
-                  ))}
-              </optgroup>
-            </select>
-          </label>
+          <EnemySelect
+            value={target.enemyId}
+            onChange={(id) => {
+              const picked = findEnemy(id)
+              setTarget(picked ? targetFromEnemy(picked, target.guarding) : { ...target, enemyId: null })
+            }}
+          />
           <NumberField label="レベル" value={target.level} min={1} max={99} disabled={!!enemy} onChange={(level) => setTarget({ ...target, level })} />
           <NumberField label="VIT" value={target.vit} min={0} max={999} disabled={!!enemy} onChange={(vit) => setTarget({ ...target, vit })} />
           <div className="vuln-grid">

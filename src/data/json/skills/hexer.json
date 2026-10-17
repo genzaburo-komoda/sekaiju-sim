@@ -600,7 +600,8 @@
           "modifiers": [
             {
               "stat": "physDef",
-              "param": "m1"
+              "param": "m1",
+              "appliesTo": "defense"
             }
           ],
           "durationTurns": 5
