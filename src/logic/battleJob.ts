@@ -1,22 +1,36 @@
-// 戦闘シミュレーションの計算を Web Worker に頼む。Worker が使えない環境（テストなど）では、その場で計算する
+// 重い計算（戦闘シミュレーション・レベル進行プラン・編成の探索）を Web Worker に頼む。Worker が使えない環境（テストなど）では、その場で計算する
 import { findMinTurns, sampleEndurance, simulateEndurance, simulateKill, type EnduranceResult, type KillDistribution, type MinTurnsResult, type Plan } from './battle'
+import { levelPlan, type LevelPlan } from './levelplan'
+import type { Member } from './party'
+import { searchParty, type SearchConditions, type SearchResult } from './partysearch'
+import type { MemberAxis, ScoreSettings } from './score'
 import type { BattleSetup, TurnLog } from './sim'
+import type { Allocation } from './skills'
 
 export type BattleJob =
   | { kind: 'min-turns'; setup: BattleSetup; maxTurns: number }
   | { kind: 'kill'; setup: BattleSetup; plan: Plan; trials: number; seed: number }
   | { kind: 'endurance'; setup: BattleSetup; policies: Record<string, string>; turns: number; trials: number; seed: number }
+  | { kind: 'level-plan'; member: Member; axis: MemberAxis; target: Allocation | null; toLevel: number; settings: ScoreSettings }
+  | { kind: 'party-search'; setup: BattleSetup; cond: SearchConditions }
 
 export type JobResult<J extends BattleJob> = J extends { kind: 'min-turns' }
   ? MinTurnsResult
   : J extends { kind: 'kill' }
     ? KillDistribution
-    : { result: EnduranceResult; sample: TurnLog[] }
+    : J extends { kind: 'level-plan' }
+      ? LevelPlan
+      : J extends { kind: 'party-search' }
+        ? SearchResult
+        : { result: EnduranceResult; sample: TurnLog[] }
 
-function runHere(job: BattleJob): unknown {
+/** 計算の中身（Worker の中と、Worker が使えないときの両方で使う） */
+export function runJob(job: BattleJob, progress?: (done: number, total: number) => void): unknown {
   if (job.kind === 'min-turns') return findMinTurns(job.setup, job.maxTurns)
-  if (job.kind === 'kill') return simulateKill(job.setup, job.plan, job.trials, job.seed)
-  return { result: simulateEndurance(job.setup, job.policies, job.turns, job.trials, job.seed), sample: sampleEndurance(job.setup, job.policies, job.turns, job.seed) }
+  if (job.kind === 'kill') return simulateKill(job.setup, job.plan, job.trials, job.seed, progress)
+  if (job.kind === 'level-plan') return levelPlan(job.member, job.axis, job.target, job.toLevel, job.settings)
+  if (job.kind === 'party-search') return searchParty(job.setup, job.cond, progress)
+  return { result: simulateEndurance(job.setup, job.policies, job.turns, job.trials, job.seed, progress), sample: sampleEndurance(job.setup, job.policies, job.turns, job.seed) }
 }
 
 let serial = 0
@@ -24,7 +38,7 @@ let serial = 0
 /** 計算を始める。cancel で中断できる（Worker を止める） */
 export function startJob<J extends BattleJob>(job: J, onProgress: (p: number) => void): { promise: Promise<JobResult<J>>; cancel: () => void } {
   if (typeof Worker === 'undefined') {
-    return { promise: Promise.resolve(runHere(job) as JobResult<J>), cancel: () => {} }
+    return { promise: Promise.resolve(runJob(job) as JobResult<J>), cancel: () => {} }
   }
   const worker = new Worker(new URL('./battle.worker.ts', import.meta.url), { type: 'module' })
   const id = ++serial

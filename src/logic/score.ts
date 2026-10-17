@@ -284,7 +284,7 @@ export function scoreParty(members: Member[], roles: Record<string, Role>, weigh
  * 今の武器で使えない攻撃、構えが必要な攻撃（採点では構えを使わない）、継続回復・蘇生は除く。
  * 除かないと、前提スキルとして自動で上がる別のスキルの効果が、そのスキルの効果に見えてしまう
  */
-function relevantSkills(member: Member, axis: MemberAxis): Skill[] {
+export function relevantSkills(member: Member, axis: MemberAxis): Skill[] {
   const skills = skillsByJob[member.jobId] ?? []
   const weaponType = findEquipment(member.weaponId)?.weaponType
   const usable = (s: Skill) => !s.weapons || (weaponType !== undefined && s.weapons.includes(weaponType))

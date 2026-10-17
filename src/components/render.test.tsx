@@ -6,6 +6,7 @@ import { jobs } from '../data/gameData'
 import { newMember } from '../logic/party'
 import { MemberEditor } from './MemberEditor'
 import { BattlePanel } from './BattlePanel'
+import { LevelPlanPanel } from './LevelPlanPanel'
 import { ScorePanel, ScoreResultView } from './ScorePanel'
 import { scoreAll, WEIGHT_PRESETS } from '../logic/score'
 
@@ -43,7 +44,16 @@ describe('採点の欄の表示', () => {
 describe('戦闘シミュレーションの欄の表示', () => {
   it('全ジョブ5人のパーティで、計画の表とターンごとの記録を表示できる', () => {
     const members = jobs.slice(0, 5).map((j) => ({ ...newMember([], j.id), level: 30 }))
-    const html = renderToString(<BattlePanel party={{ difficulty: 'expert', members }} />)
-    for (const text of ['戦闘シミュレーション', '最小ターン数を探す', '確率分布', '耐久', '1ターン目の']) expect(html).toContain(text)
+    const html = renderToString(<BattlePanel party={{ difficulty: 'expert', members }} onApplyParty={() => {}} />)
+    for (const text of ['戦闘シミュレーション', '最小ターン数を探す', '確率分布', '耐久', '1ターン目の', '最適な編成を探す', '使わないジョブ']) expect(html).toContain(text)
+  })
+})
+
+describe('レベル進行プランの欄の表示', () => {
+  it.each(jobs.map((j) => j.id))('%s で表示できる', (jobId) => {
+    const member = { ...newMember([], jobId), level: 30 }
+    const html = renderToString(<LevelPlanPanel party={{ difficulty: 'expert', members: [member] }} member={member} />)
+    expect(html).toContain('レベル進行プラン')
+    expect(html).toContain('計画する')
   })
 })

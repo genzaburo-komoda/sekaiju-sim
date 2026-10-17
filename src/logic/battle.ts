@@ -5,7 +5,8 @@
 // - B9 耐久：敵の行動（本人が入れる）に対して、各メンバーが何ターン生き残るか・全滅する確率を乱数で何度も試して出す
 //
 // どれも敵は1体。命中率は、味方の攻撃は入れず（味方の基礎命中が分からないため、当たった場合）、敵の攻撃は入れる。
-import { enemyDown, initialState, runTurn, seededRng, SimContext, type BattleSetup, type BattleState, type Fighter, type Rng, type SimAction, type TurnLog } from './sim'
+import type { Member } from './party'
+import { enemyDown, initialState, memberActions, runTurn, seededRng, SimContext, type BattleSetup, type BattleState, type Fighter, type Rng, type SimAction, type TurnLog } from './sim'
 import type { InflictId } from './support'
 
 /** 行動の計画：ターンごとの「メンバー ID → 行動 ID」 */
@@ -290,6 +291,15 @@ export function policyAction(ctx: SimContext, s: BattleState, f: Fighter, action
     return on && on.lastTurn > s.turn + 1 ? 'defend' : a.id
   }
   return a.id
+}
+
+/** B9 の行動のしかたの初期値：回復スキルがあれば最後に覚える回復（たいてい最も効く）、フロントガードがあれば使う、それ以外は防御 */
+export function defaultPolicy(m: Member): string {
+  const acts = memberActions(m)
+  const heal = acts.filter((a) => a.kind === 'heal' && !a.skill!.effects.some((e) => e.type === 'heal' && e.timing === 'per-turn')).at(-1)
+  if (heal) return heal.id
+  if (acts.some((a) => a.id === 'paladin-front-guard')) return 'paladin-front-guard'
+  return 'defend'
 }
 
 export interface EnduranceResult {

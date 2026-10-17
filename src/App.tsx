@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { BattlePanel } from './components/BattlePanel'
 import { HelpPanel } from './components/HelpPanel'
+import { LevelPlanPanel } from './components/LevelPlanPanel'
 import { MeasurementPanel } from './components/MeasurementPanel'
 import { MemberEditor } from './components/MemberEditor'
 import { PartyPanel } from './components/PartyPanel'
@@ -157,7 +158,15 @@ function App() {
         onApply={(memberId, skills) => setParty((p) => ({ ...p, members: p.members.map((m) => (m.id === memberId ? { ...m, skills } : m)) }))}
       />
 
-      <BattlePanel party={party} />
+      <LevelPlanPanel party={party} member={selected} />
+
+      <BattlePanel
+        party={party}
+        onApplyParty={(members) => {
+          setParty((p) => ({ ...p, members }))
+          setNotice({ kind: 'info', lines: ['探した編成をパーティに当てはめました'] })
+        }}
+      />
 
       <MeasurementPanel records={records} onChange={setRecords} />
 

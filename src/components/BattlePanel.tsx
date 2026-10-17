@@ -1,9 +1,9 @@
-// 戦闘シミュレーション（仕様書 B2・B3・B9）：撃破までの最小ターン数、確率分布、耐久。
+// 戦闘シミュレーション（仕様書 B2・B3・B9）：撃破までの最小ターン数、確率分布、耐久。条件付きの編成の探索（B10）もここに置く。
 // 敵は1体。計算の中身は logic/sim.ts・logic/battle.ts。重い計算は Web Worker で行う（logic/battleJob.ts）
 import { useRef, useState } from 'react'
 import { findEnemy } from '../data/gameData'
 import { ELEMENT_LABELS } from '../logic/attack'
-import { runPlan, type EnduranceResult, type KillDistribution, type Plan } from '../logic/battle'
+import { defaultPolicy, runPlan, type EnduranceResult, type KillDistribution, type Plan } from '../logic/battle'
 import { startJob, type BattleJob, type JobResult } from '../logic/battleJob'
 import type { ElementId } from '../logic/damage'
 import type { Member, Party } from '../logic/party'
@@ -12,6 +12,7 @@ import { memberActions, type BattleSetup, type EnemyAction, type SimAction, type
 import { INFLICT_LABELS, type InflictId } from '../logic/support'
 import { EnemySelect } from './EnemySelect'
 import { NumberField } from './NumberField'
+import { PartySearchSection } from './PartySearchSection'
 
 const ELEMENTS: ElementId[] = ['slash', 'bash', 'pierce', 'fire', 'ice', 'volt']
 const TARGET_LABELS: Record<EnemyAction['target'], string> = { single: '単体', row: '一列', all: '全体' }
@@ -108,16 +109,7 @@ function TurnTable({ logs, members, showHp }: { logs: TurnLog[]; members: Member
   )
 }
 
-/** B9 の行動のしかたの初期値：回復スキルがあれば最も効く回復、フロントガードがあれば使う、それ以外は防御 */
-function defaultPolicy(m: Member): string {
-  const acts = memberActions(m)
-  const heal = acts.filter((a) => a.kind === 'heal' && !a.skill!.effects.some((e) => e.type === 'heal' && e.timing === 'per-turn')).at(-1)
-  if (heal) return heal.id
-  if (acts.some((a) => a.id === 'paladin-front-guard')) return 'paladin-front-guard'
-  return 'defend'
-}
-
-export function BattlePanel({ party }: { party: Party }) {
+export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyParty: (members: Member[]) => void }) {
   const members = party.members
   const [enemyId, setEnemyId] = useState<string | null>(null)
   const [manual, setManual] = useState<Manual>(DEFAULT_MANUAL)
@@ -431,6 +423,17 @@ export function BattlePanel({ party }: { party: Party }) {
           </div>
         )}
       </details>
+
+      <PartySearchSection
+        party={party}
+        setup={endSetup}
+        maxTurns={maxTurns}
+        enduranceTurns={endTurns}
+        seed={seed}
+        busy={!!busy}
+        launch={launch}
+        onApply={onApplyParty}
+      />
     </section>
   )
 }
