@@ -1,7 +1,7 @@
 // 戦闘シミュレーション（仕様書 B2・B3・B9）：撃破までの最小ターン数、確率分布、耐久。条件付きの編成の探索（B10）もここに置く。
 // 敵は1体。計算の中身は logic/sim.ts・logic/battle.ts。重い計算は Web Worker で行う（logic/battleJob.ts）
 import { useRef, useState } from 'react'
-import { findEnemy } from '../data/gameData'
+import { findBehavior, findEnemy } from '../data/gameData'
 import { ELEMENT_LABELS } from '../logic/attack'
 import { defaultPolicy, runPlan, type EnduranceResult, type KillDistribution, type Plan } from '../logic/battle'
 import { startJob, type BattleJob, type JobResult } from '../logic/battleJob'
@@ -62,8 +62,15 @@ function Bars({ data, label }: { data: { label: string; value: number }[]; label
   )
 }
 
-/** ターンごとの記録の表 */
-function TurnTable({ logs, members, showHp }: { logs: TurnLog[]; members: Member[]; showHp: boolean }) {
+type EnemyMode = 'ai' | 'table' | 'none'
+const ENEMY_MODE_LABELS: Record<EnemyMode, string> = {
+  ai: '行動パターン（データ）で行動する',
+  table: '耐久の欄の表（手入力）で行動する',
+  none: '行動しない（撃破ターンだけを見る）',
+}
+
+/** ターンごとの記録の表。showHp：味方の HP を出す（耐久）。both：敵の HP と味方の HP・TP を出す（敵が行動する撃破の計算） */
+function TurnTable({ logs, members, showHp, both = false }: { logs: TurnLog[]; members: Member[]; showHp: boolean; both?: boolean }) {
   return (
     <div className="table-scroll">
       <table className="score-table battle-table">
@@ -72,7 +79,7 @@ function TurnTable({ logs, members, showHp }: { logs: TurnLog[]; members: Member
             <th>ターン</th>
             <th>行動（行動した順）</th>
             {!showHp && <th>敵の残りHP</th>}
-            {members.map((m) => <th key={m.id}>{m.name}{showHp ? ' HP' : ' TP'}</th>)}
+            {members.map((m) => <th key={m.id}>{m.name}{both ? ' HP／TP' : showHp ? ' HP' : ' TP'}</th>)}
             <th>強化・弱体（ターンの終わり）</th>
           </tr>
         </thead>
@@ -95,7 +102,7 @@ function TurnTable({ logs, members, showHp }: { logs: TurnLog[]; members: Member
                 </ol>
               </td>
               {!showHp && <td>{Math.ceil(l.enemyHp)}</td>}
-              {members.map((m) => <td key={m.id}>{showHp ? l.hp[m.id] : l.tp[m.id]}</td>)}
+              {members.map((m) => <td key={m.id}>{both ? `${Math.ceil(l.hp[m.id])}／${l.tp[m.id]}` : showHp ? l.hp[m.id] : l.tp[m.id]}</td>)}
               <td>
                 {members
                   .filter((m) => l.effects[m.id]?.length)
@@ -122,6 +129,7 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
   const [seed, setSeed] = useState(1)
   const [kill, setKill] = useState<{ key: string; r: KillDistribution } | null>(null)
   const [enemyActions, setEnemyActions] = useState<EnemyAction[] | null>(null)
+  const [enemyModeSel, setEnemyModeSel] = useState<EnemyMode | null>(null)
   const [policies, setPolicies] = useState<Record<string, string>>({})
   const [endTurns, setEndTurns] = useState(10)
   const [endTrials, setEndTrials] = useState(3000)
@@ -131,13 +139,18 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
 
   const enemy = findEnemy(enemyId) ?? null
   const actions = enemyActions ?? [normalAttack(enemy?.accuracy ?? 90)]
+  const hasBehavior = !!findBehavior(enemy?.id)
+  // 敵の行動：行動パターンのデータがあればそれを、なければ行動しない（撃破ターンだけ）を初期値にする
+  const enemyMode: EnemyMode = enemyModeSel === 'ai' && !hasBehavior ? 'none' : (enemyModeSel ?? (hasBehavior ? 'ai' : 'none'))
+  const enemyActs = enemyMode !== 'none'
   const setup: BattleSetup = {
     members,
     difficulty: party.difficulty,
     enemy,
     target: enemy ? targetFromEnemy(enemy) : { ...DEFAULT_TARGET, level: manual.level, vit: manual.vit },
     manual: { hp: manual.hp, str: manual.str, tec: manual.tec, agi: manual.agi },
-    enemyActions: [],
+    enemyActions: enemyMode === 'table' ? actions : [],
+    enemyAi: enemyMode === 'ai',
   }
   const actionsOf = new Map(members.map((m) => [m.id, memberActions(m)]))
   // メンバーが変わって無くなった行動は通常攻撃にする
@@ -145,7 +158,8 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
   const run = runPlan(setup, fullPlan)
   const planKey = JSON.stringify([setup, fullPlan])
   const policyOf = (m: Member) => (actionsOf.get(m.id)!.some((a) => a.id === policies[m.id]) ? policies[m.id] : defaultPolicy(m))
-  const endSetup: BattleSetup = { ...setup, enemyActions: actions }
+  // 耐久は敵が行動しないと意味が無いので、「行動しない」のときは表（手入力）を使う
+  const endSetup: BattleSetup = { ...setup, enemyActions: actions, enemyAi: enemyMode === 'ai' }
   const endPolicies = Object.fromEntries(members.map((m) => [m.id, policyOf(m)]))
   const endKey = JSON.stringify([endSetup, endPolicies, endTurns, endTrials, seed])
 
@@ -175,6 +189,7 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
           onChange={(id) => {
             setEnemyId(id)
             setEnemyActions(null)
+            setEnemyModeSel(null)
           }}
         />
         {enemy ? (
@@ -182,6 +197,14 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
             Lv{enemy.level}・HP {enemy.hp}・STR {enemy.str}・TEC {enemy.tec}・VIT {enemy.vit}・AGI {enemy.agi}（DS版の解析値、未検証）
           </p>
         ) : null}
+        <label className="wide">
+          敵の行動（撃破ターン・確率分布・耐久）
+          <select value={enemyMode} onChange={(e) => setEnemyModeSel(e.target.value as EnemyMode)}>
+            {(Object.keys(ENEMY_MODE_LABELS) as EnemyMode[])
+              .filter((m) => m !== 'ai' || hasBehavior)
+              .map((m) => <option key={m} value={m}>{ENEMY_MODE_LABELS[m]}</option>)}
+          </select>
+        </label>
         {enemy ? (
           <div className="wide">
             <EnemyBehaviorView enemy={enemy} />
@@ -208,7 +231,8 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
         <summary>撃破までのターン数と行動の計画</summary>
         <p className="note">
           表の行動を選ぶと、その計画を期待値で計算します。「最小ターン数を探す」は、期待値で最も早く倒せる計画を探します（近似解：1ターンに1〜2人の行動を変えた候補を試し、よいものを残して進める）。
-          攻撃に効く強化・弱体（攻撃力・与ダメージ・敵の防御力）と攻撃だけを候補にします。TP が足りない・構えがないときは通常攻撃になります。
+          攻撃に効く強化・弱体（攻撃力・与ダメージ・敵の防御力）と攻撃だけを候補にします。TP が足りない・構えがない・封じられたときは通常攻撃になります。
+          敵が行動するとき、期待値の計算では、敵は条件に当てはまった表の中で最も選ばれやすい技を使い、ダメージは狙われる確率で割り振り、状態異常は付けません（状態異常・封じ・即死は下の確率分布と耐久で乱数で判定します）。
         </p>
         <div className="record-fields">
           <NumberField label="探すターン数の上限" value={maxTurns} min={1} max={50} onChange={setMaxTurns} />
@@ -268,7 +292,7 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
             <>計画のターン数では倒せません（残りHP {Math.ceil(run.state.enemy.hp)} ／ {run.state.enemy.maxHp}）</>
           )}
         </p>
-        <TurnTable logs={run.logs} members={members} showHp={false} />
+        <TurnTable logs={run.logs} members={members} showHp={false} both={enemyActs} />
       </details>
 
       <details>
@@ -311,7 +335,9 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
       <details>
         <summary>耐久（敵の攻撃に何ターン耐えるか）</summary>
         <p className="note">
-          敵の行動を入れると、各メンバーが倒れるまでのターン数と全滅する確率を、乱数で何度も戦って出します。敵のスキルの数値は資料にほとんどないので、威力などは手で入れてください（初期値は通常攻撃だけ）。
+          各メンバーが倒れるまでのターン数と全滅する確率を、乱数で何度も戦って出します。敵の HP が 0 になっても敵は行動を続けます。
+          敵の行動は、上の「敵の行動」で行動パターンを選んでいればそれを使い、それ以外は下の表（手入力。初期値は通常攻撃だけ）を使います。
+          味方の状態異常：睡眠・スタン・混乱は行動できない、麻痺・テラーは 50% で行動できない（「一定の確率」の仮置き）、毒はターンの終わりにダメージ、呪いは与えたダメージの半分が返る、即死・石化は戦闘不能。封じた部位のスキルは使えない。盲目と封じによる命中・攻撃力・速さの低下は入れていません。
           狙われ方は「前列 90%・後列 10%、列の中は HP が多い順に 60%／30%／10%」、挑発中は狙われ率の確率でその味方（EO Wiki の値。出典が確かめられていない）。
           防具の防御力と属性の耐性は、メンバーの装備から入れます（防具の耐性は属性倍率から引く。未検証）。蘇生と、味方の回避の強化は入れていません。
         </p>

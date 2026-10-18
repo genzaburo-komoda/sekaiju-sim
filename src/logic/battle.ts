@@ -6,7 +6,7 @@
 //
 // どれも敵は1体。命中率は、味方の攻撃は入れず（味方の基礎命中が分からないため、当たった場合）、敵の攻撃は入れる。
 import type { Member } from './party'
-import { enemyDown, initialState, memberActions, runTurn, seededRng, SimContext, type BattleSetup, type BattleState, type Fighter, type Rng, type SimAction, type TurnLog } from './sim'
+import { enemyDefense, enemyDown, initialState, memberActions, memberAtkRates, runTurn, seededRng, SimContext, type BattleSetup, type BattleState, type Fighter, type Rng, type SimAction, type TurnLog } from './sim'
 import type { InflictId } from './support'
 
 /** 行動の計画：ターンごとの「メンバー ID → 行動 ID」 */
@@ -59,19 +59,7 @@ const offensive = (a: SimAction) =>
   ) ?? false
 
 function attackRates(s: BattleState, f: Fighter) {
-  const prod = (list: Fighter['buffs'], f2: (stat: string, v: number, applies?: string) => number | null) => {
-    let r = 100
-    for (const e of list) for (const m of e.mods) {
-      const x = f2(m.stat, m.value, m.appliesTo)
-      if (x !== null) r = (r * x) / 100
-    }
-    return r
-  }
-  return {
-    atk: prod(f.buffs, (st, v) => (st === 'physAtk' ? 100 + v : null)),
-    dealt: prod(f.buffs, (st, v) => (st === 'damageDealt' ? v : null)),
-    def: prod(s.enemy.debuffs, (st, v, ap) => (st === 'physDef' && ap === 'defense' ? 100 - v : null)),
-  }
+  return { ...memberAtkRates(f), ...enemyDefense(s) }
 }
 
 /** 今の強化のまま、TP が足りる攻撃で出せる1ターンのダメージの期待値（メンバーごと、行動の候補つき） */
@@ -81,7 +69,7 @@ function attackChoices(ctx: SimContext, s: BattleState, f: Fighter): { action: S
   for (const a of ctx.actions.get(f.id)!) {
     if (a.kind !== 'attack' || a.tp > f.tp) continue
     if (a.needsStance && !f.buffs.some((b) => b.skillId === a.needsStance)) continue
-    const p = ctx.attack(f.id, a.id, r.atk, r.dealt, r.def, false)
+    const p = ctx.attack(f.id, a.id, r.atk, r.dealt, r.def, false, r.taken, s.enemy.guarding)
     if (p) out.push({ action: a, expected: p.expected })
   }
   return out.sort((x, y) => y.expected - x.expected)
@@ -333,7 +321,7 @@ export function simulateEndurance(setup: BattleSetup, policies: Record<string, s
     let wiped = false
     for (let t = 1; t <= turns; t++) {
       const plan = Object.fromEntries(s.members.filter((f) => f.alive).map((f) => [f.id, policyAction(ctx, s, f, policies[f.id] ?? 'defend')]))
-      s = runTurn(ctx, s, { rng, plan, fallback: 'defend', log: false }).state
+      s = runTurn(ctx, s, { rng, plan, fallback: 'defend', log: false, endless: true }).state
       s.members.forEach((f, k) => {
         if (f.alive) alive[k][t - 1] += 1
       })
@@ -371,7 +359,7 @@ export function sampleEndurance(setup: BattleSetup, policies: Record<string, str
   const logs: TurnLog[] = []
   for (let t = 1; t <= turns && s.members.some((f) => f.alive); t++) {
     const plan = Object.fromEntries(s.members.filter((f) => f.alive).map((f) => [f.id, policyAction(ctx, s, f, policies[f.id] ?? 'defend')]))
-    const r = runTurn(ctx, s, { rng, plan, fallback: 'defend', log: true })
+    const r = runTurn(ctx, s, { rng, plan, fallback: 'defend', log: true, endless: true })
     s = r.state
     logs.push(r.log!)
   }
