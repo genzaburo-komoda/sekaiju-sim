@@ -119,7 +119,7 @@ export function SupportPanel({ member, members, enemyId, difficulty, onApply }: 
         </div>
         <p className="note">
           敵の耐性：{enemy ? `${enemy.name} ${inflictVuln(enemy, inflict)}%（DS版の解析値。未検証）` : '敵データを選んでいないので 100%'}
-          {inflict === 'petrify' && '。石化の耐性は資料に列が無いため、仮に「状態異常」の耐性を使っています（未確認）'}
+          {inflict === 'petrify' && '。石化の耐性は即死と同じ列を使います（LP Archive Part 47。未検証）'}
         </p>
         {ailmentResult && (
           <div className={`optimize-result${ailmentResult.key !== ailmentKey ? ' stale' : ''}`}>

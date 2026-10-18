@@ -36,12 +36,13 @@ export const INFLICT_IDS = Object.keys(INFLICT_LABELS) as InflictId[]
 
 /**
  * 敵の耐性（%）。敵データ（DS版の解析値）の列：即死・状態異常（毒〜呪いをまとめた1列）・頭・腕・脚・スタン。
- * 石化の列は無いので、仮に「状態異常」の列を使う（未確認）。敵を選んでいない（手入力の）ときは 100%
+ * 石化は即死と同じ耐性（LP Archive Part 47。本人のスクリーンショットで、毒吹きアゲハは状態異常が無効なのに石化は ○ で、即死の列と合う。2026-10-18）。
+ * 敵を選んでいない（手入力の）ときは 100%
  */
 export function inflictVuln(enemy: Enemy | undefined, id: InflictId): number {
   if (!enemy) return 100
   const r = enemy.resist
-  if (id === 'death') return r.death
+  if (id === 'death' || id === 'petrify') return r.death
   if (id === 'stun') return r.stun
   if (id === 'bind-head') return r.head
   if (id === 'bind-arm') return r.arm

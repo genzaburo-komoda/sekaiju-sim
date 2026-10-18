@@ -3587,10 +3587,11 @@
                   "value": 50
                 }
               ],
-              "turns": 5
+              "turns": 5,
+              "special": true
             }
           ],
-          "notes": "LP Archive の「防御 100%」は変化なしと読んで入れていない"
+          "notes": "LP Archive の「防御 100%」は変化なしと読んで入れていない。攻撃の弱体で打ち消せない（atwiki）"
         }
       ],
       "rules": [

@@ -6,7 +6,7 @@
 //
 // どれも敵は1体。命中率は、味方の攻撃は入れず（味方の基礎命中が分からないため、当たった場合）、敵の攻撃は入れる。
 import type { Member } from './party'
-import { enemyDefense, enemyDown, initialState, memberActions, memberAtkRates, runTurn, seededRng, SimContext, type BattleSetup, type BattleState, type Fighter, type Rng, type SimAction, type TurnLog } from './sim'
+import { enemyDefense, enemyDown, initialState, memberActions, memberAtkRates, runTurn, specialElement, seededRng, SimContext, type BattleSetup, type BattleState, type Fighter, type Rng, type SimAction, type TurnLog } from './sim'
 import type { InflictId } from './support'
 
 /** 行動の計画：ターンごとの「メンバー ID → 行動 ID」 */
@@ -50,16 +50,17 @@ interface Node {
   score: number
 }
 
-/** 攻撃に効く強化・弱体か（与ダメージ・攻撃力・敵の防御力） */
+/** 攻撃に効く強化・弱体か（与ダメージ・攻撃力・敵の防御力、序曲・チェイス） */
 const offensive = (a: SimAction) =>
-  a.skill?.effects.some(
+  a.special === 'imbue' || a.special === 'chase' ||
+  (a.skill?.effects.some(
     (e) =>
       (e.type === 'buff' && e.modifiers.some((m) => m.stat === 'damageDealt' || m.stat === 'physAtk')) ||
       (e.type === 'debuff' && e.modifiers.some((m) => m.stat === 'physDef' && m.appliesTo === 'defense')),
-  ) ?? false
+  ) ?? false)
 
 function attackRates(s: BattleState, f: Fighter) {
-  return { ...memberAtkRates(f), ...enemyDefense(s) }
+  return { ...memberAtkRates(f, s.turn + 1), ...enemyDefense(s) }
 }
 
 /** 今の強化のまま、TP が足りる攻撃で出せる1ターンのダメージの期待値（メンバーごと、行動の候補つき） */
@@ -98,8 +99,20 @@ function candidates(ctx: SimContext, s: BattleState, f: Fighter): string[] {
   if (efficient) ids.add(efficient.action.id)
   ids.add('normal')
   const next = s.turn + 1
+  // 序曲は、敵の弱点に最も合う属性だけを、まだ序曲のかかっていない味方に（候補が増えすぎないように）
+  const vuln = ctx.spec.vuln
+  const bestImbue = (['fire', 'ice', 'volt'] as const).reduce((a, b) => (vuln[b] > vuln[a] ? b : a))
   for (const a of ctx.actions.get(f.id)!) {
     if ((a.kind !== 'buff' && a.kind !== 'debuff') || a.tp > f.tp || !offensive(a)) continue
+    if (a.special === 'imbue') {
+      const t = s.members.find((x) => x.id === a.targetId)
+      if (specialElement(a.skill!.id) === bestImbue && t?.alive && !t.buffs.some((b) => b.mods.some((m) => m.stat === 'imbue'))) ids.add(a.id)
+      continue
+    }
+    if (a.special === 'chase') {
+      ids.add(a.id)
+      continue
+    }
     const on = a.kind === 'debuff' ? s.enemy.debuffs.find((b) => b.skillId === a.id) : f.buffs.find((b) => b.skillId === a.id)
     // かかっていないか、次のターンで切れるものだけ
     if (!on || on.lastTurn <= next) ids.add(a.id)
@@ -273,8 +286,13 @@ export function policyAction(ctx: SimContext, s: BattleState, f: Fighter, action
     if (perTurn) return f.buffs.some((b) => b.skillId === a.id && b.lastTurn > s.turn + 1) ? 'defend' : a.id
     return s.members.some((x) => x.alive && x.hp / x.maxHp < HEAL_THRESHOLD) ? a.id : 'defend'
   }
+  if (a.kind === 'cure') {
+    const need = a.special === 'refresh' ? s.members.some((x) => x.alive && x.ailment) : a.special === 'arm-recovery' ? f.binds.arm !== undefined : s.members.some((x) => x.id === a.targetId && x.alive && Object.keys(x.binds).length > 0)
+    return need ? a.id : 'defend'
+  }
   if (a.kind === 'buff' || a.kind === 'debuff') {
-    const list = a.kind === 'debuff' ? s.enemy.debuffs : f.buffs
+    const holder = a.targetId ? s.members.find((x) => x.id === a.targetId) : f
+    const list = a.kind === 'debuff' ? s.enemy.debuffs : (holder?.buffs ?? f.buffs)
     const on = list.find((b) => b.skillId === a.id)
     return on && on.lastTurn > s.turn + 1 ? 'defend' : a.id
   }

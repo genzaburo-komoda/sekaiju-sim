@@ -437,7 +437,8 @@ export const EnemySkillEffect = z.discriminatedUnion('type', [
     inflict: EnemyInflict.optional(),
   }),
   z.object({ type: z.literal('inflict'), target: z.enum(['single', 'all']), ...EnemyInflict.shape }),
-  z.object({ type: z.literal('self-buff'), mods: z.array(EnemyMod).min(1), turns: z.number().int().positive() }),
+  /** special：逆向きの弱体と打ち消し合わない（火竜の猛攻。atwiki「攻撃弱体で相殺できない」） */
+  z.object({ type: z.literal('self-buff'), mods: z.array(EnemyMod).min(1), turns: z.number().int().positive(), special: z.boolean().optional() }),
   z.object({ type: z.literal('party-debuff'), mods: z.array(EnemyMod).min(1), turns: z.number().int().positive(), inflict: EnemyInflict.optional() }),
   z.object({ type: z.literal('heal'), amount: z.number().int().positive() }),
   z.object({ type: z.literal('regen'), amount: z.number().int().positive(), turns: z.number().int().positive(), revive: z.number().int().positive().optional() }),

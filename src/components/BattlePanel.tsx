@@ -9,7 +9,7 @@ import type { ElementId } from '../logic/damage'
 import type { Member, Party } from '../logic/party'
 import { DEFAULT_TARGET, targetFromEnemy } from '../logic/predict'
 import { armorDefense } from '../logic/equip'
-import { memberActions, type BattleSetup, type EnemyAction, type SimAction, type TurnLog } from '../logic/sim'
+import { partyActions, type BattleSetup, type EnemyAction, type SimAction, type TurnLog } from '../logic/sim'
 import { INFLICT_LABELS, type InflictId } from '../logic/support'
 import { EnemyBehaviorView } from './EnemyBehaviorView'
 import { EnemySelect } from './EnemySelect'
@@ -18,7 +18,7 @@ import { PartySearchSection } from './PartySearchSection'
 
 const ELEMENTS: ElementId[] = ['slash', 'bash', 'pierce', 'fire', 'ice', 'volt']
 const TARGET_LABELS: Record<EnemyAction['target'], string> = { single: '単体', row: '一列', all: '全体' }
-const KIND_LABELS: Record<SimAction['kind'], string> = { attack: '攻撃', buff: '強化', debuff: '弱体', heal: '回復', ailment: '状態異常', defend: '' }
+const KIND_LABELS: Record<SimAction['kind'], string> = { attack: '攻撃', buff: '強化', debuff: '弱体', heal: '回復', ailment: '状態異常', defend: '', cure: '治療', step: '補助' }
 
 const pct = (p: number) => `${(p * 100).toFixed(1)}%`
 
@@ -152,7 +152,7 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
     enemyActions: enemyMode === 'table' ? actions : [],
     enemyAi: enemyMode === 'ai',
   }
-  const actionsOf = new Map(members.map((m) => [m.id, memberActions(m)]))
+  const actionsOf = partyActions(members)
   // メンバーが変わって無くなった行動は通常攻撃にする
   const fullPlan: Plan = plan.map((turn) => Object.fromEntries(members.map((m) => [m.id, actionsOf.get(m.id)!.some((a) => a.id === turn[m.id]) ? turn[m.id] : 'normal'])))
   const run = runPlan(setup, fullPlan)
@@ -337,7 +337,10 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
         <p className="note">
           各メンバーが倒れるまでのターン数と全滅する確率を、乱数で何度も戦って出します。敵の HP が 0 になっても敵は行動を続けます。
           敵の行動は、上の「敵の行動」で行動パターンを選んでいればそれを使い、それ以外は下の表（手入力。初期値は通常攻撃だけ）を使います。
-          味方の状態異常：睡眠・スタン・混乱は行動できない、麻痺・テラーは 50% で行動できない（「一定の確率」の仮置き）、毒はターンの終わりにダメージ、呪いは与えたダメージの半分が返る、即死・石化は戦闘不能。封じた部位のスキルは使えない。盲目と封じによる命中・攻撃力・速さの低下は入れていません。
+          状態異常（DS版の資料 LP Archive Part 47。HD版で未検証）：睡眠は行動できず攻撃を 1.5倍受け、攻撃されると起きるがそのターンは行動できない。スタンはそのターンの残りだけ行動できない。麻痺・テラーは 50% で行動できない。混乱は 50% で敵に通常攻撃（残りは味方を攻撃するが、そのダメージは入れていない）。毒はターンの終わりにダメージ、呪いは与えたダメージの半分が返る、即死・石化は戦闘不能。
+          状態異常は同時に1つで、優先順位（石化＞テラー＞呪い＞毒＞睡眠＞混乱＞麻痺＞盲目）が下のものは上のものを置き換えない（暫定）。封じた部位のスキルは使えず、頭封じは命中 −30%（敵だけ）、腕封じは物理の攻撃 ×0.7、脚封じは速さ −30%。
+          強化と弱体はそれぞれ3つまでで、同じ能力値の強化と弱体は打ち消し合って両方なくなる。
+          序曲・バインドリカバリ・アザーズステップは対象の味方を選べます（「→名前」）。パリング・一寸の見切り・チェイス・トラッピングはそのターンだけ、医術防御II は5ターン、序曲・子守唄は戦闘終了まで効きます。
           狙われ方は「前列 90%・後列 10%、列の中は HP が多い順に 60%／30%／10%」、挑発中は狙われ率の確率でその味方（EO Wiki の値。出典が確かめられていない）。
           防具の防御力と属性の耐性は、メンバーの装備から入れます（防具の耐性は属性倍率から引く。未検証）。蘇生と、味方の回避の強化は入れていません。
         </p>

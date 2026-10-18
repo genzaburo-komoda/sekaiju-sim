@@ -12,18 +12,24 @@
 // - バードの歌は戦闘終了まで続く。持続の書いていないもの（フロントガードなど）は使ったターンだけ
 // - 1人が持てる強化・弱体はそれぞれ3つまで。4つ目は古いものから消える。同じスキルをかけ直すと持続が最初からになる（新しいレベルが優先）
 // - ブシドーの構えは同時に1つだけと仮定した（未確認）
+// - 同じ能力値の強化と弱体は打ち消し合い、両方なくなる（本人の説明、2026-10-18。applyEffect）
+//
+// 状態異常・封じ（本人の説明と LP Archive Part 47「Disablement Hierarchy」（DS版）。HD版で未検証）：
+// - 強化・弱体・封じ・状態異常は別々に持つ。封じ以外の状態異常は同時に1つ（石化は別。戦闘不能と同じに扱う）
+// - 上書きは優先順位方式（暫定、本人決定）：石化＞テラー＞呪い＞毒＞睡眠＞混乱＞麻痺＞盲目。上位は下位を置き換え、下位は上位を置き換えない
+// - 封じ：頭は命中 −30%、腕は STR −30%、脚は AGI −30%。付与率の上限は封じ 90%・状態異常 100%。敵は入るたびに耐性 ×0.75、外れると ×1.25
 //
 // 敵の行動（ステップ4-6）：setup.enemyAi が true で、敵に行動パターンのデータ（json/enemyBehaviors.json）があれば、
 // ターンの初めにその条件で技を選ぶ（なければ setup.enemyActions の表から重みで選ぶ）。味方の状態異常・封じは atwiki「システム」の説明による
 import { findBehavior, findEquipment, formulas, skillsByJob } from '../data/gameData'
-import type { Enemy, EnemyBehavior, EnemySkill, EnemySkillEffect, Skill, SkillEffect } from '../data/schema'
-import { attackOptions, buildAttackInput, skillValues } from './attack'
-import { calcDamage, type AttackInput, type ElementId } from './damage'
+import type { Enemy, EnemyBehavior, EnemySkill, EnemySkillEffect, Equipment, Skill, SkillEffect } from '../data/schema'
+import { attackOptions, buildAttackInput, skillValues, type AttackOption } from './attack'
+import { calcDamage, levelCorrection, type AttackInput, type ElementId } from './damage'
 import { armorDefense, armorResist, gearAllows, hasShield } from './equip'
 import type { DifficultyId, Member } from './party'
 import { doubleAttackChance } from './optimize'
 import { memberStats, targetFromEnemy, type TargetSettings } from './predict'
-import { healAmount, inflictChance, inflictVuln, type InflictId } from './support'
+import { healAmount, inflictChance, inflictVuln, INFLICT_LABELS, type InflictId } from './support'
 
 // ---------------------------------------------------------------
 // 乱数（シード固定。仕様書 5.6「同じ入力で同じ結果」）
@@ -58,7 +64,35 @@ export function pickWeighted<T>(items: T[], weight: (x: T) => number, rng: Rng):
 // 行動
 // ---------------------------------------------------------------
 
-export type ActionKind = 'attack' | 'buff' | 'debuff' | 'heal' | 'ailment' | 'defend'
+export type ActionKind = 'attack' | 'buff' | 'debuff' | 'heal' | 'ailment' | 'defend' | 'cure' | 'step'
+
+/**
+ * 効果が「その他」などで、個別に計算するスキル（ステップ4-7。atwiki の各ジョブのページ）。
+ * target: 'ally' は対象の味方を選ぶ（行動 ID は「スキル ID@メンバー ID」）
+ */
+export type Special =
+  | 'imbue' | 'dispel' | 'tp-regen' | 'evade-once' | 'parry' | 'endure' | 'refresh' | 'bind-recovery' | 'arm-recovery' | 'others-step' | 'chase' | 'trapping'
+  | 'pain-trade' | 'the-end'
+const SPECIAL: Record<string, { kind: ActionKind; special: Special; ally?: boolean; element?: ElementId }> = {
+  'bard-fire-overture': { kind: 'buff', special: 'imbue', ally: true, element: 'fire' },
+  'bard-ice-overture': { kind: 'buff', special: 'imbue', ally: true, element: 'ice' },
+  'bard-volt-overture': { kind: 'buff', special: 'imbue', ally: true, element: 'volt' },
+  'bard-dispel-song': { kind: 'debuff', special: 'dispel' },
+  'bard-tp-lullaby': { kind: 'buff', special: 'tp-regen' },
+  'bushido-issun-no-mikiri': { kind: 'buff', special: 'evade-once' },
+  'paladin-parry': { kind: 'buff', special: 'parry' },
+  'medic-medical-defense-2': { kind: 'buff', special: 'endure' },
+  'medic-refresh': { kind: 'cure', special: 'refresh' },
+  'medic-bind-recovery': { kind: 'cure', special: 'bind-recovery', ally: true },
+  'arm-recovery': { kind: 'cure', special: 'arm-recovery' },
+  'ranger-others-step': { kind: 'step', special: 'others-step', ally: true },
+  'chase-fire': { kind: 'buff', special: 'chase', element: 'fire' },
+  'chase-freeze': { kind: 'buff', special: 'chase', element: 'ice' },
+  'chase-shock': { kind: 'buff', special: 'chase', element: 'volt' },
+  'dark-hunter-trapping': { kind: 'buff', special: 'trapping' },
+  'hexer-pain-trade': { kind: 'attack', special: 'pain-trade' },
+  'dark-hunter-the-end': { kind: 'attack', special: 'the-end' },
+}
 
 /** メンバーが選べる行動 */
 export interface SimAction {
@@ -74,6 +108,10 @@ export interface SimAction {
   priority: boolean
   /** 必要な構え（ブシドー）のスキル ID */
   needsStance?: string
+  /** 個別に計算するスキル（SPECIAL） */
+  special?: Special
+  /** 対象の味方（序曲・バインドリカバリ・アザーズステップ） */
+  targetId?: string
 }
 
 const ACTION_DEFEND: SimAction = { id: 'defend', name: '防御', kind: 'defend', skill: null, level: 0, tp: 0, speed: 1, priority: true }
@@ -105,10 +143,11 @@ export function memberActions(member: Member): SimAction[] {
   for (const s of skills) {
     const lv = member.skills[s.id] ?? 0
     if (lv === 0 || s.category !== 'active' || !s.levels) continue
-    const kind = kindOf(s)
+    const sp = SPECIAL[s.id]
+    const kind = sp?.kind ?? kindOf(s)
     if (!kind) continue
-    if (kind === 'attack' && !usable.has(s.id)) continue
-    if (kind !== 'attack' && !gearAllows(s.weapons, member)) continue
+    if (kind === 'attack' && !sp && !usable.has(s.id)) continue
+    if ((kind !== 'attack' || sp) && !gearAllows(s.weapons, member)) continue
     out.push({
       id: s.id,
       name: `${s.name} Lv${lv}`,
@@ -117,11 +156,28 @@ export function memberActions(member: Member): SimAction[] {
       level: lv,
       tp: s.levels[lv - 1].tp ?? 0,
       ...speedOf(s, lv),
-      ...(s.stance ? { needsStance: `bushido-${s.stance}` } : {}),
+      // 構えのスキル自身（上段・青眼・居合の構え）は構えが要らない
+      ...(s.stance && `bushido-${s.stance}` !== s.id ? { needsStance: `bushido-${s.stance}` } : {}),
+      ...(sp ? { special: sp.special } : {}),
     })
   }
   return out
 }
+
+/** パーティ全員の行動。味方を選ぶスキル（序曲など）は、対象ごとの行動（ID「スキル ID@メンバー ID」）に分ける */
+export function partyActions(members: Member[]): Map<string, SimAction[]> {
+  return new Map(
+    members.map((m) => [
+      m.id,
+      memberActions(m).flatMap((a) =>
+        a.skill && SPECIAL[a.skill.id]?.ally ? members.map((t) => ({ ...a, id: `${a.id}@${t.id}`, name: `${a.name}→${t.name}`, targetId: t.id })) : [a],
+      ),
+    ]),
+  )
+}
+
+/** スキルの属性（序曲・チェイス） */
+export const specialElement = (skillId: string) => SPECIAL[skillId]?.element
 
 // ---------------------------------------------------------------
 // 状態
@@ -138,6 +194,8 @@ export interface ActiveEffect {
   oneShot: boolean
   /** 継続回復（ターン終了時）。max-hp-ratio なら最大HPの％ */
   regen?: { amount: number; ratio: boolean }
+  /** 逆向きの強化・弱体と打ち消し合わない（火竜の猛攻） */
+  special?: boolean
 }
 
 export interface Fighter {
@@ -159,12 +217,29 @@ export interface Fighter {
   ailment: { id: PartyAilment; lastTurn: number; poison?: number } | null
   /** 封じ（部位 → このターンの終わりまで） */
   binds: Partial<Record<'head' | 'arm' | 'leg', number>>
-  /** このターンもう行動したか（スタンの持続を決める） */
+  /** このターンもう行動したか（スタン） */
   acted: boolean
+  /** スタンしたターン（そのターンの残りだけ行動できない） */
+  stunTurn: number
+  /** 睡眠から起きたターン（起きたターンは行動できない） */
+  wokeTurn: number
+  /** このターンだけの構え（強化の枠を使わない）：パリング・一寸の見切り・チェイス・トラッピング */
+  turnFx: TurnFx
+}
+
+export interface TurnFx {
+  /** パリング：最初の成功率と、2回目以降の成功率（%）。成功した回数 */
+  parry?: { first: number; repeat: number; succeeded: number }
+  /** 一寸の見切り：攻撃を1度だけ無効にする */
+  evade?: boolean
+  /** チェイス：属性と威力（%）、スキル。1ターンに1度だけ追撃 */
+  chase?: { element: ElementId; skill: Skill; level: number; used: boolean }[]
+  /** トラッピング：自分・左右が直接攻撃を受けたときの反撃の威力（%） */
+  trap?: { skill: Skill; level: number }
 }
 
 /** 味方がかかる状態異常（即死・石化はかかったときに戦闘不能にする） */
-export type PartyAilment = 'poison' | 'sleep' | 'paralysis' | 'confusion' | 'terror' | 'blind' | 'curse' | 'stun'
+export type PartyAilment = 'poison' | 'sleep' | 'paralysis' | 'confusion' | 'terror' | 'blind' | 'curse'
 
 export interface EnemyState {
   hp: number
@@ -184,6 +259,10 @@ export interface EnemyState {
   counter: { element: ElementId; power: number; accuracy: number } | null
   /** このターン防御しているか */
   guarding: boolean
+  /** 状態異常・封じが入るたびに変わる耐性の倍率（グループ → 倍率。Part 47：入ると ×0.75、外れると ×1.25） */
+  resistMul: Record<string, number>
+  /** 睡眠から起きたターン（起きたターンは行動できない） */
+  wokeTurn: number
 }
 
 export interface BattleState {
@@ -203,6 +282,37 @@ export function addEffect(list: ActiveEffect[], e: ActiveEffect): ActiveEffect[]
   next.push(e)
   while (next.length > MAX_EFFECTS) next = next.slice(1)
   return next
+}
+
+/** 打ち消し合う能力値（攻撃力・防御力・速さ・命中）。防御の強化のうち耐性にかかるもの（防御陣形など）は別に扱う */
+const cancelKey = (m: ActiveEffect['mods'][number]) =>
+  m.stat === 'physAtk' || m.stat === 'agi' || m.stat === 'accuracy' ? m.stat : m.stat === 'physDef' ? (m.appliesTo === 'resistance' ? null : 'physDef') : null
+
+/**
+ * 強化（または弱体）をかける。逆向き（弱体／強化）に同じ能力値のものがあれば、それを消し、新しいほうもかけない（本人の説明：両方なくなる）。
+ * 返り値：[同じ向きの一覧, 逆向きの一覧, 打ち消したか]
+ */
+export function applyEffect(same: ActiveEffect[], opposite: ActiveEffect[], e: ActiveEffect): [ActiveEffect[], ActiveEffect[], boolean] {
+  const keys = new Set(e.mods.map(cancelKey).filter(Boolean))
+  const hit = e.special ? undefined : opposite.find((x) => !x.special && x.mods.some((m) => keys.has(cancelKey(m))))
+  if (hit) return [same, opposite.filter((x) => x !== hit), true]
+  return [addEffect(same, e), opposite, false]
+}
+
+// ---------------------------------------------------------------
+// 状態異常の優先順位（LP Archive Part 47。説明の並びの逆が優先順位）
+// ---------------------------------------------------------------
+
+/** 上ほど強い。石化は戦闘不能と同じに扱うので、この表では一番上に置くだけ */
+export const AILMENT_PRIORITY = ['petrify', 'terror', 'curse', 'poison', 'sleep', 'confusion', 'paralysis', 'blind'] as const
+/** 上書きの決まり。'priority'＝優先順位方式（暫定、2026-10-18 本人決定）、'latest'＝新しいほうで上書き（本人の当初の理解） */
+export const AILMENT_OVERRIDE: 'priority' | 'latest' = 'priority'
+
+/** 今の状態異常 current に next がかかるか（同じ順位はかけ直し＝持続を引き直すとした。未確認） */
+export function ailmentReplaces(current: string | null | undefined, next: string): boolean {
+  if (!current || AILMENT_OVERRIDE === 'latest') return true
+  const rank = (id: string) => AILMENT_PRIORITY.indexOf(id as (typeof AILMENT_PRIORITY)[number])
+  return rank(next) <= rank(current)
 }
 
 /** 強化・弱体の倍率を掛け合わせる（増える方向は 100+値、減る方向は 100−値。スキルの数値が倍率そのもののものはそのまま） */
@@ -272,16 +382,16 @@ export function initialState(setup: BattleSetup): BattleState {
     turn: 0,
     members: setup.members.map((m) => {
       const st = memberStats(m)
-      return { id: m.id, name: m.name, hp: st.hp, maxHp: st.hp, baseMaxHp: st.hp, tp: st.tp, alive: true, buffs: [], debuffs: [], guarding: false, downTurn: null, ailment: null, binds: {}, acted: false }
+      return { id: m.id, name: m.name, hp: st.hp, maxHp: st.hp, baseMaxHp: st.hp, tp: st.tp, alive: true, buffs: [], debuffs: [], guarding: false, downTurn: null, ailment: null, binds: {}, acted: false, stunTurn: 0, wokeTurn: 0, turnFx: {} }
     }),
-    enemy: { hp: es.hp, maxHp: es.hp, debuffs: [], ailments: {}, buffs: [], prev: null, regen: null, revived: false, counter: null, guarding: false },
+    enemy: { hp: es.hp, maxHp: es.hp, debuffs: [], ailments: {}, buffs: [], prev: null, regen: null, revived: false, counter: null, guarding: false, resistMul: {}, wokeTurn: 0 },
   }
 }
 
 const cloneState = (s: BattleState): BattleState => ({
   turn: s.turn,
-  members: s.members.map((m) => ({ ...m, buffs: [...m.buffs], debuffs: [...m.debuffs], binds: { ...m.binds } })),
-  enemy: { ...s.enemy, debuffs: [...s.enemy.debuffs], ailments: { ...s.enemy.ailments }, buffs: [...s.enemy.buffs] },
+  members: s.members.map((m) => ({ ...m, buffs: [...m.buffs], debuffs: [...m.debuffs], binds: { ...m.binds }, turnFx: {} })),
+  enemy: { ...s.enemy, debuffs: [...s.enemy.debuffs], ailments: { ...s.enemy.ailments }, buffs: [...s.enemy.buffs], resistMul: { ...s.enemy.resistMul } },
 })
 
 // ---------------------------------------------------------------
@@ -327,6 +437,8 @@ export interface AttackProfile {
   inflicts: { id: InflictId; chance: number }[]
   /** 期待値（1回の行動の合計） */
   expected: number
+  /** 攻撃の属性（複合なら2つ）。チェイスの判定に使う */
+  elements: ElementId[]
 }
 
 /** 戦闘の計算で使う覚え書き（同じ設定の間は使い回す） */
@@ -343,7 +455,7 @@ export class SimContext {
 
   constructor(setup: BattleSetup) {
     this.setup = setup
-    this.actions = new Map(setup.members.map((m) => [m.id, memberActions(m)]))
+    this.actions = partyActions(setup.members)
     this.stats = new Map(setup.members.map((m) => [m.id, memberStats(m)]))
     this.spec = setup.enemy ? targetFromEnemy(setup.enemy, false) : { ...setup.target, guarding: false }
     this.es = enemyStats(setup)
@@ -367,25 +479,41 @@ export class SimContext {
    * 攻撃の分布。atk＝攻撃の強化（物理）の倍率、dealt＝与ダメージの倍率、def＝敵の防御の倍率、sleep＝敵が睡眠中、
    * taken＝敵の強化による属性ごとの受けるダメージの倍率（%）、guarding＝敵が防御中
    */
-  attack(memberId: string, actionId: string, atk: number, dealt: number, def: number, sleep: boolean, taken: Partial<Record<ElementId, number>> = {}, guarding = false): AttackProfile | null {
-    const key = `${memberId}|${actionId}|${atk}|${dealt}|${def}|${sleep}|${JSON.stringify(taken)}|${guarding}`
+  attack(memberId: string, actionId: string, atk: number, dealt: number, def: number, sleep: boolean, taken: Partial<Record<ElementId, number>> = {}, guarding = false, imbue?: ElementId): AttackProfile | null {
+    const key = `${memberId}|${actionId}|${atk}|${dealt}|${def}|${sleep}|${JSON.stringify(taken)}|${guarding}|${imbue ?? ''}`
     if (this.cache.has(key)) return this.cache.get(key)!
-    const r = this.buildAttack(memberId, actionId, atk, dealt, def, sleep, taken, guarding)
+    const r = this.buildAttack(memberId, actionId, atk, dealt, def, sleep, taken, guarding, imbue)
     this.cache.set(key, r)
     return r
   }
 
-  private buildAttack(memberId: string, actionId: string, atk: number, dealt: number, def: number, sleep: boolean, taken: Partial<Record<ElementId, number>>, guarding: boolean): AttackProfile | null {
+  /** チェイス・トラッピングの1発（STR の単体攻撃。element の属性だけ、威力 power%）。期待値と分布 */
+  extraHit(memberId: string, skill: Skill, level: number, element: ElementId, powerParam: string, atk: number, dealt: number, def: number, sleep: boolean, taken: Partial<Record<ElementId, number>>, guarding: boolean): AttackProfile | null {
+    const fake: Skill = { ...skill, weapons: undefined, stance: undefined, effects: [{ type: 'damage', attack: 'str', element, target: 'enemy-single', powerParam }] }
+    const key = `extra|${memberId}|${skill.id}|${powerParam}|${element}|${atk}|${dealt}|${def}|${sleep}|${JSON.stringify(taken)}|${guarding}`
+    if (this.cache.has(key)) return this.cache.get(key)!
+    const option = { id: skill.id, name: skill.name, skill: fake, level, unusable: null }
+    const r = this.buildAttack(memberId, skill.id, atk, dealt, def, sleep, taken, guarding, undefined, option)
+    this.cache.set(key, r)
+    return r
+  }
+
+  private buildAttack(
+    memberId: string, actionId: string, atk: number, dealt: number, def: number, sleep: boolean, taken: Partial<Record<ElementId, number>>, guarding: boolean,
+    imbue?: ElementId, forced?: AttackOption,
+  ): AttackProfile | null {
     const m = this.member(memberId)
     const skills = skillsByJob[m.jobId] ?? []
-    const weapon = findEquipment(m.weaponId)
-    const option = attackOptions(skills, m.skills, weapon, hasShield(m)).find((o) => o.id === actionId)
+    // 序曲：通常攻撃を物理100%＋属性100%の複合属性にする（atwiki バード）。素手でも属性を付ける
+    const real = findEquipment(m.weaponId)
+    const weapon = imbue && actionId === 'normal' ? ({ ...(real ?? { id: 'fist', name: '素手', slot: 'weapon', atk: 0, jobs: [], sources: [] }), element: imbue } as Equipment) : real
+    const option = forced ?? attackOptions(skills, m.skills, real, hasShield(m)).find((o) => o.id === actionId)
     if (!option) return null
     const effect = option.skill?.effects.find((e) => e.type === 'damage')
     // 攻撃の強化（攻撃力上昇）は物理だけ、与ダメージ（ウォークライ）はすべてに効くとした
     const tec = effect?.type === 'damage' && effect.attack === 'tec'
-    // 睡眠中の敵は物理攻撃の属性倍率が 1.5 倍（EO Wiki）
-    const vulnMul = sleep && !tec ? 1.5 : 1
+    // 睡眠中の敵は攻撃を 1.5倍受ける（Part 47：物理も属性も。EO Wiki は物理だけ。Part 47 を使う）
+    const vulnMul = sleep ? 1.5 : 1
     const target = {
       ...this.spec,
       guarding,
@@ -408,6 +536,7 @@ export class SimContext {
       defBuffRate: def,
     })
     if (!built) return null
+    const elements = [built.element, ...(built.elemElement ? [built.elemElement] : [])]
     const r = calcDamage(built.input)
     const hit = toHitDist(r.distribution, r.expected)
     const inflicts = this.inflicts(m, option.skill)
@@ -416,7 +545,7 @@ export class SimContext {
       const crit = toHitDist(c.distribution, c.expected)
       const doubleChance = doubleAttackChance(skills, m.skills)
       const per = (1 - PARTY_CRIT) * hit.expected + PARTY_CRIT * crit.expected
-      return { hit, crit, hitsMin: 1, hitsMax: 1, doubleChance, inflicts, expected: per * (1 + doubleChance) }
+      return { hit, crit, hitsMin: 1, hitsMax: 1, doubleChance, inflicts, expected: per * (1 + doubleChance), elements }
     }
     if (!effect || effect.type !== 'damage') return null
     const values = skillValues(option.skill, option.level, false)!
@@ -427,7 +556,7 @@ export class SimContext {
       hi = values[effect.maxHitsParam]
     }
     // 敵は1体なので、対象が複数のスキル（全体・ランダム・左右）も1体に1回分だけ当たる
-    return { hit, crit: null, hitsMin: lo, hitsMax: hi, doubleChance: 0, inflicts, expected: (hit.expected * (lo + hi)) / 2 }
+    return { hit, crit: null, hitsMin: lo, hitsMax: hi, doubleChance: 0, inflicts, expected: (hit.expected * (lo + hi)) / 2, elements }
   }
 
   /** スキルが付ける状態異常と付与率（0〜1） */
@@ -543,8 +672,8 @@ function resolveAction(ctx: SimContext, f: Fighter, actionId: string, fallbackId
 }
 
 /** 行動の速度（ターンの初めの状態で決める）。味方の弱体（敵の技で下がった速さ）も入れる */
-function speedKey(ctx: SimContext, f: Fighter, a: SimAction): number {
-  const agiBuff = (product(f.buffs, (m) => (m.stat === 'agi' ? 100 + m.value : null)) * product(f.debuffs, (m) => (m.stat === 'agi' ? 100 - m.value : null))) / 100
+function speedKey(ctx: SimContext, f: Fighter, a: SimAction, turn: number): number {
+  const agiBuff = memberAgiRate(f, turn)
   const party = formulas.difficulty[ctx.setup.difficulty].partySpeed
   return Math.round((ctx.stats.get(f.id)!.agi * (agiBuff / 100) * a.speed * (party / 100)) / 5)
 }
@@ -562,11 +691,17 @@ export interface TurnOptions {
   endless?: boolean
 }
 
-/** 状態異常で行動できないか（乱数のとき。麻痺・テラーは「一定の確率で」なので 50% とした。混乱は行動を入力できないので何もしないとした） */
-function ailmentBlocks(f: Fighter, turn: number, rng: Rng | null): string | null {
+/**
+ * 状態異常で予定の行動ができないか（Part 47）。'confused' は混乱で予定の行動ができず、50% で敵に通常攻撃（残り 50% は味方を攻撃するが入れていない）。
+ * 睡眠・スタン・起きたターンは行動できない。麻痺・テラーは 50% で行動できない
+ */
+function ailmentBlocks(f: Fighter, turn: number, rng: Rng | null): string | 'confused' | null {
+  if (f.stunTurn === turn) return 'スタン'
+  if (f.wokeTurn === turn) return '睡眠（起きたターン）'
   const a = f.ailment
   if (!a || a.lastTurn < turn) return null
-  if (a.id === 'sleep' || a.id === 'stun' || a.id === 'confusion') return INFLICT_NOTE[a.id]
+  if (a.id === 'sleep') return INFLICT_NOTE.sleep
+  if (a.id === 'confusion') return 'confused'
   if ((a.id === 'paralysis' || a.id === 'terror') && rng && rng() < 0.5) return INFLICT_NOTE[a.id]
   return null
 }
@@ -587,7 +722,13 @@ export function runTurn(ctx: SimContext, prev: BattleState, opts: TurnOptions): 
 
   // ---- 敵の行動を決める（ターンの初め） ----
   const alive = () => opts.endless || !enemyDown(s)
-  const choice = ctx.enemyActs && !enemyDisabled(s.enemy, t) && alive() ? chooseEnemyAction(ctx, s, rng) : null
+  // 行動できないか（麻痺・テラーの判定はここで1回だけ）。混乱は 50% で通常攻撃に変わる
+  const disabled = enemyDisabled(s.enemy, t, rng)
+  let choice = ctx.enemyActs && !disabled && alive() ? chooseEnemyAction(ctx, s, rng) : null
+  if (choice && rng && (s.enemy.ailments.confusion ?? 0) >= t && ctx.setup.enemy) {
+    // 混乱：50% で味方のだれかに通常攻撃、残りは仲間（自分の側）を攻撃する（1対1なので何もしない）
+    choice = rng() < 0.5 ? (ctx.behavior ? { kind: 'skill', id: 'normal', skill: null, note: '混乱' } : choice) : { kind: 'skip', id: 'confused', name: '行動できない', note: '混乱' }
+  }
 
   // ---- 行動順 ----
   type Slot = { kind: 'member'; f: Fighter; action: SimAction; fallback?: string; key: number; tie: number; index: number } | { kind: 'enemy'; key: number; tie: number; index: number }
@@ -595,23 +736,39 @@ export function runTurn(ctx: SimContext, prev: BattleState, opts: TurnOptions): 
   s.members.forEach((f, i) => {
     if (!f.alive) return
     const r = resolveAction(ctx, f, opts.plan[f.id] ?? opts.fallback, opts.fallback, t)
-    slots.push({ kind: 'member', f, action: r.action, fallback: r.fallback, key: r.action.priority ? Infinity : speedKey(ctx, f, r.action), tie: rng ? rng() : 0, index: i })
+    slots.push({ kind: 'member', f, action: r.action, fallback: r.fallback, key: r.action.priority ? Infinity : speedKey(ctx, f, r.action, t), tie: rng ? rng() : 0, index: i })
   })
   if (choice) {
-    const agiRate = (product(s.enemy.debuffs, (m) => (m.stat === 'agi' ? 100 - m.value : null)) * product(s.enemy.buffs, (m) => (m.stat === 'agi' ? 100 + m.value : null))) / 100
+    const agiRate = ((product(s.enemy.debuffs, (m) => (m.stat === 'agi' ? 100 - m.value : null)) * product(s.enemy.buffs, (m) => (m.stat === 'agi' ? 100 + m.value : null))) / 100) * ((s.enemy.ailments['bind-leg'] ?? 0) >= t ? 0.7 : 1)
     slots.push({ kind: 'enemy', key: Math.round((ctx.es.agi * (agiRate / 100) * (enemyChoiceSpeed(choice) / 100)) / 5), tie: rng ? rng() : 0, index: s.members.length })
+  }
+  // アザーズステップ：選んだ味方を、ターンの最初（使ったレンジャーのすぐ後）に動けるようにする（atwiki レンジャー）
+  for (const sl of slots) {
+    if (sl.kind !== 'member' || sl.action.special !== 'others-step' || !sl.action.targetId) continue
+    const target = slots.find((x) => x.kind === 'member' && x.f.id === sl.action.targetId && x !== sl)
+    if (target && target.key !== Infinity) target.key = Number.MAX_SAFE_INTEGER
   }
   slots.sort((a, b) => b.key - a.key || (rng ? a.tie - b.tie : a.index - b.index))
 
   for (const slot of slots) {
     if (slot.kind === 'enemy') {
-      if (alive() && !enemyDisabled(s.enemy, t)) enemyTurn(ctx, s, choice!, rng, entries)
+      // 行動の前に起こされた・スタンしたら行動できない
+      if (alive() && s.enemy.wokeTurn !== t && (s.enemy.ailments.stun ?? 0) !== t && (s.enemy.ailments.sleep ?? 0) < t) enemyTurn(ctx, s, choice!, rng, entries)
       continue
     }
     const f = slot.f
     if (!f.alive) continue
     f.acted = true
     const blocked = ailmentBlocks(f, t, rng)
+    if (blocked === 'confused') {
+      // 混乱：50% で敵に通常攻撃、残りは味方を攻撃する（味方へのダメージは入れていない）
+      if (!rng || rng() < 0.5) {
+        const entry: TurnLog['entries'][number] = { actor: f.name, action: '通常攻撃', note: '混乱' }
+        memberAttack(ctx, s, f, ctx.action(f.id, 'normal')!, rng, entry, !rng ? 0.5 : 1)
+        entries.push(entry)
+      } else entries.push({ actor: f.name, action: '行動できない', note: '混乱（味方を攻撃。ダメージは入れていない）' })
+      continue
+    }
     if (blocked) {
       entries.push({ actor: f.name, action: '行動できない', note: blocked })
       continue
@@ -620,6 +777,7 @@ export function runTurn(ctx: SimContext, prev: BattleState, opts: TurnOptions): 
     f.tp -= a.tp
     const entry: TurnLog['entries'][number] = { actor: f.name, action: a.name, ...(slot.fallback ? { fallback: slot.fallback } : {}) }
     if (a.kind === 'defend') f.guarding = true
+    else if (a.special && a.kind !== 'attack') castSpecial(s, f, a, entry)
     else if (a.kind === 'attack' || a.kind === 'ailment') memberAttack(ctx, s, f, a, rng, entry)
     else if (a.kind === 'buff' || a.kind === 'debuff') castEffect(ctx, s, f, a, entry)
     else if (a.kind === 'heal') castHeal(ctx, s, f, a, entry)
@@ -637,11 +795,13 @@ export function runTurn(ctx: SimContext, prev: BattleState, opts: TurnOptions): 
       const amount = b.regen.ratio ? Math.floor((f.maxHp * b.regen.amount) / 100) : b.regen.amount
       f.hp = Math.min(f.maxHp, f.hp + Math.floor((amount * healRate) / 100))
     }
+    // 安らぎの子守唄：ターンの終わりに最大TP の一定割合を回復（atwiki バード）
+    for (const b of f.buffs) for (const m of b.mods) if (m.stat === 'tpRegen') f.tp = Math.min(ctx.stats.get(f.id)!.tp, f.tp + Math.floor((ctx.stats.get(f.id)!.tp * m.value) / 100))
     // 毒：ターンの終わりに決まったダメージ（atwiki「システム」）
     if (f.ailment?.id === 'poison' && f.ailment.lastTurn >= t && f.ailment.poison) {
       f.hp -= f.ailment.poison
       entries.push({ actor: f.name, action: '毒', damage: f.ailment.poison })
-      if (f.hp <= 0) knockDown(f, t)
+      if (f.hp <= 0) downOrEndure(f, t, rng)
     }
   }
   if (s.enemy.regen && s.enemy.regen.lastTurn >= t && !enemyDown(s)) s.enemy.hp = Math.min(s.enemy.maxHp, s.enemy.hp + s.enemy.regen.amount)
@@ -694,8 +854,10 @@ function counterAttack(ctx: SimContext, s: BattleState, f: Fighter, rng: Rng | n
 }
 
 /** 敵が行動できない状態異常（睡眠・麻痺・石化・スタン）。麻痺は毎ターン確実に止まるとした（未確認） */
-function enemyDisabled(e: EnemyState, t: number): boolean {
-  return (['sleep', 'paralysis', 'petrify', 'stun'] as InflictId[]).some((id) => (e.ailments[id] ?? 0) >= t)
+function enemyDisabled(e: EnemyState, t: number, rng: Rng | null = null): boolean {
+  if (e.wokeTurn === t || (e.ailments.stun ?? 0) === t || (e.ailments.sleep ?? 0) >= t) return true
+  // 麻痺・テラー：50% で行動できない（Part 47）。期待値の計算では行動するとした（期待値では状態異常が付かない）
+  return rng !== null && (['paralysis', 'terror'] as InflictId[]).some((id) => (e.ailments[id] ?? 0) >= t) && rng() < 0.5
 }
 
 /** 最大HPの強化（蛮族の行進曲・ヘルズクライ）を反映する */
@@ -720,12 +882,19 @@ export function enemyDefense(s: BattleState): { def: number; taken: Partial<Reco
   return { def, taken }
 }
 
-/** 味方の攻撃の倍率（強化と、敵の技による弱体） */
-export function memberAtkRates(f: Fighter): { atk: number; dealt: number } {
+/** 味方の攻撃の倍率（強化と、敵の技による弱体。腕封じは STR −30%（Part 47）を物理の攻撃の倍率 ×0.7 として近似） */
+export function memberAtkRates(f: Fighter, turn: number): { atk: number; dealt: number } {
+  const arm = (f.binds.arm ?? 0) >= turn ? 0.7 : 1
   return {
-    atk: (product(f.buffs, (m) => (m.stat === 'physAtk' ? 100 + m.value : null)) * product(f.debuffs, (m) => (m.stat === 'physAtk' ? 100 - m.value : null))) / 100,
+    atk: ((product(f.buffs, (m) => (m.stat === 'physAtk' ? 100 + m.value : null)) * product(f.debuffs, (m) => (m.stat === 'physAtk' ? 100 - m.value : null))) / 100) * arm,
     dealt: product(f.buffs, (m) => (m.stat === 'damageDealt' ? m.value : null)),
   }
+}
+
+/** 味方の速さの倍率（%）：強化・弱体と脚封じ（AGI −30%、Part 47） */
+export function memberAgiRate(f: Fighter, turn: number): number {
+  const leg = (f.binds.leg ?? 0) >= turn ? 0.7 : 1
+  return ((product(f.buffs, (m) => (m.stat === 'agi' ? 100 + m.value : null)) * product(f.debuffs, (m) => (m.stat === 'agi' ? 100 - m.value : null))) / 100) * leg
 }
 
 /** 敵に与えるダメージを反映する（ゴーレムのリジェネ中の起き上がり） */
@@ -737,48 +906,159 @@ function hitEnemy(s: BattleState, dmg: number) {
   }
 }
 
-function memberAttack(ctx: SimContext, s: BattleState, f: Fighter, a: SimAction, rng: Rng | null, entry: TurnLog['entries'][number]) {
-  const { atk, dealt } = memberAtkRates(f)
+/** 敵に与えるダメージ（マンティコアの半減・既に倒れている）を反映して、与えた量を返す */
+function dealToEnemy(ctx: SimContext, s: BattleState, dmg: number, rng: Rng | null): number {
+  const halve = ctx.behavior?.halveDamageChance
+  if (halve) dmg = rng ? (rng() * 100 < halve ? Math.floor(dmg / 2) : dmg) : dmg * (1 - halve / 200)
+  if (enemyDown(s)) return 0
+  hitEnemy(s, dmg)
+  return dmg
+}
+
+/** 攻撃1回分のダメージ（乱数なら引く、期待値なら期待値 × scale） */
+function rollAttack(p: AttackProfile, rng: Rng | null, scale: number): number {
+  if (!rng) return p.expected * scale
+  const one = () => (p.crit && rng() < PARTY_CRIT ? sampleHit(p.crit, rng) : sampleHit(p.hit, rng))
+  const n = p.hitsMin + Math.floor(rng() * (p.hitsMax - p.hitsMin + 1))
+  let dmg = 0
+  for (let i = 0; i < n; i++) dmg += one()
+  if (p.doubleChance > 0 && rng() < p.doubleChance) dmg += one()
+  return dmg
+}
+
+/** 呪い：攻撃すると与えたダメージの半分が自分に返る（atwiki「システム」） */
+function curseBacklash(s: BattleState, f: Fighter, dmg: number, rng: Rng | null, entry: TurnLog['entries'][number]) {
+  if (f.ailment?.id !== 'curse' || f.ailment.lastTurn < s.turn || dmg <= 0) return
+  f.hp -= rng ? Math.floor(dmg / 2) : dmg / 2
+  entry.note = `${entry.note ? `${entry.note}・` : ''}呪いで${Math.floor(dmg / 2)}返る`
+  if (f.hp <= 0) downOrEndure(f, s.turn, rng, entry)
+}
+
+function memberAttack(ctx: SimContext, s: BattleState, f: Fighter, a: SimAction, rng: Rng | null, entry: TurnLog['entries'][number], scale = 1) {
+  const { atk, dealt } = memberAtkRates(f, s.turn)
   const { def, taken } = enemyDefense(s)
   const asleep = (s.enemy.ailments.sleep ?? 0) >= s.turn
+  const m = ctx.member(f.id)
+  if (a.special === 'pain-trade') {
+    // ペイントレード：(最大HP − 今の HP) × スキル倍率 × レベル補正 の固定ダメージ（atwiki カースメーカー）
+    const values = skillValues(a.skill!, a.level, false)!
+    const rate = levelCorrection(formulas, m.level, ctx.es.level).rate
+    const dmg = dealToEnemy(ctx, s, Math.floor((((f.maxHp - Math.max(0, f.hp)) * values.p1) / 100) * (rate / 100)), rng)
+    entry.damage = dmg
+    curseBacklash(s, f, dmg, rng, entry)
+    return
+  }
+  if (a.special === 'the-end') {
+    // ジエンド：HP が条件の割合以下の敵を即死させる（即死の耐性で判定）。条件を満たさなければ外れ（atwiki ダークハンター）
+    const values = skillValues(a.skill!, a.level, false)!
+    const hpPct = (s.enemy.hp / s.enemy.maxHp) * 100
+    if (hpPct > values.p1) {
+      entry.note = '条件の HP を満たさず外れ'
+      return
+    }
+    const chance = inflictVuln(ctx.setup.enemy ?? undefined, 'death') / 100
+    if (rng) {
+      const note = inflictEnemy(s, 'death', chance, rng)
+      entry.note = note ? '即死' : '即死しなかった'
+    } else s.enemy.hp *= 1 - Math.min(1, chance)
+    return
+  }
   if (a.kind === 'attack') {
-    const p = ctx.attack(f.id, a.id, atk, dealt, def, asleep, taken, s.enemy.guarding)
+    const imbue = a.id === 'normal' ? f.buffs.find((b) => b.mods.some((x) => x.stat === 'imbue'))?.mods[0].elements?.[0] : undefined
+    const p = ctx.attack(f.id, a.id, atk, dealt, def, asleep, taken, s.enemy.guarding, imbue)
     if (p) {
-      let dmg: number
-      if (!rng) dmg = p.expected
-      else {
-        const one = () => (p.crit && rng() < PARTY_CRIT ? sampleHit(p.crit, rng) : sampleHit(p.hit, rng))
-        const n = p.hitsMin + Math.floor(rng() * (p.hitsMax - p.hitsMin + 1))
-        dmg = 0
-        for (let i = 0; i < n; i++) dmg += one()
-        if (p.doubleChance > 0 && rng() < p.doubleChance) dmg += one()
-      }
-      // 受ける攻撃ごとに一定の確率でダメージを半分にする（マンティコア）
-      const halve = ctx.behavior?.halveDamageChance
-      if (halve) dmg = rng ? (rng() * 100 < halve ? Math.floor(dmg / 2) : dmg) : dmg * (1 - halve / 200)
-      if (enemyDown(s)) dmg = 0
-      hitEnemy(s, dmg)
+      const dmg = dealToEnemy(ctx, s, rollAttack(p, rng, scale), rng)
       entry.damage = dmg
-      // 呪い：攻撃すると与えたダメージの半分が自分に返る（atwiki「システム」）
-      if (f.ailment?.id === 'curse' && f.ailment.lastTurn >= s.turn && dmg > 0) {
-        f.hp -= rng ? Math.floor(dmg / 2) : dmg / 2
-        entry.note = `${entry.note ? `${entry.note}・` : ''}呪いで${Math.floor(dmg / 2)}返る`
-        if (f.hp <= 0) knockDown(f, s.turn)
+      curseBacklash(s, f, dmg, rng, entry)
+      // ドレインバイト：与えたダメージの一部を回復する（atwiki ダークハンター）
+      if (a.skill?.id === 'dark-hunter-drain-bite' && dmg > 0 && f.alive) {
+        const heal = (dmg * skillValues(a.skill, a.level, false)!.p2) / 100
+        f.hp = Math.min(f.maxHp, f.hp + (rng ? Math.floor(heal) : heal))
       }
-      // 攻撃を受けると睡眠が解ける（atwiki のカースメーカーの解説から。推定）
-      if (asleep && dmg > 0) delete s.enemy.ailments.sleep
+      // 攻撃を受けると睡眠が解け、起きたターンは行動できない（atwiki「システム」、Part 47）
+      if (asleep && dmg > 0) {
+        delete s.enemy.ailments.sleep
+        s.enemy.wokeTurn = s.turn
+      }
+      // チェイス：この攻撃の属性（炎・氷・雷）に構えている味方が1度だけ追撃する
+      if (dmg > 0) for (const n of chaseFollowUp(ctx, s, f, p.elements, rng, scale)) entry.note = `${entry.note ? `${entry.note}・` : ''}${n}`
     }
   }
   // 状態異常は乱数で計算するときだけ判定する（期待値の計算では付かないものとする）
   if (rng) {
-    const m = ctx.member(f.id)
     for (const x of ctx.inflicts(m, a.skill)) {
-      if (rng() < x.chance) {
-        s.enemy.ailments[x.id] = Math.max(s.enemy.ailments[x.id] ?? 0, s.turn + ailmentDuration(x.id, rng) - 1)
-        entry.note = `${entry.note ? `${entry.note}・` : ''}${x.id}`
-      }
+      const note = inflictEnemy(s, x.id, x.chance, rng)
+      if (note) entry.note = `${entry.note ? `${entry.note}・` : ''}${note}`
     }
   }
+}
+
+/**
+ * チェイス（atwiki ソードマン）：使ったターン、味方の属性攻撃に反応して1度だけ追撃する。追撃は属性だけで物理を含まず、STR で計算する。
+ * 追撃は呪いの反射を受けない。ダブルアタックへの2回の追撃は入れていない（1度だけ）
+ */
+function chaseFollowUp(ctx: SimContext, s: BattleState, attacker: Fighter, elements: ElementId[], rng: Rng | null, scale: number): string[] {
+  const notes: string[] = []
+  for (const c of s.members) {
+    if (!c.alive || c === attacker || !c.turnFx.chase) continue
+    for (const ch of c.turnFx.chase) {
+      if (ch.used || !elements.includes(ch.element) || enemyDown(s)) continue
+      ch.used = true
+      const { atk, dealt } = memberAtkRates(c, s.turn)
+      const { def, taken } = enemyDefense(s)
+      const p = ctx.extraHit(c.id, ch.skill, ch.level, ch.element, 'dmg', atk, dealt, def, (s.enemy.ailments.sleep ?? 0) >= s.turn, taken, s.enemy.guarding)
+      if (p) notes.push(`${c.name}の${ch.skill.name} ${Math.round(dealToEnemy(ctx, s, rollAttack(p, rng, scale), rng))}`)
+    }
+  }
+  return notes
+}
+
+/** 戦闘不能になる HP になったとき：医術防御II がかかっていれば、その確率で HP 1 で残り、強化・弱体がすべて消える（atwiki メディック） */
+function downOrEndure(f: Fighter, turn: number, rng: Rng | null, entry?: { note?: string }) {
+  const endure = f.buffs.find((b) => b.mods.some((m) => m.stat === 'endure'))
+  const p = endure ? endure.mods.find((m) => m.stat === 'endure')!.value : 0
+  // 期待値の計算では、発動率が 50% 以上なら残るとした
+  if (p > 0 && (rng ? rng() * 100 < p : p >= 50)) {
+    f.hp = 1
+    f.buffs = []
+    f.debuffs = []
+    refreshMaxHp(f)
+    if (entry) entry.note = `${entry.note ? `${entry.note}・` : ''}医術防御IIで HP1`
+    return
+  }
+  knockDown(f, turn)
+}
+
+/** 耐性のグループ（Part 47：状態異常はすべて同じ耐性、即死と石化は同じ、スタンは別、封じは部位ごと） */
+const resistGroup = (id: InflictId) => (id.startsWith('bind-') ? id : id === 'death' || id === 'petrify' ? 'death' : id === 'stun' ? 'stun' : 'ailment')
+
+/**
+ * 敵に状態異常・封じをかける（乱数）。付与率に、入るたびに ×0.75・外れると ×1.25 の耐性の倍率をかけ、封じは 90%・ほかは 100% で頭打ち（Part 47）。
+ * 返り値は記録に出す文字（かからなければ null）
+ */
+function inflictEnemy(s: BattleState, id: InflictId, chance: number, rng: Rng): string | null {
+  const group = resistGroup(id)
+  const mul = s.enemy.resistMul[group] ?? 1
+  const cap = id.startsWith('bind-') ? 0.9 : 1
+  const landed = rng() < Math.min(cap, chance * mul)
+  s.enemy.resistMul[group] = mul * (landed ? 0.75 : 1.25)
+  if (!landed) return null
+  if (id === 'death' || id === 'petrify') {
+    // 即死は残りの HP 分のダメージ、石化は倒れたのと同じ（1対1なので戦闘が終わる）
+    s.enemy.hp = 0
+    return INFLICT_LABELS[id]
+  }
+  if (id === 'stun') {
+    s.enemy.ailments.stun = s.turn
+    return INFLICT_LABELS[id]
+  }
+  if (!id.startsWith('bind-')) {
+    const current = AILMENT_PRIORITY.find((a) => a !== 'petrify' && (s.enemy.ailments[a as InflictId] ?? 0) >= s.turn)
+    if (!ailmentReplaces(current, id)) return `${INFLICT_LABELS[id]}（${INFLICT_LABELS[current as InflictId]}に負けた）`
+    if (current) delete s.enemy.ailments[current as InflictId]
+  }
+  s.enemy.ailments[id] = Math.max(s.enemy.ailments[id] ?? 0, s.turn + ailmentDuration(id, rng) - 1)
+  return INFLICT_LABELS[id]
 }
 
 function effectOf(skill: Skill, type: 'buff' | 'debuff') {
@@ -798,8 +1078,11 @@ function castEffect(ctx: SimContext, s: BattleState, f: Fighter, a: SimAction, e
     oneShot: !!e.oneShot,
   }
   if (a.kind === 'debuff') {
-    s.enemy.debuffs = addEffect(s.enemy.debuffs, effect)
+    const [debuffs, buffs, canceled] = applyEffect(s.enemy.debuffs, s.enemy.buffs, effect)
+    s.enemy.debuffs = debuffs
+    s.enemy.buffs = buffs
     entry.target = '敵'
+    if (canceled) entry.note = '敵の強化と打ち消し合った'
     return
   }
   const caster = ctx.member(f.id)
@@ -812,10 +1095,89 @@ function castEffect(ctx: SimContext, s: BattleState, f: Fighter, a: SimAction, e
     return true
   })
   for (const x of targets) {
-    x.buffs = addEffect(x.buffs, effect)
+    const [buffs, debuffs, canceled] = applyEffect(x.buffs, x.debuffs, effect)
+    x.buffs = buffs
+    x.debuffs = debuffs
+    if (canceled) entry.note = `${entry.note ? `${entry.note}・` : ''}${x.name}の弱体と打ち消し合った`
     refreshMaxHp(x)
   }
   entry.target = e.target === 'self' ? '自分' : e.target === 'ally-row' ? `${(e.row ?? caster.row) === 'front' ? '前' : '後'}列` : e.target === 'ally-single' ? '自分' : '味方全体'
+}
+
+/** 個別に計算するスキル（攻撃以外）。atwiki の各ジョブのページの説明による */
+function castSpecial(s: BattleState, f: Fighter, a: SimAction, entry: TurnLog['entries'][number]) {
+  const skill = a.skill!
+  const values = skillValues(skill, a.level, false) ?? {}
+  const name = `${skill.name} Lv${a.level}`
+  const target = a.targetId ? s.members.find((x) => x.id === a.targetId) : undefined
+  const put = (x: Fighter, e: ActiveEffect) => {
+    const [buffs, debuffs] = applyEffect(x.buffs, x.debuffs, e)
+    x.buffs = buffs
+    x.debuffs = debuffs
+  }
+  switch (a.special) {
+    case 'imbue': {
+      // 序曲：味方1人の通常攻撃を戦闘終了まで複合属性にする（歌。強化の枠を使う）。ほかの序曲は外す（1人に1つと仮定）
+      if (!target?.alive) break
+      target.buffs = target.buffs.filter((b) => !b.mods.some((m) => m.stat === 'imbue'))
+      put(target, { skillId: skill.id, name, mods: [{ stat: 'imbue', value: 0, elements: [specialElement(skill.id)!] }], lastTurn: Infinity, oneShot: false })
+      entry.target = target.name
+      break
+    }
+    case 'dispel': {
+      // 沈静なる奇想曲：敵の強化をレベルに応じた数だけ消す（古いものから。LP Archive）
+      const n = values.p1 ?? 1
+      s.enemy.buffs = s.enemy.buffs.slice(n)
+      entry.target = '敵'
+      break
+    }
+    case 'tp-regen':
+      for (const x of s.members) if (x.alive) put(x, { skillId: skill.id, name, mods: [{ stat: 'tpRegen', value: values.p1 }], lastTurn: Infinity, oneShot: false })
+      entry.target = '味方全体'
+      break
+    case 'endure':
+      // 医術防御II：5ターンの間、戦闘不能になるダメージを受けても発動率で HP1 で残る
+      for (const x of s.members) if (x.alive) put(x, { skillId: skill.id, name, mods: [{ stat: 'endure', value: values.p1 }], lastTurn: s.turn + 4, oneShot: false })
+      entry.target = '味方全体'
+      break
+    case 'evade-once':
+      f.turnFx.evade = true
+      entry.target = '自分'
+      break
+    case 'parry':
+      f.turnFx.parry = { first: values.p1, repeat: values.p2 ?? 0, succeeded: 0 }
+      entry.target = '自分'
+      break
+    case 'chase':
+      f.turnFx.chase = [...(f.turnFx.chase ?? []), { element: specialElement(skill.id)!, skill, level: a.level, used: false }]
+      break
+    case 'trapping':
+      f.turnFx.trap = { skill, level: a.level }
+      break
+    case 'refresh':
+      // リフレッシュ：味方全員の状態異常（封じ以外）を治す
+      for (const x of s.members) if (x.alive) x.ailment = null
+      entry.target = '味方全体'
+      break
+    case 'bind-recovery': {
+      // バインドリカバリ：味方1人の封じをレベルに応じた数だけ治す（頭・腕・脚の順とした）
+      if (!target?.alive) break
+      let n = values.p1 ?? 1
+      for (const part of PARTS) if (n > 0 && target.binds[part] !== undefined) {
+        delete target.binds[part]
+        n -= 1
+      }
+      entry.target = target.name
+      break
+    }
+    case 'arm-recovery':
+      delete f.binds.arm
+      entry.target = '自分'
+      break
+    case 'others-step':
+      entry.target = target?.name
+      break
+  }
 }
 
 function castHeal(ctx: SimContext, s: BattleState, f: Fighter, a: SimAction, entry: TurnLog['entries'][number]) {
@@ -889,8 +1251,10 @@ function chooseRow(ctx: SimContext, alive: Fighter[], rng: Rng): 'front' | 'back
 /** 敵の攻撃が当たる確率（EO Wiki「Hit Rate」）。味方の回避の強化・弱体は入れない */
 export function enemyHitChance(ctx: SimContext, s: BattleState, action: EnemyAction, f: Fighter): number {
   const m = ctx.member(f.id)
-  const agi = ctx.stats.get(f.id)!.agi * (product(f.buffs, (x) => (x.stat === 'agi' ? 100 + x.value : null)) / 100)
-  const acc = product(s.enemy.debuffs, (x) => (x.stat === 'accuracy' ? x.value : null))
+  // 脚封じは AGI −30%（Part 47）。速さの強化・弱体も入れる
+  const agi = (ctx.stats.get(f.id)!.agi * memberAgiRate(f, s.turn)) / 100
+  // 敵の命中：味方の弱体（トリックステップ）、敵の盲目・頭封じ（命中 −30%。盲目の量は Part 47 では不明なので LP Archive の別の回の 30% とした）
+  const acc = product(s.enemy.debuffs, (x) => (x.stat === 'accuracy' ? x.value : null)) * ((s.enemy.ailments.blind ?? 0) >= s.turn ? 0.7 : 1) * ((s.enemy.ailments['bind-head'] ?? 0) >= s.turn ? 0.7 : 1)
   const diff = formulas.difficulty[ctx.setup.difficulty].enemyAccuracy
   const p = ((ctx.es.agi + ctx.es.level + 500) / (agi + m.level + 500)) * (action.accuracy / 100) * (acc / 100) * (diff / 100)
   return Math.max(0, Math.min(1, p))
@@ -913,8 +1277,8 @@ function defenseRates(ctx: SimContext, f: Fighter, action: EnemyAction): { vuln:
       for (const e of sk.effects) if (e.type === 'passive-stat' && e.stat === 'physResist') vuln = (vuln * (100 - sk.levels[lv - 1].values[e.param])) / 100
     }
   }
-  // 睡眠中は受けるダメージが大きくなる（atwiki「システム」。敵と同じく物理を 1.5倍とした）
-  if (physical && f.ailment?.id === 'sleep') vuln *= 1.5
+  // 睡眠中は攻撃を 1.5倍受ける（Part 47：物理も属性も）
+  if (f.ailment?.id === 'sleep') vuln *= 1.5
   const def = (product(f.buffs, (x) => (x.appliesTo === 'defense' && x.stat === 'physDef' ? 100 + x.value : null)) * product(f.debuffs, (x) => (x.stat === 'physDef' ? 100 - x.value : null))) / 100
   const taken = product(f.buffs, (x) => (x.stat === 'damageTaken' ? x.value : null))
   return { vuln, def, taken }
@@ -1020,7 +1384,8 @@ const PHYSICAL: ElementId[] = ['slash', 'bash', 'pierce']
 
 /** 敵の攻撃力の倍率（味方の弱体と敵の自己強化） */
 function enemyAtkRate(s: BattleState): number {
-  return (product(s.enemy.debuffs, (m) => (m.stat === 'physAtk' ? 100 - m.value : null)) * product(s.enemy.buffs, (m) => (m.stat === 'physAtk' ? 100 + m.value : null))) / 100
+  const arm = (s.enemy.ailments['bind-arm'] ?? 0) >= s.turn ? 0.7 : 1
+  return ((product(s.enemy.debuffs, (m) => (m.stat === 'physAtk' ? 100 - m.value : null)) * product(s.enemy.buffs, (m) => (m.stat === 'physAtk' ? 100 + m.value : null))) / 100) * arm
 }
 
 /** 狙いの確率（メンバー ID → 確率）。挑発・前後列・HP の順（chooseTarget と同じ考え方） */
@@ -1065,6 +1430,12 @@ function drawTarget(s: BattleState, dist: Map<string, number>, rng: Rng): Fighte
   return s.members.find((f) => f.id === id) ?? null
 }
 
+/** 睡眠から起こす（起きたターンは行動できない） */
+function wake(f: Fighter, turn: number) {
+  f.ailment = null
+  f.wokeTurn = turn
+}
+
 /** 味方を戦闘不能にする */
 function knockDown(f: Fighter, turn: number) {
   f.hp = 0
@@ -1094,10 +1465,20 @@ function inflictParty(ctx: SimContext, s: BattleState, f: Fighter, x: { ailments
       notes.push(INFLICT_NOTE[a])
       continue
     }
-    // 封じ以外の状態異常は1つだけ。後からかかったものが前のものを消す（atwiki「システム」）
+    // スタン：そのターンの残りだけ行動できない（Part 47）
+    if (a === 'stun') {
+      f.stunTurn = s.turn
+      notes.push(INFLICT_NOTE.stun)
+      continue
+    }
+    // 封じ以外の状態異常は1つだけ。優先順位方式（暫定）：下位のものは上位のものを置き換えない
     const id = a as PartyAilment
-    const lastTurn = id === 'stun' ? s.turn + (f.acted ? 1 : 0) : s.turn + ailmentDuration(id as InflictId, rng) - 1
-    f.ailment = { id, lastTurn, ...(x.poisonDamage ? { poison: x.poisonDamage } : {}) }
+    const current = f.ailment && f.ailment.lastTurn >= s.turn ? f.ailment.id : null
+    if (!ailmentReplaces(current, id)) {
+      notes.push(`${INFLICT_NOTE[a]}は${INFLICT_NOTE[current!]}に負けてかからない`)
+      continue
+    }
+    f.ailment = { id, lastTurn: s.turn + ailmentDuration(id as InflictId, rng) - 1, ...(x.poisonDamage ? { poison: x.poisonDamage } : {}) }
     notes.push(INFLICT_NOTE[a])
   }
 }
@@ -1122,9 +1503,10 @@ function enemyStrike(
       const exp = expectedEnemyDamage(ctx, s, a, f, o.ignoreDef ? 100 : undefined)
       dmg += (exp * (a.attack === 'str' ? atkStr : 100)) / 100
     }
-    dmg *= o.weight
+    dmg *= o.weight * guardFactor(f, null, entries, name)
     f.hp -= dmg
-    if (f.hp <= 0) knockDown(f, s.turn)
+    if (dmg > 0 && parts[0].attack === 'str') trapCounter(ctx, s, f, null, o.weight, entries)
+    if (f.hp <= 0) downOrEndure(f, s.turn, null)
     return dmg
   }
   const entry: TurnLog['entries'][number] = { actor: '敵', action: name, target: f.name }
@@ -1133,6 +1515,7 @@ function enemyStrike(
     entries.push(entry)
     return 0
   }
+  if (guardFactor(f, rng, entries, name) === 0) return 0
   const crit = o.normal && rng() < ENEMY_CRIT
   let dmg = 0
   for (const a of parts) {
@@ -1143,13 +1526,14 @@ function enemyStrike(
   f.hp -= dmg
   entry.damage = dmg
   if (crit) entry.note = 'クリティカル'
-  // 攻撃を受けると睡眠が解ける（atwiki「システム」）
-  if (f.ailment?.id === 'sleep' && dmg > 0) f.ailment = null
+  // 攻撃を受けると睡眠が解け、そのターンは行動できない（atwiki「システム」、Part 47）
+  if (f.ailment?.id === 'sleep' && dmg > 0) wake(f, s.turn)
   if (f.hp <= 0) {
-    knockDown(f, s.turn)
-    entry.note = `${entry.note ? `${entry.note}・` : ''}戦闘不能`
+    downOrEndure(f, s.turn, rng, entry)
+    if (!f.alive) entry.note = `${entry.note ? `${entry.note}・` : ''}戦闘不能`
   }
   entries.push(entry)
+  if (dmg > 0 && parts[0].attack === 'str') trapCounter(ctx, s, f, rng, 1, entries)
   return dmg
 }
 
@@ -1158,7 +1542,7 @@ function doEnemySkill(ctx: SimContext, s: BattleState, skill: EnemySkill | null,
   const enemy = ctx.setup.enemy!
   const b = ctx.behavior!
   const name = skill ? skill.name : '通常攻撃'
-  const accuracy = (skill?.accuracy ?? enemy.accuracy) * ((s.enemy.ailments.blind ?? 0) >= s.turn ? 0.7 : 1)
+  const accuracy = skill?.accuracy ?? enemy.accuracy
   const effects: EnemySkillEffect[] = skill ? skill.effects : [{ type: 'damage', element: enemy.normalElement ?? 'slash', power: 100, target: 'single' }]
   const aim = skill ? skill.aim : b.normalAim
   const head: TurnLog['entries'][number] = { actor: '敵', action: name, ...(note ? { note } : {}) }
@@ -1244,12 +1628,23 @@ function doEnemySkill(ctx: SimContext, s: BattleState, skill: EnemySkill | null,
         break
       }
       case 'self-buff':
-        s.enemy.buffs = addEffect(s.enemy.buffs, { skillId: skill!.id, name, mods: e.mods.map((m) => ({ stat: m.stat, value: m.value, ...(m.elements ? { elements: m.elements } : {}) })), lastTurn: s.turn + e.turns - 1, oneShot: false })
-        if (!logged) logHead({ target: '自分' })
+        {
+          const effect: ActiveEffect = { skillId: skill!.id, name, mods: e.mods.map((m) => ({ stat: m.stat, value: m.value, ...(m.elements ? { elements: m.elements } : {}) })), lastTurn: s.turn + e.turns - 1, oneShot: false, ...(e.special ? { special: true } : {}) }
+          const [buffs, debuffs, canceled] = applyEffect(s.enemy.buffs, s.enemy.debuffs, effect)
+          s.enemy.buffs = buffs
+          s.enemy.debuffs = debuffs
+          if (!logged) logHead({ target: '自分', ...(canceled ? { note: '味方の弱体と打ち消し合った' } : {}) })
+        }
         break
       case 'party-debuff': {
         const effect: ActiveEffect = { skillId: skill!.id, name, mods: e.mods.map((m) => ({ stat: m.stat, value: m.value })), lastTurn: s.turn + e.turns - 1, oneShot: false }
-        for (const f of s.members) if (f.alive) f.debuffs = addEffect(f.debuffs, effect)
+        for (const f of s.members) {
+          if (!f.alive) continue
+          const [debuffs, buffs] = applyEffect(f.debuffs, f.buffs, effect)
+          f.debuffs = debuffs
+          f.buffs = buffs
+          refreshMaxHp(f)
+        }
         if (!logged) logHead({ target: '味方全体' })
         if (rng && e.inflict) for (const f of s.members) {
           const notes: string[] = []
@@ -1302,9 +1697,10 @@ function doManualAction(ctx: SimContext, s: BattleState, action: EnemyAction, rn
     // 手入力の行動は物理か属性かを本人が選ぶので、その区別をそのまま使う
     const a = action
     if (!rng) {
-      const dmg = (expectedEnemyDamage(ctx, s, a, f) * (a.attack === 'str' ? enemyAtkRate(s) : 100) * weight) / 100
+      const dmg = ((expectedEnemyDamage(ctx, s, a, f) * (a.attack === 'str' ? enemyAtkRate(s) : 100) * weight) / 100) * guardFactor(f, null, entries, a.name)
       f.hp -= dmg
-      if (f.hp <= 0) knockDown(f, s.turn)
+      if (dmg > 0 && a.attack === 'str') trapCounter(ctx, s, f, null, weight, entries)
+      if (f.hp <= 0) downOrEndure(f, s.turn, null)
       return
     }
     enemyStrikeManual(ctx, s, f, a, rng, entries)
@@ -1336,6 +1732,7 @@ function enemyStrikeManual(ctx: SimContext, s: BattleState, f: Fighter, action: 
     entries.push(entry)
     return
   }
+  if (guardFactor(f, rng, entries, action.name) === 0) return
   const crit = action.normal && rng() < ENEMY_CRIT
   const r = defenseRates(ctx, f, action)
   const d = ctx.enemyHit(action, f.id, r.vuln, r.def, action.attack === 'str' ? enemyAtkRate(s) : 100, f.guarding, crit)
@@ -1343,12 +1740,63 @@ function enemyStrikeManual(ctx: SimContext, s: BattleState, f: Fighter, action: 
   f.hp -= dmg
   entry.damage = dmg
   if (crit) entry.note = 'クリティカル'
-  if (f.ailment?.id === 'sleep' && dmg > 0) f.ailment = null
+  if (f.ailment?.id === 'sleep' && dmg > 0) wake(f, s.turn)
   if (f.hp <= 0) {
-    knockDown(f, s.turn)
-    entry.note = `${entry.note ? `${entry.note}・` : ''}戦闘不能`
+    downOrEndure(f, s.turn, rng, entry)
+    if (!f.alive) entry.note = `${entry.note ? `${entry.note}・` : ''}戦闘不能`
   }
   entries.push(entry)
+  if (dmg > 0 && action.attack === 'str') trapCounter(ctx, s, f, rng, 1, entries)
+}
+
+/**
+ * 一寸の見切り（1度だけ無効）とパリング（成功率で無効。2回目以降は連続発動率）。無効にしたら 0、そうでなければ 1 を返す。
+ * 期待値の計算では、見切りは最初の1回を 0 にし、パリングは成功しない割合をかける
+ */
+function guardFactor(f: Fighter, rng: Rng | null, entries: TurnLog['entries'], name: string): number {
+  const fx = f.turnFx
+  if (fx.evade) {
+    fx.evade = false
+    if (rng) entries.push({ actor: '敵', action: name, target: f.name, note: '一寸の見切りで無効' })
+    return 0
+  }
+  if (fx.parry) {
+    const p = (fx.parry.succeeded === 0 ? fx.parry.first : fx.parry.repeat) / 100
+    if (!rng) {
+      fx.parry.succeeded += p
+      return 1 - Math.min(1, p)
+    }
+    if (rng() < p) {
+      fx.parry.succeeded += 1
+      entries.push({ actor: '敵', action: name, target: f.name, note: 'パリングで無効' })
+      return 0
+    }
+  }
+  return 1
+}
+
+/**
+ * トラッピング（atwiki ダークハンター）：使ったターン、自分か左右の味方が直接攻撃を受けるたびに斬攻撃で反撃する（自分なら威力大、左右なら威力小）。
+ * 直接攻撃は物理（STR）の攻撃とした（Claude 決定）
+ */
+function trapCounter(ctx: SimContext, s: BattleState, victim: Fighter, rng: Rng | null, weight: number, entries: TurnLog['entries']) {
+  for (const t of s.members) {
+    if (!t.alive || !t.turnFx.trap || enemyDown(s)) continue
+    let param: string | null = null
+    if (t === victim) param = 'p1'
+    else {
+      const row = s.members.filter((x) => ctx.member(x.id).row === ctx.member(t.id).row)
+      const i = row.indexOf(t)
+      if (row[i - 1] === victim || row[i + 1] === victim) param = 'p2'
+    }
+    if (!param) continue
+    const { atk, dealt } = memberAtkRates(t, s.turn)
+    const { def, taken } = enemyDefense(s)
+    const p = ctx.extraHit(t.id, t.turnFx.trap.skill, t.turnFx.trap.level, 'slash', param, atk, dealt, def, (s.enemy.ailments.sleep ?? 0) >= s.turn, taken, s.enemy.guarding)
+    if (!p) continue
+    const dmg = dealToEnemy(ctx, s, rollAttack(p, rng, weight), rng)
+    if (rng) entries.push({ actor: t.name, action: 'トラッピングの反撃', damage: dmg })
+  }
 }
 
 function enemyTurn(ctx: SimContext, s: BattleState, choice: EnemyChoice, rng: Rng | null, entries: TurnLog['entries']) {
