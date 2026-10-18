@@ -114,53 +114,81 @@
       },
       "boostable": false,
       "prerequisites": [],
-      "params": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "術式攻撃力倍率",
+          "unit": "percent"
+        }
+      ],
       "effects": [
         {
-          "type": "other",
-          "description": "炎の術式の攻撃力を上げるパッシブ。炎の術式の前提"
+          "type": "passive-stat",
+          "stat": "spellAtk",
+          "param": "rate",
+          "element": "fire"
         }
       ],
       "levels": [
         {
           "lv": 1,
-          "values": {}
+          "values": {
+            "rate": 110
+          }
         },
         {
           "lv": 2,
-          "values": {}
+          "values": {
+            "rate": 111
+          }
         },
         {
           "lv": 3,
-          "values": {}
+          "values": {
+            "rate": 112
+          }
         },
         {
           "lv": 4,
-          "values": {}
+          "values": {
+            "rate": 113
+          }
         },
         {
           "lv": 5,
-          "values": {}
+          "values": {
+            "rate": 119
+          }
         },
         {
           "lv": 6,
-          "values": {}
+          "values": {
+            "rate": 120
+          }
         },
         {
           "lv": 7,
-          "values": {}
+          "values": {
+            "rate": 121
+          }
         },
         {
           "lv": 8,
-          "values": {}
+          "values": {
+            "rate": 122
+          }
         },
         {
           "lv": 9,
-          "values": {}
+          "values": {
+            "rate": 123
+          }
         },
         {
           "lv": 10,
-          "values": {}
+          "values": {
+            "rate": 130
+          }
         }
       ],
       "sources": [
@@ -170,6 +198,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "属性マスタリーの倍率（Fire Up など）。pokachi EtrianStuff の DS版のスキルデータ。術式攻撃力だけにかかる（EO Wiki）",
+          "checkedAt": "2026-10-18"
         }
       ],
       "notes": "数で表せない項目（atwiki）… 術式攻撃力：各属性の威力が微増"
@@ -187,53 +222,81 @@
       },
       "boostable": false,
       "prerequisites": [],
-      "params": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "術式攻撃力倍率",
+          "unit": "percent"
+        }
+      ],
       "effects": [
         {
-          "type": "other",
-          "description": "氷の術式の攻撃力を上げるパッシブ。氷の術式の前提"
+          "type": "passive-stat",
+          "stat": "spellAtk",
+          "param": "rate",
+          "element": "ice"
         }
       ],
       "levels": [
         {
           "lv": 1,
-          "values": {}
+          "values": {
+            "rate": 110
+          }
         },
         {
           "lv": 2,
-          "values": {}
+          "values": {
+            "rate": 111
+          }
         },
         {
           "lv": 3,
-          "values": {}
+          "values": {
+            "rate": 112
+          }
         },
         {
           "lv": 4,
-          "values": {}
+          "values": {
+            "rate": 113
+          }
         },
         {
           "lv": 5,
-          "values": {}
+          "values": {
+            "rate": 119
+          }
         },
         {
           "lv": 6,
-          "values": {}
+          "values": {
+            "rate": 120
+          }
         },
         {
           "lv": 7,
-          "values": {}
+          "values": {
+            "rate": 121
+          }
         },
         {
           "lv": 8,
-          "values": {}
+          "values": {
+            "rate": 122
+          }
         },
         {
           "lv": 9,
-          "values": {}
+          "values": {
+            "rate": 123
+          }
         },
         {
           "lv": 10,
-          "values": {}
+          "values": {
+            "rate": 130
+          }
         }
       ],
       "sources": [
@@ -243,6 +306,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "属性マスタリーの倍率（Fire Up など）。pokachi EtrianStuff の DS版のスキルデータ。術式攻撃力だけにかかる（EO Wiki）",
+          "checkedAt": "2026-10-18"
         }
       ],
       "notes": "数で表せない項目（atwiki）… 術式攻撃力：各属性の威力が微増"
@@ -260,53 +330,81 @@
       },
       "boostable": false,
       "prerequisites": [],
-      "params": [],
+      "params": [
+        {
+          "id": "rate",
+          "label": "術式攻撃力倍率",
+          "unit": "percent"
+        }
+      ],
       "effects": [
         {
-          "type": "other",
-          "description": "雷の術式の攻撃力を上げるパッシブ。雷の術式の前提"
+          "type": "passive-stat",
+          "stat": "spellAtk",
+          "param": "rate",
+          "element": "volt"
         }
       ],
       "levels": [
         {
           "lv": 1,
-          "values": {}
+          "values": {
+            "rate": 110
+          }
         },
         {
           "lv": 2,
-          "values": {}
+          "values": {
+            "rate": 111
+          }
         },
         {
           "lv": 3,
-          "values": {}
+          "values": {
+            "rate": 112
+          }
         },
         {
           "lv": 4,
-          "values": {}
+          "values": {
+            "rate": 113
+          }
         },
         {
           "lv": 5,
-          "values": {}
+          "values": {
+            "rate": 119
+          }
         },
         {
           "lv": 6,
-          "values": {}
+          "values": {
+            "rate": 120
+          }
         },
         {
           "lv": 7,
-          "values": {}
+          "values": {
+            "rate": 121
+          }
         },
         {
           "lv": 8,
-          "values": {}
+          "values": {
+            "rate": 122
+          }
         },
         {
           "lv": 9,
-          "values": {}
+          "values": {
+            "rate": 123
+          }
         },
         {
           "lv": 10,
-          "values": {}
+          "values": {
+            "rate": 130
+          }
         }
       ],
       "sources": [
@@ -316,6 +414,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "属性マスタリーの倍率（Fire Up など）。pokachi EtrianStuff の DS版のスキルデータ。術式攻撃力だけにかかる（EO Wiki）",
+          "checkedAt": "2026-10-18"
         }
       ],
       "notes": "数で表せない項目（atwiki）… 術式攻撃力：各属性の威力が微増"
@@ -611,6 +716,11 @@
           "id": "dmg",
           "label": "ダメージ倍率",
           "unit": "percent"
+        },
+        {
+          "id": "spell",
+          "label": "術式攻撃力",
+          "unit": "number"
         }
       ],
       "effects": [
@@ -619,7 +729,8 @@
           "attack": "tec",
           "element": "fire",
           "target": "enemy-single",
-          "powerParam": "dmg"
+          "powerParam": "dmg",
+          "spellAtkParam": "spell"
         }
       ],
       "levels": [
@@ -627,70 +738,80 @@
           "lv": 1,
           "tp": 4,
           "values": {
-            "dmg": 160
+            "dmg": 160,
+            "spell": 10
           }
         },
         {
           "lv": 2,
           "tp": 4,
           "values": {
-            "dmg": 170
+            "dmg": 170,
+            "spell": 10
           }
         },
         {
           "lv": 3,
           "tp": 5,
           "values": {
-            "dmg": 180
+            "dmg": 180,
+            "spell": 10
           }
         },
         {
           "lv": 4,
           "tp": 5,
           "values": {
-            "dmg": 200
+            "dmg": 200,
+            "spell": 10
           }
         },
         {
           "lv": 5,
           "tp": 6,
           "values": {
-            "dmg": 210
+            "dmg": 210,
+            "spell": 10
           }
         },
         {
           "lv": 6,
           "tp": 6,
           "values": {
-            "dmg": 220
+            "dmg": 220,
+            "spell": 10
           }
         },
         {
           "lv": 7,
           "tp": 6,
           "values": {
-            "dmg": 230
+            "dmg": 230,
+            "spell": 10
           }
         },
         {
           "lv": 8,
           "tp": 6,
           "values": {
-            "dmg": 240
+            "dmg": 240,
+            "spell": 10
           }
         },
         {
           "lv": 9,
           "tp": 6,
           "values": {
-            "dmg": 250
+            "dmg": 250,
+            "spell": 10
           }
         },
         {
           "lv": 10,
           "tp": 6,
           "values": {
-            "dmg": 260
+            "dmg": 260,
+            "spell": 10
           }
         }
       ],
@@ -699,35 +820,40 @@
           "lv": 11,
           "tp": 6,
           "values": {
-            "dmg": 270
+            "dmg": 270,
+            "spell": 10
           }
         },
         {
           "lv": 12,
           "tp": 6,
           "values": {
-            "dmg": 280
+            "dmg": 280,
+            "spell": 10
           }
         },
         {
           "lv": 13,
           "tp": 6,
           "values": {
-            "dmg": 290
+            "dmg": 290,
+            "spell": 10
           }
         },
         {
           "lv": 14,
           "tp": 6,
           "values": {
-            "dmg": 300
+            "dmg": 300,
+            "spell": 10
           }
         },
         {
           "lv": 15,
           "tp": 6,
           "values": {
-            "dmg": 310
+            "dmg": 310,
+            "spell": 10
           }
         }
       ],
@@ -738,6 +864,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "術式攻撃力（Damage Boost）。pokachi EtrianStuff の DS版のスキルデータ。EO Wiki の式「(2×TEC＋術式攻撃力×(1＋属性マスタリー))」の術式攻撃力",
+          "checkedAt": "2026-10-18"
         }
       ]
     },
@@ -770,6 +903,11 @@
           "id": "dmg",
           "label": "ダメージ倍率",
           "unit": "percent"
+        },
+        {
+          "id": "spell",
+          "label": "術式攻撃力",
+          "unit": "number"
         }
       ],
       "effects": [
@@ -778,7 +916,8 @@
           "attack": "tec",
           "element": "fire",
           "target": "enemy-single",
-          "powerParam": "dmg"
+          "powerParam": "dmg",
+          "spellAtkParam": "spell"
         }
       ],
       "levels": [
@@ -786,70 +925,80 @@
           "lv": 1,
           "tp": 10,
           "values": {
-            "dmg": 280
+            "dmg": 280,
+            "spell": 10
           }
         },
         {
           "lv": 2,
           "tp": 11,
           "values": {
-            "dmg": 320
+            "dmg": 320,
+            "spell": 10
           }
         },
         {
           "lv": 3,
           "tp": 12,
           "values": {
-            "dmg": 360
+            "dmg": 360,
+            "spell": 9
           }
         },
         {
           "lv": 4,
           "tp": 13,
           "values": {
-            "dmg": 400
+            "dmg": 400,
+            "spell": 9
           }
         },
         {
           "lv": 5,
           "tp": 14,
           "values": {
-            "dmg": 460
+            "dmg": 460,
+            "spell": 8
           }
         },
         {
           "lv": 6,
           "tp": 14,
           "values": {
-            "dmg": 500
+            "dmg": 500,
+            "spell": 8
           }
         },
         {
           "lv": 7,
           "tp": 14,
           "values": {
-            "dmg": 540
+            "dmg": 540,
+            "spell": 7
           }
         },
         {
           "lv": 8,
           "tp": 14,
           "values": {
-            "dmg": 580
+            "dmg": 580,
+            "spell": 7
           }
         },
         {
           "lv": 9,
           "tp": 14,
           "values": {
-            "dmg": 620
+            "dmg": 620,
+            "spell": 6
           }
         },
         {
           "lv": 10,
           "tp": 14,
           "values": {
-            "dmg": 700
+            "dmg": 700,
+            "spell": 6
           }
         }
       ],
@@ -858,35 +1007,40 @@
           "lv": 11,
           "tp": 14,
           "values": {
-            "dmg": 740
+            "dmg": 740,
+            "spell": 6
           }
         },
         {
           "lv": 12,
           "tp": 14,
           "values": {
-            "dmg": 780
+            "dmg": 780,
+            "spell": 6
           }
         },
         {
           "lv": 13,
           "tp": 14,
           "values": {
-            "dmg": 820
+            "dmg": 820,
+            "spell": 6
           }
         },
         {
           "lv": 14,
           "tp": 14,
           "values": {
-            "dmg": 860
+            "dmg": 860,
+            "spell": 6
           }
         },
         {
           "lv": 15,
           "tp": 14,
           "values": {
-            "dmg": 960
+            "dmg": 960,
+            "spell": 6
           }
         }
       ],
@@ -897,6 +1051,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "術式攻撃力（Damage Boost）。pokachi EtrianStuff の DS版のスキルデータ。EO Wiki の式「(2×TEC＋術式攻撃力×(1＋属性マスタリー))」の術式攻撃力",
+          "checkedAt": "2026-10-18"
         }
       ]
     },
@@ -925,6 +1086,11 @@
           "id": "dmg",
           "label": "ダメージ倍率",
           "unit": "percent"
+        },
+        {
+          "id": "spell",
+          "label": "術式攻撃力",
+          "unit": "number"
         }
       ],
       "effects": [
@@ -933,7 +1099,8 @@
           "attack": "tec",
           "element": "fire",
           "target": "enemy-all",
-          "powerParam": "dmg"
+          "powerParam": "dmg",
+          "spellAtkParam": "spell"
         }
       ],
       "levels": [
@@ -941,70 +1108,80 @@
           "lv": 1,
           "tp": 16,
           "values": {
-            "dmg": 224
+            "dmg": 224,
+            "spell": 10
           }
         },
         {
           "lv": 2,
           "tp": 17,
           "values": {
-            "dmg": 256
+            "dmg": 256,
+            "spell": 10
           }
         },
         {
           "lv": 3,
           "tp": 18,
           "values": {
-            "dmg": 288
+            "dmg": 288,
+            "spell": 9
           }
         },
         {
           "lv": 4,
           "tp": 19,
           "values": {
-            "dmg": 320
+            "dmg": 320,
+            "spell": 9
           }
         },
         {
           "lv": 5,
           "tp": 20,
           "values": {
-            "dmg": 368
+            "dmg": 368,
+            "spell": 8
           }
         },
         {
           "lv": 6,
           "tp": 20,
           "values": {
-            "dmg": 400
+            "dmg": 400,
+            "spell": 8
           }
         },
         {
           "lv": 7,
           "tp": 20,
           "values": {
-            "dmg": 432
+            "dmg": 432,
+            "spell": 7
           }
         },
         {
           "lv": 8,
           "tp": 20,
           "values": {
-            "dmg": 464
+            "dmg": 464,
+            "spell": 7
           }
         },
         {
           "lv": 9,
           "tp": 20,
           "values": {
-            "dmg": 496
+            "dmg": 496,
+            "spell": 6
           }
         },
         {
           "lv": 10,
           "tp": 20,
           "values": {
-            "dmg": 560
+            "dmg": 560,
+            "spell": 6
           }
         }
       ],
@@ -1013,35 +1190,40 @@
           "lv": 11,
           "tp": 20,
           "values": {
-            "dmg": 592
+            "dmg": 592,
+            "spell": 6
           }
         },
         {
           "lv": 12,
           "tp": 20,
           "values": {
-            "dmg": 624
+            "dmg": 624,
+            "spell": 6
           }
         },
         {
           "lv": 13,
           "tp": 20,
           "values": {
-            "dmg": 656
+            "dmg": 656,
+            "spell": 6
           }
         },
         {
           "lv": 14,
           "tp": 20,
           "values": {
-            "dmg": 688
+            "dmg": 688,
+            "spell": 6
           }
         },
         {
           "lv": 15,
           "tp": 20,
           "values": {
-            "dmg": 768
+            "dmg": 768,
+            "spell": 6
           }
         }
       ],
@@ -1052,6 +1234,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "術式攻撃力（Damage Boost）。pokachi EtrianStuff の DS版のスキルデータ。EO Wiki の式「(2×TEC＋術式攻撃力×(1＋属性マスタリー))」の術式攻撃力",
+          "checkedAt": "2026-10-18"
         }
       ]
     },
@@ -1080,6 +1269,11 @@
           "id": "dmg",
           "label": "ダメージ倍率",
           "unit": "percent"
+        },
+        {
+          "id": "spell",
+          "label": "術式攻撃力",
+          "unit": "number"
         }
       ],
       "effects": [
@@ -1088,7 +1282,8 @@
           "attack": "tec",
           "element": "ice",
           "target": "enemy-single",
-          "powerParam": "dmg"
+          "powerParam": "dmg",
+          "spellAtkParam": "spell"
         }
       ],
       "levels": [
@@ -1096,70 +1291,80 @@
           "lv": 1,
           "tp": 4,
           "values": {
-            "dmg": 160
+            "dmg": 160,
+            "spell": 10
           }
         },
         {
           "lv": 2,
           "tp": 4,
           "values": {
-            "dmg": 170
+            "dmg": 170,
+            "spell": 10
           }
         },
         {
           "lv": 3,
           "tp": 5,
           "values": {
-            "dmg": 180
+            "dmg": 180,
+            "spell": 10
           }
         },
         {
           "lv": 4,
           "tp": 5,
           "values": {
-            "dmg": 200
+            "dmg": 200,
+            "spell": 10
           }
         },
         {
           "lv": 5,
           "tp": 6,
           "values": {
-            "dmg": 210
+            "dmg": 210,
+            "spell": 10
           }
         },
         {
           "lv": 6,
           "tp": 6,
           "values": {
-            "dmg": 220
+            "dmg": 220,
+            "spell": 10
           }
         },
         {
           "lv": 7,
           "tp": 6,
           "values": {
-            "dmg": 230
+            "dmg": 230,
+            "spell": 10
           }
         },
         {
           "lv": 8,
           "tp": 6,
           "values": {
-            "dmg": 240
+            "dmg": 240,
+            "spell": 10
           }
         },
         {
           "lv": 9,
           "tp": 6,
           "values": {
-            "dmg": 250
+            "dmg": 250,
+            "spell": 10
           }
         },
         {
           "lv": 10,
           "tp": 6,
           "values": {
-            "dmg": 260
+            "dmg": 260,
+            "spell": 10
           }
         }
       ],
@@ -1168,35 +1373,40 @@
           "lv": 11,
           "tp": 6,
           "values": {
-            "dmg": 270
+            "dmg": 270,
+            "spell": 10
           }
         },
         {
           "lv": 12,
           "tp": 6,
           "values": {
-            "dmg": 280
+            "dmg": 280,
+            "spell": 10
           }
         },
         {
           "lv": 13,
           "tp": 6,
           "values": {
-            "dmg": 290
+            "dmg": 290,
+            "spell": 10
           }
         },
         {
           "lv": 14,
           "tp": 6,
           "values": {
-            "dmg": 300
+            "dmg": 300,
+            "spell": 10
           }
         },
         {
           "lv": 15,
           "tp": 6,
           "values": {
-            "dmg": 310
+            "dmg": 310,
+            "spell": 10
           }
         }
       ],
@@ -1207,6 +1417,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "術式攻撃力（Damage Boost）。pokachi EtrianStuff の DS版のスキルデータ。EO Wiki の式「(2×TEC＋術式攻撃力×(1＋属性マスタリー))」の術式攻撃力",
+          "checkedAt": "2026-10-18"
         }
       ]
     },
@@ -1239,6 +1456,11 @@
           "id": "dmg",
           "label": "ダメージ倍率",
           "unit": "percent"
+        },
+        {
+          "id": "spell",
+          "label": "術式攻撃力",
+          "unit": "number"
         }
       ],
       "effects": [
@@ -1247,7 +1469,8 @@
           "attack": "tec",
           "element": "ice",
           "target": "enemy-single",
-          "powerParam": "dmg"
+          "powerParam": "dmg",
+          "spellAtkParam": "spell"
         }
       ],
       "levels": [
@@ -1255,70 +1478,80 @@
           "lv": 1,
           "tp": 10,
           "values": {
-            "dmg": 280
+            "dmg": 280,
+            "spell": 10
           }
         },
         {
           "lv": 2,
           "tp": 11,
           "values": {
-            "dmg": 320
+            "dmg": 320,
+            "spell": 10
           }
         },
         {
           "lv": 3,
           "tp": 12,
           "values": {
-            "dmg": 360
+            "dmg": 360,
+            "spell": 9
           }
         },
         {
           "lv": 4,
           "tp": 13,
           "values": {
-            "dmg": 400
+            "dmg": 400,
+            "spell": 9
           }
         },
         {
           "lv": 5,
           "tp": 14,
           "values": {
-            "dmg": 460
+            "dmg": 460,
+            "spell": 8
           }
         },
         {
           "lv": 6,
           "tp": 14,
           "values": {
-            "dmg": 500
+            "dmg": 500,
+            "spell": 8
           }
         },
         {
           "lv": 7,
           "tp": 14,
           "values": {
-            "dmg": 540
+            "dmg": 540,
+            "spell": 7
           }
         },
         {
           "lv": 8,
           "tp": 14,
           "values": {
-            "dmg": 580
+            "dmg": 580,
+            "spell": 7
           }
         },
         {
           "lv": 9,
           "tp": 14,
           "values": {
-            "dmg": 620
+            "dmg": 620,
+            "spell": 6
           }
         },
         {
           "lv": 10,
           "tp": 14,
           "values": {
-            "dmg": 700
+            "dmg": 700,
+            "spell": 6
           }
         }
       ],
@@ -1327,35 +1560,40 @@
           "lv": 11,
           "tp": 14,
           "values": {
-            "dmg": 740
+            "dmg": 740,
+            "spell": 6
           }
         },
         {
           "lv": 12,
           "tp": 14,
           "values": {
-            "dmg": 780
+            "dmg": 780,
+            "spell": 6
           }
         },
         {
           "lv": 13,
           "tp": 14,
           "values": {
-            "dmg": 820
+            "dmg": 820,
+            "spell": 6
           }
         },
         {
           "lv": 14,
           "tp": 14,
           "values": {
-            "dmg": 860
+            "dmg": 860,
+            "spell": 6
           }
         },
         {
           "lv": 15,
           "tp": 14,
           "values": {
-            "dmg": 960
+            "dmg": 960,
+            "spell": 6
           }
         }
       ],
@@ -1366,6 +1604,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "術式攻撃力（Damage Boost）。pokachi EtrianStuff の DS版のスキルデータ。EO Wiki の式「(2×TEC＋術式攻撃力×(1＋属性マスタリー))」の術式攻撃力",
+          "checkedAt": "2026-10-18"
         }
       ]
     },
@@ -1394,6 +1639,11 @@
           "id": "dmg",
           "label": "ダメージ倍率",
           "unit": "percent"
+        },
+        {
+          "id": "spell",
+          "label": "術式攻撃力",
+          "unit": "number"
         }
       ],
       "effects": [
@@ -1402,7 +1652,8 @@
           "attack": "tec",
           "element": "ice",
           "target": "enemy-all",
-          "powerParam": "dmg"
+          "powerParam": "dmg",
+          "spellAtkParam": "spell"
         }
       ],
       "levels": [
@@ -1410,70 +1661,80 @@
           "lv": 1,
           "tp": 16,
           "values": {
-            "dmg": 224
+            "dmg": 224,
+            "spell": 10
           }
         },
         {
           "lv": 2,
           "tp": 17,
           "values": {
-            "dmg": 256
+            "dmg": 256,
+            "spell": 10
           }
         },
         {
           "lv": 3,
           "tp": 18,
           "values": {
-            "dmg": 288
+            "dmg": 288,
+            "spell": 9
           }
         },
         {
           "lv": 4,
           "tp": 19,
           "values": {
-            "dmg": 320
+            "dmg": 320,
+            "spell": 9
           }
         },
         {
           "lv": 5,
           "tp": 20,
           "values": {
-            "dmg": 368
+            "dmg": 368,
+            "spell": 8
           }
         },
         {
           "lv": 6,
           "tp": 20,
           "values": {
-            "dmg": 400
+            "dmg": 400,
+            "spell": 8
           }
         },
         {
           "lv": 7,
           "tp": 20,
           "values": {
-            "dmg": 432
+            "dmg": 432,
+            "spell": 7
           }
         },
         {
           "lv": 8,
           "tp": 20,
           "values": {
-            "dmg": 464
+            "dmg": 464,
+            "spell": 7
           }
         },
         {
           "lv": 9,
           "tp": 20,
           "values": {
-            "dmg": 496
+            "dmg": 496,
+            "spell": 6
           }
         },
         {
           "lv": 10,
           "tp": 20,
           "values": {
-            "dmg": 560
+            "dmg": 560,
+            "spell": 6
           }
         }
       ],
@@ -1482,35 +1743,40 @@
           "lv": 11,
           "tp": 20,
           "values": {
-            "dmg": 592
+            "dmg": 592,
+            "spell": 6
           }
         },
         {
           "lv": 12,
           "tp": 20,
           "values": {
-            "dmg": 624
+            "dmg": 624,
+            "spell": 6
           }
         },
         {
           "lv": 13,
           "tp": 20,
           "values": {
-            "dmg": 656
+            "dmg": 656,
+            "spell": 6
           }
         },
         {
           "lv": 14,
           "tp": 20,
           "values": {
-            "dmg": 688
+            "dmg": 688,
+            "spell": 6
           }
         },
         {
           "lv": 15,
           "tp": 20,
           "values": {
-            "dmg": 768
+            "dmg": 768,
+            "spell": 6
           }
         }
       ],
@@ -1521,6 +1787,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "術式攻撃力（Damage Boost）。pokachi EtrianStuff の DS版のスキルデータ。EO Wiki の式「(2×TEC＋術式攻撃力×(1＋属性マスタリー))」の術式攻撃力",
+          "checkedAt": "2026-10-18"
         }
       ]
     },
@@ -1549,6 +1822,11 @@
           "id": "dmg",
           "label": "ダメージ倍率",
           "unit": "percent"
+        },
+        {
+          "id": "spell",
+          "label": "術式攻撃力",
+          "unit": "number"
         }
       ],
       "effects": [
@@ -1557,7 +1835,8 @@
           "attack": "tec",
           "element": "volt",
           "target": "enemy-single",
-          "powerParam": "dmg"
+          "powerParam": "dmg",
+          "spellAtkParam": "spell"
         }
       ],
       "levels": [
@@ -1565,70 +1844,80 @@
           "lv": 1,
           "tp": 4,
           "values": {
-            "dmg": 160
+            "dmg": 160,
+            "spell": 10
           }
         },
         {
           "lv": 2,
           "tp": 4,
           "values": {
-            "dmg": 170
+            "dmg": 170,
+            "spell": 10
           }
         },
         {
           "lv": 3,
           "tp": 5,
           "values": {
-            "dmg": 180
+            "dmg": 180,
+            "spell": 10
           }
         },
         {
           "lv": 4,
           "tp": 5,
           "values": {
-            "dmg": 200
+            "dmg": 200,
+            "spell": 10
           }
         },
         {
           "lv": 5,
           "tp": 6,
           "values": {
-            "dmg": 210
+            "dmg": 210,
+            "spell": 10
           }
         },
         {
           "lv": 6,
           "tp": 6,
           "values": {
-            "dmg": 220
+            "dmg": 220,
+            "spell": 10
           }
         },
         {
           "lv": 7,
           "tp": 6,
           "values": {
-            "dmg": 230
+            "dmg": 230,
+            "spell": 10
           }
         },
         {
           "lv": 8,
           "tp": 6,
           "values": {
-            "dmg": 240
+            "dmg": 240,
+            "spell": 10
           }
         },
         {
           "lv": 9,
           "tp": 6,
           "values": {
-            "dmg": 250
+            "dmg": 250,
+            "spell": 10
           }
         },
         {
           "lv": 10,
           "tp": 6,
           "values": {
-            "dmg": 260
+            "dmg": 260,
+            "spell": 10
           }
         }
       ],
@@ -1637,35 +1926,40 @@
           "lv": 11,
           "tp": 6,
           "values": {
-            "dmg": 270
+            "dmg": 270,
+            "spell": 10
           }
         },
         {
           "lv": 12,
           "tp": 6,
           "values": {
-            "dmg": 280
+            "dmg": 280,
+            "spell": 10
           }
         },
         {
           "lv": 13,
           "tp": 6,
           "values": {
-            "dmg": 290
+            "dmg": 290,
+            "spell": 10
           }
         },
         {
           "lv": 14,
           "tp": 6,
           "values": {
-            "dmg": 300
+            "dmg": 300,
+            "spell": 10
           }
         },
         {
           "lv": 15,
           "tp": 6,
           "values": {
-            "dmg": 310
+            "dmg": 310,
+            "spell": 10
           }
         }
       ],
@@ -1676,6 +1970,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "術式攻撃力（Damage Boost）。pokachi EtrianStuff の DS版のスキルデータ。EO Wiki の式「(2×TEC＋術式攻撃力×(1＋属性マスタリー))」の術式攻撃力",
+          "checkedAt": "2026-10-18"
         }
       ]
     },
@@ -1708,6 +2009,11 @@
           "id": "dmg",
           "label": "ダメージ倍率",
           "unit": "percent"
+        },
+        {
+          "id": "spell",
+          "label": "術式攻撃力",
+          "unit": "number"
         }
       ],
       "effects": [
@@ -1716,7 +2022,8 @@
           "attack": "tec",
           "element": "volt",
           "target": "enemy-single",
-          "powerParam": "dmg"
+          "powerParam": "dmg",
+          "spellAtkParam": "spell"
         }
       ],
       "levels": [
@@ -1724,70 +2031,80 @@
           "lv": 1,
           "tp": 10,
           "values": {
-            "dmg": 280
+            "dmg": 280,
+            "spell": 10
           }
         },
         {
           "lv": 2,
           "tp": 11,
           "values": {
-            "dmg": 320
+            "dmg": 320,
+            "spell": 10
           }
         },
         {
           "lv": 3,
           "tp": 12,
           "values": {
-            "dmg": 360
+            "dmg": 360,
+            "spell": 9
           }
         },
         {
           "lv": 4,
           "tp": 13,
           "values": {
-            "dmg": 400
+            "dmg": 400,
+            "spell": 9
           }
         },
         {
           "lv": 5,
           "tp": 14,
           "values": {
-            "dmg": 460
+            "dmg": 460,
+            "spell": 8
           }
         },
         {
           "lv": 6,
           "tp": 14,
           "values": {
-            "dmg": 500
+            "dmg": 500,
+            "spell": 8
           }
         },
         {
           "lv": 7,
           "tp": 14,
           "values": {
-            "dmg": 540
+            "dmg": 540,
+            "spell": 7
           }
         },
         {
           "lv": 8,
           "tp": 14,
           "values": {
-            "dmg": 580
+            "dmg": 580,
+            "spell": 7
           }
         },
         {
           "lv": 9,
           "tp": 14,
           "values": {
-            "dmg": 620
+            "dmg": 620,
+            "spell": 6
           }
         },
         {
           "lv": 10,
           "tp": 14,
           "values": {
-            "dmg": 700
+            "dmg": 700,
+            "spell": 6
           }
         }
       ],
@@ -1796,35 +2113,40 @@
           "lv": 11,
           "tp": 14,
           "values": {
-            "dmg": 740
+            "dmg": 740,
+            "spell": 6
           }
         },
         {
           "lv": 12,
           "tp": 14,
           "values": {
-            "dmg": 780
+            "dmg": 780,
+            "spell": 6
           }
         },
         {
           "lv": 13,
           "tp": 14,
           "values": {
-            "dmg": 820
+            "dmg": 820,
+            "spell": 6
           }
         },
         {
           "lv": 14,
           "tp": 14,
           "values": {
-            "dmg": 860
+            "dmg": 860,
+            "spell": 6
           }
         },
         {
           "lv": 15,
           "tp": 14,
           "values": {
-            "dmg": 960
+            "dmg": 960,
+            "spell": 6
           }
         }
       ],
@@ -1835,6 +2157,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "術式攻撃力（Damage Boost）。pokachi EtrianStuff の DS版のスキルデータ。EO Wiki の式「(2×TEC＋術式攻撃力×(1＋属性マスタリー))」の術式攻撃力",
+          "checkedAt": "2026-10-18"
         }
       ]
     },
@@ -1863,6 +2192,11 @@
           "id": "dmg",
           "label": "ダメージ倍率",
           "unit": "percent"
+        },
+        {
+          "id": "spell",
+          "label": "術式攻撃力",
+          "unit": "number"
         }
       ],
       "effects": [
@@ -1871,7 +2205,8 @@
           "attack": "tec",
           "element": "volt",
           "target": "enemy-all",
-          "powerParam": "dmg"
+          "powerParam": "dmg",
+          "spellAtkParam": "spell"
         }
       ],
       "levels": [
@@ -1879,70 +2214,80 @@
           "lv": 1,
           "tp": 16,
           "values": {
-            "dmg": 224
+            "dmg": 224,
+            "spell": 10
           }
         },
         {
           "lv": 2,
           "tp": 17,
           "values": {
-            "dmg": 256
+            "dmg": 256,
+            "spell": 10
           }
         },
         {
           "lv": 3,
           "tp": 18,
           "values": {
-            "dmg": 288
+            "dmg": 288,
+            "spell": 9
           }
         },
         {
           "lv": 4,
           "tp": 19,
           "values": {
-            "dmg": 320
+            "dmg": 320,
+            "spell": 9
           }
         },
         {
           "lv": 5,
           "tp": 20,
           "values": {
-            "dmg": 368
+            "dmg": 368,
+            "spell": 8
           }
         },
         {
           "lv": 6,
           "tp": 20,
           "values": {
-            "dmg": 400
+            "dmg": 400,
+            "spell": 8
           }
         },
         {
           "lv": 7,
           "tp": 20,
           "values": {
-            "dmg": 432
+            "dmg": 432,
+            "spell": 7
           }
         },
         {
           "lv": 8,
           "tp": 20,
           "values": {
-            "dmg": 464
+            "dmg": 464,
+            "spell": 7
           }
         },
         {
           "lv": 9,
           "tp": 20,
           "values": {
-            "dmg": 496
+            "dmg": 496,
+            "spell": 6
           }
         },
         {
           "lv": 10,
           "tp": 20,
           "values": {
-            "dmg": 560
+            "dmg": 560,
+            "spell": 6
           }
         }
       ],
@@ -1951,35 +2296,40 @@
           "lv": 11,
           "tp": 20,
           "values": {
-            "dmg": 592
+            "dmg": 592,
+            "spell": 6
           }
         },
         {
           "lv": 12,
           "tp": 20,
           "values": {
-            "dmg": 624
+            "dmg": 624,
+            "spell": 6
           }
         },
         {
           "lv": 13,
           "tp": 20,
           "values": {
-            "dmg": 656
+            "dmg": 656,
+            "spell": 6
           }
         },
         {
           "lv": 14,
           "tp": 20,
           "values": {
-            "dmg": 688
+            "dmg": 688,
+            "spell": 6
           }
         },
         {
           "lv": 15,
           "tp": 20,
           "values": {
-            "dmg": 768
+            "dmg": 768,
+            "spell": 6
           }
         }
       ],
@@ -1990,6 +2340,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/121.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "術式攻撃力（Damage Boost）。pokachi EtrianStuff の DS版のスキルデータ。EO Wiki の式「(2×TEC＋術式攻撃力×(1＋属性マスタリー))」の術式攻撃力",
+          "checkedAt": "2026-10-18"
         }
       ]
     },

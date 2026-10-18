@@ -65,6 +65,17 @@ const STANCE_LABELS = { jodan: '上段の構え', seigan: '青眼の構え', iai
 const WEAPON_LABELS: Record<WeaponTypeId, string> = { sword: '剣', axe: '斧', bow: '弓', whip: '鞭', staff: '杖', katana: '刀', shield: '盾' }
 export const weaponLabel = (t: WeaponTypeId) => WEAPON_LABELS[t]
 
+/** 属性マスタリーの、術式攻撃力への倍率（%） */
+export function spellMasteryRate(skills: Skill[], alloc: Allocation, element: string): number {
+  let rate = 100
+  for (const s of skills) {
+    const lv = alloc[s.id] ?? 0
+    if (lv === 0 || !s.levels) continue
+    for (const e of s.effects) if (e.type === 'passive-stat' && e.stat === 'spellAtk' && e.element === element) rate = (rate * s.levels[lv - 1].values[e.param]) / 100
+  }
+  return rate
+}
+
 /** 装備している武器の種類に合うマスタリーの倍率（%） */
 export function masteryRate(skills: Skill[], alloc: Allocation, weapon: Equipment | undefined): number {
   let rate = 100
@@ -170,11 +181,17 @@ export function buildAttackInput(c: AttackContext): { input: AttackInput; elemen
   const effect = skill.effects.find((e) => e.type === 'damage')
   const values = skillValues(skill, c.option.level, c.boosted)
   if (!effect || effect.type !== 'damage' || !values) return null
+  // 術式（TEC）：武器は使わず、術式ごとの術式攻撃力 × 属性マスタリー（EO Wiki。ほかの TEC の攻撃は術式攻撃力 0）
+  const attacker =
+    effect.attack === 'tec'
+      ? { ...base.attacker, weaponAtk: effect.spellAtkParam ? values[effect.spellAtkParam] : 0, masteryRate: spellMasteryRate(c.skills, c.alloc, effect.element) }
+      : base.attacker
   return {
     element: effect.element,
     elemElement: effect.hybridElement,
     input: {
       ...base,
+      attacker,
       kind: effect.attack,
       power: values[effect.powerParam],
       elemPower: effect.hybridElement ? values[effect.hybridPowerParam ?? effect.powerParam] : undefined,

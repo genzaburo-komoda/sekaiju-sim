@@ -2309,42 +2309,42 @@
         },
         {
           "lv": 2,
-          "tp": 10,
+          "tp": 9,
           "values": {}
         },
         {
           "lv": 3,
-          "tp": 10,
+          "tp": 8,
           "values": {}
         },
         {
           "lv": 4,
-          "tp": 10,
+          "tp": 7,
           "values": {}
         },
         {
           "lv": 5,
-          "tp": 10,
+          "tp": 6,
           "values": {}
         },
         {
           "lv": 6,
-          "tp": 10,
+          "tp": 5,
           "values": {}
         },
         {
           "lv": 7,
-          "tp": 10,
+          "tp": 4,
           "values": {}
         },
         {
           "lv": 8,
-          "tp": 10,
+          "tp": 3,
           "values": {}
         },
         {
           "lv": 9,
-          "tp": 10,
+          "tp": 2,
           "values": {}
         },
         {
@@ -2360,6 +2360,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "消費TP。DS版のスキルデータ（pokachi EtrianStuff）。前の値は仮入力だった",
+          "checkedAt": "2026-10-18"
         }
       ],
       "notes": "atwiki にレベル別の表がない。消費TPは Lv1 10・Lv10 1 だけが分かり、Lv2〜9 は仮に Lv1 と同じにした。atwiki の表記は「命ず、言動能ず」。ゲーム内の表記に合わせた"
@@ -2397,42 +2404,42 @@
         },
         {
           "lv": 2,
-          "tp": 10,
+          "tp": 9,
           "values": {}
         },
         {
           "lv": 3,
-          "tp": 10,
+          "tp": 8,
           "values": {}
         },
         {
           "lv": 4,
-          "tp": 10,
+          "tp": 7,
           "values": {}
         },
         {
           "lv": 5,
-          "tp": 10,
+          "tp": 6,
           "values": {}
         },
         {
           "lv": 6,
-          "tp": 10,
+          "tp": 5,
           "values": {}
         },
         {
           "lv": 7,
-          "tp": 10,
+          "tp": 4,
           "values": {}
         },
         {
           "lv": 8,
-          "tp": 10,
+          "tp": 3,
           "values": {}
         },
         {
           "lv": 9,
-          "tp": 10,
+          "tp": 2,
           "values": {}
         },
         {
@@ -2448,6 +2455,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "消費TP。DS版のスキルデータ（pokachi EtrianStuff）。前の値は仮入力だった",
+          "checkedAt": "2026-10-18"
         }
       ],
       "notes": "atwiki にレベル別の表がない。消費TPは Lv1 10・Lv10 1 だけが分かり、Lv2〜9 は仮に Lv1 と同じにした"
@@ -2485,42 +2499,42 @@
         },
         {
           "lv": 2,
-          "tp": 10,
+          "tp": 11,
           "values": {}
         },
         {
           "lv": 3,
-          "tp": 10,
+          "tp": 12,
           "values": {}
         },
         {
           "lv": 4,
-          "tp": 10,
+          "tp": 13,
           "values": {}
         },
         {
           "lv": 5,
-          "tp": 10,
+          "tp": 14,
           "values": {}
         },
         {
           "lv": 6,
-          "tp": 10,
+          "tp": 14,
           "values": {}
         },
         {
           "lv": 7,
-          "tp": 10,
+          "tp": 14,
           "values": {}
         },
         {
           "lv": 8,
-          "tp": 10,
+          "tp": 14,
           "values": {}
         },
         {
           "lv": 9,
-          "tp": 10,
+          "tp": 14,
           "values": {}
         },
         {
@@ -2536,6 +2550,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/123.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "消費TP。DS版のスキルデータ（pokachi EtrianStuff）。前の値は仮入力だった",
+          "checkedAt": "2026-10-18"
         }
       ],
       "notes": "atwiki にレベル別の表がない。消費TPは Lv1 10・Lv10 14 だけが分かり、Lv2〜9 は仮に Lv1 と同じにした"

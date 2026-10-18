@@ -1052,7 +1052,13 @@
           "level": 3
         }
       ],
-      "params": [],
+      "params": [
+        {
+          "id": "p1",
+          "label": "狙いから外れる率",
+          "unit": "percent"
+        }
+      ],
       "effects": [
         {
           "type": "other",
@@ -1063,79 +1069,109 @@
         {
           "lv": 1,
           "tp": 2,
-          "values": {}
+          "values": {
+            "p1": 50
+          }
         },
         {
           "lv": 2,
           "tp": 2,
-          "values": {}
+          "values": {
+            "p1": 55
+          }
         },
         {
           "lv": 3,
           "tp": 2,
-          "values": {}
+          "values": {
+            "p1": 60
+          }
         },
         {
           "lv": 4,
           "tp": 2,
-          "values": {}
+          "values": {
+            "p1": 65
+          }
         },
         {
           "lv": 5,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 75
+          }
         },
         {
           "lv": 6,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 76
+          }
         },
         {
           "lv": 7,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 77
+          }
         },
         {
           "lv": 8,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 78
+          }
         },
         {
           "lv": 9,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 79
+          }
         },
         {
           "lv": 10,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 80
+          }
         }
       ],
       "boostLevels": [
         {
           "lv": 11,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 81
+          }
         },
         {
           "lv": 12,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 82
+          }
         },
         {
           "lv": 13,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 83
+          }
         },
         {
           "lv": 14,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 84
+          }
         },
         {
           "lv": 15,
           "tp": 3,
-          "values": {}
+          "values": {
+            "p1": 85
+          }
         }
       ],
       "sources": [
@@ -1145,6 +1181,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/116.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "狙いから外れる率。DS版のデータの「狙われ率」（ranger 50→20%、dark hunter 50→26%）を 100% から引いた推定。EO Wiki：HD版では、この率で敵の狙いの候補から外れる",
+          "checkedAt": "2026-10-18"
         }
       ],
       "notes": "DS版では効果がかなり小さく、リマスター版で強化された（atwiki）"

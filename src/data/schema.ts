@@ -178,6 +178,7 @@ export const ModifierStat = z.enum([
 export const PassiveStat = z.enum([
   'maxHp', 'maxTp', 'str', 'vit', 'agi', 'luc', 'tec',
   'weaponAtk', // 武器攻撃力（マスタリー）
+  'spellAtk', // 術式攻撃力（属性マスタリー。element の術式だけ）
   'physResist', // 物理耐性（DEFブーストなど）
   'elemResist',
   'critRate',
@@ -207,6 +208,8 @@ export const SkillEffect = z.discriminatedUnion('type', [
     maxTargetsParam: z.string().optional(),
     /** 複合攻撃の属性部分の倍率（無ければ powerParam と同じ） */
     hybridPowerParam: z.string().optional(),
+    /** 術式攻撃力（アルケミストの術式。EO Wiki の SpellATK） */
+    spellAtkParam: z.string().optional(),
     /** 攻撃回数（固定なら hits、レベルで変わるなら hitsParam） */
     hits: z.number().int().positive().optional(),
     hitsParam: z.string().optional(),
@@ -269,6 +272,8 @@ export const SkillEffect = z.discriminatedUnion('type', [
     param: z.string(),
     /** 特定の武器を装備したときだけ効く（マスタリー） */
     weapon: WeaponType.optional(),
+    /** この属性の術式だけに効く（属性マスタリー） */
+    element: Element.optional(),
   }),
   z.object({
     type: z.literal('passive-proc'),

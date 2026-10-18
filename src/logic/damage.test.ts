@@ -61,9 +61,9 @@ describe('ダメージの分岐（仕様書 5.1）', () => {
     expect([r.min, r.max]).toEqual([40, 50])
   })
 
-  it('術式は DEF が 0.25 倍、乱数 +0〜10', () => {
-    // ATK = 2 × TEC 10 = 20、DEF = 0.25 × 10 = 2.5 → 17.5 を切り捨てて 17。乱数で 17〜27
-    const r = calcDamage(input({ kind: 'tec' }))
+  it('術式は DEF が 0.25 倍、乱数 +0〜10。倍率は atwiki の「TEC×」の値の半分を 2 × TEC にかける', () => {
+    // 倍率 200%（TEC×）→ 2 × TEC 10 × 100% = 20、DEF = 0.25 × 10 = 2.5 → 17.5 を切り捨てて 17。乱数で 17〜27
+    const r = calcDamage(input({ kind: 'tec', power: 200 }))
     expect([r.min, r.max]).toEqual([17, 27])
   })
 })

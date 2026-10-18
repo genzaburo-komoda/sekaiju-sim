@@ -151,13 +151,14 @@ export function calcDamage(input: AttackInput): DamageResult {
       note: 'EO Wiki の式（DS版）。'+'実測33発と一致（2026-10-12）。スキル倍率・マスタリー・ATKブーストは一部のみ確認',
     })
   } else if (input.kind === 'tec') {
-    atk = (2 * a.tec + weapon) * (input.power / 100) * (input.vuln / 100) * buff
+    // atwiki の術式の倍率は「TEC × 倍率」の値（dam倍率(TEC×)）。EO Wiki の式は 2 × TEC にかけるので半分にする（2026-10-18。atwiki の全体術式の検証と合う）
+    atk = (2 * a.tec + weapon) * (input.power / 2 / 100) * (input.vuln / 100) * buff
     steps.push({
       label: '攻撃値 ATK（術式）',
-      formula: `(2 × TEC ${a.tec} + 術式攻撃力 ${fmt(weapon)}) × 倍率 ${pct(input.power)} × 属性倍率 ${pct(input.vuln)} × 攻撃強化 ${pct(input.atkBuffRate)}`,
+      formula: `(2 × TEC ${a.tec} + 術式攻撃力 ${a.weaponAtk} × 属性マスタリー ${pct(a.masteryRate)}) × 倍率 ${pct(input.power)} ÷ 2 × 属性倍率 ${pct(input.vuln)} × 攻撃強化 ${pct(input.atkBuffRate)}`,
       value: fmt(atk),
       confidence: 'unverified',
-      note: 'EO Wiki の式（DS版）',
+      note: 'EO Wiki の式（DS版）。倍率は atwiki の「TEC×」の値を半分にして 2 × TEC にかける。術式攻撃力と属性マスタリーは DS版のスキルデータ（pokachi EtrianStuff）',
     })
   } else {
     const phys = (str + weapon) * (input.power / 100) * (input.vuln / 100) * buff

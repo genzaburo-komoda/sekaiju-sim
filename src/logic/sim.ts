@@ -72,7 +72,7 @@ export type ActionKind = 'attack' | 'buff' | 'debuff' | 'heal' | 'ailment' | 'de
  */
 export type Special =
   | 'imbue' | 'dispel' | 'tp-regen' | 'evade-once' | 'parry' | 'endure' | 'refresh' | 'bind-recovery' | 'arm-recovery' | 'others-step' | 'chase' | 'trapping'
-  | 'pain-trade' | 'the-end'
+  | 'pain-trade' | 'the-end' | 'recovery' | 'relapse' | 'cloak'
 const SPECIAL: Record<string, { kind: ActionKind; special: Special; ally?: boolean; element?: ElementId }> = {
   'bard-fire-overture': { kind: 'buff', special: 'imbue', ally: true, element: 'fire' },
   'bard-ice-overture': { kind: 'buff', special: 'imbue', ally: true, element: 'ice' },
@@ -91,6 +91,10 @@ const SPECIAL: Record<string, { kind: ActionKind; special: Special; ally?: boole
   'chase-shock': { kind: 'buff', special: 'chase', element: 'volt' },
   'dark-hunter-trapping': { kind: 'buff', special: 'trapping' },
   'hexer-pain-trade': { kind: 'attack', special: 'pain-trade' },
+  'bard-recovery-song': { kind: 'buff', special: 'recovery' },
+  'hexer-burden-curse': { kind: 'debuff', special: 'relapse' },
+  'ranger-shadow-entry': { kind: 'buff', special: 'cloak' },
+  'dark-hunter-shadow-entry': { kind: 'buff', special: 'cloak' },
   'dark-hunter-the-end': { kind: 'attack', special: 'the-end' },
 }
 
@@ -864,8 +868,7 @@ function enemyDisabled(e: EnemyState, t: number, rng: Rng | null = null): boolea
 function refreshMaxHp(f: Fighter) {
   const rate = product(f.buffs, (m) => (m.stat === 'maxHp' ? m.value : null))
   const next = Math.floor((f.baseMaxHp * rate) / 100)
-  // 上がった分は今の HP にも足す（未確認）。下がったら今の HP を最大HP に合わせる
-  if (next > f.maxHp) f.hp += next - f.maxHp
+  // 上がっても今の HP は増えない（2026-10-18 の実測：蛮族の行進曲で HP の数値はそのまま、バーだけ短くなった）。下がったら今の HP を最大HP に合わせる
   f.maxHp = next
   f.hp = Math.min(f.hp, f.maxHp)
 }
@@ -958,7 +961,7 @@ function memberAttack(ctx: SimContext, s: BattleState, f: Fighter, a: SimAction,
     }
     const chance = inflictVuln(ctx.setup.enemy ?? undefined, 'death') / 100
     if (rng) {
-      const note = inflictEnemy(s, 'death', chance, rng)
+      const note = inflictEnemy(ctx, s, 'death', chance, rng)
       entry.note = note ? '即死' : '即死しなかった'
     } else s.enemy.hp *= 1 - Math.min(1, chance)
     return
@@ -987,7 +990,7 @@ function memberAttack(ctx: SimContext, s: BattleState, f: Fighter, a: SimAction,
   // 状態異常は乱数で計算するときだけ判定する（期待値の計算では付かないものとする）
   if (rng) {
     for (const x of ctx.inflicts(m, a.skill)) {
-      const note = inflictEnemy(s, x.id, x.chance, rng)
+      const note = inflictEnemy(ctx, s, x.id, x.chance, rng)
       if (note) entry.note = `${entry.note ? `${entry.note}・` : ''}${note}`
     }
   }
@@ -995,7 +998,8 @@ function memberAttack(ctx: SimContext, s: BattleState, f: Fighter, a: SimAction,
 
 /**
  * チェイス（atwiki ソードマン）：使ったターン、味方の属性攻撃に反応して1度だけ追撃する。追撃は属性だけで物理を含まず、STR で計算する。
- * 追撃は呪いの反射を受けない。ダブルアタックへの2回の追撃は入れていない（1度だけ）
+ * 追撃は呪いの反射を受けない。ダブルアタックへの2回の追撃は入れていない（1度だけ）。
+ * 2026-10-18 の実測では、敵2体への大爆炎の術式1回に、敵ごとに1回ずつ（計2回）追撃した。1対1の戦闘では対象が1体なので結果は変わらない
  */
 function chaseFollowUp(ctx: SimContext, s: BattleState, attacker: Fighter, elements: ElementId[], rng: Rng | null, scale: number): string[] {
   const notes: string[] = []
@@ -1029,19 +1033,26 @@ function downOrEndure(f: Fighter, turn: number, rng: Rng | null, entry?: { note?
   knockDown(f, turn)
 }
 
-/** 耐性のグループ（Part 47：状態異常はすべて同じ耐性、即死と石化は同じ、スタンは別、封じは部位ごと） */
-const resistGroup = (id: InflictId) => (id.startsWith('bind-') ? id : id === 'death' || id === 'petrify' ? 'death' : id === 'stun' ? 'stun' : 'ailment')
-
 /**
- * 敵に状態異常・封じをかける（乱数）。付与率に、入るたびに ×0.75・外れると ×1.25 の耐性の倍率をかけ、封じは 90%・ほかは 100% で頭打ち（Part 47）。
- * 返り値は記録に出す文字（かからなければ null）
+ * 敵に状態異常・封じをかける（乱数）。返り値は記録に出す文字（かからなければ null）。
+ * 封じの耐性の変化は HD版の決まり（EO Wiki「Accumulative Resistance」の HD版）：外れるたびに付与率に +25%（上限 90%）、入るとその部位の耐性が −25%（下限 5%、重ならない）。
+ * 状態異常は変化しない。封じの付与率の上限は 90%、状態異常は 100%（Part 47）
  */
-function inflictEnemy(s: BattleState, id: InflictId, chance: number, rng: Rng): string | null {
-  const group = resistGroup(id)
-  const mul = s.enemy.resistMul[group] ?? 1
-  const cap = id.startsWith('bind-') ? 0.9 : 1
-  const landed = rng() < Math.min(cap, chance * mul)
-  s.enemy.resistMul[group] = mul * (landed ? 0.75 : 1.25)
+function inflictEnemy(ctx: SimContext, s: BattleState, id: InflictId, chance: number, rng: Rng): string | null {
+  let p = chance
+  const bind = id.startsWith('bind-')
+  if (bind) {
+    const vuln = inflictVuln(ctx.setup.enemy ?? undefined, id)
+    if (s.enemy.resistMul[`reduced:${id}`] && vuln > 0) p = (p * Math.max(5, vuln - 25)) / vuln
+    p = Math.min(0.9, p + (s.enemy.resistMul[`bonus:${id}`] ?? 0))
+  }
+  const landed = rng() < Math.min(1, p)
+  if (bind) {
+    if (landed) {
+      s.enemy.resistMul[`bonus:${id}`] = 0
+      s.enemy.resistMul[`reduced:${id}`] = 1
+    } else s.enemy.resistMul[`bonus:${id}`] = (s.enemy.resistMul[`bonus:${id}`] ?? 0) + 0.25
+  }
   if (!landed) return null
   if (id === 'death' || id === 'petrify') {
     // 即死は残りの HP 分のダメージ、石化は倒れたのと同じ（1対1なので戦闘が終わる）
@@ -1057,7 +1068,9 @@ function inflictEnemy(s: BattleState, id: InflictId, chance: number, rng: Rng): 
     if (!ailmentReplaces(current, id)) return `${INFLICT_LABELS[id]}（${INFLICT_LABELS[current as InflictId]}に負けた）`
     if (current) delete s.enemy.ailments[current as InflictId]
   }
-  s.enemy.ailments[id] = Math.max(s.enemy.ailments[id] ?? 0, s.turn + ailmentDuration(id, rng) - 1)
+  // 重苦の呪言：持続 ÷ 回復率補正（切り上げ。EO Wiki）
+  const relapse = product(s.enemy.debuffs, (m) => (m.stat === 'ailmentRecovery' ? m.value * 100 : null)) / 100
+  s.enemy.ailments[id] = Math.max(s.enemy.ailments[id] ?? 0, s.turn + Math.ceil(ailmentDuration(id, rng) / relapse) - 1)
   return INFLICT_LABELS[id]
 }
 
@@ -1177,6 +1190,24 @@ function castSpecial(s: BattleState, f: Fighter, a: SimAction, entry: TurnLog['e
     case 'others-step':
       entry.target = target?.name
       break
+    case 'recovery':
+      // 破邪の鎮魂歌：味方全体、戦闘終了まで（歌）。この後にかかる状態異常・封じの持続を短くする
+      for (const x of s.members) if (x.alive) put(x, { skillId: skill.id, name, mods: [{ stat: 'ailmentRecovery', value: values.p1 }], lastTurn: Infinity, oneShot: false })
+      entry.target = '味方全体'
+      break
+    case 'relapse': {
+      // 重苦の呪言：敵の状態異常・封じの持続を長くする（持続は5ターンと仮定）
+      const [debuffs, buffs] = applyEffect(s.enemy.debuffs, s.enemy.buffs, { skillId: skill.id, name, mods: [{ stat: 'ailmentRecovery', value: values.p1 }], lastTurn: s.turn + 4, oneShot: false })
+      s.enemy.debuffs = debuffs
+      s.enemy.buffs = buffs
+      entry.target = '敵'
+      break
+    }
+    case 'cloak':
+      // シャドウエントリ：5ターン、この率で敵の狙いの候補から外れる（EO Wiki の HD版の決まり）
+      put(f, { skillId: skill.id, name, mods: [{ stat: 'cloak', value: values.p1 }], lastTurn: s.turn + 4, oneShot: false })
+      entry.target = '自分'
+      break
   }
 }
 
@@ -1227,17 +1258,7 @@ function castHeal(ctx: SimContext, s: BattleState, f: Fighter, a: SimAction, ent
  * - 前列 90%／後列 10%（片方の列にしかいなければその列）。列の中では HP が多い順に 60%／30%／10%（2人なら 60:30 の比）
  */
 export function chooseTarget(ctx: SimContext, s: BattleState, rng: Rng): Fighter | null {
-  const alive = s.members.filter((f) => f.alive)
-  if (!alive.length) return null
-  let provoker: { f: Fighter; rate: number } | null = null
-  for (const f of alive) {
-    for (const b of f.buffs) for (const m of b.mods) if (m.stat === 'aggro' && (!provoker || m.value > provoker.rate)) provoker = { f, rate: m.value }
-  }
-  if (provoker && rng() < provoker.rate / 100) return provoker.f
-  const row = chooseRow(ctx, alive, rng)
-  const inRow = alive.filter((f) => ctx.member(f.id).row === row).sort((a, b) => b.hp - a.hp)
-  const weights = [60, 30, 10]
-  return pickWeighted(inRow, (f) => weights[inRow.indexOf(f)] ?? 0, rng)
+  return drawTarget(s, targetDistribution(ctx, s), rng)
 }
 
 function chooseRow(ctx: SimContext, alive: Fighter[], rng: Rng): 'front' | 'back' {
@@ -1250,6 +1271,8 @@ function chooseRow(ctx: SimContext, alive: Fighter[], rng: Rng): 'front' | 'back
 
 /** 敵の攻撃が当たる確率（EO Wiki「Hit Rate」）。味方の回避の強化・弱体は入れない */
 export function enemyHitChance(ctx: SimContext, s: BattleState, action: EnemyAction, f: Fighter): number {
+  // 睡眠中（EO Wiki の HD版）と脚封じ中（HD版の攻略サイト al-gest「回避不可」）は回避できない
+  if ((f.ailment?.id === 'sleep' && f.ailment.lastTurn >= s.turn) || (f.binds.leg ?? 0) >= s.turn) return 1
   const m = ctx.member(f.id)
   // 脚封じは AGI −30%（Part 47）。速さの強化・弱体も入れる
   const agi = (ctx.stats.get(f.id)!.agi * memberAgiRate(f, s.turn)) / 100
@@ -1390,8 +1413,27 @@ function enemyAtkRate(s: BattleState): number {
 
 /** 狙いの確率（メンバー ID → 確率）。挑発・前後列・HP の順（chooseTarget と同じ考え方） */
 export function targetDistribution(ctx: SimContext, s: BattleState, aim?: 'front' | 'back' | 'lowest' | 'highest'): Map<string, number> {
+  // シャドウエントリ（EO Wiki の HD版）：その率で狙いの候補から外れ、外れなければいつもどおり。複数いれば1人ずつ独立に判定する
+  const cloakers = s.members.filter((f) => f.alive && f.buffs.some((b) => b.mods.some((m) => m.stat === 'cloak')))
+  const combine = (excluded: Set<string>, i: number): Map<string, number> => {
+    if (i >= cloakers.length) return baseDistribution(ctx, s, aim, excluded)
+    const c = cloakers[i]
+    const p = Math.max(...c.buffs.flatMap((b) => b.mods.filter((m) => m.stat === 'cloak').map((m) => m.value))) / 100
+    const out = new Map<string, number>()
+    const add = (d: Map<string, number>, w: number) => d.forEach((v, k) => out.set(k, (out.get(k) ?? 0) + v * w))
+    const withOut = new Set(excluded).add(c.id)
+    // 全員が外れてしまうときは、外れないものとする
+    const removed = s.members.some((f) => f.alive && !withOut.has(f.id)) ? combine(withOut, i + 1) : combine(excluded, i + 1)
+    add(removed, p)
+    add(combine(excluded, i + 1), 1 - p)
+    return out
+  }
+  return combine(new Set(), 0)
+}
+
+function baseDistribution(ctx: SimContext, s: BattleState, aim: 'front' | 'back' | 'lowest' | 'highest' | undefined, excluded: Set<string>): Map<string, number> {
   const out = new Map<string, number>()
-  const alive = s.members.filter((f) => f.alive)
+  const alive = s.members.filter((f) => f.alive && !excluded.has(f.id))
   if (!alive.length) return out
   if (aim === 'lowest' || aim === 'highest') {
     const pick = [...alive].sort((a, b) => (aim === 'lowest' ? a.hp - b.hp : b.hp - a.hp))[0]
@@ -1430,6 +1472,12 @@ function drawTarget(s: BattleState, dist: Map<string, number>, rng: Rng): Fighte
   return s.members.find((f) => f.id === id) ?? null
 }
 
+/** 破邪の鎮魂歌：状態異常・封じの持続 ÷ 回復率補正（切り上げ。EO Wiki） */
+function recoveredDuration(f: Fighter, d: number): number {
+  const r = product(f.buffs, (m) => (m.stat === 'ailmentRecovery' ? m.value * 100 : null)) / 100
+  return Math.ceil(d / r)
+}
+
 /** 睡眠から起こす（起きたターンは行動できない） */
 function wake(f: Fighter, turn: number) {
   f.ailment = null
@@ -1461,7 +1509,7 @@ function inflictParty(ctx: SimContext, s: BattleState, f: Fighter, x: { ailments
     }
     if (a.startsWith('bind-')) {
       const part = a.slice(5) as 'head' | 'arm' | 'leg'
-      f.binds[part] = Math.max(f.binds[part] ?? 0, s.turn + ailmentDuration(a as InflictId, rng) - 1)
+      f.binds[part] = Math.max(f.binds[part] ?? 0, s.turn + recoveredDuration(f, ailmentDuration(a as InflictId, rng)) - 1)
       notes.push(INFLICT_NOTE[a])
       continue
     }
@@ -1478,7 +1526,7 @@ function inflictParty(ctx: SimContext, s: BattleState, f: Fighter, x: { ailments
       notes.push(`${INFLICT_NOTE[a]}は${INFLICT_NOTE[current!]}に負けてかからない`)
       continue
     }
-    f.ailment = { id, lastTurn: s.turn + ailmentDuration(id as InflictId, rng) - 1, ...(x.poisonDamage ? { poison: x.poisonDamage } : {}) }
+    f.ailment = { id, lastTurn: s.turn + recoveredDuration(f, ailmentDuration(id as InflictId, rng)) - 1, ...(x.poisonDamage ? { poison: x.poisonDamage } : {}) }
     notes.push(INFLICT_NOTE[a])
   }
 }

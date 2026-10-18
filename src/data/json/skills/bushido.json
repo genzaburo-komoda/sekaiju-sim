@@ -2541,7 +2541,8 @@
       "bodyPart": "arm",
       "speed": {
         "kind": "agi",
-        "factor": 1
+        "factor": 1,
+        "boostFactor": 1.2
       },
       "boostable": true,
       "weapons": [
@@ -2716,6 +2717,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "行動速度 AGI×1.0（BOOST 1.2）。DS版のスキルデータ（pokachi EtrianStuff）",
+          "checkedAt": "2026-10-18"
         }
       ],
       "notes": "行動速度は居合の構えのレベルで決まる（atwiki「スキル速度」）。ここでは仮に AGI×1.0"
@@ -2900,7 +2908,8 @@
       "bodyPart": "arm",
       "speed": {
         "kind": "agi",
-        "factor": 1
+        "factor": 0.2,
+        "boostFactor": 0.4
       },
       "boostable": true,
       "weapons": [
@@ -3071,6 +3080,13 @@
           "url": "https://w.atwiki.jp/sekaiju_maze/pages/120.html",
           "note": "スキル一覧（前提スキル）とレベル別の表から入力。リマスター版の値がある所はそちらを使った。ゲーム内で未確認",
           "checkedAt": "2026-10-17"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://github.com/pokachi/EtrianStuff",
+          "note": "行動速度 AGI×0.2（BOOST 0.4）。DS版のスキルデータ（pokachi EtrianStuff）。atwiki に記載なし",
+          "checkedAt": "2026-10-18"
         }
       ],
       "notes": "行動速度は居合の構えのレベルで決まる（atwiki「スキル速度」）。ここでは仮に AGI×1.0"

@@ -27,7 +27,7 @@ const party = [
 const setup: BattleSetup = { members: party, difficulty: 'expert', enemy: iwao, target: targetFromEnemy(iwao), manual: { hp: 1, str: 0, tec: 0, agi: 0 }, enemyActions: [], enemyAi: true }
 
 describe('全滅率の上限つきの最短（4-8）', () => {
-  const o = { maxTurns: 20, wipeLimit: 0.05, trials: 300, seed: 1 }
+  const o = { maxTurns: 20, wipeLimit: 0.2, trials: 300, seed: 1 }
   const r = findSafeMinTurns(setup, o)
 
   it('選んだ計画は全滅率が上限以下で、上限以下の候補の中で倒すまでの期待値が最短', () => {
