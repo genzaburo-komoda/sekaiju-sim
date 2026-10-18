@@ -25,6 +25,7 @@ export const MeasurementSchema = z.object({
     skills: z.record(z.string(), z.number().int()),
     retire: z.object({ level: z.number().int(), jobId: z.string() }).nullable(),
     weaponId: z.string().nullable(),
+    armorIds: z.array(z.string().nullable()).optional(),
   }),
   attack: z.object({
     attackId: z.string(),

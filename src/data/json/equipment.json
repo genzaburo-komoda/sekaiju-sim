@@ -2052,6 +2052,3533 @@
         "str": 7
       },
       "notes": "特性「BOOST+15」（BOOST ゲージ関係。計算エンジンでは未使用）"
+    },
+    {
+      "id": "armor-1",
+      "name": "ツイード",
+      "slot": "armor",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-2",
+      "name": "カフタンリーフ",
+      "slot": "armor",
+      "def": 1,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 1
+      }
+    },
+    {
+      "id": "armor-3",
+      "name": "レザージャーキン",
+      "slot": "armor",
+      "def": 3,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-4",
+      "name": "レザーベスト",
+      "slot": "armor",
+      "def": 2,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-5",
+      "name": "ハードレザーアーマ ー",
+      "slot": "armor",
+      "def": 4,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 5
+      }
+    },
+    {
+      "id": "armor-6",
+      "name": "バフコート",
+      "slot": "armor",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 3
+      }
+    },
+    {
+      "id": "armor-7",
+      "name": "ブレストプレート",
+      "slot": "armor",
+      "def": 5,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 2,
+        "agi": -1
+      }
+    },
+    {
+      "id": "armor-8",
+      "name": "ダブレット",
+      "slot": "armor",
+      "def": 3,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 1
+      }
+    },
+    {
+      "id": "armor-9",
+      "name": "ブリオー",
+      "slot": "armor",
+      "def": 5,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 1,
+        "iceResist": 10
+      }
+    },
+    {
+      "id": "armor-10",
+      "name": "カフタンフラワー",
+      "slot": "armor",
+      "def": 4,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 2
+      }
+    },
+    {
+      "id": "armor-11",
+      "name": "チェインメイル",
+      "slot": "armor",
+      "def": 7,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-12",
+      "name": "リーフチュニック",
+      "slot": "armor",
+      "def": 6,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-13",
+      "name": "アイアンブレスト",
+      "slot": "armor",
+      "def": 12,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 9
+      }
+    },
+    {
+      "id": "armor-14",
+      "name": "ウィングコート",
+      "slot": "armor",
+      "def": 6,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-15",
+      "name": "リングメイル",
+      "slot": "armor",
+      "def": 16,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": -2
+      }
+    },
+    {
+      "id": "armor-16",
+      "name": "ウッドダブレット",
+      "slot": "armor",
+      "def": 8,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 8
+      }
+    },
+    {
+      "id": "armor-17",
+      "name": "カフタンドレス",
+      "slot": "armor",
+      "def": 11,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 3
+      }
+    },
+    {
+      "id": "armor-18",
+      "name": "スタデッドベスト",
+      "slot": "armor",
+      "def": 17,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-19",
+      "name": "ロリカハマタ",
+      "slot": "armor",
+      "def": 10,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 4
+      }
+    },
+    {
+      "id": "armor-20",
+      "name": "コートハーディ",
+      "slot": "armor",
+      "def": 16,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-21",
+      "name": "フェアリーローブ",
+      "slot": "armor",
+      "def": 24,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-22",
+      "name": "フリューテッド",
+      "slot": "armor",
+      "def": 22,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 12
+      }
+    },
+    {
+      "id": "armor-23",
+      "name": "タイガージャーキン",
+      "slot": "armor",
+      "def": 27,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-24",
+      "name": "サーコート",
+      "slot": "armor",
+      "def": 16,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-25",
+      "name": "ロリカセグメンター タ",
+      "slot": "armor",
+      "def": 26,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-26",
+      "name": "セブンスダブレット",
+      "slot": "armor",
+      "def": 18,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 10
+      }
+    },
+    {
+      "id": "armor-27",
+      "name": "ダークチュニック",
+      "slot": "armor",
+      "def": 26,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-28",
+      "name": "ブリガンダイン",
+      "slot": "armor",
+      "def": 32,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-29",
+      "name": "ルーンツイード",
+      "slot": "armor",
+      "def": 24,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 4,
+        "tp": 10
+      }
+    },
+    {
+      "id": "armor-30",
+      "name": "デモンジャーキン",
+      "slot": "armor",
+      "def": 37,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-31",
+      "name": "ロリカブラックド",
+      "slot": "armor",
+      "def": 36,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-32",
+      "name": "リカリスダブレット",
+      "slot": "armor",
+      "def": 28,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-33",
+      "name": "ルーンチュニック",
+      "slot": "armor",
+      "def": 36,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 15
+      }
+    },
+    {
+      "id": "armor-34",
+      "name": "ブラッドチェイン",
+      "slot": "armor",
+      "def": 42,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-35",
+      "name": "ブラッドサーコート",
+      "slot": "armor",
+      "def": 36,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "armor-36",
+      "name": "コンポジットアーマ ー",
+      "slot": "armor",
+      "def": 46,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 14,
+        "agi": -4
+      }
+    },
+    {
+      "id": "armor-37",
+      "name": "アズライトダブレッ ト",
+      "slot": "armor",
+      "def": 38,
+      "jobs": [
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 5
+      }
+    },
+    {
+      "id": "armor-38",
+      "name": "ワイバーンメイル",
+      "slot": "armor",
+      "def": 26,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "slashResist": 5,
+        "pierceResist": 5,
+        "bashResist": 5,
+        "fireResist": 5,
+        "iceResist": 5,
+        "voltResist": 5
+      },
+      "notes": "atwiki の注記：物理・属性・即死・バステ・封じの全耐性（属性の耐性5%だけ計算に入れた）"
+    },
+    {
+      "id": "armor-39",
+      "name": "ジャザラント",
+      "slot": "armor",
+      "def": 35,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 18,
+        "tp": 10
+      }
+    },
+    {
+      "id": "armor-40",
+      "name": "雷竜のコート",
+      "slot": "armor",
+      "def": 40,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "voltResist": 30
+      }
+    },
+    {
+      "id": "armor-41",
+      "name": "氷竜のコート",
+      "slot": "armor",
+      "def": 40,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "iceResist": 30
+      }
+    },
+    {
+      "id": "armor-42",
+      "name": "火竜のコート",
+      "slot": "armor",
+      "def": 40,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "fireResist": 30
+      }
+    },
+    {
+      "id": "armor-43",
+      "name": "世界樹のコート",
+      "slot": "armor",
+      "def": 35,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "fireResist": 20,
+        "iceResist": 20,
+        "voltResist": 20
+      }
+    },
+    {
+      "id": "armor-44",
+      "name": "呪詛の鎖",
+      "slot": "armor",
+      "def": 34,
+      "jobs": [
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tec": 12,
+        "luc": 15
+      }
+    },
+    {
+      "id": "armor-45",
+      "name": "緋緋色金二枚胴具足",
+      "slot": "armor",
+      "def": 42,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "str": 8,
+        "hp": 22
+      }
+    },
+    {
+      "id": "armor-46",
+      "name": "フェアリーチェイン",
+      "slot": "armor",
+      "def": 47,
+      "jobs": [
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 10,
+        "tp": 15
+      }
+    },
+    {
+      "id": "armor-47",
+      "name": "エンジェルローブ",
+      "slot": "armor",
+      "def": 45,
+      "jobs": [
+        "medic"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 7,
+        "tp": 22
+      }
+    },
+    {
+      "id": "armor-48",
+      "name": "ウロボロスローブ",
+      "slot": "armor",
+      "def": 34,
+      "jobs": [
+        "alchemist"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tec": 10,
+        "tp": 20
+      }
+    },
+    {
+      "id": "armor-49",
+      "name": "ミラージュベスト",
+      "slot": "armor",
+      "def": 47,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 18,
+        "tec": 10
+      }
+    },
+    {
+      "id": "armor-50",
+      "name": "聖騎士の鎧",
+      "slot": "armor",
+      "def": 56,
+      "jobs": [
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 25,
+        "slashResist": 10,
+        "pierceResist": 10,
+        "bashResist": 10
+      }
+    },
+    {
+      "id": "armor-51",
+      "name": "シルフィードベスト",
+      "slot": "armor",
+      "def": 47,
+      "jobs": [
+        "ranger"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 11,
+        "hp": 15
+      }
+    },
+    {
+      "id": "armor-52",
+      "name": "バーサーカーメイル",
+      "slot": "armor",
+      "def": 52,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "str": 10,
+        "hp": 20
+      }
+    },
+    {
+      "id": "armor-53",
+      "name": "ディノブレスト",
+      "slot": "armor",
+      "def": 32,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "slashResist": 5,
+        "pierceResist": 5,
+        "bashResist": 5
+      }
+    },
+    {
+      "id": "shield-1",
+      "name": "タージェ",
+      "slot": "shield",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "shield-2",
+      "name": "レザーシールド",
+      "slot": "shield",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "shield-3",
+      "name": "アスピス",
+      "slot": "shield",
+      "def": 2,
+      "jobs": [
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 1
+      }
+    },
+    {
+      "id": "shield-4",
+      "name": "ラウンドシールド",
+      "slot": "shield",
+      "def": 5,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "shield-5",
+      "name": "ヒーターシールド",
+      "slot": "shield",
+      "def": 10,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "fireResist": 10
+      }
+    },
+    {
+      "id": "shield-6",
+      "name": "ラバーシールド",
+      "slot": "shield",
+      "def": 7,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "voltResist": 10
+      }
+    },
+    {
+      "id": "shield-7",
+      "name": "シャドウアスピス",
+      "slot": "shield",
+      "def": 10,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "shield-8",
+      "name": "シルバーシールド",
+      "slot": "shield",
+      "def": 20,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 4
+      }
+    },
+    {
+      "id": "shield-9",
+      "name": "タワーシールド",
+      "slot": "shield",
+      "def": 14,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 3,
+        "iceResist": 10
+      }
+    },
+    {
+      "id": "shield-10",
+      "name": "カイザーシールド",
+      "slot": "shield",
+      "def": 14,
+      "jobs": [
+        "swordsman",
+        "paladin",
+        "ranger",
+        "dark-hunter",
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 5
+      }
+    },
+    {
+      "id": "shield-11",
+      "name": "天使の盾",
+      "slot": "shield",
+      "def": 28,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "特性「即死耐性↑」（数値が無いので計算には入れていない）"
+    },
+    {
+      "id": "shield-12",
+      "name": "殺戮の盾",
+      "slot": "shield",
+      "def": 60,
+      "jobs": [
+        "swordsman",
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "特性「全耐性 100%↓」は意味が確かめられないので計算に入れていない"
+    },
+    {
+      "id": "shield-13",
+      "name": "聖騎士の盾",
+      "slot": "shield",
+      "def": 32,
+      "jobs": [
+        "paladin"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "特性「封じ耐性↑」（数値が無いので計算には入れていない）"
+    },
+    {
+      "id": "helmet-1",
+      "name": "木彫りの髪飾り",
+      "slot": "helmet",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "helmet-2",
+      "name": "レザーハット",
+      "slot": "helmet",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 5
+      }
+    },
+    {
+      "id": "helmet-3",
+      "name": "羽根つき帽子",
+      "slot": "helmet",
+      "def": 2,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 7
+      }
+    },
+    {
+      "id": "helmet-4",
+      "name": "チェインヘルム",
+      "slot": "helmet",
+      "def": 3,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "helmet-5",
+      "name": "ラバーヘッド",
+      "slot": "helmet",
+      "def": 3,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 9
+      }
+    },
+    {
+      "id": "helmet-6",
+      "name": "スケイルヘルム",
+      "slot": "helmet",
+      "def": 4,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "helmet-7",
+      "name": "枯森の髪飾り",
+      "slot": "helmet",
+      "def": 4,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 14
+      }
+    },
+    {
+      "id": "helmet-8",
+      "name": "スケイルキャップ",
+      "slot": "helmet",
+      "def": 6,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 12
+      }
+    },
+    {
+      "id": "helmet-9",
+      "name": "タイガーキャップ",
+      "slot": "helmet",
+      "def": 7,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "helmet-10",
+      "name": "ルーンサークレット",
+      "slot": "helmet",
+      "def": 5,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 20
+      }
+    },
+    {
+      "id": "helmet-11",
+      "name": "ブラッドヘルム",
+      "slot": "helmet",
+      "def": 8,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "helmet-12",
+      "name": "アンゼリカキャップ",
+      "slot": "helmet",
+      "def": 10,
+      "jobs": [
+        "medic"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 30
+      }
+    },
+    {
+      "id": "gloves-1",
+      "name": "毛糸の手袋",
+      "slot": "gloves",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "gloves-2",
+      "name": "レザーグローブ",
+      "slot": "gloves",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "str": 1
+      }
+    },
+    {
+      "id": "gloves-3",
+      "name": "フェザーグローブ",
+      "slot": "gloves",
+      "def": 2,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "gloves-4",
+      "name": "チェイングローブ",
+      "slot": "gloves",
+      "def": 3,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "gloves-5",
+      "name": "ラバーグローブ",
+      "slot": "gloves",
+      "def": 3,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tec": 2
+      }
+    },
+    {
+      "id": "gloves-6",
+      "name": "堅殻の手甲",
+      "slot": "gloves",
+      "def": 4,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "str": 2
+      }
+    },
+    {
+      "id": "gloves-7",
+      "name": "ベアグローブ",
+      "slot": "gloves",
+      "def": 3,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "str": 2,
+        "tec": 1
+      }
+    },
+    {
+      "id": "gloves-8",
+      "name": "枯森の手袋",
+      "slot": "gloves",
+      "def": 4,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tec": 3
+      }
+    },
+    {
+      "id": "gloves-9",
+      "name": "タイガーグローブ",
+      "slot": "gloves",
+      "def": 6,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "id": "gloves-10",
+      "name": "ルーングローブ",
+      "slot": "gloves",
+      "def": 5,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tec": 5
+      }
+    },
+    {
+      "id": "gloves-11",
+      "name": "鮮血のガントレット",
+      "slot": "gloves",
+      "def": 8,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "str": 3
+      }
+    },
+    {
+      "id": "gloves-12",
+      "name": "毒手",
+      "slot": "gloves",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "特性「バステ 耐性↑↑」（数値が無いので計算には入れていない）"
+    },
+    {
+      "id": "gloves-13",
+      "name": "緋緋色金小手",
+      "slot": "gloves",
+      "def": 10,
+      "jobs": [
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 9,
+        "tec": 7
+      }
+    },
+    {
+      "id": "gloves-14",
+      "name": "アタノールオリジン",
+      "slot": "gloves",
+      "def": 7,
+      "jobs": [
+        "alchemist"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tec": 10
+      }
+    },
+    {
+      "id": "gloves-15",
+      "name": "シャドウグラブ",
+      "slot": "gloves",
+      "def": 9,
+      "jobs": [
+        "dark-hunter"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 11
+      }
+    },
+    {
+      "id": "gloves-16",
+      "name": "ブレイブガントレット",
+      "slot": "gloves",
+      "def": 11,
+      "jobs": [
+        "swordsman"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "str": 12
+      }
+    },
+    {
+      "id": "boots-1",
+      "name": "リーフサンダル",
+      "slot": "boots",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido",
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 1
+      }
+    },
+    {
+      "id": "boots-2",
+      "name": "レザーブーツ",
+      "slot": "boots",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 2
+      }
+    },
+    {
+      "id": "boots-3",
+      "name": "フェザーブーツ",
+      "slot": "boots",
+      "def": 2,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 3
+      }
+    },
+    {
+      "id": "boots-4",
+      "name": "チェイングリーブ",
+      "slot": "boots",
+      "def": 3,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 4
+      }
+    },
+    {
+      "id": "boots-5",
+      "name": "モカシン",
+      "slot": "boots",
+      "def": 3,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 5
+      }
+    },
+    {
+      "id": "boots-6",
+      "name": "スケイルブーツ",
+      "slot": "boots",
+      "def": 4,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 6
+      }
+    },
+    {
+      "id": "boots-7",
+      "name": "妖精のブーツ",
+      "slot": "boots",
+      "def": 4,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 7
+      }
+    },
+    {
+      "id": "boots-8",
+      "name": "タイガーグリーブ",
+      "slot": "boots",
+      "def": 6,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 9
+      }
+    },
+    {
+      "id": "boots-9",
+      "name": "フレイムグリーブ",
+      "slot": "boots",
+      "def": 6,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 11
+      }
+    },
+    {
+      "id": "boots-10",
+      "name": "ブライトサンダル",
+      "slot": "boots",
+      "def": 7,
+      "jobs": [
+        "medic",
+        "alchemist",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 14
+      }
+    },
+    {
+      "id": "boots-11",
+      "name": "クリムゾンレギンズ",
+      "slot": "boots",
+      "def": 8,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "bard",
+        "bushido"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 15
+      }
+    },
+    {
+      "id": "boots-12",
+      "name": "フォレストランナー",
+      "slot": "boots",
+      "def": 12,
+      "jobs": [
+        "ranger"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "agi": 20,
+        "luc": 15
+      }
+    },
+    {
+      "id": "accessory-1",
+      "name": "フラワーネックレス",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tec": 1
+      }
+    },
+    {
+      "id": "accessory-2",
+      "name": "朱実の守り",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 5
+      }
+    },
+    {
+      "id": "accessory-3",
+      "name": "革のベルト",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 5
+      }
+    },
+    {
+      "id": "accessory-4",
+      "name": "レザーリング",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "slashResist": 5
+      }
+    },
+    {
+      "id": "accessory-5",
+      "name": "オカリナ",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 10
+      },
+      "notes": "楽器（バード専用）"
+    },
+    {
+      "id": "accessory-6",
+      "name": "リトルシザース",
+      "slot": "accessory",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 9
+      }
+    },
+    {
+      "id": "accessory-7",
+      "name": "輝石のリング",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "voltResist": 15
+      }
+    },
+    {
+      "id": "accessory-8",
+      "name": "リーフケープ",
+      "slot": "accessory",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 10
+      }
+    },
+    {
+      "id": "accessory-9",
+      "name": "星つづり",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 10
+      }
+    },
+    {
+      "id": "accessory-10",
+      "name": "ファイアリング",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "fireResist": 15
+      }
+    },
+    {
+      "id": "accessory-11",
+      "name": "巨象の牙飾り",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 3
+      }
+    },
+    {
+      "id": "accessory-12",
+      "name": "リュート",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 15
+      },
+      "notes": "楽器（バード専用）"
+    },
+    {
+      "id": "accessory-13",
+      "name": "化石の首飾り",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "luc": 8
+      }
+    },
+    {
+      "id": "accessory-14",
+      "name": "アリゲーターマント",
+      "slot": "accessory",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 15
+      }
+    },
+    {
+      "id": "accessory-15",
+      "name": "ブルーリング",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "iceResist": 15
+      }
+    },
+    {
+      "id": "accessory-16",
+      "name": "フルート",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 20
+      },
+      "notes": "楽器（バード専用）"
+    },
+    {
+      "id": "accessory-17",
+      "name": "キタラ",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 30
+      },
+      "notes": "楽器（バード専用）"
+    },
+    {
+      "id": "accessory-18",
+      "name": "海の守り",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 20
+      }
+    },
+    {
+      "id": "accessory-19",
+      "name": "アウロス",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 40
+      },
+      "notes": "楽器（バード専用）"
+    },
+    {
+      "id": "accessory-20",
+      "name": "真紅の外套",
+      "slot": "accessory",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 19
+      }
+    },
+    {
+      "id": "accessory-21",
+      "name": "鬼の護符",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 25
+      }
+    },
+    {
+      "id": "accessory-22",
+      "name": "ベッ甲の二連指輪",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "特性「バステ耐性↑」（数値が無いので計算には入れていない）"
+    },
+    {
+      "id": "accessory-23",
+      "name": "バラの首飾り",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "vit": 4,
+        "agi": 7
+      }
+    },
+    {
+      "id": "accessory-24",
+      "name": "エンジェルハープ",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 50
+      },
+      "notes": "楽器（バード専用）"
+    },
+    {
+      "id": "accessory-25",
+      "name": "金糸のケープ",
+      "slot": "accessory",
+      "def": 3,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 25
+      }
+    },
+    {
+      "id": "accessory-26",
+      "name": "ロイヤルリング",
+      "slot": "accessory",
+      "def": 1,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "特性「封じ耐性↑」（数値が無いので計算には入れていない）"
+    },
+    {
+      "id": "accessory-27",
+      "name": "大天使のお守り",
+      "slot": "accessory",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 35
+      }
+    },
+    {
+      "id": "accessory-28",
+      "name": "退魔のペンダント",
+      "slot": "accessory",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tec": 8
+      }
+    },
+    {
+      "id": "accessory-29",
+      "name": "クリスタルアイ",
+      "slot": "accessory",
+      "def": 2,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "特性「即死耐性↑」（数値が無いので計算には入れていない）"
+    },
+    {
+      "id": "accessory-30",
+      "name": "世界樹の首飾り",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 70,
+        "agi": 15,
+        "tec": 15
+      }
+    },
+    {
+      "id": "accessory-31",
+      "name": "世界樹の指輪",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 80,
+        "str": 10,
+        "vit": 10
+      }
+    },
+    {
+      "id": "accessory-32",
+      "name": "シュリンクス",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "bard"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 70
+      },
+      "notes": "楽器（バード専用）"
+    },
+    {
+      "id": "accessory-33",
+      "name": "ユグラドール",
+      "slot": "accessory",
+      "def": 7,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "tp": 50
+      }
+    },
+    {
+      "id": "accessory-34",
+      "name": "アダマース",
+      "slot": "accessory",
+      "def": 6,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "slashResist": 15,
+        "pierceResist": 15,
+        "bashResist": 15
+      }
+    },
+    {
+      "id": "accessory-35",
+      "name": "トリトス",
+      "slot": "accessory",
+      "def": 6,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "fireResist": 20,
+        "iceResist": 20,
+        "voltResist": 20
+      }
+    },
+    {
+      "id": "accessory-36",
+      "name": "トパゾス",
+      "slot": "accessory",
+      "def": 4,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "voltResist": 30
+      }
+    },
+    {
+      "id": "accessory-37",
+      "name": "サピロス",
+      "slot": "accessory",
+      "def": 4,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "iceResist": 30
+      }
+    },
+    {
+      "id": "accessory-38",
+      "name": "ルビニ",
+      "slot": "accessory",
+      "def": 4,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "fireResist": 30
+      }
+    },
+    {
+      "id": "accessory-39",
+      "name": "エトリアの勲章",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 100,
+        "tp": 50
+      },
+      "notes": "買値：非売品"
+    },
+    {
+      "id": "accessory-40",
+      "name": "エトリアの王冠",
+      "slot": "accessory",
+      "def": 0,
+      "jobs": [
+        "swordsman",
+        "ranger",
+        "paladin",
+        "dark-hunter",
+        "medic",
+        "alchemist",
+        "bard",
+        "bushido",
+        "hexer"
+      ],
+      "sources": [
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "bonuses": {
+        "hp": 100,
+        "tp": 50,
+        "str": 15,
+        "tec": 15,
+        "vit": 15,
+        "agi": 15,
+        "luc": 15
+      },
+      "notes": "「全能力+15」を STR・TEC・VIT・AGI・LUC の各+15 と解釈（武器と同じ扱い）。特性「BOOST+10」（数値が無いので計算には入れていない）。買値：非売品"
     }
   ]
 }

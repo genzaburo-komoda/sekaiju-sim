@@ -1,6 +1,7 @@
-// 選んだメンバーの編集：名前・ジョブ・レベル・隊列・引退・武器、ステータス、SP、スキル振り分け、ダメージ計算（仕様書 C1・C2・A1・A2・B4）
+// 選んだメンバーの編集：名前・ジョブ・レベル・隊列・引退・装備（4枠）、ステータス、SP、スキル振り分け、ダメージ計算（仕様書 C1・C2・A1・A2・B4）
 import { findEquipment, findJob, jobs, rules, skillsByJob, weaponsFor } from '../data/gameData'
 import { weaponLabel } from '../logic/attack'
+import { ARMOR_SLOT_RULES, armorChoices, armorDefense, armorItems, equipBonuses, SLOT_LABELS, validArmorIds } from '../logic/equip'
 import { rowChangeError, type DifficultyId, type Member, type Row } from '../logic/party'
 import type { AttackSettings, TargetSettings } from '../logic/predict'
 import { RETIRE_LEVEL_CHOICES, retireSpBonus, retireStatBonus } from '../logic/retire'
@@ -20,6 +21,9 @@ interface Props {
 }
 
 const STAT_LABEL = { hp: 'HP', tp: 'TP', str: 'STR', vit: 'VIT', agi: 'AGI', luc: 'LUC', tec: 'TEC' } as const
+const RESIST_LABEL: Record<string, string> = { slash: '斬', pierce: '突', bash: '壊', fire: '炎', ice: '氷', volt: '雷' }
+/** 能力補正の名前（「slashResist」は「斬耐性%」） */
+const bonusLabel = (k: string) => (k.endsWith('Resist') ? `${RESIST_LABEL[k.slice(0, -6)] ?? k}耐性%` : k.toUpperCase())
 
 export function MemberEditor({ member, members, difficulty, onChange, onRecord, lastGameVersion }: Props) {
   const job = findJob(member.jobId)
@@ -31,7 +35,9 @@ export function MemberEditor({ member, members, difficulty, onChange, onRecord, 
   const left = total - used
   const weapon = findEquipment(member.weaponId)
   const weapons = weaponsFor(member.jobId)
-  const stats = displayStats(job, member.level, skills, member.skills, bonusStat, rules.statCap, weapon?.bonuses)
+  const stats = displayStats(job, member.level, skills, member.skills, bonusStat, rules.statCap, equipBonuses(member))
+  const armorIds = validArmorIds(member.armorIds, member.jobId)
+  const setArmor = (i: number, id: string | null) => onChange({ ...member, armorIds: armorIds.map((x, k) => (k === i ? id : x)) })
 
   const setLevel = (value: number) => {
     if (Number.isNaN(value)) return
@@ -50,9 +56,9 @@ export function MemberEditor({ member, members, difficulty, onChange, onRecord, 
           <select
             value={member.jobId}
             onChange={(e) => {
-              // 新しいジョブが装備できない武器は外す
+              // 新しいジョブが装備できない武器・防具は外す
               const keep = weapon?.jobs.includes(e.target.value)
-              onChange({ ...member, jobId: e.target.value, skills: {}, weaponId: keep ? member.weaponId : null })
+              onChange({ ...member, jobId: e.target.value, skills: {}, weaponId: keep ? member.weaponId : null, armorIds: validArmorIds(member.armorIds, e.target.value) })
             }}
           >
             {jobs.map((j) => (
@@ -90,7 +96,7 @@ export function MemberEditor({ member, members, difficulty, onChange, onRecord, 
           })}
         </fieldset>
         <label>
-          武器
+          装備1（武器）
           <select value={member.weaponId ?? ''} onChange={(e) => onChange({ ...member, weaponId: e.target.value || null })}>
             <option value="">素手</option>
             {weapons.map((w) => (
@@ -100,6 +106,23 @@ export function MemberEditor({ member, members, difficulty, onChange, onRecord, 
             ))}
           </select>
         </label>
+        {ARMOR_SLOT_RULES.map((kinds, i) => (
+          <label key={i}>
+            装備{i + 2}（{kinds.map((k) => SLOT_LABELS[k]).join('・')}）
+            <select value={armorIds[i] ?? ''} onChange={(e) => setArmor(i, e.target.value || null)}>
+              <option value="">なし</option>
+              {kinds.map((k) => (
+                <optgroup key={k} label={SLOT_LABELS[k]}>
+                  {armorChoices(i, member.jobId)
+                    .filter((a) => a.slot === k)
+                    .map((a) => (
+                      <option key={a.id} value={a.id}>{`${a.name}（防${a.def ?? 0}）`}</option>
+                    ))}
+                </optgroup>
+              ))}
+            </select>
+          </label>
+        ))}
         <label>
           引退（ボーナス）
           <select
@@ -152,7 +175,15 @@ export function MemberEditor({ member, members, difficulty, onChange, onRecord, 
           {weapon.notes && `（${weapon.notes}）`}
         </p>
       )}
-      <p className="note">HP・TP はブーストスキル込み。武器の能力補正を含む（防具は未対応）。武器の数値は資料からの引用で、ゲーム内で未確認。</p>
+      {armorItems(member).length > 0 && (
+        <p className="note">
+          防具の防御力の合計 {armorDefense(member)}。
+          {armorItems(member)
+            .map((a) => `${a.name}${a.bonuses ? `（${Object.entries(a.bonuses).map(([k, v]) => `${bonusLabel(k)}${v >= 0 ? '+' : ''}${v}`).join(' ')}）` : ''}${a.notes ? `［${a.notes}］` : ''}`)
+            .join('、')}
+        </p>
+      )}
+      <p className="note">HP・TP はブーストスキル込み。武器と防具の能力補正を含む。装備の数値は資料からの引用で、ゲーム内で未確認。</p>
 
       <div className={`sp-counter${left < 0 ? ' over' : ''}`}>
         <span>SP</span>

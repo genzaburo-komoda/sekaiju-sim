@@ -15,7 +15,7 @@ describe('戦闘シミュレーションの Worker', () => {
     vi.stubGlobal('postMessage', (m: { id: number }) => posted.push(m))
     await import('./battle.worker')
     const m = { ...newMember([], 'swordsman'), level: 10 }
-    const setup: BattleSetup = { members: [m], difficulty: 'expert', enemy: null, target: { ...DEFAULT_TARGET, level: 10 }, manual: { hp: 200, str: 0, tec: 0, agi: 0 }, enemyActions: [], armor: {} }
+    const setup: BattleSetup = { members: [m], difficulty: 'expert', enemy: null, target: { ...DEFAULT_TARGET, level: 10 }, manual: { hp: 200, str: 0, tec: 0, agi: 0 }, enemyActions: [] }
     const plan = [{ [m.id]: 'normal' }, { [m.id]: 'normal' }]
     handler!({ data: { id: 5, job: { kind: 'kill', setup, plan, trials: 500, seed: 2 } } })
     expect(posted.some((p) => p.id === 5 && p.progress !== undefined)).toBe(true)

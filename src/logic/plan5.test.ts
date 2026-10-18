@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { enemies, jobs, rules } from '../data/gameData'
 import { levelPlan, planText } from './levelplan'
 import { newMember, type Member } from './party'
-import { buildsFor, DEFAULT_CONDITIONS, evaluateParty, missingSkills, searchParty } from './partysearch'
+import { buildsFor, DEFAULT_CONDITIONS, evaluateParty, missingSkills, searchParty, strongestArmor } from './partysearch'
 import { targetFromEnemy } from './predict'
 import { defaultRole, memberOptimum } from './score'
 import type { BattleSetup, EnemyAction } from './sim'
@@ -52,7 +52,7 @@ describe('条件付き最適化・編成の探索（B10、5-2 の完了条件）
   const foe = enemies.find((e) => e.kind === 'foe' && e.level >= 18 && e.level <= 25)!
   const normal: EnemyAction = { name: '通常攻撃', attack: 'str', element: 'bash', power: 100, target: 'single', weight: 1, accuracy: foe.accuracy, normal: true }
   const slots = (n: number): Member[] => Array.from({ length: n }, (_, i) => ({ ...newMember([], 'swordsman'), name: `枠${i + 1}`, level: 20, row: i < 3 ? 'front' : 'back' }))
-  const setupOf = (members: Member[]): BattleSetup => ({ members, difficulty: 'expert', enemy: foe, target: targetFromEnemy(foe), manual: { hp: 1, str: 0, tec: 0, agi: 0 }, enemyActions: [normal], armor: {} })
+  const setupOf = (members: Member[]): BattleSetup => ({ members, difficulty: 'expert', enemy: foe, target: targetFromEnemy(foe), manual: { hp: 1, str: 0, tec: 0, agi: 0 }, enemyActions: [normal] })
   const cond = { ...DEFAULT_CONDITIONS, trials: 100 }
 
   it('探す枠が1つなら、全部の候補（ジョブ×振り方）を評価した最良と一致する', () => {
@@ -62,7 +62,7 @@ describe('条件付き最適化・編成の探索（B10、5-2 の完了条件）
     let best = -1
     for (const j of jobs) {
       for (const b of buildsFor(members[2], j.id, setup, [])) {
-        const m = { ...members[2], jobId: j.id, skills: b.alloc, weaponId: b.weaponId, retire: null }
+        const m = { ...members[2], jobId: j.id, skills: b.alloc, weaponId: b.weaponId, armorIds: strongestArmor(j.id), retire: null }
         best = Math.max(best, evaluateParty(setup, [members[0], members[1], m], ['fixed', 'fixed', b.kind], cond).score)
       }
     }

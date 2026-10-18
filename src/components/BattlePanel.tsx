@@ -8,6 +8,7 @@ import { startJob, type BattleJob, type JobResult } from '../logic/battleJob'
 import type { ElementId } from '../logic/damage'
 import type { Member, Party } from '../logic/party'
 import { DEFAULT_TARGET, targetFromEnemy } from '../logic/predict'
+import { armorDefense } from '../logic/equip'
 import { memberActions, type BattleSetup, type EnemyAction, type SimAction, type TurnLog } from '../logic/sim'
 import { INFLICT_LABELS, type InflictId } from '../logic/support'
 import { EnemySelect } from './EnemySelect'
@@ -121,7 +122,6 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
   const [kill, setKill] = useState<{ key: string; r: KillDistribution } | null>(null)
   const [enemyActions, setEnemyActions] = useState<EnemyAction[] | null>(null)
   const [policies, setPolicies] = useState<Record<string, string>>({})
-  const [armor, setArmor] = useState<Record<string, number>>({})
   const [endTurns, setEndTurns] = useState(10)
   const [endTrials, setEndTrials] = useState(3000)
   const [endurance, setEndurance] = useState<{ key: string; r: EnduranceResult; sample: TurnLog[] } | null>(null)
@@ -137,7 +137,6 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
     target: enemy ? targetFromEnemy(enemy) : { ...DEFAULT_TARGET, level: manual.level, vit: manual.vit },
     manual: { hp: manual.hp, str: manual.str, tec: manual.tec, agi: manual.agi },
     enemyActions: [],
-    armor,
   }
   const actionsOf = new Map(members.map((m) => [m.id, memberActions(m)]))
   // メンバーが変わって無くなった行動は通常攻撃にする
@@ -308,7 +307,7 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
         <p className="note">
           敵の行動を入れると、各メンバーが倒れるまでのターン数と全滅する確率を、乱数で何度も戦って出します。敵のスキルの数値は資料にほとんどないので、威力などは手で入れてください（初期値は通常攻撃だけ）。
           狙われ方は「前列 90%・後列 10%、列の中は HP が多い順に 60%／30%／10%」、挑発中は狙われ率の確率でその味方（EO Wiki の値。出典が確かめられていない）。
-          防具のデータがないので、防具の防御力の合計は手で入れてください（初期値 0）。蘇生と、味方の回避の強化は入れていません。
+          防具の防御力と属性の耐性は、メンバーの装備から入れます（防具の耐性は属性倍率から引く。未検証）。蘇生と、味方の回避の強化は入れていません。
         </p>
         <div className="table-scroll">
           <table className="score-table">
@@ -367,7 +366,7 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
                   ))}
                 </select>
               </label>
-              <NumberField label="防具の防御力" value={armor[m.id] ?? 0} min={0} max={999} onChange={(v) => setArmor({ ...armor, [m.id]: v })} />
+              <span className="note">防具の防御力 {armorDefense(m)}（装備から）</span>
             </span>
           ))}
         </div>

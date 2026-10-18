@@ -16,6 +16,7 @@ import { findEquipment, formulas, skillsByJob } from '../data/gameData'
 import type { Enemy, Skill, SkillEffect } from '../data/schema'
 import { attackOptions, buildAttackInput, skillValues } from './attack'
 import { calcDamage, type AttackInput, type ElementId } from './damage'
+import { armorDefense, armorResist, gearAllows, hasShield } from './equip'
 import type { DifficultyId, Member } from './party'
 import { doubleAttackChance } from './optimize'
 import { memberStats, targetFromEnemy, type TargetSettings } from './predict'
@@ -97,15 +98,14 @@ export function memberActions(member: Member): SimAction[] {
   const skills = skillsByJob[member.jobId] ?? []
   const weapon = findEquipment(member.weaponId)
   const out: SimAction[] = [{ id: 'normal', name: '通常攻撃', kind: 'attack', skill: null, level: 0, tp: 0, speed: 1, priority: false }, ACTION_DEFEND]
-  const usable = new Set(attackOptions(skills, member.skills, weapon).filter((o) => o.unusable === null).map((o) => o.id))
-  const weaponType = weapon?.weaponType
+  const usable = new Set(attackOptions(skills, member.skills, weapon, hasShield(member)).filter((o) => o.unusable === null).map((o) => o.id))
   for (const s of skills) {
     const lv = member.skills[s.id] ?? 0
     if (lv === 0 || s.category !== 'active' || !s.levels) continue
     const kind = kindOf(s)
     if (!kind) continue
     if (kind === 'attack' && !usable.has(s.id)) continue
-    if (kind !== 'attack' && s.weapons && !(weaponType && s.weapons.includes(weaponType))) continue
+    if (kind !== 'attack' && !gearAllows(s.weapons, member)) continue
     out.push({
       id: s.id,
       name: `${s.name} Lv${lv}`,
@@ -222,8 +222,6 @@ export interface BattleSetup {
   manual: { hp: number; str: number; tec: number; agi: number }
   /** 敵の行動（B9。空なら敵は行動しない） */
   enemyActions: EnemyAction[]
-  /** メンバー ID → 防具の防御力の合計（防具データが無いので手入力） */
-  armor: Record<string, number>
 }
 
 /** 敵の数値（敵データ、または手入力の値） */
@@ -344,7 +342,7 @@ export class SimContext {
     const m = this.member(memberId)
     const skills = skillsByJob[m.jobId] ?? []
     const weapon = findEquipment(m.weaponId)
-    const option = attackOptions(skills, m.skills, weapon).find((o) => o.id === actionId)
+    const option = attackOptions(skills, m.skills, weapon, hasShield(m)).find((o) => o.id === actionId)
     if (!option) return null
     const effect = option.skill?.effects.find((e) => e.type === 'damage')
     // 攻撃の強化（攻撃力上昇）は物理だけ、与ダメージ（ウォークライ）はすべてに効くとした
@@ -423,7 +421,7 @@ export class SimContext {
     const m = this.member(memberId)
     const st = this.stats.get(memberId)!
     const back = m.row === 'back' && action.attack === 'str'
-    const armor = this.setup.armor[memberId] ?? 0
+    const armor = armorDefense(m)
     const input: AttackInput = {
       kind: action.attack,
       attacker: { level: this.es.level, str: this.es.str, tec: this.es.tec, atkBoostRate: 100, weaponAtk: 0, masteryRate: 100, backRow: false, bow: false },
@@ -766,6 +764,8 @@ function defenseRates(ctx: SimContext, f: Fighter, action: EnemyAction): { vuln:
   const physical = action.attack === 'str'
   const hits = (x: ActiveEffect['mods'][number]) => !x.elements || x.elements.includes(action.element)
   let vuln = product(f.buffs, (x) => (x.appliesTo === 'resistance' && hits(x) ? Math.max(0, 100 - x.value) : null))
+  // 防具の属性の耐性（「斬突壊 耐性5%↑」など）：属性倍率から引く（未検証）
+  vuln = (vuln * Math.max(0, 100 - armorResist(m, action.element))) / 100
   // パッシブの物理耐性（DEFブースト）：物理の属性倍率を下げる（推定）
   if (physical) {
     for (const sk of skills) {

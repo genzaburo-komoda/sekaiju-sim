@@ -11,9 +11,10 @@
 // - atwiki の表には「前提のマスタリーのレベルでの値」と「マスタリー10 での値」の2つしかない。
 //   間のレベルは、マスタリーの倍率（102%〜175%）に比例するとして直線で補間する（Claude の推定。両端は資料の値と一致する）
 // - 継続回復（癒しの子守唄・リジェネレート）と蘇生（リザレクション）は、1ターンの回復とは比べられないので対象外
-import { findEnemy, findEquipment, formulas, rules, skillsByJob } from '../data/gameData'
+import { findEnemy, formulas, rules, skillsByJob } from '../data/gameData'
 import type { Enemy, Skill } from '../data/schema'
 import { skillValues } from './attack'
+import { gearAllows } from './equip'
 import type { DifficultyId, Member } from './party'
 import { retireSpBonus } from './retire'
 import { setSkillLevel, spTotal, spUsed, type Allocation } from './skills'
@@ -95,9 +96,7 @@ const STANCE_LABELS = { jodan: '上段の構え', seigan: '青眼の構え', iai
 
 /** 武器が必要なスキルを、今の武器で使えるか */
 function usableWithWeapon(skill: Skill, member: Member): boolean {
-  if (!skill.weapons) return true
-  const t = findEquipment(member.weaponId)?.weaponType
-  return t !== undefined && skill.weapons.includes(t)
+  return gearAllows(skill.weapons, member)
 }
 
 /**

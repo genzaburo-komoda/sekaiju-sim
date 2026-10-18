@@ -16,8 +16,10 @@ export interface Member {
   skills: Allocation
   /** 引退ボーナスの元になった引退（null は引退なし） */
   retire: Retirement | null
-  /** 装備している武器の ID（null は素手） */
+  /** 装備している武器の ID（null は素手）。装備の1枠目 */
   weaponId: string | null
+  /** 装備の2〜4枠目の防具の ID（null は空き。決まりは equip.ts）。古いデータには無い */
+  armorIds?: (string | null)[]
 }
 
 export interface Party {
@@ -80,5 +82,6 @@ export function newMember(members: Member[], jobId: string): Member {
     skills: {},
     retire: null,
     weaponId: null,
+    armorIds: [null, null, null],
   }
 }

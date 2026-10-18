@@ -4,6 +4,7 @@ import { findEnemy, findEquipment, findJob, formulas, rules, skillsByJob } from 
 import type { Enemy } from '../data/schema'
 import { attackOptions, buildAttackInput, selfBuffOptions, type TargetSpec } from './attack'
 import { calcDamage, type DamageResult, type ElementId } from './damage'
+import { equipBonuses, hasShield } from './equip'
 import type { DifficultyId, Member } from './party'
 import { retireStatBonus } from './retire'
 import { displayStats, type Stats } from './stats'
@@ -51,7 +52,7 @@ export function memberStats(member: Member): Stats {
   const job = findJob(member.jobId)
   const skills = skillsByJob[member.jobId] ?? []
   const bonusStat = retireStatBonus(rules, member.retire, findJob)
-  return displayStats(job, member.level, skills, member.skills, bonusStat, rules.statCap, findEquipment(member.weaponId)?.bonuses)
+  return displayStats(job, member.level, skills, member.skills, bonusStat, rules.statCap, equipBonuses(member))
 }
 
 export interface Prediction {
@@ -66,7 +67,7 @@ export interface Prediction {
 export function predict(member: Member, attack: AttackSettings, target: TargetSettings, difficulty: DifficultyId): Prediction {
   const skills = skillsByJob[member.jobId] ?? []
   const weapon = findEquipment(member.weaponId)
-  const options = attackOptions(skills, member.skills, weapon)
+  const options = attackOptions(skills, member.skills, weapon, hasShield(member))
   const option = options.find((o) => o.id === attack.attackId) ?? options[0]
   const buff = selfBuffOptions(skills, member.skills).find((b) => b.id === attack.buffId)
   // 敵データを選んでいれば、データの値を使う（データを直したときに記録の予測も追従させるため）

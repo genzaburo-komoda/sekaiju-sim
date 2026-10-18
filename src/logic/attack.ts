@@ -40,13 +40,14 @@ export function skillValues(skill: Skill, level: number, boosted: boolean): Reco
   return skill.boostLevels?.[lv - skill.levels.length - 1]?.values ?? skill.levels[skill.levels.length - 1].values
 }
 
-export function attackOptions(skills: Skill[], alloc: Allocation, weapon: Equipment | undefined): AttackOption[] {
+/** 攻撃の候補。shield は盾を付けているか（盾が要るスキル） */
+export function attackOptions(skills: Skill[], alloc: Allocation, weapon: Equipment | undefined, shield = false): AttackOption[] {
   const options: AttackOption[] = [{ id: 'normal', name: '通常攻撃', skill: null, level: 0, unusable: null }]
   for (const s of skills) {
     const lv = alloc[s.id] ?? 0
     if (lv === 0 || !s.effects.some((e) => e.type === 'damage')) continue
     const needs = s.weapons
-    const ok = !needs || (weapon?.weaponType !== undefined && needs.includes(weapon.weaponType))
+    const ok = !needs || (weapon?.weaponType !== undefined && needs.includes(weapon.weaponType)) || (shield && needs.includes('shield'))
     options.push({
       id: s.id,
       name: s.name,

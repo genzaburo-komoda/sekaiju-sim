@@ -13,6 +13,7 @@
 import { findEnemy, findEquipment, formulas, rules, skillsByJob } from '../data/gameData'
 import type { Skill } from '../data/schema'
 import { attackOptions, buildAttackInput, selfBuffOptions, skillValues } from './attack'
+import { hasShield } from './equip'
 import { calcDamage, type AttackInput, type DamageResult } from './damage'
 import type { DifficultyId, Member } from './party'
 import { memberStats, targetFromEnemy, type TargetSettings } from './predict'
@@ -110,7 +111,7 @@ export function optimizeMaxDamage(member: Member, target: TargetSettings, diffic
 
   // 攻撃の候補（武器で使えるもの）
   // 構えが必要なスキル（ブシドー）は「前のターンに済ませてある」を選んだときだけ
-  const attacks = attackOptions(skills, allMax, weapon).filter((o) => o.unusable === null && (!o.skill?.stance || opts.preBuffed))
+  const attacks = attackOptions(skills, allMax, weapon, hasShield(member)).filter((o) => o.unusable === null && (!o.skill?.stance || opts.preBuffed))
 
   const best = new Map<string, Candidate>()
   const calc = cachedCalc()
@@ -157,7 +158,7 @@ export function currentMaxDamage(member: Member, target: TargetSettings, difficu
   const spec = enemy ? targetFromEnemy(enemy, target.guarding) : target
   const calc = cachedCalc()
   let best: Omit<Candidate, 'spUsed'> | null = null
-  for (const o of attackOptions(skills, member.skills, findEquipment(member.weaponId))) {
+  for (const o of attackOptions(skills, member.skills, findEquipment(member.weaponId), hasShield(member))) {
     if (o.unusable !== null || (o.skill?.stance && !opts.preBuffed)) continue
     const c = evaluate(member, member.skills, o.id, '', spec, difficulty, opts, skills, calc)
     if (c && (!best || c.expected > best.expected)) best = c
@@ -204,7 +205,7 @@ function evaluate(
 ): Omit<Candidate, 'spUsed'> | null {
   const m: Member = { ...member, skills: alloc }
   const weapon = findEquipment(m.weaponId)
-  const option = attackOptions(skills, alloc, weapon).find((o) => o.id === attackId)
+  const option = attackOptions(skills, alloc, weapon, hasShield(m)).find((o) => o.id === attackId)
   if (!option) return null
   const buff = selfBuffOptions(skills, alloc).find((b) => b.id === buffId)
   const base = {

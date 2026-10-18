@@ -17,6 +17,7 @@
 import { equipment, findJob, jobs as allJobs, rules, skillsByJob } from '../data/gameData'
 import type { Skill } from '../data/schema'
 import { defaultPolicy, findMinTurns, runPlan, simulateEndurance, type Progress } from './battle'
+import { ARMOR_SLOT_RULES, armorChoices } from './equip'
 import { optimizeMaxDamage } from './optimize'
 import type { Member } from './party'
 import { retireSpBonus } from './retire'
@@ -119,6 +120,22 @@ function strongestWeapons(jobId: string): (string | null)[] {
   return best.size ? [...best.values()].map((x) => x.id) : [null]
 }
 
+/**
+ * 探索するメンバーの防具：枠ごとに、まだ使っていない種類のうち防御力が最も高いもの（2026-10-18、Claude 決定。
+ * 武器を「全武器から最強」にしたのに合わせた）。意味が確かめられない特性の防具（殺戮の盾）は除く
+ */
+export function strongestArmor(jobId: string): (string | null)[] {
+  const used = new Set<string>()
+  return ARMOR_SLOT_RULES.map((_, i) => {
+    const best = armorChoices(i, jobId)
+      .filter((e) => !used.has(e.slot) && !e.notes?.includes('意味が確かめられない'))
+      .sort((a, b) => (b.def ?? 0) - (a.def ?? 0))[0]
+    if (!best) return null
+    used.add(best.slot)
+    return best.id
+  })
+}
+
 /** 探索するメンバーの振り方の候補（ジョブ・レベル・隊列・敵ごと） */
 export function buildsFor(slot: Member, jobId: string, setup: BattleSetup, required: string[]): Build[] {
   const skills = skillsByJob[jobId] ?? []
@@ -129,11 +146,11 @@ export function buildsFor(slot: Member, jobId: string, setup: BattleSetup, requi
   // 武器：種類ごとの最強の武器で火力の最適化をして、最も大きいもの
   let damage: { alloc: Allocation; weaponId: string | null; expected: number } = { alloc: {}, weaponId: null, expected: -1 }
   for (const weaponId of strongestWeapons(jobId)) {
-    const m: Member = { ...slot, jobId, weaponId, skills: {}, retire: null }
+    const m: Member = { ...slot, jobId, weaponId, armorIds: strongestArmor(jobId), skills: {}, retire: null }
     const c = optimizeMaxDamage(m, target, setup.difficulty, opts)[0]
     if (c && c.expected > damage.expected) damage = { alloc: c.alloc, weaponId, expected: c.expected }
   }
-  const member: Member = { ...slot, jobId, weaponId: damage.weaponId, skills: {}, retire: null }
+  const member: Member = { ...slot, jobId, weaponId: damage.weaponId, armorIds: strongestArmor(jobId), skills: {}, retire: null }
   const withDamage = (b: Allocation) => mergeGreedy(skills, b, damage.alloc, total)
   const builds: Build[] = [{ kind: 'damage', alloc: withDamage(base), weaponId: damage.weaponId }]
 
@@ -252,7 +269,7 @@ export function searchParty(setup: BattleSetup, cond: SearchConditions, onProgre
       for (const jobId of jobs) {
         if (cond.noDuplicateJobs && used.has(jobId)) continue
         for (const b of builds(slots[i], jobId)) {
-          const member: Member = { ...slots[i], name: findJob(jobId).name, jobId, skills: b.alloc, weaponId: b.weaponId, retire: null }
+          const member: Member = { ...slots[i], name: findJob(jobId).name, jobId, skills: b.alloc, weaponId: b.weaponId, armorIds: strongestArmor(jobId), retire: null }
           const picks = new Map(st.picks)
           picks.set(i, { member, kind: b.kind })
           const cand: State = { picks, eval: null }

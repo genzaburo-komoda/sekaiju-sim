@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react'
 import { findEnemy, findEquipment, skillsByJob } from '../data/gameData'
 import { attackOptions, ELEMENT_LABELS, selfBuffOptions } from '../logic/attack'
+import { hasShield } from '../logic/equip'
 import type { ConfidenceId, ElementId } from '../logic/damage'
 import { parseValues } from '../logic/measure'
 import type { DifficultyId, Member } from '../logic/party'
@@ -48,7 +49,7 @@ function loadSettings(): { attack: AttackSettings; target: TargetSettings } {
 export function DamagePanel({ member, members, difficulty, onRecord, lastGameVersion, onApplySkills }: Props) {
   const skills = skillsByJob[member.jobId] ?? []
   const weapon = findEquipment(member.weaponId)
-  const options = attackOptions(skills, member.skills, weapon)
+  const options = attackOptions(skills, member.skills, weapon, hasShield(member))
   const buffs = selfBuffOptions(skills, member.skills)
 
   const [initial] = useState(loadSettings)

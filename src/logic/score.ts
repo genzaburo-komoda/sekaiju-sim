@@ -13,6 +13,7 @@
 // - こうすると、全員が自分の役割の最適構築なら総合 100 点になる（6.2 の「満点の条件」）
 import { enemies, findEquipment, rules, skillsByJob } from '../data/gameData'
 import type { Skill } from '../data/schema'
+import { gearAllows } from './equip'
 import { currentMaxDamage, optimizeMaxDamage } from './optimize'
 import type { DifficultyId, Member, Party } from './party'
 import { DEFAULT_TARGET, type TargetSettings } from './predict'
@@ -91,7 +92,7 @@ export function enduranceValue(member: Member, difficulty: DifficultyId): number
   const setup = {
     members: [member], difficulty, enemy: null, target,
     manual: { hp: 1, str: nearMedian(member.level, 'str'), tec: 0, agi: nearMedian(member.level, 'agi') },
-    enemyActions: [STANDARD_ATTACK], armor: {},
+    enemyActions: [STANDARD_ATTACK],
   }
   const ctx = new SimContext(setup)
   const st = initialState(setup)
@@ -287,7 +288,7 @@ export function scoreParty(members: Member[], roles: Record<string, Role>, weigh
 export function relevantSkills(member: Member, axis: MemberAxis): Skill[] {
   const skills = skillsByJob[member.jobId] ?? []
   const weaponType = findEquipment(member.weaponId)?.weaponType
-  const usable = (s: Skill) => !s.weapons || (weaponType !== undefined && s.weapons.includes(weaponType))
+  const usable = (s: Skill) => gearAllows(s.weapons, member)
   return skills.filter((s) =>
     s.effects.some((e) => {
       if (axis === 'endurance') return enduresBy(s)

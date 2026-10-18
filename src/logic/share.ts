@@ -3,6 +3,7 @@
 // - テキスト：「ジョブ Lv / スキル名 Lv…」の形にしてコピーできるようにする
 import { z } from 'zod'
 import type { Equipment, Job, ProgressionRules, Skill } from '../data/schema'
+import { validArmorIds } from './equip'
 import { DIFFICULTY_LABELS, formationError, MAX_MEMBERS, newMember, type Member, type Party } from './party'
 import { retireSpBonus, retireStatBonus } from './retire'
 import { setSkillLevel, spTotal, spUsed, type Allocation } from './skills'
@@ -20,6 +21,7 @@ const CodeMember = z.object({
   s: z.record(z.string(), z.number().int()), // スキル ID → レベル
   t: z.tuple([z.number().int(), z.string()]).nullable(), // 引退（レベル、ジョブ ID）
   w: z.string().nullable().optional(), // 武器 ID（ステップ2-1 で追加。古いコードには無い）
+  a: z.array(z.string().nullable()).max(3).optional(), // 装備2〜4枠目の防具 ID（ステップ4-4 で追加。古いコードには無い）
 })
 const Code = z.object({
   d: z.enum(['expert', 'basic', 'picnic']),
@@ -52,6 +54,7 @@ export function encodeParty(party: Party): string {
       s: m.skills,
       t: m.retire ? [m.retire.level, m.retire.jobId] : null,
       w: m.weaponId,
+      ...((m.armorIds ?? []).some(Boolean) ? { a: m.armorIds } : {}),
     })),
   }
   return PREFIX + toBase64Url(JSON.stringify(code))
@@ -120,8 +123,14 @@ export function decodeParty(text: string, ctx: DecodeContext): DecodeResult {
       else weaponId = weapon.id
     }
 
+    // 防具は存在して、その枠とジョブに合うものだけ
+    const armorIds = validArmorIds(cm.a, job.id)
+    ;(cm.a ?? []).forEach((id, i) => {
+      if (id && armorIds[i] !== id) warnings.push(`${label}：装備${i + 2}の「${ctx.equipment.find((e) => e.id === id)?.name ?? id}」は付けられないため外しました`)
+    })
+
     const base = newMember(members, job.id)
-    members.push({ ...base, name: cm.n.slice(0, 8) || base.name, level, row: cm.r === 'f' ? 'front' : 'back', skills: alloc, retire, weaponId })
+    members.push({ ...base, name: cm.n.slice(0, 8) || base.name, level, row: cm.r === 'f' ? 'front' : 'back', skills: alloc, retire, weaponId, armorIds })
   }
   if (members.length === 0) return { ok: false, error: '読み込めるメンバーがいませんでした' }
   const formation = formationError(members)
@@ -148,6 +157,8 @@ export function partyToText(party: Party, ctx: DecodeContext): string {
       )
       const weapon = ctx.equipment.find((e) => e.id === m.weaponId)
       lines.push(`  武器：${weapon ? `${weapon.name}（攻${weapon.atk}）` : '素手'}`)
+      const armor = (m.armorIds ?? []).map((id) => ctx.equipment.find((e) => e.id === id)).filter((e) => !!e)
+      if (armor.length) lines.push(`  防具：${armor.map((e) => `${e.name}（防${e.def ?? 0}）`).join('、')}`)
       const skills = (ctx.skillsByJob[m.jobId] ?? []).filter((s) => (m.skills[s.id] ?? 0) > 0)
       lines.push(skills.length ? '  ' + skills.map((s) => `${s.name}${m.skills[s.id]}`).join(' / ') : '  （スキルなし）')
     }

@@ -27,7 +27,6 @@ function setup(members: Member[], hp: number, extra: Partial<BattleSetup> = {}):
     target: { ...DEFAULT_TARGET, level: members[0].level, vit: 10 },
     manual: { hp, str: 0, tec: 0, agi: 0 },
     enemyActions: [],
-    armor: {},
     ...extra,
   }
 }
