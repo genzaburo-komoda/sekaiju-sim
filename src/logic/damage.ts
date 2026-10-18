@@ -157,8 +157,8 @@ export function calcDamage(input: AttackInput): DamageResult {
       label: '攻撃値 ATK（術式）',
       formula: `(2 × TEC ${a.tec} + 術式攻撃力 ${a.weaponAtk} × 属性マスタリー ${pct(a.masteryRate)}) × 倍率 ${pct(input.power)} ÷ 2 × 属性倍率 ${pct(input.vuln)} × 攻撃強化 ${pct(input.atkBuffRate)}`,
       value: fmt(atk),
-      confidence: 'unverified',
-      note: 'EO Wiki の式（DS版）。倍率は atwiki の「TEC×」の値を半分にして 2 × TEC にかける。術式攻撃力と属性マスタリーは DS版のスキルデータ（pokachi EtrianStuff）',
+      confidence: 'estimated',
+      note: 'EO Wiki の式（DS版）。倍率は atwiki の「TEC×」の値を半分にして 2 × TEC にかける。術式攻撃力と属性マスタリーは DS版のスキルデータ（pokachi EtrianStuff）。実測18発（火の術式・火炎の術式・大爆炎の術式）と一致（2026-10-18）',
     })
   } else {
     const phys = (str + weapon) * (input.power / 100) * (input.vuln / 100) * buff
