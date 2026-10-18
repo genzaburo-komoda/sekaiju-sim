@@ -5455,6 +5455,556 @@
           "checkedAt": "2026-10-17"
         }
       ]
+    },
+    {
+      "id": "ren",
+      "name": "レン",
+      "nameEn": "Ren",
+      "kind": "boss",
+      "stratum": 5,
+      "level": 47,
+      "hp": 7000,
+      "str": 360,
+      "tec": 102,
+      "vit": 110,
+      "agi": 102,
+      "luc": 51,
+      "accuracy": 95,
+      "resist": {
+        "slash": 75,
+        "bash": 75,
+        "pierce": 75,
+        "fire": 150,
+        "ice": 0,
+        "volt": 100,
+        "death": 3,
+        "ailment": 5,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 15
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/745.html",
+          "note": "日本語名（イベントのテキスト「レン＆ツスクル戦」）。能力値は載っていない",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "レンとツスクルは同時に戦う。英語名との対応は、シートで Lv47 の2体が並ぶこと（図鑑番号118・119）から（未確認）"
+    },
+    {
+      "id": "tlachtga",
+      "name": "ツスクル",
+      "nameEn": "Tlachtga",
+      "kind": "boss",
+      "stratum": 5,
+      "level": 47,
+      "hp": 5000,
+      "str": 210,
+      "tec": 141,
+      "vit": 105,
+      "agi": 102,
+      "luc": 51,
+      "accuracy": 95,
+      "resist": {
+        "slash": 125,
+        "bash": 125,
+        "pierce": 125,
+        "fire": 50,
+        "ice": 50,
+        "volt": 50,
+        "death": 3,
+        "ailment": 5,
+        "head": 25,
+        "arm": 25,
+        "leg": 25,
+        "stun": 15
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/745.html",
+          "note": "日本語名（イベントのテキスト「レン＆ツスクル戦」）。能力値は載っていない",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "レンとツスクルは同時に戦う。Tlachtga＝ツスクルの対応は、Ren と同じ Lv47 で図鑑番号が続くことから（未確認）"
+    },
+    {
+      "id": "etreant",
+      "name": "世界樹の王",
+      "nameEn": "Etreant",
+      "kind": "boss",
+      "floors": [
+        25
+      ],
+      "stratum": 5,
+      "level": 56,
+      "hp": 18000,
+      "str": 470,
+      "tec": 130,
+      "vit": 160,
+      "agi": 115,
+      "luc": 65,
+      "accuracy": 95,
+      "resist": {
+        "slash": 90,
+        "bash": 90,
+        "pierce": 90,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 0,
+        "ailment": 3,
+        "head": 50,
+        "arm": 50,
+        "leg": 50,
+        "stun": 10
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/745.html",
+          "note": "日本語名と階（B25F の扉の先で戦う）。能力値は載っていない",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "第5階層のボス。Etreant＝世界樹の王の対応は、シートの並び（レン・ツスクルの次、図鑑番号120）とレベルから（未確認）"
+    },
+    {
+      "id": "primevil",
+      "name": "フォレスト・セル",
+      "nameEn": "Primevil",
+      "kind": "boss",
+      "floors": [
+        30
+      ],
+      "stratum": 6,
+      "level": 70,
+      "hp": 90000,
+      "str": 585,
+      "tec": 160,
+      "vit": 170,
+      "agi": 160,
+      "luc": 80,
+      "accuracy": 95,
+      "resist": {
+        "slash": 150,
+        "bash": 150,
+        "pierce": 150,
+        "fire": 150,
+        "ice": 150,
+        "volt": 150,
+        "death": 0,
+        "ailment": 0,
+        "head": 0,
+        "arm": 0,
+        "leg": 0,
+        "stun": 10
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "note": "日本語名：本人による（第6階層のボス）。階は atwiki 745 の「B30F セルに通じる部屋の扉」から",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "第6階層のボス。Primevil＝フォレスト・セルの対応は、シートに残る第6階層のボスがこれだけであることから（未確認）。シートの EXP は 0"
+    },
+    {
+      "id": "fireater",
+      "name": "怒りの火喰い鳥",
+      "nameEn": "Fireater",
+      "kind": "normal",
+      "level": 26,
+      "hp": 864,
+      "str": 113,
+      "tec": 32,
+      "vit": 54,
+      "agi": 48,
+      "luc": 48,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 150,
+        "fire": 10,
+        "ice": 150,
+        "volt": 50,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名（モンスターページ末尾の特殊な敵の表）。Lv・HP・攻・防・EXP・弱点がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "クエスト「幸運のコイン」で戦う（atwiki の備考の欄）"
+    },
+    {
+      "id": "pondclaw",
+      "name": "泉の魔物",
+      "nameEn": "Pondclaw",
+      "kind": "normal",
+      "floors": [
+        7
+      ],
+      "level": 26,
+      "hp": 660,
+      "str": 113,
+      "tec": 32,
+      "vit": 54,
+      "agi": 48,
+      "luc": 48,
+      "accuracy": 90,
+      "resist": {
+        "slash": 50,
+        "bash": 50,
+        "pierce": 50,
+        "fire": 150,
+        "ice": 200,
+        "volt": 200,
+        "death": 200,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名（モンスターページ末尾の特殊な敵の表）。Lv・HP・攻・防・EXP・弱点がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "B7F のイベントで戦う特殊な敵（atwiki：クリア後は FOE として出る）"
+    },
+    {
+      "id": "toxinfly",
+      "name": "猛毒アゲハ",
+      "nameEn": "Toxinfly",
+      "kind": "normal",
+      "level": 30,
+      "hp": 211,
+      "str": 93,
+      "tec": 35,
+      "vit": 61,
+      "agi": 35,
+      "luc": 35,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名（モンスターページ末尾の特殊な敵の表）。Lv・HP・攻・防・EXP・弱点がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "クエスト「害虫退治の依頼」で戦う"
+    },
+    {
+      "id": "omnivore",
+      "name": "大喰い草",
+      "nameEn": "Omnivore",
+      "kind": "normal",
+      "level": 32,
+      "hp": 1419,
+      "str": 153,
+      "tec": 37,
+      "vit": 66,
+      "agi": 56,
+      "luc": 56,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 125,
+        "ice": 100,
+        "volt": 100,
+        "death": 50,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名（モンスターページ末尾の特殊な敵の表）。Lv・HP・攻・防・EXP・弱点がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "クエスト「執政院からの依頼I」で戦う"
+    },
+    {
+      "id": "nightoad",
+      "name": "ヨナキガエル",
+      "nameEn": "Nightoad",
+      "kind": "normal",
+      "level": 42,
+      "hp": 1964,
+      "str": 204,
+      "tec": 46,
+      "vit": 93,
+      "agi": 69,
+      "luc": 69,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 125,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名（モンスターページ末尾の特殊な敵の表）。Lv・HP・攻・防・EXP・弱点がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "クエスト「謎の魔物討伐依頼」で戦う（夜のみ）"
+    },
+    {
+      "id": "hextoad",
+      "name": "呪いヨルガエル",
+      "nameEn": "Hextoad",
+      "kind": "normal",
+      "level": 43,
+      "hp": 2030,
+      "str": 210,
+      "tec": 47,
+      "vit": 96,
+      "agi": 71,
+      "luc": 71,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 125,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 150,
+        "death": 1,
+        "ailment": 100,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名（モンスターページ末尾の特殊な敵の表）。Lv・HP・攻・防・EXP・弱点がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "クエスト「謎の魔物討伐依頼」で戦う（夜のみ）"
+    },
+    {
+      "id": "steelweb",
+      "name": "グランバインド",
+      "nameEn": "Steelweb",
+      "kind": "normal",
+      "level": 65,
+      "hp": 4367,
+      "str": 375,
+      "tec": 65,
+      "vit": 143,
+      "agi": 98,
+      "luc": 98,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 125,
+        "ice": 100,
+        "volt": 150,
+        "death": 100,
+        "ailment": 0,
+        "head": 100,
+        "arm": 100,
+        "leg": 100,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名（モンスターページ末尾の特殊な敵の表）。Lv・HP・攻・防・EXP・弱点がシートと一致する行を対応づけた",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "クエスト「執政院からの依頼II」で戦う"
+    },
+    {
+      "id": "goudarat",
+      "name": "フランソワマウス",
+      "nameEn": "Goudarat",
+      "kind": "normal",
+      "floors": [
+        26
+      ],
+      "level": 70,
+      "hp": 4719,
+      "str": 402,
+      "tec": 68,
+      "vit": 136,
+      "agi": 102,
+      "luc": 102,
+      "accuracy": 90,
+      "resist": {
+        "slash": 100,
+        "bash": 100,
+        "pierce": 100,
+        "fire": 100,
+        "ice": 100,
+        "volt": 100,
+        "death": 100,
+        "ailment": 100,
+        "head": 150,
+        "arm": 150,
+        "leg": 150,
+        "stun": 100
+      },
+      "sources": [
+        {
+          "kind": "enemy-data-sheet",
+          "confidence": "unverified",
+          "url": "https://docs.google.com/spreadsheets/d/1nwJmfX1EWQZuG3TphctdAP2MXnnCxr_nd6ZigRQ18EE/",
+          "note": "In-game Codex Order (DS) タブ。DS版のゲームデータ"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+          "note": "日本語名・EXP 3200・クエスト（特殊な敵の表）",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2039/",
+          "note": "Goudarat の能力値（Lv70・HP4719・STR402・VIT136）・クエストの内容",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "クエスト「ラッチを探して！」で、B26F の外れの場所を調べると戦う。図鑑（執政院）に載らない。atwiki では能力値が ??? のため、EXP 3200 の一致と、EO Wiki・LP Archive のクエストの記述（B26F の外れの場所で戦う、図鑑に載らない唯一の敵）で Goudarat と対応づけた"
     }
   ]
 }

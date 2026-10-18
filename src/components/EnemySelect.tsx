@@ -19,11 +19,11 @@ export function EnemySelect({ value, onChange, label = '敵データ' }: { value
               ))}
           </optgroup>
         ))}
-        <optgroup label="特殊FOE（クエストなど）">
+        <optgroup label="クエストなどで戦う敵（特殊FOE・特殊な敵）">
           {enemies
             .filter((en) => en.stratum === undefined)
             .map((en) => (
-              <option key={en.id} value={en.id}>{`${en.name}（Lv${en.level}）`}</option>
+              <option key={en.id} value={en.id}>{`${en.name}（Lv${en.level}${KIND_LABELS[en.kind]}）`}</option>
             ))}
         </optgroup>
       </select>
