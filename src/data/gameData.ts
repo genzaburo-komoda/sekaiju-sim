@@ -1,7 +1,7 @@
 // 検査済みのゲームデータ。アプリの画面と計算はここから読む。
 // 起動時に validateData で検査し、エラーがあれば画面を出さずに止める（壊れたデータで計算しないため）。
 import { rawData } from './index'
-import { EnemyFile, EquipmentFile, FormulaSet, Job, ProgressionRules, SkillFile, type Skill } from './schema'
+import { EnemyBehaviorFile, EnemyFile, EquipmentFile, FormulaSet, Job, ProgressionRules, SkillFile, type Skill } from './schema'
 import { validateData } from './validate'
 
 const errors = validateData(rawData)
@@ -12,8 +12,15 @@ if (errors.length > 0) {
 export const jobs = rawData.jobs.map((j) => Job.parse(j))
 export const rules = ProgressionRules.parse(rawData.rules)
 export const equipment = EquipmentFile.parse(rawData.equipment).items
-/** 敵（第1〜6階層の通常の敵・FOE・ボス。第5・6階層のボス2体は日本語名の資料がなく未入力） */
+/** 敵（第1〜6階層の通常の敵・FOE・ボス、クエストなどで戦う敵。スプレッドシートの132体） */
 export const enemies = EnemyFile.parse(rawData.enemies).items
+/** FOE・ボスの技と行動パターン（ステップ4-5） */
+export const enemyBehaviors = EnemyBehaviorFile.parse(rawData.enemyBehaviors).items
+
+export function findBehavior(enemyId: string | null | undefined) {
+  return enemyId ? enemyBehaviors.find((b) => b.enemyId === enemyId) : undefined
+}
+
 /** 使う式セット（今は EO Wiki・DS版の1つだけ） */
 export const formulas = FormulaSet.parse(rawData.formulaSets![0])
 

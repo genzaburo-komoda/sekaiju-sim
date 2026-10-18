@@ -1,6 +1,7 @@
 // ゲームデータの読み込み口。アプリとテストはここからデータを取り出す。
 // スキルは json/skills/ にジョブごとのファイルを置けば自動で読み込まれる。
 import enemies from './json/enemies.json'
+import enemyBehaviors from './json/enemyBehaviors.json'
 import equipment from './json/equipment.json'
 import formulas from './json/formulas.json'
 import jobs from './json/jobs.json'
@@ -17,4 +18,5 @@ export const rawData: DataSet = {
   rules,
   equipment,
   enemies,
+  enemyBehaviors,
 }

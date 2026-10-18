@@ -3,7 +3,7 @@
 // 2. 整合性の検査：ファイルをまたいだ矛盾がないか（存在しない前提スキル、レベル数の不一致など）
 // 返り値はエラーメッセージの配列。空ならデータに問題なし。
 import { z } from 'zod'
-import { EnemyFile, EquipmentFile, FormulaSet, Job, ProgressionRules, SkillFile, type Skill, type SkillEffect } from './schema'
+import { EnemyBehaviorFile, EnemyFile, EquipmentFile, FormulaSet, Job, ProgressionRules, SkillFile, type Skill, type SkillEffect } from './schema'
 
 export interface DataSet {
   jobs: unknown[]
@@ -15,6 +15,8 @@ export interface DataSet {
   equipment?: unknown
   /** 敵（1ファイル） */
   enemies?: unknown
+  /** 敵の技と行動パターン（1ファイル） */
+  enemyBehaviors?: unknown
 }
 
 /** 形式の検査。問題があればメッセージを errors に足し、合格したデータだけ返す */
@@ -184,6 +186,24 @@ export function validateData(data: DataSet): string[] {
   if (enemies) {
     const ids = enemies.items.map((e) => e.id)
     for (const id of new Set(ids.filter((id, i) => ids.indexOf(id) !== i))) errors.push(`敵 ID「${id}」が重複しています`)
+  }
+
+  // 敵の行動：敵が存在するか、表と条件の技が存在するか、FOE・ボスがすべてそろっているか
+  const [behaviors] = parseAll(EnemyBehaviorFile, data.enemyBehaviors === undefined ? [] : [data.enemyBehaviors], '敵の行動', errors)
+  if (behaviors && enemies) {
+    const enemyIds = new Set(enemies.items.map((e) => e.id))
+    for (const b of behaviors.items) {
+      const where = `敵の行動 ${b.enemyId}`
+      if (!enemyIds.has(b.enemyId)) errors.push(`${where}: 敵データにありません`)
+      const skillIds = b.skills.map((s) => s.id)
+      for (const id of new Set(skillIds.filter((id, i) => skillIds.indexOf(id) !== i))) errors.push(`${where}: 技 ID「${id}」が重複しています`)
+      const known = new Set(['normal', ...skillIds])
+      const refs = [...b.default, ...b.rules.flatMap((r) => r.use)].map((c) => c.skill)
+      for (const r of b.rules) refs.push(...[r.when.prev, r.when.notPrev, r.when.selfBuff, r.when.noSelfBuff].filter((x): x is string => !!x))
+      for (const id of new Set(refs)) if (!known.has(id)) errors.push(`${where}: 技「${id}」がありません`)
+    }
+    const covered = new Set(behaviors.items.map((b) => b.enemyId))
+    for (const e of enemies.items) if (e.kind !== 'normal' && !covered.has(e.id)) errors.push(`敵の行動：FOE・ボス「${e.name}」の行動がありません`)
   }
 
   // レベル差補正の表は −20〜+20 が1行ずつそろっているか

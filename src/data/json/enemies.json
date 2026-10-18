@@ -14,6 +14,7 @@
       "agi": 9,
       "luc": 9,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -58,6 +59,7 @@
       "agi": 9,
       "luc": 9,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -102,6 +104,7 @@
       "agi": 10,
       "luc": 10,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -146,6 +149,7 @@
       "agi": 9,
       "luc": 10,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -190,6 +194,7 @@
       "agi": 13,
       "luc": 13,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -234,6 +239,7 @@
       "agi": 14,
       "luc": 14,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -278,6 +284,7 @@
       "agi": 13,
       "luc": 15,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -322,6 +329,7 @@
       "agi": 16,
       "luc": 16,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -366,6 +374,7 @@
       "agi": 17,
       "luc": 17,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -410,6 +419,7 @@
       "agi": 16,
       "luc": 18,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -454,6 +464,7 @@
       "agi": 18,
       "luc": 20,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -498,6 +509,7 @@
       "agi": 48,
       "luc": 48,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -542,6 +554,7 @@
       "agi": 20,
       "luc": 22,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -586,6 +599,7 @@
       "agi": 25,
       "luc": 25,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -630,6 +644,7 @@
       "agi": 26,
       "luc": 26,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -674,6 +689,7 @@
       "agi": 23,
       "luc": 26,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -718,6 +734,7 @@
       "agi": 22,
       "luc": 25,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -762,6 +779,7 @@
       "agi": 24,
       "luc": 27,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -806,6 +824,7 @@
       "agi": 28,
       "luc": 28,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -850,6 +869,7 @@
       "agi": 58,
       "luc": 58,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -895,6 +915,7 @@
       "agi": 28,
       "luc": 28,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -939,6 +960,7 @@
       "agi": 29,
       "luc": 29,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -983,6 +1005,7 @@
       "agi": 64,
       "luc": 64,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1027,6 +1050,7 @@
       "agi": 30,
       "luc": 28,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1071,6 +1095,7 @@
       "agi": 20,
       "luc": 20,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 300,
         "bash": 300,
@@ -1115,6 +1140,7 @@
       "agi": 28,
       "luc": 31,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 150,
         "bash": 50,
@@ -1159,6 +1185,7 @@
       "agi": 32,
       "luc": 32,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 150,
@@ -1203,6 +1230,7 @@
       "agi": 32,
       "luc": 32,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -1247,6 +1275,7 @@
       "agi": 31,
       "luc": 31,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -1291,6 +1320,7 @@
       "agi": 33,
       "luc": 33,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 150,
@@ -1335,6 +1365,7 @@
       "agi": 38,
       "luc": 38,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1380,6 +1411,7 @@
       "agi": 32,
       "luc": 36,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 150,
         "bash": 50,
@@ -1424,6 +1456,7 @@
       "agi": 36,
       "luc": 36,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1468,6 +1501,7 @@
       "agi": 33,
       "luc": 37,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1512,6 +1546,7 @@
       "agi": 40,
       "luc": 40,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1556,6 +1591,7 @@
       "agi": 41,
       "luc": 41,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -1600,6 +1636,7 @@
       "agi": 42,
       "luc": 42,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 50,
         "bash": 100,
@@ -1644,6 +1681,7 @@
       "agi": 44,
       "luc": 44,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1688,6 +1726,7 @@
       "agi": 36,
       "luc": 40,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1732,6 +1771,7 @@
       "agi": 36,
       "luc": 40,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 50,
         "bash": 100,
@@ -1776,6 +1816,7 @@
       "agi": 44,
       "luc": 44,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1820,6 +1861,7 @@
       "agi": 47,
       "luc": 47,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1864,6 +1906,7 @@
       "agi": 37,
       "luc": 42,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -1908,6 +1951,7 @@
       "agi": 36,
       "luc": 40,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 150,
@@ -1952,6 +1996,7 @@
       "agi": 40,
       "luc": 40,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 150,
@@ -1996,6 +2041,7 @@
       "agi": 39,
       "luc": 44,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 150,
@@ -2040,6 +2086,7 @@
       "agi": 44,
       "luc": 44,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 150,
@@ -2084,6 +2131,7 @@
       "agi": 43,
       "luc": 43,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2128,6 +2176,7 @@
       "agi": 44,
       "luc": 44,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2172,6 +2221,7 @@
       "agi": 98,
       "luc": 98,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2216,6 +2266,7 @@
       "agi": 51,
       "luc": 51,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2260,6 +2311,7 @@
       "agi": 41,
       "luc": 46,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2304,6 +2356,7 @@
       "agi": 102,
       "luc": 102,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -2348,6 +2401,7 @@
       "agi": 51,
       "luc": 51,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 150,
@@ -2392,6 +2446,7 @@
       "agi": 52,
       "luc": 52,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2436,6 +2491,7 @@
       "agi": 50,
       "luc": 50,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2480,6 +2536,7 @@
       "agi": 46,
       "luc": 52,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -2524,6 +2581,7 @@
       "agi": 55,
       "luc": 55,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2568,6 +2626,7 @@
       "agi": 58,
       "luc": 58,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2612,6 +2671,7 @@
       "agi": 48,
       "luc": 54,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2656,6 +2716,7 @@
       "agi": 56,
       "luc": 56,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2700,6 +2761,7 @@
       "agi": 48,
       "luc": 54,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -2744,6 +2806,7 @@
       "agi": 54,
       "luc": 54,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2788,6 +2851,7 @@
       "agi": 65,
       "luc": 65,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2832,6 +2896,7 @@
       "agi": 59,
       "luc": 59,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2876,6 +2941,7 @@
       "agi": 61,
       "luc": 61,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -2920,6 +2986,7 @@
       "agi": 55,
       "luc": 62,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 0,
         "bash": 0,
@@ -2964,6 +3031,7 @@
       "agi": 65,
       "luc": 65,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 50,
         "bash": 100,
@@ -3008,6 +3076,7 @@
       "agi": 60,
       "luc": 60,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -3052,6 +3121,7 @@
       "agi": 65,
       "luc": 65,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -3096,6 +3166,7 @@
       "agi": 136,
       "luc": 136,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -3140,6 +3211,7 @@
       "agi": 128,
       "luc": 128,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 0,
         "bash": 0,
@@ -3184,6 +3256,7 @@
       "agi": 66,
       "luc": 66,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -3228,6 +3301,7 @@
       "agi": 20,
       "luc": 20,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 300,
         "bash": 300,
@@ -3272,6 +3346,7 @@
       "agi": 60,
       "luc": 60,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -3317,6 +3392,7 @@
       "agi": 54,
       "luc": 61,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 0,
         "bash": 0,
@@ -3366,6 +3442,7 @@
       "agi": 27,
       "luc": 27,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -3414,6 +3491,7 @@
       "agi": 29,
       "luc": 29,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -3461,6 +3539,7 @@
       "agi": 36,
       "luc": 36,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 50,
         "bash": 100,
@@ -3509,6 +3588,7 @@
       "agi": 30,
       "luc": 30,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -3558,6 +3638,7 @@
       "agi": 47,
       "luc": 47,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -3607,6 +3688,7 @@
       "agi": 50,
       "luc": 50,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -3657,6 +3739,7 @@
       "agi": 40,
       "luc": 48,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 90,
         "bash": 90,
@@ -3707,6 +3790,7 @@
       "agi": 50,
       "luc": 50,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -3754,6 +3838,7 @@
       "agi": 63,
       "luc": 63,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -3802,6 +3887,7 @@
       "agi": 51,
       "luc": 51,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -3849,6 +3935,7 @@
       "agi": 53,
       "luc": 53,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -3898,6 +3985,7 @@
       "agi": 58,
       "luc": 65,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -3947,6 +4035,7 @@
       "agi": 62,
       "luc": 62,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -3996,6 +4085,7 @@
       "agi": 66,
       "luc": 66,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4045,6 +4135,7 @@
       "agi": 71,
       "luc": 71,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -4094,6 +4185,7 @@
       "agi": 71,
       "luc": 71,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4141,6 +4233,7 @@
       "agi": 20,
       "luc": 20,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 300,
         "bash": 300,
@@ -4188,6 +4281,7 @@
       "agi": 75,
       "luc": 75,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -4235,6 +4329,7 @@
       "agi": 85,
       "luc": 75,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4284,6 +4379,7 @@
       "agi": 89,
       "luc": 89,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4335,6 +4431,7 @@
       "agi": 81,
       "luc": 81,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4385,6 +4482,7 @@
       "agi": 86,
       "luc": 86,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4432,6 +4530,7 @@
       "agi": 87,
       "luc": 87,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -4481,6 +4580,7 @@
       "agi": 101,
       "luc": 101,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4529,6 +4629,7 @@
       "agi": 94,
       "luc": 101,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -4577,6 +4678,7 @@
       "agi": 101,
       "luc": 101,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -4624,6 +4726,7 @@
       "agi": 101,
       "luc": 101,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -4671,6 +4774,7 @@
       "agi": 102,
       "luc": 102,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4718,6 +4822,7 @@
       "agi": 102,
       "luc": 102,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4765,6 +4870,7 @@
       "agi": 102,
       "luc": 102,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4811,6 +4917,7 @@
       "agi": 30,
       "luc": 30,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -4859,6 +4966,7 @@
       "agi": 88,
       "luc": 44,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -4906,6 +5014,7 @@
       "agi": 98,
       "luc": 49,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -4953,6 +5062,7 @@
       "agi": 120,
       "luc": 59,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5000,6 +5110,7 @@
       "agi": 136,
       "luc": 68,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -5047,6 +5158,7 @@
       "agi": 142,
       "luc": 68,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -5094,6 +5206,7 @@
       "agi": 120,
       "luc": 68,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5142,6 +5255,7 @@
       "agi": 32,
       "luc": 32,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5190,6 +5304,7 @@
       "agi": 48,
       "luc": 24,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5237,6 +5352,7 @@
       "agi": 68,
       "luc": 34,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5284,6 +5400,7 @@
       "agi": 32,
       "luc": 32,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5332,6 +5449,7 @@
       "agi": 74,
       "luc": 37,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5379,6 +5497,7 @@
       "agi": 86,
       "luc": 43,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5426,6 +5545,7 @@
       "agi": 100,
       "luc": 50,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5470,6 +5590,7 @@
       "agi": 102,
       "luc": 51,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 75,
         "bash": 75,
@@ -5515,6 +5636,7 @@
       "agi": 102,
       "luc": 51,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 125,
         "bash": 125,
@@ -5563,6 +5685,7 @@
       "agi": 115,
       "luc": 65,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 90,
         "bash": 90,
@@ -5611,6 +5734,7 @@
       "agi": 160,
       "luc": 80,
       "accuracy": 95,
+      "normalElement": "bash",
       "resist": {
         "slash": 150,
         "bash": 150,
@@ -5654,6 +5778,7 @@
       "agi": 48,
       "luc": 48,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5701,6 +5826,7 @@
       "agi": 48,
       "luc": 48,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 50,
         "bash": 50,
@@ -5745,6 +5871,7 @@
       "agi": 35,
       "luc": 35,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5789,6 +5916,7 @@
       "agi": 56,
       "luc": 56,
       "accuracy": 90,
+      "normalElement": "pierce",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5833,6 +5961,7 @@
       "agi": 69,
       "luc": 69,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 125,
@@ -5877,6 +6006,7 @@
       "agi": 71,
       "luc": 71,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 125,
@@ -5921,6 +6051,7 @@
       "agi": 98,
       "luc": 98,
       "accuracy": 90,
+      "normalElement": "bash",
       "resist": {
         "slash": 100,
         "bash": 100,
@@ -5968,6 +6099,7 @@
       "agi": 102,
       "luc": 102,
       "accuracy": 90,
+      "normalElement": "slash",
       "resist": {
         "slash": 100,
         "bash": 100,

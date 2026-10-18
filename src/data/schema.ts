@@ -353,6 +353,8 @@ export const Enemy = z.object({
   luc: z.number().int().nonnegative(),
   /** 通常攻撃の基礎命中（%） */
   accuracy: z.number().min(0),
+  /** 通常攻撃の属性（スプレッドシートの Attack 列） */
+  normalElement: z.enum(['slash', 'bash', 'pierce']).optional(),
   resist: z.object({
     slash: Resist, bash: Resist, pierce: Resist, fire: Resist, ice: Resist, volt: Resist,
     death: Resist, ailment: Resist, head: Resist, arm: Resist, leg: Resist, stun: Resist,
@@ -383,6 +385,152 @@ export const Equipment = z.object({
 
 export const EnemyFile = z.object({
   items: z.array(Enemy),
+})
+
+// ---------------------------------------------------------------
+// 敵の技と行動パターン（ステップ4-5。数値は LP Archive の DS版データの解析、条件は LP Archive と atwiki の記述）
+// ---------------------------------------------------------------
+
+/** 敵が味方にかける状態異常・封じ */
+export const EnemyAilment = z.union([Ailment, z.literal('bind-head'), z.literal('bind-arm'), z.literal('bind-leg')])
+
+const EnemyInflict = z.object({
+  /** かける状態異常。複数あれば all でないかぎり1つを等しい確率で選ぶ（「毒か麻痺」） */
+  ailments: z.array(EnemyAilment).min(1),
+  /** すべてを別々に判定する（全箇所封じ・太古の呪粉） */
+  all: z.boolean().optional(),
+  /** 付与率（%）。味方の耐性と難易度の「被状態異常」をかける */
+  chance: z.number().min(0),
+  /** 毒のダメージ（1ターンあたり） */
+  poisonDamage: z.number().int().positive().optional(),
+  /** 味方の耐性を無視する（ネクローシス） */
+  ignoreResist: z.boolean().optional(),
+})
+
+/** 敵の自己強化・味方への弱体の1項目。stat は味方の強化と同じ名前（physAtk は 100+値 の倍率、damageTaken などは値そのものの倍率） */
+const EnemyMod = z.object({
+  stat: z.enum(['physAtk', 'physDef', 'agi', 'accuracy', 'damageTaken', 'physTaken', 'elemTaken']),
+  value: z.number(),
+  /** 属性を限るとき（「炎だけ 1% に」など） */
+  elements: z.array(Element).optional(),
+})
+
+export const EnemySkillEffect = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('damage'),
+    element: Element,
+    /** 威力（%）。通常攻撃は 100 */
+    power: z.number().positive(),
+    /** 複合属性のもう1つ（抜刀氷雪改など。それぞれの威力で別々に計算して足す） */
+    element2: Element.optional(),
+    power2: z.number().positive().optional(),
+    /** single=単体、splash=単体＋左右、all=全体、random=ランダムに hits 回（distinct なら同じ人に2回当たらない） */
+    target: z.enum(['single', 'splash', 'all', 'random']),
+    hits: z.tuple([z.number().int().positive(), z.number().int().positive()]).optional(),
+    distinct: z.boolean().optional(),
+    /** 左右への威力（%）。無ければ本体と同じ */
+    splashPower: z.number().positive().optional(),
+    /** 与えたダメージだけ回復する */
+    drain: z.boolean().optional(),
+    /** 味方の防御の強化を無視する */
+    ignoreDefBuff: z.boolean().optional(),
+    inflict: EnemyInflict.optional(),
+  }),
+  z.object({ type: z.literal('inflict'), target: z.enum(['single', 'all']), ...EnemyInflict.shape }),
+  z.object({ type: z.literal('self-buff'), mods: z.array(EnemyMod).min(1), turns: z.number().int().positive() }),
+  z.object({ type: z.literal('party-debuff'), mods: z.array(EnemyMod).min(1), turns: z.number().int().positive(), inflict: EnemyInflict.optional() }),
+  z.object({ type: z.literal('heal'), amount: z.number().int().positive() }),
+  z.object({ type: z.literal('regen'), amount: z.number().int().positive(), turns: z.number().int().positive(), revive: z.number().int().positive().optional() }),
+  /** 味方の強化をすべて消す */
+  z.object({ type: z.literal('dispel') }),
+  /** 自分の封じをすべて消す */
+  z.object({ type: z.literal('cleanse') }),
+  /** このターン、味方の物理攻撃に反撃する */
+  z.object({ type: z.literal('counter'), element: Element, power: z.number().positive() }),
+  /** 防御（このターン受けるダメージが減る） */
+  z.object({ type: z.literal('guard') }),
+  /** 仲間を呼ぶ（1対1のシミュレーションでは何もしない） */
+  z.object({ type: z.literal('summon') }),
+])
+
+export const EnemySkill = z.object({
+  id: Id,
+  /** 日本語名（atwiki）。資料に無ければ英語名 */
+  name: z.string().min(1),
+  nameEn: z.string().min(1),
+  /** 日本語名の確かさ（atwiki の FOE・ボスのページで確かめた＝なし、敵スキル一覧の部位・効果から対応づけた＝estimated、不明＝unknown） */
+  nameConfidence: z.enum(['estimated', 'unknown']).optional(),
+  part: BodyPart,
+  /** 基礎命中（%）。無ければ敵の通常攻撃と同じ */
+  accuracy: z.number().positive().optional(),
+  /** 速度補正（%）。無ければ 100 */
+  speed: z.number().positive().optional(),
+  /** 狙い：front=前列だけ、back=後列を優先、lowest／highest=HP が最も低い／高い味方 */
+  aim: z.enum(['front', 'back', 'lowest', 'highest']).optional(),
+  effects: z.array(EnemySkillEffect),
+  notes: z.string().optional(),
+})
+
+/** 行動を選ぶ条件（すべて満たすときに当てはまる）。ターンは 1 から数える */
+const AiCondition = z.object({
+  turn: z.number().int().positive().optional(),
+  turnFrom: z.number().int().positive().optional(),
+  /** ターン t が t % m === r（[m, r]） */
+  turnMod: z.tuple([z.number().int().min(2), z.number().int().min(0)]).optional(),
+  /** 自分の HP の割合（%）が未満／以上 */
+  hpBelow: z.number().positive().optional(),
+  hpAtLeast: z.number().positive().optional(),
+  /** 前のターンに使った技／使わなかった技 */
+  prev: z.string().optional(),
+  notPrev: z.string().optional(),
+  /** 封じられている部位がちょうどこれだけ（ほかは封じられていない） */
+  boundExactly: z.array(Bind).optional(),
+  /** これらの部位がすべて封じられている／いない */
+  bound: z.array(Bind).optional(),
+  notBound: z.array(Bind).optional(),
+  /** 封じられている部位の数がこれ以上 */
+  boundCountAtLeast: z.number().int().positive().optional(),
+  /** 味方にかかっている強化の数（メンバーごとに数えた合計）がこれ以上 */
+  partyBuffsAtLeast: z.number().int().positive().optional(),
+  /** 自分の強化（技 ID）がかかっている／いない */
+  selfBuff: z.string().optional(),
+  noSelfBuff: z.string().optional(),
+  /** 味方のだれかが属性の耐性（強化・防具）を持っているか */
+  partyElemResist: z.boolean().optional(),
+  /** この確率（%）で当てはまる */
+  chance: z.number().positive().max(100).optional(),
+})
+
+const AiChoice = z.object({ skill: z.string(), weight: z.number().positive() })
+
+export const AiRule = z.object({
+  when: AiCondition,
+  use: z.array(AiChoice).min(1),
+  /** 重み（確率）が資料に無く、等しい確率などで仮に置いたもの */
+  assumed: z.boolean().optional(),
+  note: z.string().optional(),
+})
+
+export const EnemyBehavior = z.object({
+  enemyId: Id,
+  skills: z.array(EnemySkill),
+  /** 上から順に条件を見て、最初に当てはまった行の表から選ぶ */
+  rules: z.array(AiRule),
+  /** どの行にも当てはまらないときの表 */
+  default: z.array(AiChoice).min(1),
+  defaultAssumed: z.boolean().optional(),
+  /** 封じで使えない技を選んだとき：normal=通常攻撃にする（既定）、reroll=使える技から選び直す、skip=何もしない */
+  onBound: z.enum(['normal', 'reroll', 'skip']).optional(),
+  /** 通常攻撃の狙い */
+  normalAim: z.enum(['front', 'back', 'lowest', 'highest']).optional(),
+  /** 受けるダメージを一定の確率で半分にする（マンティコア） */
+  halveDamageChance: z.number().positive().max(100).optional(),
+  sources: z.array(Source).min(1),
+  notes: z.string().optional(),
+})
+
+export const EnemyBehaviorFile = z.object({
+  items: z.array(EnemyBehavior),
 })
 
 export const EquipmentFile = z.object({
@@ -431,6 +579,10 @@ export type Skill = z.infer<typeof Skill>
 export type SkillFile = z.infer<typeof SkillFile>
 export type SkillEffect = z.infer<typeof SkillEffect>
 export type Enemy = z.infer<typeof Enemy>
+export type EnemySkill = z.infer<typeof EnemySkill>
+export type EnemySkillEffect = z.infer<typeof EnemySkillEffect>
+export type EnemyBehavior = z.infer<typeof EnemyBehavior>
+export type AiRule = z.infer<typeof AiRule>
 export type EnemyFile = z.infer<typeof EnemyFile>
 export type Equipment = z.infer<typeof Equipment>
 export type EquipmentFile = z.infer<typeof EquipmentFile>

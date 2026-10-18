@@ -11,6 +11,7 @@ import { DEFAULT_TARGET, targetFromEnemy } from '../logic/predict'
 import { armorDefense } from '../logic/equip'
 import { memberActions, type BattleSetup, type EnemyAction, type SimAction, type TurnLog } from '../logic/sim'
 import { INFLICT_LABELS, type InflictId } from '../logic/support'
+import { EnemyBehaviorView } from './EnemyBehaviorView'
 import { EnemySelect } from './EnemySelect'
 import { NumberField } from './NumberField'
 import { PartySearchSection } from './PartySearchSection'
@@ -180,6 +181,11 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
           <p className="note wide">
             Lv{enemy.level}・HP {enemy.hp}・STR {enemy.str}・TEC {enemy.tec}・VIT {enemy.vit}・AGI {enemy.agi}（DS版の解析値、未検証）
           </p>
+        ) : null}
+        {enemy ? (
+          <div className="wide">
+            <EnemyBehaviorView enemy={enemy} />
+          </div>
         ) : (
           <div className="record-fields">
             {(['level', 'hp', 'str', 'tec', 'vit', 'agi'] as const).map((k) => (

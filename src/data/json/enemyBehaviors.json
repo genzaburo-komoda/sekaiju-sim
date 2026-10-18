@@ -1,0 +1,5435 @@
+{
+  "items": [
+    {
+      "enemyId": "ragelope",
+      "skills": [
+        {
+          "id": "scream",
+          "name": "混乱の叫び",
+          "nameEn": "Scream",
+          "part": "head",
+          "speed": 60,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "single",
+              "ailments": [
+                "confusion"
+              ],
+              "chance": 25
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "scream",
+              "weight": 1
+            }
+          ],
+          "note": "最初の2ターンに使う（atwiki）"
+        },
+        {
+          "when": {
+            "turn": 2
+          },
+          "use": [
+            {
+              "skill": "scream",
+              "weight": 1
+            }
+          ],
+          "note": "最初の2ターンに使う（atwiki）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2003/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "kuyutha",
+      "skills": [
+        {
+          "id": "rampage",
+          "name": "大暴れ",
+          "nameEn": "Rampage",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 130,
+              "target": "single"
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "rampage",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2005/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "stalker",
+      "skills": [
+        {
+          "id": "scythe",
+          "name": "大鎌斬",
+          "nameEn": "Scythe",
+          "part": "arm",
+          "accuracy": 97,
+          "speed": 10,
+          "aim": "front",
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 120,
+              "target": "single"
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "scythe",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "normalAim": "front",
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2007/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "前列だけを狙う（atwiki）"
+    },
+    {
+      "enemyId": "wolf",
+      "skills": [
+        {
+          "id": "fang",
+          "name": "シルバーファング",
+          "nameEn": "Fang",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 90,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "evil-cry",
+          "name": "デビルクライ",
+          "nameEn": "Evil Cry",
+          "part": "head",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 50
+                }
+              ],
+              "turns": 5
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "selfBuff": "evil-cry"
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "fang",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "デビルクライがかかっている間はかけ直さない（仮定）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "fang",
+          "weight": 1
+        },
+        {
+          "skill": "evil-cry",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2006/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "fenrir",
+      "skills": [
+        {
+          "id": "coldfang",
+          "name": "凍てつく牙",
+          "nameEn": "Coldfang",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 115,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "roar",
+          "name": "恐怖の咆哮",
+          "nameEn": "Roar",
+          "part": "head",
+          "speed": 10,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "terror"
+              ],
+              "chance": 40
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "coldfang",
+          "weight": 1
+        },
+        {
+          "skill": "roar",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2007/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "技の日本語名・部位・行動の条件（ボス攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "取り巻きのスノーウルフは入れていない（1対1）"
+    },
+    {
+      "enemyId": "moa",
+      "skills": [
+        {
+          "id": "rush",
+          "name": "突撃",
+          "nameEn": "Rush",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 90,
+              "target": "all"
+            }
+          ],
+          "notes": "atwiki は壊属性、LP Archive（データ）は突属性。LP Archive の値を使う"
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "rush",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2011/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "cutter",
+      "skills": [
+        {
+          "id": "shredder",
+          "name": "ひきさく大爪",
+          "nameEn": "Shredder",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 120,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "roar",
+          "name": "恐怖の咆哮",
+          "nameEn": "Roar",
+          "part": "head",
+          "speed": 10,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "terror"
+              ],
+              "chance": 40
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "roar",
+              "weight": 1
+            }
+          ],
+          "note": "1ターン目に必ず使う（atwiki）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "shredder",
+          "weight": 1
+        },
+        {
+          "skill": "roar",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2011/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "assassin",
+      "skills": [
+        {
+          "id": "needle",
+          "name": "キラーニードル",
+          "nameEn": "Needle",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 10,
+          "aim": "lowest",
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 120,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "venom",
+          "name": "麻痺毒針",
+          "nameEn": "Venom",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 100,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 70,
+              "target": "single",
+              "inflict": {
+                "ailments": [
+                  "poison",
+                  "paralysis"
+                ],
+                "chance": 50,
+                "poisonDamage": 113
+              }
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "needle",
+              "weight": 1
+            },
+            {
+              "skill": "venom",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "キラーニードルは HP が半分を切ってから、HP が最も低い味方に使う（atwiki）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "venom",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2011/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "armoth",
+      "skills": [
+        {
+          "id": "charge",
+          "name": "力溜め",
+          "nameEn": "Charge",
+          "part": "none",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 0
+                }
+              ],
+              "turns": 2
+            }
+          ],
+          "notes": "次のターンに猪突猛進を使う。LP Archive によると攻撃力が上がる処理は働いていない（強化の表示だけ付く）"
+        },
+        {
+          "id": "bullrush",
+          "name": "猪突猛進",
+          "nameEn": "Bullrush",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 135,
+              "target": "all"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "prev": "charge"
+          },
+          "use": [
+            {
+              "skill": "bullrush",
+              "weight": 1
+            }
+          ],
+          "note": "力溜めの次のターンに使う（atwiki・LP Archive）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "charge",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2011/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "shelltor",
+      "skills": [
+        {
+          "id": "blizzard",
+          "name": "吹雪の息",
+          "nameEn": "Blizzard",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "ice",
+              "power": 125,
+              "target": "all"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turnFrom": 7
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            }
+          ],
+          "note": "6ターンを過ぎると吹雪の息を使わなくなる（LP Archive）"
+        },
+        {
+          "when": {
+            "prev": "blizzard"
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 2
+            },
+            {
+              "skill": "blizzard",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "使った次のターンは使いにくくなる（LP Archive。割合は仮）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "blizzard",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2020/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "bloodant",
+      "skills": [
+        {
+          "id": "acid",
+          "name": "粘着する蟻酸",
+          "nameEn": "Acid",
+          "part": "head",
+          "speed": 200,
+          "effects": [
+            {
+              "type": "party-debuff",
+              "mods": [
+                {
+                  "stat": "agi",
+                  "value": 50
+                }
+              ],
+              "turns": 5
+            }
+          ]
+        },
+        {
+          "id": "summon",
+          "name": "仲間呼び",
+          "nameEn": "Summon",
+          "part": "head",
+          "effects": [
+            {
+              "type": "summon"
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "acid",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2015/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "仲間呼びは1対1では使わないものとした"
+    },
+    {
+      "enemyId": "servant",
+      "skills": [
+        {
+          "id": "crusher",
+          "name": "破壊の大顎",
+          "nameEn": "Crusher",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 120,
+              "target": "single"
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "crusher",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2015/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "royalant",
+      "skills": [
+        {
+          "id": "crunch",
+          "name": "かみくだき",
+          "nameEn": "Crunch",
+          "part": "head",
+          "accuracy": 95,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 120,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "hammer",
+          "name": "女王の鉄槌",
+          "nameEn": "Hammer",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 75,
+              "target": "random",
+              "hits": [
+                2,
+                4
+              ],
+              "distinct": true
+            }
+          ]
+        },
+        {
+          "id": "duster",
+          "name": "土けむり",
+          "nameEn": "Duster",
+          "part": "leg",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "party-debuff",
+              "mods": [
+                {
+                  "stat": "accuracy",
+                  "value": 10
+                }
+              ],
+              "turns": 5,
+              "inflict": {
+                "ailments": [
+                  "blind"
+                ],
+                "chance": 40
+              }
+            }
+          ],
+          "notes": "命中の低下は LP Archive の「90%」を、命中を 90% にすると読んだ"
+        },
+        {
+          "id": "ant-aura",
+          "name": "ホーリークイーン",
+          "nameEn": "Ant Aura",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "heal",
+              "amount": 300
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "bound": [
+              "head",
+              "arm"
+            ]
+          },
+          "use": [
+            {
+              "skill": "duster",
+              "weight": 1
+            }
+          ],
+          "note": "頭と腕を封じると土けむりを続けて使う（atwiki）"
+        },
+        {
+          "when": {
+            "bound": [
+              "arm"
+            ]
+          },
+          "use": [
+            {
+              "skill": "crunch",
+              "weight": 60
+            },
+            {
+              "skill": "duster",
+              "weight": 40
+            }
+          ],
+          "note": "封じられている間はかみくだき 60%・土けむり 40%（LP Archive）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "crunch",
+          "weight": 1
+        },
+        {
+          "skill": "hammer",
+          "weight": 1
+        },
+        {
+          "skill": "duster",
+          "weight": 1
+        },
+        {
+          "skill": "ant-aura",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "onBound": "reroll",
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2016/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "技の日本語名・部位・行動の条件（ボス攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "封じられた技は使わず、使える技から選び直す（LP Archive）。取り巻きのハイキラーアントは入れていない（1対1）"
+    },
+    {
+      "enemyId": "muckdile",
+      "skills": [
+        {
+          "id": "bite",
+          "name": "乱れ咬み",
+          "nameEn": "Bite",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 80,
+              "target": "all"
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "bite",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2019/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "killclaw",
+      "skills": [
+        {
+          "id": "ripper",
+          "name": "死神の爪",
+          "nameEn": "Ripper",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 90,
+              "target": "single",
+              "inflict": {
+                "ailments": [
+                  "death"
+                ],
+                "chance": 20
+              }
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "hpBelow": 25
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "ripper",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "HP が赤（25%）を切ると使い始める（atwiki）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2018/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "cotrangl",
+      "skills": [
+        {
+          "id": "tackle",
+          "name": "体当たり",
+          "nameEn": "Tackle",
+          "part": "none",
+          "accuracy": 90,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 135,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "blizzard",
+          "name": "アイスブレス",
+          "nameEn": "Blizzard",
+          "part": "head",
+          "accuracy": 80,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "ice",
+              "power": 85,
+              "target": "random",
+              "hits": [
+                2,
+                4
+              ],
+              "distinct": true,
+              "inflict": {
+                "ailments": [
+                  "sleep"
+                ],
+                "chance": 25
+              }
+            }
+          ]
+        },
+        {
+          "id": "flood",
+          "name": "大海原の侵食",
+          "nameEn": "Flood",
+          "part": "head",
+          "accuracy": 85,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "ice",
+              "power": 90,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "ice-gaze",
+          "name": "フリージングアイ",
+          "nameEn": "Ice Gaze",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "party-debuff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 25
+                }
+              ],
+              "turns": 5
+            }
+          ],
+          "notes": "攻撃力の低下は LP Archive の「75%」を、攻撃力を 75% にすると読んだ"
+        },
+        {
+          "id": "coiling",
+          "name": "テイルコイル",
+          "nameEn": "Coiling",
+          "part": "leg",
+          "speed": 50,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "single",
+              "ailments": [
+                "bind-head",
+                "bind-arm",
+                "bind-leg"
+              ],
+              "chance": 95,
+              "all": true
+            }
+          ]
+        },
+        {
+          "id": "aquaveil",
+          "name": "水のヴェール",
+          "nameEn": "Aquaveil",
+          "part": "leg",
+          "speed": 150,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "damageTaken",
+                  "value": 1,
+                  "elements": [
+                    "fire"
+                  ]
+                }
+              ],
+              "turns": 5
+            }
+          ],
+          "notes": "持続ターンは資料に無いので 5 とした"
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "selfBuff": "aquaveil"
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "tackle",
+              "weight": 1
+            },
+            {
+              "skill": "blizzard",
+              "weight": 1
+            },
+            {
+              "skill": "flood",
+              "weight": 1
+            },
+            {
+              "skill": "ice-gaze",
+              "weight": 1
+            },
+            {
+              "skill": "coiling",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "水のヴェールがかかっている間はかけ直さない（仮定）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "tackle",
+          "weight": 1
+        },
+        {
+          "skill": "blizzard",
+          "weight": 1
+        },
+        {
+          "skill": "flood",
+          "weight": 1
+        },
+        {
+          "skill": "ice-gaze",
+          "weight": 1
+        },
+        {
+          "skill": "coiling",
+          "weight": 1
+        },
+        {
+          "skill": "aquaveil",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2020/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "技の日本語名・部位・行動の条件（ボス攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "golem",
+      "skills": [
+        {
+          "id": "hammer",
+          "name": "ロックハンマー",
+          "nameEn": "Hammer",
+          "part": "arm",
+          "accuracy": 95,
+          "speed": 80,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 150,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "3-hit",
+          "name": "トリプルハンマー",
+          "nameEn": "3-Hit",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 130,
+              "target": "single",
+              "hits": [
+                3,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "flash",
+          "name": "フラッシュ",
+          "nameEn": "Flash",
+          "part": "head",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "blind"
+              ],
+              "chance": 25
+            }
+          ]
+        },
+        {
+          "id": "block",
+          "name": "パワーウォール",
+          "nameEn": "Block",
+          "part": "arm",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physTaken",
+                  "value": 30
+                }
+              ],
+              "turns": 3
+            }
+          ],
+          "notes": "atwiki は「物理耐性25%↑・5ターン」、LP Archive（データ）は「物理 70% 軽減・3ターン」。LP Archive の値を使う"
+        },
+        {
+          "id": "ward",
+          "name": "フォースウォール",
+          "nameEn": "Ward",
+          "part": "arm",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "elemTaken",
+                  "value": 75
+                }
+              ],
+              "turns": 3
+            }
+          ]
+        },
+        {
+          "id": "regen",
+          "name": "リジェネ",
+          "nameEn": "Regen",
+          "part": "head",
+          "speed": 50,
+          "effects": [
+            {
+              "type": "regen",
+              "amount": 280,
+              "turns": 3,
+              "revive": 1750
+            }
+          ],
+          "notes": "かかっている間に倒すと HP 1750 で1度だけ起き上がる（LP Archive。atwiki は HP 700）"
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "flash",
+              "weight": 1
+            }
+          ],
+          "note": "必ず不意打ちになり、そのターンにフラッシュを使う（LP Archive）"
+        },
+        {
+          "when": {
+            "bound": [
+              "arm"
+            ]
+          },
+          "use": [
+            {
+              "skill": "hammer",
+              "weight": 1
+            }
+          ],
+          "note": "腕を封じられても腕の技を選び、そのターンは何もしない（LP Archive：90%。残り 10% の効果は不明なので入れない）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "hammer",
+          "weight": 1
+        },
+        {
+          "skill": "3-hit",
+          "weight": 1
+        },
+        {
+          "skill": "flash",
+          "weight": 1
+        },
+        {
+          "skill": "block",
+          "weight": 1
+        },
+        {
+          "skill": "ward",
+          "weight": 1
+        },
+        {
+          "skill": "regen",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "onBound": "skip",
+      "normalAim": "back",
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2017/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2025/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "通常攻撃は後列を狙う（atwiki）"
+    },
+    {
+      "enemyId": "sickwood",
+      "skills": [
+        {
+          "id": "venom",
+          "name": "毒の息",
+          "nameEn": "Venom",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "poison"
+              ],
+              "chance": 45,
+              "poisonDamage": 99
+            }
+          ]
+        },
+        {
+          "id": "branch",
+          "name": "うごめく枝葉",
+          "nameEn": "Branch",
+          "part": "head",
+          "speed": 10,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "single",
+              "ailments": [
+                "bind-head",
+                "bind-arm",
+                "bind-leg"
+              ],
+              "chance": 70,
+              "all": true
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "venom",
+          "weight": 1
+        },
+        {
+          "skill": "branch",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2021/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "cruella",
+      "skills": [
+        {
+          "id": "siren",
+          "name": "混乱の歌声",
+          "nameEn": "Siren",
+          "part": "head",
+          "speed": 50,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "confusion"
+              ],
+              "chance": 50
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "siren",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2023/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "diabolix",
+      "skills": [
+        {
+          "id": "curse",
+          "name": "呪いの声",
+          "nameEn": "Curse",
+          "part": "head",
+          "speed": 120,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "curse"
+              ],
+              "chance": 50
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "curse",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2023/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "bud",
+      "skills": [
+        {
+          "id": "guard",
+          "name": "防御",
+          "nameEn": "Defend",
+          "part": "none",
+          "effects": [
+            {
+              "type": "guard"
+            }
+          ],
+          "notes": "味方の攻撃の攻撃力・TEC を 70% にして計算する（atwiki）。防御中として計算する"
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "guard",
+          "weight": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2023/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "LP Archive では技なし。攻撃はしない（atwiki の技は防御だけ）"
+    },
+    {
+      "enemyId": "ogre",
+      "skills": [
+        {
+          "id": "evil-cry",
+          "name": "デビルクライ",
+          "nameEn": "Evil Cry",
+          "part": "head",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 50
+                }
+              ],
+              "turns": 5
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "evil-cry",
+              "weight": 1
+            }
+          ],
+          "note": "1ターン目にデビルクライを使い、そのあとは通常攻撃だけ（LP Archive。頭縫いの羽などは使われない）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2026/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "hunter",
+      "skills": [
+        {
+          "id": "blazer",
+          "name": "炎の息吹",
+          "nameEn": "Blazer",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "fire",
+              "power": 120,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "glare",
+          "name": "死の眼光",
+          "nameEn": "Glare",
+          "part": "head",
+          "accuracy": 100,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "single",
+              "ailments": [
+                "death"
+              ],
+              "chance": 30
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "blazer",
+              "weight": 1
+            },
+            {
+              "skill": "glare",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "HP が減るほど技を多く使う（LP Archive。境目と割合は仮）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "blazer",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2026/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "iwaopeln",
+      "skills": [
+        {
+          "id": "voltwing",
+          "name": "サンダーウィング",
+          "nameEn": "Voltwing",
+          "part": "head",
+          "accuracy": 85,
+          "speed": 90,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "volt",
+              "power": 100,
+              "target": "all",
+              "inflict": {
+                "ailments": [
+                  "paralysis"
+                ],
+                "chance": 30
+              }
+            }
+          ]
+        },
+        {
+          "id": "rockbeak",
+          "name": "デスブリンガー",
+          "nameEn": "Rockbeak",
+          "part": "head",
+          "accuracy": 95,
+          "speed": 30,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 135,
+              "target": "single",
+              "inflict": {
+                "ailments": [
+                  "petrify"
+                ],
+                "chance": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "feathers",
+          "name": "フェザースピアー",
+          "nameEn": "Feathers",
+          "part": "arm",
+          "accuracy": 85,
+          "speed": 120,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 120,
+              "target": "random",
+              "hits": [
+                3,
+                5
+              ],
+              "distinct": true
+            }
+          ]
+        },
+        {
+          "id": "grip",
+          "name": "鷲づかみ",
+          "nameEn": "Grip",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 80,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 150,
+              "target": "single",
+              "inflict": {
+                "ailments": [
+                  "bind-arm"
+                ],
+                "chance": 95
+              }
+            }
+          ]
+        },
+        {
+          "id": "roar",
+          "name": "カオスロア",
+          "nameEn": "Roar",
+          "part": "head",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "confusion"
+              ],
+              "chance": 20
+            }
+          ]
+        },
+        {
+          "id": "faster",
+          "name": "音速の翼",
+          "nameEn": "Faster",
+          "part": "head",
+          "speed": 200,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "agi",
+                  "value": 0
+                }
+              ],
+              "turns": 5
+            }
+          ],
+          "notes": "LP Archive によると数値の誤りで効果が無い"
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "faster",
+              "weight": 1
+            }
+          ],
+          "note": "開幕は音速の翼を使うことが多い（atwiki）"
+        },
+        {
+          "when": {
+            "hpBelow": 40
+          },
+          "use": [
+            {
+              "skill": "rockbeak",
+              "weight": 1
+            },
+            {
+              "skill": "feathers",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "HP 40% 未満はデスブリンガーとフェザースピアー（LP Archive）"
+        },
+        {
+          "when": {
+            "hpBelow": 70
+          },
+          "use": [
+            {
+              "skill": "voltwing",
+              "weight": 1
+            }
+          ],
+          "note": "HP 70%〜40% はほぼ毎ターンサンダーウィング（LP Archive）"
+        },
+        {
+          "when": {
+            "noSelfBuff": "faster"
+          },
+          "use": [
+            {
+              "skill": "faster",
+              "weight": 1
+            }
+          ],
+          "note": "効果が切れるとかけ直す（atwiki）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "grip",
+          "weight": 1
+        },
+        {
+          "skill": "roar",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2027/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "技の日本語名・部位・行動の条件（ボス攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "音速の翼の間はカオスロアと鷲づかみを多く使う（atwiki）"
+    },
+    {
+      "enemyId": "dinolich",
+      "skills": [
+        {
+          "id": "roar",
+          "name": "恐怖の咆哮",
+          "nameEn": "Roar",
+          "part": "head",
+          "speed": 10,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "terror"
+              ],
+              "chance": 40
+            }
+          ]
+        },
+        {
+          "id": "charge",
+          "name": "力溜め",
+          "nameEn": "Charge",
+          "part": "none",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 0
+                }
+              ],
+              "turns": 2
+            }
+          ],
+          "notes": "次のターンにまるかじりを使う。LP Archive によると攻撃力が上がる処理は働いていない（強化の表示だけ付く）"
+        },
+        {
+          "id": "devour",
+          "name": "まるかじり",
+          "nameEn": "Devour",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 130,
+              "target": "single"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "roar",
+              "weight": 1
+            }
+          ],
+          "note": "1ターン目は必ず恐怖の咆哮（LP Archive）"
+        },
+        {
+          "when": {
+            "prev": "charge"
+          },
+          "use": [
+            {
+              "skill": "devour",
+              "weight": 1
+            }
+          ],
+          "note": "力溜めの次のターンに使う（atwiki・LP Archive）"
+        },
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "charge",
+              "weight": 2
+            }
+          ],
+          "assumed": true,
+          "note": "HP が減ると力溜めが増える（atwiki。境目と割合は仮）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "charge",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2023/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2030/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "desouler",
+      "skills": [
+        {
+          "id": "charge",
+          "name": "力溜め",
+          "nameEn": "Charge",
+          "part": "none",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 0
+                }
+              ],
+              "turns": 2
+            }
+          ],
+          "notes": "次のターンに荒れ狂う爪牙を使う。LP Archive によると攻撃力が上がる処理は働いていない（強化の表示だけ付く）"
+        },
+        {
+          "id": "slash",
+          "name": "荒れ狂う爪牙",
+          "nameEn": "Slash",
+          "part": "head",
+          "accuracy": 70,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 110,
+              "target": "all"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "prev": "charge"
+          },
+          "use": [
+            {
+              "skill": "slash",
+              "weight": 1
+            }
+          ],
+          "note": "力溜めの次のターンに使う（atwiki・LP Archive）"
+        },
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "charge",
+              "weight": 3
+            }
+          ],
+          "assumed": true,
+          "note": "後半はほぼ力溜め→全体攻撃の繰り返し（atwiki。境目と割合は仮）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "charge",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2030/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "kingdile",
+      "skills": [
+        {
+          "id": "shred",
+          "name": "切断咬",
+          "nameEn": "Shred",
+          "part": "head",
+          "accuracy": 95,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 120,
+              "target": "single",
+              "inflict": {
+                "ailments": [
+                  "death"
+                ],
+                "chance": 25
+              }
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "shred",
+              "weight": 2
+            }
+          ],
+          "assumed": true,
+          "note": "HP が減ると使う頻度が上がる（atwiki。境目と割合は仮）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 2
+        },
+        {
+          "skill": "shred",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2030/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "後列へもよく攻撃が来る（atwiki）。狙い方は通常どおり"
+    },
+    {
+      "enemyId": "treetusk",
+      "skills": [
+        {
+          "id": "rush",
+          "name": "突撃",
+          "nameEn": "Rush",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 90,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "hell-cry",
+          "name": "ヘルズクライ",
+          "nameEn": "Hell Cry",
+          "part": "head",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 50
+                },
+                {
+                  "stat": "damageTaken",
+                  "value": 150
+                }
+              ],
+              "turns": 5
+            }
+          ]
+        },
+        {
+          "id": "defend",
+          "name": "防御",
+          "nameEn": "Defend",
+          "part": "head",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physDef",
+                  "value": 50
+                }
+              ],
+              "turns": 5
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "hell-cry",
+              "weight": 1
+            }
+          ],
+          "note": "1ターン目に使う（atwiki）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 2
+        },
+        {
+          "skill": "rush",
+          "weight": 2
+        },
+        {
+          "skill": "defend",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2032/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "防御はまれにしか使わない（atwiki）ので重みを半分にした（仮）"
+    },
+    {
+      "enemyId": "alraune",
+      "skills": [
+        {
+          "id": "flame",
+          "name": "フレイムサイ",
+          "nameEn": "Flame",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 90,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "fire",
+              "power": 105,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "frost",
+          "name": "フロストスマイル",
+          "nameEn": "Frost",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 200,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "ice",
+              "power": 135,
+              "target": "single",
+              "inflict": {
+                "ailments": [
+                  "stun"
+                ],
+                "chance": 100
+              }
+            }
+          ]
+        },
+        {
+          "id": "shock",
+          "name": "ライトニング",
+          "nameEn": "Shock",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 70,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "volt",
+              "power": 95,
+              "target": "all",
+              "inflict": {
+                "ailments": [
+                  "bind-head"
+                ],
+                "chance": 25
+              }
+            }
+          ]
+        },
+        {
+          "id": "kiss",
+          "name": "ヴァンパイアキス",
+          "nameEn": "Kiss",
+          "part": "head",
+          "accuracy": 50,
+          "speed": 100,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 110,
+              "target": "single",
+              "drain": true
+            }
+          ]
+        },
+        {
+          "id": "thrash",
+          "name": "テンタクルビート",
+          "nameEn": "Thrash",
+          "part": "leg",
+          "accuracy": 80,
+          "speed": 90,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 80,
+              "target": "splash"
+            }
+          ]
+        },
+        {
+          "id": "lily",
+          "name": "スパイダーリリィ",
+          "nameEn": "Lily",
+          "part": "head",
+          "speed": 50,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "single",
+              "ailments": [
+                "death"
+              ],
+              "chance": 30
+            }
+          ]
+        },
+        {
+          "id": "pollen",
+          "name": "太古の呪粉",
+          "nameEn": "Pollen",
+          "part": "head",
+          "speed": 150,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "petrify",
+                "terror",
+                "curse",
+                "sleep",
+                "paralysis",
+                "confusion",
+                "blind"
+              ],
+              "chance": 25,
+              "all": true
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "bound": [
+              "arm"
+            ]
+          },
+          "use": [
+            {
+              "skill": "lily",
+              "weight": 1
+            },
+            {
+              "skill": "normal",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "スパイダーリリィは腕を封じられたときに使う（atwiki・LP Archive）"
+        },
+        {
+          "when": {
+            "partyElemResist": false,
+            "chance": 50
+          },
+          "use": [
+            {
+              "skill": "pollen",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "パーティのだれも属性の耐性を持たないと太古の呪粉を使う（atwiki。確率は仮）"
+        },
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "thrash",
+              "weight": 1
+            },
+            {
+              "skill": "flame",
+              "weight": 1
+            },
+            {
+              "skill": "frost",
+              "weight": 1
+            },
+            {
+              "skill": "shock",
+              "weight": 1
+            },
+            {
+              "skill": "kiss",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "HP が半分を切るとどの属性もヴァンパイアキスも使う（LP Archive）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "thrash",
+          "weight": 1
+        },
+        {
+          "skill": "flame",
+          "weight": 1
+        },
+        {
+          "skill": "frost",
+          "weight": 1
+        },
+        {
+          "skill": "shock",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2032/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "ゲームでは味方の属性の倍率を見て属性と狙いを決める（LP Archive）。その判定は資料が画像で読めないので入れていない"
+    },
+    {
+      "enemyId": "songbird",
+      "skills": [
+        {
+          "id": "blazer",
+          "name": "炎の息吹",
+          "nameEn": "Blazer",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "fire",
+              "power": 120,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "summon",
+          "name": "仲間呼び",
+          "nameEn": "Summon",
+          "part": "none",
+          "effects": [
+            {
+              "type": "summon"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "summon",
+              "weight": 1
+            }
+          ],
+          "note": "最初のターンは仲間呼び（LP Archive）。1対1では何もしない"
+        },
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "blazer",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "HP が半分を切ると炎の息吹を使い始める（LP Archive）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2035/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "shellord",
+      "skills": [
+        {
+          "id": "blazer",
+          "name": "炎の息吹",
+          "nameEn": "Blazer",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "fire",
+              "power": 120,
+              "target": "all"
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "blazer",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2034/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "teralich",
+      "skills": [
+        {
+          "id": "devour",
+          "name": "まるかじり",
+          "nameEn": "Devour",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 130,
+              "target": "single"
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "devour",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2035/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "macabre",
+      "skills": [
+        {
+          "id": "bad-beak",
+          "name": "悪魔のクチバシ",
+          "nameEn": "Bad Beak",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 120,
+              "target": "single"
+            }
+          ],
+          "notes": "リマスター版で部位が腕から頭に変わった（atwiki「リマスター版の変更点」）"
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "bad-beak",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2035/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/1214.html",
+          "note": "部位の変更",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "デビルクライは条件の誤りで使われない（LP Archive）ので入れていない"
+    },
+    {
+      "enemyId": "drakoid",
+      "skills": [
+        {
+          "id": "icelance",
+          "name": "貫く氷槍",
+          "nameEn": "Icelance",
+          "part": "arm",
+          "accuracy": 95,
+          "speed": 250,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 165,
+              "target": "single",
+              "element2": "ice",
+              "power2": 100
+            }
+          ]
+        },
+        {
+          "id": "0-point",
+          "name": "絶対零度",
+          "nameEn": "0 Point",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "ice",
+              "power": 130,
+              "target": "all",
+              "inflict": {
+                "ailments": [
+                  "death"
+                ],
+                "chance": 50
+              }
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "icelance",
+          "weight": 1
+        },
+        {
+          "skill": "0-point",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2040/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "dragoid",
+      "skills": [
+        {
+          "id": "curse",
+          "name": "古竜の呪撃",
+          "nameEn": "Curse",
+          "part": "arm",
+          "accuracy": 95,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 250,
+              "target": "single",
+              "drain": true
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "curse",
+              "weight": 3
+            },
+            {
+              "skill": "normal",
+              "weight": 1
+            }
+          ],
+          "note": "HP が半分を切ると 75%（LP Archive）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "curse",
+          "weight": 1
+        },
+        {
+          "skill": "normal",
+          "weight": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2040/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "毎ターン 50% で古竜の呪撃（LP Archive）"
+    },
+    {
+      "enemyId": "wyrmoid",
+      "skills": [
+        {
+          "id": "assault",
+          "name": "火竜の強襲",
+          "nameEn": "Assault",
+          "part": "arm",
+          "accuracy": 95,
+          "speed": 200,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 155,
+              "target": "single",
+              "inflict": {
+                "ailments": [
+                  "stun"
+                ],
+                "chance": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "tailwhip",
+          "name": "ドラゴンテイル",
+          "nameEn": "Tailwhip",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 100,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 115,
+              "target": "all"
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "assault",
+          "weight": 1
+        },
+        {
+          "skill": "tailwhip",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2040/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "wyvern",
+      "skills": [
+        {
+          "id": "sky-ray",
+          "name": "高空からの閃光",
+          "nameEn": "Sky Ray",
+          "part": "head",
+          "accuracy": 95,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "volt",
+              "power": 150,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "talon",
+          "name": "ウィングクロー",
+          "nameEn": "Talon",
+          "part": "arm",
+          "accuracy": 100,
+          "speed": 150,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 135,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "tailwhip",
+          "name": "テイルストライク",
+          "nameEn": "Tailwhip",
+          "part": "leg",
+          "accuracy": 95,
+          "speed": 95,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 125,
+              "target": "splash"
+            }
+          ]
+        },
+        {
+          "id": "tornado",
+          "name": "大翼の旋風",
+          "nameEn": "Tornado",
+          "part": "arm",
+          "accuracy": 95,
+          "speed": 100,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "bind-leg"
+              ],
+              "chance": 90
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "tornado",
+              "weight": 1
+            }
+          ],
+          "note": "最初のターンだけ使う（LP Archive）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "sky-ray",
+          "weight": 1
+        },
+        {
+          "skill": "talon",
+          "weight": 1
+        },
+        {
+          "skill": "tailwhip",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2025/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "manticor",
+      "skills": [
+        {
+          "id": "poison",
+          "name": "ポイズンテイル",
+          "nameEn": "Poison",
+          "part": "leg",
+          "accuracy": 95,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 100,
+              "target": "all",
+              "inflict": {
+                "ailments": [
+                  "poison"
+                ],
+                "chance": 100,
+                "poisonDamage": 163
+              }
+            }
+          ]
+        },
+        {
+          "id": "petrify",
+          "name": "ペトリフヴォイス",
+          "nameEn": "Petrify",
+          "part": "head",
+          "speed": 30,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "petrify",
+                "confusion"
+              ],
+              "chance": 30
+            }
+          ]
+        },
+        {
+          "id": "lullaby",
+          "name": "魔の子守唄",
+          "nameEn": "Lullaby",
+          "part": "head",
+          "speed": 50,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "sleep",
+                "terror"
+              ],
+              "chance": 80
+            }
+          ]
+        },
+        {
+          "id": "darkcoil",
+          "name": "ダークネスコイル",
+          "nameEn": "Darkcoil",
+          "part": "head",
+          "speed": 90,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "blind",
+                "curse"
+              ],
+              "chance": 50
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "poison",
+          "weight": 1
+        },
+        {
+          "skill": "petrify",
+          "weight": 1
+        },
+        {
+          "skill": "lullaby",
+          "weight": 1
+        },
+        {
+          "skill": "darkcoil",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "halveDamageChance": 70,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2032/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "受ける攻撃ごとに 70% でダメージを半分にする（LP Archive。atwiki「自動防御」）"
+    },
+    {
+      "enemyId": "wyrm",
+      "skills": [
+        {
+          "id": "searing",
+          "name": "ファイアブレス",
+          "nameEn": "Searing",
+          "part": "head",
+          "accuracy": 100,
+          "speed": 200,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "fire",
+              "power": 900,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "assault",
+          "name": "火竜の強襲",
+          "nameEn": "Assault",
+          "part": "arm",
+          "accuracy": 95,
+          "speed": 200,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 155,
+              "target": "single",
+              "inflict": {
+                "ailments": [
+                  "stun"
+                ],
+                "chance": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "tailwhip",
+          "name": "ドラゴンテイル",
+          "nameEn": "Tailwhip",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 100,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 115,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "quake",
+          "name": "火竜の激震",
+          "nameEn": "Quake",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 80,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 130,
+              "target": "all",
+              "inflict": {
+                "ailments": [
+                  "bind-leg"
+                ],
+                "chance": 25
+              }
+            }
+          ]
+        },
+        {
+          "id": "howling",
+          "name": "とどろく咆哮",
+          "nameEn": "Howling",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "party-debuff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 50
+                }
+              ],
+              "turns": 5,
+              "inflict": {
+                "ailments": [
+                  "confusion"
+                ],
+                "chance": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "strike",
+          "name": "火竜の猛攻",
+          "nameEn": "Strike",
+          "part": "none",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 50
+                }
+              ],
+              "turns": 5
+            }
+          ],
+          "notes": "LP Archive の「防御 100%」は変化なしと読んで入れていない"
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turnMod": [
+              4,
+              1
+            ]
+          },
+          "use": [
+            {
+              "skill": "searing",
+              "weight": 1
+            }
+          ],
+          "note": "開幕と 4n+1 ターン目（atwiki）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "assault",
+          "weight": 1
+        },
+        {
+          "skill": "tailwhip",
+          "weight": 1
+        },
+        {
+          "skill": "quake",
+          "weight": 1
+        },
+        {
+          "skill": "howling",
+          "weight": 1
+        },
+        {
+          "skill": "strike",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2039/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "drake",
+      "skills": [
+        {
+          "id": "frigid",
+          "name": "アイスブレス",
+          "nameEn": "Frigid",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 80,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "ice",
+              "power": 900,
+              "target": "all",
+              "inflict": {
+                "ailments": [
+                  "bind-head"
+                ],
+                "chance": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "icelance",
+          "name": "貫く氷槍",
+          "nameEn": "Icelance",
+          "part": "arm",
+          "accuracy": 95,
+          "speed": 250,
+          "aim": "back",
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 165,
+              "target": "single",
+              "element2": "ice",
+              "power2": 100
+            }
+          ]
+        },
+        {
+          "id": "0-point",
+          "name": "絶対零度",
+          "nameEn": "0 Point",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "ice",
+              "power": 130,
+              "target": "all",
+              "inflict": {
+                "ailments": [
+                  "death"
+                ],
+                "chance": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "iceblock",
+          "name": "アイスシールド",
+          "nameEn": "Iceblock",
+          "part": "leg",
+          "speed": 200,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "damageTaken",
+                  "value": 1,
+                  "elements": [
+                    "slash",
+                    "pierce",
+                    "bash",
+                    "fire",
+                    "ice"
+                  ]
+                }
+              ],
+              "turns": 5
+            }
+          ],
+          "notes": "雷以外のダメージを 1% にする（atwiki・LP Archive）"
+        },
+        {
+          "id": "regen",
+          "name": "氷河の再生",
+          "nameEn": "Regen",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "regen",
+              "amount": 1750,
+              "turns": 5
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turnMod": [
+              4,
+              1
+            ]
+          },
+          "use": [
+            {
+              "skill": "frigid",
+              "weight": 1
+            }
+          ],
+          "note": "開幕と 4ターンごと（atwiki・LP Archive）"
+        },
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "icelance",
+              "weight": 1
+            },
+            {
+              "skill": "0-point",
+              "weight": 1
+            },
+            {
+              "skill": "iceblock",
+              "weight": 1
+            },
+            {
+              "skill": "regen",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "HP が半分を切ると貫く氷槍・絶対零度も使う（LP Archive）"
+        },
+        {
+          "when": {
+            "selfBuff": "iceblock",
+            "noSelfBuff": "regen"
+          },
+          "use": [
+            {
+              "skill": "regen",
+              "weight": 1
+            }
+          ],
+          "note": "アイスシールドの後は氷河の再生（LP Archive）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "iceblock",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2037/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "enemyId": "dragon",
+      "skills": [
+        {
+          "id": "voltage",
+          "name": "サンダーブレス",
+          "nameEn": "Voltage",
+          "part": "head",
+          "accuracy": 90,
+          "speed": 75,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "volt",
+              "power": 900,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "curse",
+          "name": "古竜の呪撃",
+          "nameEn": "Curse",
+          "part": "arm",
+          "accuracy": 95,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 250,
+              "target": "single",
+              "drain": true
+            }
+          ]
+        },
+        {
+          "id": "shield",
+          "name": "古竜の大盾",
+          "nameEn": "Shield",
+          "part": "arm",
+          "speed": 150,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "damageTaken",
+                  "value": 1
+                }
+              ],
+              "turns": 5
+            }
+          ]
+        },
+        {
+          "id": "corrupt",
+          "name": "呪われし遠吠え",
+          "nameEn": "Corrupt",
+          "part": "head",
+          "speed": 200,
+          "effects": [
+            {
+              "type": "dispel"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "partyBuffsAtLeast": 1,
+            "notBound": [
+              "head"
+            ]
+          },
+          "use": [
+            {
+              "skill": "corrupt",
+              "weight": 1
+            }
+          ],
+          "note": "味方に強化が1つでもあれば消す（LP Archive）"
+        },
+        {
+          "when": {
+            "bound": [
+              "head"
+            ]
+          },
+          "use": [
+            {
+              "skill": "curse",
+              "weight": 2
+            },
+            {
+              "skill": "shield",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "古竜の呪撃と古竜の大盾は頭を封じられたときだけ（LP Archive）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "voltage",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "normalAim": "back",
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2038/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+          "note": "技の日本語名・部位・行動の条件（FOE攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "通常攻撃は後列を狙いやすい（atwiki）"
+    },
+    {
+      "enemyId": "cernunos",
+      "skills": [
+        {
+          "id": "hornrush",
+          "name": "ホーンラッシュ",
+          "nameEn": "Hornrush",
+          "part": "head",
+          "accuracy": 85,
+          "speed": 80,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 120,
+              "target": "single"
+            }
+          ]
+        },
+        {
+          "id": "combo",
+          "name": "スマッシュコンボ",
+          "nameEn": "Combo",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 20,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 90,
+              "target": "splash"
+            }
+          ]
+        },
+        {
+          "id": "whirlhit",
+          "name": "ハリケーンパンチ",
+          "nameEn": "Whirlhit",
+          "part": "arm",
+          "accuracy": 95,
+          "speed": 80,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 120,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "glare",
+          "name": "死の眼光",
+          "nameEn": "Glare",
+          "part": "head",
+          "accuracy": 100,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "single",
+              "ailments": [
+                "death"
+              ],
+              "chance": 30
+            }
+          ]
+        },
+        {
+          "id": "summon",
+          "name": "召喚",
+          "nameEn": "Summon",
+          "part": "none",
+          "effects": [
+            {
+              "type": "summon"
+            }
+          ]
+        },
+        {
+          "id": "counter",
+          "name": "クロスカウンター",
+          "nameEn": "Counter",
+          "part": "none",
+          "accuracy": 95,
+          "speed": 100,
+          "effects": [
+            {
+              "type": "counter",
+              "element": "bash",
+              "power": 155
+            }
+          ],
+          "notes": "腕の技だが封じでは止まらない（LP Archive。atwiki は腕封じで使えないとしている）"
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turn": 1
+          },
+          "use": [
+            {
+              "skill": "summon",
+              "weight": 1
+            }
+          ],
+          "note": "まずヒーラーボールを呼ぶ（atwiki）。1対1では何もしない"
+        },
+        {
+          "when": {
+            "turnMod": [
+              5,
+              1
+            ]
+          },
+          "use": [
+            {
+              "skill": "combo",
+              "weight": 1
+            }
+          ],
+          "note": "内部のターンが 5 の倍数のときスマッシュコンボ（LP Archive）"
+        },
+        {
+          "when": {
+            "hpBelow": 50,
+            "chance": 50
+          },
+          "use": [
+            {
+              "skill": "counter",
+              "weight": 1
+            }
+          ],
+          "note": "HP が半分を切ると 50% でクロスカウンター（LP Archive）"
+        },
+        {
+          "when": {
+            "hpBelow": 25
+          },
+          "use": [
+            {
+              "skill": "whirlhit",
+              "weight": 2
+            },
+            {
+              "skill": "hornrush",
+              "weight": 1
+            },
+            {
+              "skill": "glare",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "瀕死になるとハリケーンパンチを多く使う（atwiki）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "hornrush",
+          "weight": 1
+        },
+        {
+          "skill": "glare",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2013/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/79.html",
+          "note": "技の日本語名・部位・行動の条件（ボス攻略）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "ヒーラーボールがいない（1対1）ので、死の眼光を多く使う側として表に入れた（atwiki）"
+    },
+    {
+      "enemyId": "ren",
+      "skills": [
+        {
+          "id": "iai",
+          "name": "居合の構え",
+          "nameEn": "Iai",
+          "part": "arm",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "agi",
+                  "value": 100
+                },
+                {
+                  "stat": "physDef",
+                  "value": -25
+                }
+              ],
+              "turns": 5
+            }
+          ],
+          "notes": "「AGI 200%・DEF 75%」を、速さを2倍・防御を 75% にすると読んだ"
+        },
+        {
+          "id": "kubiuchi",
+          "name": "首討ち改",
+          "nameEn": "Kubiuchi",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 50,
+          "aim": "highest",
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 100,
+              "target": "single",
+              "inflict": {
+                "ailments": [
+                  "death"
+                ],
+                "chance": 30
+              }
+            }
+          ]
+        },
+        {
+          "id": "hyosetsu",
+          "name": "抜刀氷雪改",
+          "nameEn": "Hyosetsu",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 100,
+          "aim": "lowest",
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 100,
+              "target": "single",
+              "element2": "ice",
+              "power2": 40
+            }
+          ]
+        },
+        {
+          "id": "kesagiri",
+          "name": "踏み袈裟改",
+          "nameEn": "Kesagiri",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 10,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 60,
+              "target": "random",
+              "hits": [
+                3,
+                6
+              ]
+            }
+          ],
+          "notes": "同じ人に何度も当たる（atwiki）"
+        },
+        {
+          "id": "ibuki",
+          "name": "息吹改",
+          "nameEn": "Ibuki",
+          "part": "head",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "heal",
+              "amount": 240
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "prev": "iai"
+          },
+          "use": [
+            {
+              "skill": "kubiuchi",
+              "weight": 1
+            }
+          ],
+          "note": "居合の構えの次のターンは首討ち改（atwiki：高確率、HP が最も高い味方に）。首討ち改は基本的にこのときだけ"
+        },
+        {
+          "when": {
+            "noSelfBuff": "iai"
+          },
+          "use": [
+            {
+              "skill": "iai",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "構えが切れるとかけ直す（atwiki：首討ちは5ターンに1度）"
+        },
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "hyosetsu",
+              "weight": 1
+            },
+            {
+              "skill": "kesagiri",
+              "weight": 1
+            },
+            {
+              "skill": "ibuki",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "HP が減ると息吹改で回復する（atwiki。境目は仮）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "hyosetsu",
+          "weight": 1
+        },
+        {
+          "skill": "kesagiri",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2028/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/744.html",
+          "note": "技の日本語名・部位・行動パターン（ボス攻略（第5層以降）、本人が保存）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "ツスクルと同時に戦うが、1対1として計算する。抜刀氷雪改は HP の少ない味方を仕留めに来る（atwiki）"
+    },
+    {
+      "enemyId": "tlachtga",
+      "skills": [
+        {
+          "id": "sapping",
+          "name": "弱法師の呪言",
+          "nameEn": "Sapping",
+          "part": "head",
+          "speed": 80,
+          "effects": [
+            {
+              "type": "party-debuff",
+              "mods": [
+                {
+                  "stat": "physAtk",
+                  "value": 25
+                }
+              ],
+              "turns": 5
+            }
+          ],
+          "notes": "攻撃力の低下は「75%」を、攻撃力を 75% にすると読んだ。猛き戦いの舞曲で打ち消せる（atwiki）"
+        },
+        {
+          "id": "cranial",
+          "name": "封の呪言・頭首",
+          "nameEn": "Cranial",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "bind-head"
+              ],
+              "chance": 25
+            }
+          ]
+        },
+        {
+          "id": "abdomen",
+          "name": "封の呪言・上肢",
+          "nameEn": "Abdomen",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "bind-arm"
+              ],
+              "chance": 25
+            }
+          ]
+        },
+        {
+          "id": "binding",
+          "name": "バインドボイス",
+          "nameEn": "Binding",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "stun"
+              ],
+              "chance": 30
+            }
+          ]
+        },
+        {
+          "id": "chaos",
+          "name": "禍神の呪言",
+          "nameEn": "Chaos",
+          "part": "head",
+          "speed": 50,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "paralysis",
+                "confusion",
+                "blind",
+                "sleep",
+                "curse",
+                "terror"
+              ],
+              "chance": 13
+            }
+          ]
+        }
+      ],
+      "rules": [],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "sapping",
+          "weight": 1
+        },
+        {
+          "skill": "cranial",
+          "weight": 1
+        },
+        {
+          "skill": "abdomen",
+          "weight": 1
+        },
+        {
+          "skill": "binding",
+          "weight": 1
+        },
+        {
+          "skill": "chaos",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2028/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/744.html",
+          "note": "技の日本語名・部位・行動パターン（ボス攻略（第5層以降）、本人が保存）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "レンと同時に戦うが、1対1として計算する。行動の条件は資料に無い"
+    },
+    {
+      "enemyId": "etreant",
+      "skills": [
+        {
+          "id": "thorns",
+          "name": "サウザンドネイル",
+          "nameEn": "Thorns",
+          "part": "arm",
+          "accuracy": 90,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 100,
+              "target": "random",
+              "hits": [
+                2,
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cyclone",
+          "name": "サイクロンルーツ",
+          "nameEn": "Cyclone",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 125,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "inferno",
+          "name": "インフェルノ",
+          "nameEn": "Inferno",
+          "part": "head",
+          "accuracy": 100,
+          "speed": 100,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "fire",
+              "power": 110,
+              "target": "single",
+              "drain": true,
+              "inflict": {
+                "ailments": [
+                  "death"
+                ],
+                "chance": 50
+              }
+            }
+          ],
+          "notes": "即死は相手の HP が半分以下のとき（atwiki）。シミュレーションではいつも判定する"
+        },
+        {
+          "id": "twigs",
+          "name": "千樹の守り",
+          "nameEn": "Twigs",
+          "part": "arm",
+          "speed": 300,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "physTaken",
+                  "value": 0
+                }
+              ],
+              "turns": 1
+            }
+          ]
+        },
+        {
+          "id": "growth",
+          "name": "エタニティツリー",
+          "nameEn": "Growth",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "regen",
+              "amount": 900,
+              "turns": 3
+            }
+          ]
+        },
+        {
+          "id": "resolve",
+          "name": "王の威厳",
+          "nameEn": "Resolve",
+          "part": "head",
+          "speed": 10,
+          "effects": [
+            {
+              "type": "dispel"
+            }
+          ]
+        },
+        {
+          "id": "bearing",
+          "name": "王の誇り",
+          "nameEn": "Bearing",
+          "part": "none",
+          "speed": 10,
+          "effects": [
+            {
+              "type": "cleanse"
+            }
+          ]
+        },
+        {
+          "id": "wasted",
+          "name": "（無駄行動）",
+          "nameEn": "Wasted",
+          "part": "none",
+          "effects": [],
+          "notes": "封じで使えない技・自分に使うインフェルノなど、何も起きない行動（atwiki の行動パターン表）"
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "prev": "bearing"
+          },
+          "use": [
+            {
+              "skill": "cyclone",
+              "weight": 1
+            }
+          ],
+          "note": "王の誇りの次はサイクロンルーツ（atwiki の行動パターン表）"
+        },
+        {
+          "when": {
+            "prev": "resolve",
+            "hpBelow": 25
+          },
+          "use": [
+            {
+              "skill": "growth",
+              "weight": 1
+            }
+          ],
+          "note": "王の威厳の次・HP 25% 未満はエタニティツリー（重ねがけする）"
+        },
+        {
+          "when": {
+            "prev": "resolve"
+          },
+          "use": [
+            {
+              "skill": "cyclone",
+              "weight": 1
+            }
+          ],
+          "note": "王の威厳の次・HP 25% 以上はサイクロンルーツ"
+        },
+        {
+          "when": {
+            "boundCountAtLeast": 3
+          },
+          "use": [
+            {
+              "skill": "bearing",
+              "weight": 1
+            }
+          ],
+          "note": "3か所封じは王の誇り"
+        },
+        {
+          "when": {
+            "boundExactly": [
+              "arm",
+              "leg"
+            ]
+          },
+          "use": [
+            {
+              "skill": "bearing",
+              "weight": 1
+            },
+            {
+              "skill": "wasted",
+              "weight": 1
+            }
+          ],
+          "note": "腕と脚を封じられると王の誇りかインフェルノ（自分に使って何も起きない）"
+        },
+        {
+          "when": {
+            "boundExactly": [
+              "head",
+              "leg"
+            ]
+          },
+          "use": [
+            {
+              "skill": "bearing",
+              "weight": 1
+            },
+            {
+              "skill": "thorns",
+              "weight": 1
+            }
+          ],
+          "note": "頭と脚を封じられると王の誇りかサウザンドネイル"
+        },
+        {
+          "when": {
+            "boundExactly": [
+              "head",
+              "arm"
+            ]
+          },
+          "use": [
+            {
+              "skill": "bearing",
+              "weight": 1
+            },
+            {
+              "skill": "cyclone",
+              "weight": 1
+            }
+          ],
+          "note": "頭と腕を封じられると王の誇りかサイクロンルーツ"
+        },
+        {
+          "when": {
+            "boundExactly": [
+              "head"
+            ]
+          },
+          "use": [
+            {
+              "skill": "thorns",
+              "weight": 1
+            },
+            {
+              "skill": "wasted",
+              "weight": 1
+            }
+          ],
+          "note": "頭封じはサウザンドネイルかインフェルノ（使えず無駄行動）"
+        },
+        {
+          "when": {
+            "boundExactly": [
+              "arm"
+            ]
+          },
+          "use": [
+            {
+              "skill": "inferno",
+              "weight": 1
+            },
+            {
+              "skill": "cyclone",
+              "weight": 1
+            }
+          ],
+          "note": "腕封じはインフェルノかサイクロンルーツ"
+        },
+        {
+          "when": {
+            "boundExactly": [
+              "leg"
+            ]
+          },
+          "use": [
+            {
+              "skill": "thorns",
+              "weight": 1
+            },
+            {
+              "skill": "twigs",
+              "weight": 1
+            }
+          ],
+          "note": "脚封じはサウザンドネイルか千樹の守り"
+        },
+        {
+          "when": {
+            "partyBuffsAtLeast": 5
+          },
+          "use": [
+            {
+              "skill": "resolve",
+              "weight": 1
+            },
+            {
+              "skill": "twigs",
+              "weight": 1
+            }
+          ],
+          "note": "味方の強化が合計5以上なら王の威厳か千樹の守り（atwiki・LP Archive）"
+        },
+        {
+          "when": {
+            "hpBelow": 25
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "thorns",
+              "weight": 1
+            },
+            {
+              "skill": "growth",
+              "weight": 1
+            },
+            {
+              "skill": "inferno",
+              "weight": 1
+            },
+            {
+              "skill": "cyclone",
+              "weight": 1
+            }
+          ],
+          "note": "HP 25% 未満"
+        },
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "thorns",
+              "weight": 1
+            },
+            {
+              "skill": "growth",
+              "weight": 1
+            },
+            {
+              "skill": "inferno",
+              "weight": 1
+            }
+          ],
+          "note": "HP 50%〜25%"
+        },
+        {
+          "when": {
+            "selfBuff": "growth"
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "thorns",
+              "weight": 1
+            }
+          ],
+          "note": "HP 100%〜50% はエタニティツリーを重ねがけしない"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "thorns",
+          "weight": 1
+        },
+        {
+          "skill": "growth",
+          "weight": 1
+        }
+      ],
+      "onBound": "skip",
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2033/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/744.html",
+          "note": "技の日本語名・部位・行動パターン（ボス攻略（第5層以降）、本人が保存）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "行動パターンは atwiki の表のとおり（複数あれば等しい確率で選ぶ）。atwiki には「1ターンに複数人が攻撃を選ぶと千樹の守りを使いやすい」ともあるが、リマスター版で未確認なので入れていない"
+    },
+    {
+      "enemyId": "primevil",
+      "skills": [
+        {
+          "id": "explode",
+          "name": "エクスプロウド",
+          "nameEn": "Explode",
+          "part": "none",
+          "accuracy": 100,
+          "speed": 200,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "fire",
+              "power": 900,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "frigid",
+          "name": "フリージング",
+          "nameEn": "Frigid",
+          "part": "none",
+          "accuracy": 100,
+          "speed": 200,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "ice",
+              "power": 900,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "storm",
+          "name": "サンダーストーム",
+          "nameEn": "Storm",
+          "part": "none",
+          "accuracy": 100,
+          "speed": 200,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "volt",
+              "power": 900,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "slash",
+          "name": "ランドスラッシュ",
+          "nameEn": "Slash",
+          "part": "arm",
+          "accuracy": 98,
+          "speed": 120,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "slash",
+              "power": 200,
+              "target": "single",
+              "hits": [
+                4,
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rush",
+          "name": "デモンズラッシュ",
+          "nameEn": "Rush",
+          "part": "arm",
+          "accuracy": 98,
+          "speed": 120,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "pierce",
+              "power": 130,
+              "target": "random",
+              "hits": [
+                3,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smash",
+          "name": "ウォーハンマー",
+          "nameEn": "Smash",
+          "part": "leg",
+          "accuracy": 98,
+          "speed": 120,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 150,
+              "target": "all"
+            }
+          ]
+        },
+        {
+          "id": "cyclone",
+          "name": "サイクロンルーツ",
+          "nameEn": "Cyclone",
+          "part": "leg",
+          "accuracy": 90,
+          "speed": 50,
+          "effects": [
+            {
+              "type": "damage",
+              "element": "bash",
+              "power": 125,
+              "target": "all",
+              "ignoreDefBuff": true
+            }
+          ],
+          "notes": "パラディンの属性ガード2種類を同じターンに使った次のターンに確率で使う（atwiki）。この条件は入れていない"
+        },
+        {
+          "id": "segment",
+          "name": "セグメント",
+          "nameEn": "Segment",
+          "part": "head",
+          "speed": 100,
+          "effects": [
+            {
+              "type": "heal",
+              "amount": 24000
+            }
+          ],
+          "notes": "回復量は 9999 か 24000（atwiki）。LP Archive の 24000 を使う"
+        },
+        {
+          "id": "pollen",
+          "name": "太古の呪粉",
+          "nameEn": "Pollen",
+          "part": "head",
+          "speed": 150,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "blind",
+                "paralysis",
+                "confusion",
+                "sleep",
+                "curse",
+                "terror",
+                "petrify"
+              ],
+              "chance": 25,
+              "all": true
+            }
+          ]
+        },
+        {
+          "id": "resolve",
+          "name": "王の威厳",
+          "nameEn": "Resolve",
+          "part": "head",
+          "speed": 10,
+          "effects": [
+            {
+              "type": "dispel"
+            }
+          ]
+        },
+        {
+          "id": "membrane",
+          "name": "セルメンブレン",
+          "nameEn": "Membrane",
+          "part": "arm",
+          "speed": 300,
+          "effects": [
+            {
+              "type": "self-buff",
+              "mods": [
+                {
+                  "stat": "elemTaken",
+                  "value": 0
+                }
+              ],
+              "turns": 5
+            }
+          ],
+          "notes": "属性ダメージを無効にして跳ね返す（atwiki・LP Archive）。跳ね返しは入れていない"
+        },
+        {
+          "id": "entangle",
+          "name": "エンタングルレイ",
+          "nameEn": "Entangle",
+          "part": "leg",
+          "speed": 50,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "bind-head",
+                "bind-arm",
+                "bind-leg"
+              ],
+              "chance": 90,
+              "all": true
+            }
+          ]
+        },
+        {
+          "id": "necrosis",
+          "name": "ネクローシス",
+          "nameEn": "Necrosis",
+          "part": "none",
+          "speed": 50,
+          "effects": [
+            {
+              "type": "inflict",
+              "target": "all",
+              "ailments": [
+                "death"
+              ],
+              "chance": 90
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "when": {
+            "turnFrom": 52
+          },
+          "use": [
+            {
+              "skill": "explode",
+              "weight": 1
+            },
+            {
+              "skill": "frigid",
+              "weight": 1
+            },
+            {
+              "skill": "storm",
+              "weight": 1
+            }
+          ],
+          "note": "51ターン目のエクスプロウドより後は3つの属性攻撃だけをランダムに使う（atwiki）"
+        },
+        {
+          "when": {
+            "turnMod": [
+              5,
+              1
+            ]
+          },
+          "use": [
+            {
+              "skill": "explode",
+              "weight": 1
+            }
+          ],
+          "note": "5n+1ターン目はエクスプロウド（atwiki・LP Archive）"
+        },
+        {
+          "when": {
+            "turnMod": [
+              6,
+              1
+            ]
+          },
+          "use": [
+            {
+              "skill": "frigid",
+              "weight": 1
+            }
+          ],
+          "note": "6n+1ターン目はフリージング。重なるとエクスプロウド＞フリージング＞サンダーストーム（atwiki）"
+        },
+        {
+          "when": {
+            "turnMod": [
+              4,
+              1
+            ]
+          },
+          "use": [
+            {
+              "skill": "storm",
+              "weight": 1
+            }
+          ],
+          "note": "4n+1ターン目はサンダーストーム（atwiki・LP Archive）"
+        },
+        {
+          "when": {
+            "partyBuffsAtLeast": 10,
+            "notPrev": "resolve"
+          },
+          "use": [
+            {
+              "skill": "resolve",
+              "weight": 1
+            }
+          ],
+          "note": "味方の強化が合計10以上なら王の威厳。続けては使わない（atwiki）"
+        },
+        {
+          "when": {
+            "prev": "resolve"
+          },
+          "use": [
+            {
+              "skill": "explode",
+              "weight": 1
+            },
+            {
+              "skill": "frigid",
+              "weight": 1
+            },
+            {
+              "skill": "storm",
+              "weight": 1
+            },
+            {
+              "skill": "slash",
+              "weight": 1
+            },
+            {
+              "skill": "rush",
+              "weight": 1
+            },
+            {
+              "skill": "smash",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "王の威厳の次のターンは全体の属性攻撃が多い（atwiki。割合は仮）"
+        },
+        {
+          "when": {
+            "prev": "membrane"
+          },
+          "use": [
+            {
+              "skill": "necrosis",
+              "weight": 3
+            },
+            {
+              "skill": "normal",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "セルメンブレンの次のターンは高い確率でネクローシス（atwiki。割合は仮）"
+        },
+        {
+          "when": {
+            "hpBelow": 25
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "slash",
+              "weight": 1
+            },
+            {
+              "skill": "rush",
+              "weight": 1
+            },
+            {
+              "skill": "smash",
+              "weight": 1
+            },
+            {
+              "skill": "entangle",
+              "weight": 1
+            },
+            {
+              "skill": "membrane",
+              "weight": 1
+            },
+            {
+              "skill": "pollen",
+              "weight": 1
+            },
+            {
+              "skill": "necrosis",
+              "weight": 1
+            },
+            {
+              "skill": "segment",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "HP 25% ごとに技が増える（LP Archive）。25% 未満でセグメントを足した（仮）"
+        },
+        {
+          "when": {
+            "hpBelow": 50
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "slash",
+              "weight": 1
+            },
+            {
+              "skill": "rush",
+              "weight": 1
+            },
+            {
+              "skill": "smash",
+              "weight": 1
+            },
+            {
+              "skill": "entangle",
+              "weight": 1
+            },
+            {
+              "skill": "membrane",
+              "weight": 1
+            },
+            {
+              "skill": "pollen",
+              "weight": 1
+            },
+            {
+              "skill": "necrosis",
+              "weight": 1
+            }
+          ],
+          "assumed": true,
+          "note": "50% 未満で太古の呪粉・ネクローシスを足した（仮）"
+        },
+        {
+          "when": {
+            "hpBelow": 75
+          },
+          "use": [
+            {
+              "skill": "normal",
+              "weight": 1
+            },
+            {
+              "skill": "slash",
+              "weight": 1
+            },
+            {
+              "skill": "rush",
+              "weight": 1
+            },
+            {
+              "skill": "smash",
+              "weight": 1
+            },
+            {
+              "skill": "entangle",
+              "weight": 1
+            },
+            {
+              "skill": "membrane",
+              "weight": 3
+            }
+          ],
+          "assumed": true,
+          "note": "75% 未満でエンタングルレイ・セルメンブレンが加わり、75%〜50% はセルメンブレンが多い（LP Archive・atwiki。割合は仮）"
+        }
+      ],
+      "default": [
+        {
+          "skill": "normal",
+          "weight": 1
+        },
+        {
+          "skill": "slash",
+          "weight": 1
+        },
+        {
+          "skill": "rush",
+          "weight": 1
+        },
+        {
+          "skill": "smash",
+          "weight": 1
+        }
+      ],
+      "defaultAssumed": true,
+      "sources": [
+        {
+          "kind": "other",
+          "confidence": "unverified",
+          "url": "https://lparchive.org/Etrian-Odyssey/Update%2041/",
+          "note": "LP Archive（DS版のデータの解析）：技の数値・行動の条件",
+          "checkedAt": "2026-10-18"
+        },
+        {
+          "kind": "atwiki",
+          "confidence": "unverified",
+          "url": "https://w.atwiki.jp/sekaiju_maze/pages/744.html",
+          "note": "技の日本語名・部位・行動パターン（ボス攻略（第5層以降）、本人が保存）",
+          "checkedAt": "2026-10-18"
+        }
+      ],
+      "notes": "固定の属性攻撃と王の威厳以外は、物理攻撃を中心としたランダム行動（atwiki）"
+    }
+  ]
+}
