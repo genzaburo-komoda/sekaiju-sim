@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react'
 import { findBehavior, findEnemy } from '../data/gameData'
 import { ELEMENT_LABELS } from '../logic/attack'
-import { defaultPolicy, runPlan, type EnduranceResult, type KillDistribution, type Plan } from '../logic/battle'
+import { defaultPolicy, runPlan, type EnduranceResult, type KillDistribution, type Plan, type SafeSearchResult } from '../logic/battle'
 import { startJob, type BattleJob, type JobResult } from '../logic/battleJob'
 import type { ElementId } from '../logic/damage'
 import type { Member, Party } from '../logic/party'
@@ -130,6 +130,9 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
   const [kill, setKill] = useState<{ key: string; r: KillDistribution } | null>(null)
   const [enemyActions, setEnemyActions] = useState<EnemyAction[] | null>(null)
   const [enemyModeSel, setEnemyModeSel] = useState<EnemyMode | null>(null)
+  const [wipeLimit, setWipeLimit] = useState(5)
+  const [safeTrials, setSafeTrials] = useState(300)
+  const [safe, setSafe] = useState<{ key: string; r: SafeSearchResult } | null>(null)
   const [policies, setPolicies] = useState<Record<string, string>>({})
   const [endTurns, setEndTurns] = useState(10)
   const [endTrials, setEndTrials] = useState(3000)
@@ -251,6 +254,66 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
           <button type="button" onClick={() => setPlan([...plan, { ...(plan.at(-1) ?? {}) }])}>ターンを足す</button>
           <button type="button" disabled={plan.length <= 1} onClick={() => setPlan(plan.slice(0, -1))}>最後のターンを消す</button>
         </div>
+        {enemyActs && (
+          <div className="optimize-result">
+            <h3 className="score-h">全滅率の上限つきで最短を探す</h3>
+            <p className="note">
+              敵が行動するときは、最短の計画が危ないことがあります。「味方の危なさ」をどれだけ重く見るかを5通りに変えて計画を作り（重いほど防御・回復・守りの強化を使う）、
+              それぞれを乱数で戦わせて、全滅率が上限以下のうち倒すまでのターン数の期待値が最も短い計画を選びます（倒せなかった回は上限＋1 ターンとして数えます）。近似解です。
+            </p>
+            <div className="record-fields">
+              <NumberField label="全滅率の上限（%）" value={wipeLimit} min={0} max={100} onChange={setWipeLimit} />
+              <NumberField label="試行回数（1計画あたり）" value={safeTrials} min={50} max={5000} onChange={setSafeTrials} />
+              <button
+                type="button"
+                disabled={!!busy}
+                onClick={() => {
+                  const key = JSON.stringify([setup, maxTurns, wipeLimit, safeTrials, seed])
+                  launch('全滅率の上限つきで探しています', { kind: 'safe-min-turns', setup, maxTurns, wipeLimit: wipeLimit / 100, trials: safeTrials, seed }, (r) => {
+                    setSafe({ key, r })
+                    if (r.best >= 0) setPlan(r.candidates[r.best].plan)
+                  })
+                }}
+              >
+                探す
+              </button>
+            </div>
+            {safe && (
+              <>
+                {safe.key !== JSON.stringify([setup, maxTurns, wipeLimit, safeTrials, seed]) && <p className="danger">条件が変わりました。もう一度「探す」を押してください。</p>}
+                {!safe.r.satisfied && <p className="danger">全滅率が上限以下の計画は見つかりませんでした。全滅率が最も低い計画を表に入れました。</p>}
+                <div className="table-scroll">
+                  <table className="score-table">
+                    <thead>
+                      <tr>
+                        <th>危なさの重み</th>
+                        <th>撃破（期待値の計算）</th>
+                        <th>倒すまでの期待値</th>
+                        <th>{maxTurns}ターン以内に倒せる</th>
+                        <th>全滅率</th>
+                        <th>だれかが倒れる</th>
+                        <th />
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {safe.r.candidates.map((c, i) => (
+                        <tr key={i} className={i === safe.r.best ? 'best' : undefined}>
+                          <td>{c.risk === 0 ? '0（最短だけ）' : c.risk}{i === safe.r.best ? '（選んだ計画）' : ''}</td>
+                          <td>{c.killTurn !== null ? `${c.killTurn}ターン` : '倒せない'}</td>
+                          <td>{c.check.expectedTurns.toFixed(2)}ターン</td>
+                          <td>{pct(c.check.killRate)}</td>
+                          <td className={c.check.wipeRate > safe.r.wipeLimit ? 'danger' : undefined}>{pct(c.check.wipeRate)}</td>
+                          <td>{pct(c.check.anyDownRate)}</td>
+                          <td><button type="button" onClick={() => setPlan(c.plan)}>この計画にする</button></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </>
+            )}
+          </div>
+        )}
 
         <div className="table-scroll">
           <table className="score-table battle-plan">

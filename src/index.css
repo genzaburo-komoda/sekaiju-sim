@@ -894,6 +894,11 @@ select {
 }
 
 /* ---- 戦闘シミュレーション ---- */
+/* 全滅率つきの探索で選んだ計画の行 */
+.score-table tr.best td {
+  font-weight: bold;
+}
+
 .battle-enemy {
   margin: 12px 0;
 }

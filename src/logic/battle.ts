@@ -76,9 +76,21 @@ function attackChoices(ctx: SimContext, s: BattleState, f: Fighter): { action: S
   return out.sort((x, y) => y.expected - x.expected)
 }
 
-/** 評価：倒すまでにかかりそうなターン数（今のターン ＋ 残りHP ÷ 今出せる1ターンのダメージ）。小さいほどよい */
-function evaluate(ctx: SimContext, s: BattleState): number {
-  if (enemyDown(s)) return s.turn
+/** 味方の危なさ（倒れた人は 3、それ以外は減った HP の割合の合計）。全滅率つきの探索（4-8）で評価に足す */
+function partyRisk(s: BattleState): number {
+  return s.members.reduce((n, f) => n + (f.alive ? 1 - Math.max(0, f.hp) / f.maxHp : 3), 0)
+}
+
+/**
+ * 評価：倒すまでにかかりそうなターン数（今のターン ＋ 残りHP ÷ 今出せる1ターンのダメージ）＋ risk × 味方の危なさ。小さいほどよい。
+ * risk が 0 なら今までどおり（最短だけを見る）
+ */
+function evaluate(ctx: SimContext, s: BattleState, risk = 0): number {
+  if (enemyDown(s)) return s.turn + risk * partyRisk(s)
+  return evaluateBase(ctx, s) + risk * partyRisk(s)
+}
+
+function evaluateBase(ctx: SimContext, s: BattleState): number {
   let potential = 0
   let tp = 0
   for (const f of s.members) {
@@ -91,8 +103,49 @@ function evaluate(ctx: SimContext, s: BattleState): number {
   return s.turn + s.enemy.hp / potential - tp * 1e-9
 }
 
+/** 守りの行動か（防御、被ダメージを減らす強化・敵の攻撃を下げる弱体、回復・治療、パリングなど） */
+function defensiveKind(a: SimAction): boolean {
+  if (a.kind === 'defend' || a.kind === 'heal' || a.kind === 'cure') return true
+  if (a.special === 'parry' || a.special === 'evade-once' || a.special === 'endure') return true
+  return (
+    a.skill?.effects.some(
+      (e) =>
+        (e.type === 'buff' && e.modifiers.some((m) => ['physDef', 'elemDef', 'damageTaken', 'aggro', 'maxHp'].includes(m.stat))) ||
+        (e.type === 'debuff' && e.modifiers.some((m) => m.stat === 'physAtk' || m.stat === 'accuracy')),
+    ) ?? false
+  )
+}
+
+/** 守りの行動の候補（その時に意味のあるものだけ） */
+function defensiveCandidates(ctx: SimContext, s: BattleState, f: Fighter): string[] {
+  const out: string[] = ['defend']
+  const next = s.turn + 1
+  const hurt = s.members.some((x) => x.alive && x.hp / x.maxHp < HEAL_THRESHOLD)
+  for (const a of ctx.actions.get(f.id)!) {
+    if (a.id === 'defend' || a.tp > f.tp || !defensiveKind(a)) continue
+    if (a.needsStance && !f.buffs.some((b) => b.skillId === a.needsStance)) continue
+    if (a.kind === 'heal') {
+      if (hurt) out.push(a.id)
+      continue
+    }
+    if (a.kind === 'cure') {
+      if (policyAction(ctx, s, f, a.id) === a.id) out.push(a.id)
+      continue
+    }
+    if (a.special === 'parry' || a.special === 'evade-once') {
+      out.push(a.id)
+      continue
+    }
+    // 強化・弱体：かかっていないか、次のターンで切れるもの（味方全体の強化は使った人の強化で見る）
+    const holder = a.targetId ? s.members.find((x) => x.id === a.targetId) : f
+    const on = a.kind === 'debuff' ? s.enemy.debuffs.find((b) => b.skillId === a.skill?.id) : holder?.buffs.find((b) => b.skillId === a.skill?.id)
+    if (!on || (on.lastTurn !== Infinity && on.lastTurn <= next) || on.oneShot) out.push(a.id)
+  }
+  return out
+}
+
 /** 次のターンの、メンバーごとの行動の候補（攻撃の上位2つ、TP あたりで最も効率のよい攻撃、攻撃に効く強化・弱体） */
-function candidates(ctx: SimContext, s: BattleState, f: Fighter): string[] {
+function candidates(ctx: SimContext, s: BattleState, f: Fighter, defensive = false): string[] {
   const attacks = attackChoices(ctx, s, f)
   const ids = new Set(attacks.slice(0, 2).map((x) => x.action.id))
   const efficient = attacks.filter((x) => x.action.tp > 0).sort((a, b) => b.expected / b.action.tp - a.expected / a.action.tp)[0]
@@ -117,13 +170,14 @@ function candidates(ctx: SimContext, s: BattleState, f: Fighter): string[] {
     // かかっていないか、次のターンで切れるものだけ
     if (!on || on.lastTurn <= next) ids.add(a.id)
   }
+  if (defensive) for (const id of defensiveCandidates(ctx, s, f)) ids.add(id)
   return [...ids]
 }
 
 const stateKey = (s: BattleState) =>
   [
     Math.round(s.enemy.hp * 100),
-    ...s.members.map((f) => `${f.tp}:${f.buffs.map((b) => `${b.skillId}@${b.lastTurn}`).join(',')}`),
+    ...s.members.map((f) => `${f.tp}:${Math.round(f.alive ? f.hp : -1)}:${f.buffs.map((b) => `${b.skillId}@${b.lastTurn}`).join(',')}`),
     s.enemy.debuffs.map((b) => `${b.skillId}@${b.lastTurn}`).join(','),
   ].join('|')
 
@@ -140,14 +194,17 @@ export interface MinTurnsResult {
  * 1ターンの行動は「全員が今最もダメージの大きい攻撃」を基本に、1〜2人の行動を別の候補（別の攻撃・強化・弱体）に変えたものを試す。
  * 各ターンで評価のよい状態を beamWidth 個だけ残す
  */
-export function findMinTurns(setup: BattleSetup, maxTurns: number, beamWidth = 30): MinTurnsResult {
+export function findMinTurns(setup: BattleSetup, maxTurns: number, beamWidth = 30, risk = 0): MinTurnsResult {
   const ctx = new SimContext(setup)
+  // 守りの行動も候補にするのは、敵が行動して risk が正のとき（4-8）
+  const defensive = risk > 0 && ctx.enemyActs
   let beam: Node[] = [{ state: initialState(setup), plan: [], score: 0 }]
   for (let t = 1; t <= maxTurns; t++) {
     const next = new Map<string, Node>()
     for (const node of beam) {
       const alive = node.state.members.filter((f) => f.alive)
-      const opts = alive.map((f) => candidates(ctx, node.state, f))
+      if (!alive.length) continue
+      const opts = alive.map((f) => candidates(ctx, node.state, f, defensive))
       const base = alive.map((f, i) => attackChoices(ctx, node.state, f)[0]?.action.id ?? opts[i][0])
       const joints: string[][] = [base]
       for (let i = 0; i < alive.length; i++) {
@@ -170,22 +227,124 @@ export function findMinTurns(setup: BattleSetup, maxTurns: number, beamWidth = 3
         const plan = Object.fromEntries(alive.map((f, i) => [f.id, joint[i]]))
         const { state } = runTurn(ctx, node.state, { rng: null, plan, fallback: 'normal', log: false })
         const key = stateKey(state)
-        const score = evaluate(ctx, state)
+        if (state.members.every((f) => !f.alive)) continue
+        const score = evaluate(ctx, state, risk)
         const prev = next.get(key)
         if (!prev || score < prev.score) next.set(key, { state, plan: [...node.plan, plan], score })
       }
     }
     const nodes = [...next.values()].sort((a, b) => a.score - b.score)
+    // どの計画でも全滅する（期待値）なら、その前のターンまでの計画を返す
+    if (!nodes.length) return { plan: beam[0]?.plan ?? [], killTurn: null, beamWidth }
     const killed = nodes.filter((n) => enemyDown(n.state))
     if (killed.length) {
-      // 倒せた計画のうち、TP が最も多く残るもの
+      // 倒せた計画のうち、味方の危なさが最も小さく（risk が正のとき）、TP が最も多く残るもの
       const tpLeft = (n: Node) => n.state.members.reduce((sum, f) => sum + f.tp, 0)
-      const best = killed.sort((a, b) => tpLeft(b) - tpLeft(a))[0]
+      const best = killed.sort((a, b) => (risk > 0 ? partyRisk(a.state) - partyRisk(b.state) : 0) || tpLeft(b) - tpLeft(a))[0]
       return { plan: best.plan, killTurn: t, beamWidth }
     }
     beam = nodes.slice(0, beamWidth)
   }
   return { plan: beam[0]?.plan ?? [], killTurn: null, beamWidth }
+}
+
+// ---------------------------------------------------------------
+// 4-8：全滅率の上限つきの最短ターン
+// ---------------------------------------------------------------
+
+/** 計画を乱数で何度も戦わせた結果 */
+export interface PlanCheck {
+  /** 上限のターン数までに倒せた割合 */
+  killRate: number
+  /** 倒すまでのターン数の期待値（倒せなかった回は上限＋1 ターンとして数える） */
+  expectedTurns: number
+  /** 倒せた回だけの平均ターン数 */
+  meanKillTurn: number | null
+  /** 倒す前に全滅した割合 */
+  wipeRate: number
+  /** 倒すまでに1人でも倒れた割合 */
+  anyDownRate: number
+}
+
+/** 計画を乱数で trials 回戦わせる（計画より長いターンは最後のターンの行動をくり返す） */
+export function checkPlan(setup: BattleSetup, plan: Plan, maxTurns: number, trials: number, seed: number): PlanCheck {
+  const ctx = new SimContext(setup)
+  const rng = seededRng(seed)
+  const start = initialState(setup)
+  let kills = 0
+  let wipes = 0
+  let anyDown = 0
+  let sumTurns = 0
+  let sumKill = 0
+  for (let i = 0; i < trials; i++) {
+    let s = start
+    let killTurn: number | null = null
+    for (let t = 1; t <= maxTurns; t++) {
+      s = runTurn(ctx, s, { rng, plan: planAt(plan, t), fallback: 'normal', log: false }).state
+      if (enemyDown(s)) {
+        killTurn = t
+        break
+      }
+      if (s.members.every((f) => !f.alive)) break
+    }
+    if (s.members.some((f) => !f.alive)) anyDown += 1
+    if (killTurn !== null) {
+      kills += 1
+      sumKill += killTurn
+      sumTurns += killTurn
+    } else {
+      sumTurns += maxTurns + 1
+      if (s.members.every((f) => !f.alive)) wipes += 1
+    }
+  }
+  return { killRate: kills / trials, expectedTurns: sumTurns / trials, meanKillTurn: kills ? sumKill / kills : null, wipeRate: wipes / trials, anyDownRate: anyDown / trials }
+}
+
+export interface SafePlan {
+  /** 探索で使った「危なさ」の重み（0 は最短だけを見た計画） */
+  risk: number
+  plan: Plan
+  /** 期待値の計算で倒せたターン */
+  killTurn: number | null
+  check: PlanCheck
+}
+
+export interface SafeSearchResult {
+  candidates: SafePlan[]
+  /** 選んだ計画（candidates の添字）。上限を満たすものが無ければ全滅率が最も低いもの */
+  best: number
+  /** 全滅率の上限を満たす計画があったか */
+  satisfied: boolean
+  wipeLimit: number
+}
+
+/** 探索で試す「危なさ」の重み。0 は最短だけ、大きいほど守りを重く見る（Claude 決定） */
+export const RISK_WEIGHTS = [0, 0.3, 1, 3, 10]
+
+/**
+ * 全滅率の上限つきの最短ターン（4-8、2026-10-18 本人決定）：
+ * 「危なさ」の重みを変えて期待値のビームサーチで候補の計画を作り、それぞれを乱数で trials 回戦わせて、
+ * 全滅率が上限以下のうち倒すまでのターン数の期待値が最も短い計画を選ぶ
+ */
+export function findSafeMinTurns(
+  setup: BattleSetup, o: { maxTurns: number; wipeLimit: number; trials: number; seed: number; beamWidth?: number }, onProgress?: Progress,
+): SafeSearchResult {
+  const seen = new Set<string>()
+  const candidates: SafePlan[] = []
+  RISK_WEIGHTS.forEach((risk, i) => {
+    const r = findMinTurns(setup, o.maxTurns, o.beamWidth ?? (risk > 0 ? 15 : 30), risk)
+    const key = JSON.stringify(r.plan)
+    if (r.plan.length && !seen.has(key)) {
+      seen.add(key)
+      candidates.push({ risk, plan: r.plan, killTurn: r.killTurn, check: checkPlan(setup, r.plan, o.maxTurns, o.trials, o.seed) })
+    }
+    onProgress?.(i + 1, RISK_WEIGHTS.length)
+  })
+  const ok = candidates.map((c, i) => ({ c, i })).filter(({ c }) => c.check.wipeRate <= o.wipeLimit && c.check.killRate > 0)
+  const pick = (list: { c: SafePlan; i: number }[], by: (c: SafePlan) => number) => list.reduce((a, b) => (by(b.c) < by(a.c) - 1e-12 ? b : a))
+  if (ok.length) return { candidates, best: pick(ok, (c) => c.check.expectedTurns + c.check.wipeRate * 1e-3).i, satisfied: true, wipeLimit: o.wipeLimit }
+  const all = candidates.map((c, i) => ({ c, i }))
+  return { candidates, best: all.length ? pick(all, (c) => c.check.wipeRate + c.check.expectedTurns * 1e-6).i : -1, satisfied: false, wipeLimit: o.wipeLimit }
 }
 
 // ---------------------------------------------------------------
