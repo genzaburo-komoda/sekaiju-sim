@@ -8,6 +8,7 @@ import { retireSpBonus } from '../logic/retire'
 import { AXIS_LABELS, defaultRole, MEMBER_AXES, memberOptimum, type MemberAxis } from '../logic/score'
 import { spTotal, spUsed } from '../logic/skills'
 import { NumberField } from './NumberField'
+import { Explain } from './Explain'
 
 type TargetMode = 'free' | 'current' | 'optimum'
 const TARGET_LABELS: Record<TargetMode, string> = {
@@ -51,11 +52,11 @@ export function LevelPlanPanel({ party, member }: { party: Party; member: Member
   return (
     <section className="measure-panel">
       <h2>レベル進行プラン（{member.name}・{findJob(member.jobId).name}）</h2>
-      <p className="note">
+      <Explain lead="Lv1 から目標のレベルまでの、スキルを振る順番を出します（途中の振り直しは不要）。">
         Lv1 から目標のレベルまで、どの順でスキルを振るかを出します。スキルは上げるだけで下げないので、途中で振り直しは要りません。
         各レベルで「SP 1 あたりの評価値の伸び」が最も大きい振り方を選び、もっと SP があれば大きく伸びる振り方があるときは SP を残します（近似解）。
         評価値は採点と同じで、敵は各レベルの標準敵です。武器・引退は今の設定のまま、レベルが上がっても変えません。
-      </p>
+      </Explain>
       <div className="record-fields">
         <label>
           評価の軸

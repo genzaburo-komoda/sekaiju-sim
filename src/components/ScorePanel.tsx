@@ -20,6 +20,7 @@ import {
   type Weights,
 } from '../logic/score'
 import type { Allocation } from '../logic/skills'
+import { Explain } from './Explain'
 
 interface Props {
   party: Party
@@ -232,11 +233,11 @@ export function ScorePanel({ party, selectedId, onApply }: Props) {
   return (
     <section className="measure-panel score-panel">
       <h2>採点（仮の基準）</h2>
-      <p className="note">
+      <Explain lead="役割ごとに、最適な振り方を 100 点として今の振り方を採点します。">
         メンバーごとに役割を決め、今の振り方の評価値を「同じジョブ・レベル・武器での最適値」で割って 100 点満点にします（火力＝最大ダメージ、状態異常＝最も付けやすい状態異常の付与率、回復＝1ターンの総回復量、耐久＝標準敵の通常攻撃を何回耐えられるか）。
         敵は標準敵（メンバーと同じレベル、耐性はすべて等倍、VIT・STR・AGI は近いレベルの敵の中央値）。耐久には付けている防具（防御力・属性の耐性）を入れています。総合点は軸ごとの点数の重み付き平均です。
         重み・役割・標準敵・探索の項目は仮のもので、あとで見直します。
-      </p>
+      </Explain>
 
       <div className="record-fields">
         <label>

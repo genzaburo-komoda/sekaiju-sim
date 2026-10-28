@@ -21,6 +21,9 @@ interface Props {
   difficulty: DifficultyId
   /** 最適化の結果をスキルの振り方に当てはめる */
   onApplySkills: (alloc: Allocation) => void
+  /** 選んでいる敵（戦闘シミュレーションと共通。開発計画 U10）。null は手入力 */
+  enemyId: string | null
+  onEnemyChange: (id: string | null) => void
 }
 
 const ELEMENTS: ElementId[] = ['slash', 'bash', 'pierce', 'fire', 'ice', 'volt']
@@ -40,7 +43,7 @@ function loadSettings(): { attack: AttackSettings; target: TargetSettings } {
   return { attack: DEFAULT_ATTACK, target: DEFAULT_TARGET }
 }
 
-export function DamagePanel({ member, members, difficulty, onApplySkills }: Props) {
+export function DamagePanel({ member, members, difficulty, onApplySkills, enemyId, onEnemyChange }: Props) {
   const skills = skillsByJob[member.jobId] ?? []
   const weapon = findEquipment(member.weaponId)
   const options = attackOptions(skills, member.skills, weapon, hasShield(member))
@@ -48,21 +51,24 @@ export function DamagePanel({ member, members, difficulty, onApplySkills }: Prop
 
   const [initial] = useState(loadSettings)
   const [attack, setAttack] = useState<AttackSettings>(initial.attack)
-  const [target, setTarget] = useState<TargetSettings>(initial.target)
+  // 手入力の敵の値と「防御中」はここで持ち、敵データを選んでいればその値を使う
+  const [manualTarget, setTarget] = useState<TargetSettings>(initial.target)
+  const picked = findEnemy(enemyId)
+  const target: TargetSettings = picked ? targetFromEnemy(picked, manualTarget.guarding) : { ...manualTarget, enemyId: null }
   useEffect(() => {
     try {
-      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ attack, target }))
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ attack, target: manualTarget }))
     } catch {
       // 保存できなくても計算はできる
     }
-  }, [attack, target])
+  }, [attack, manualTarget])
 
   // メンバーを切り替えて選んでいた攻撃・強化が無くなったら、通常攻撃・強化なしとして扱う
   const option = options.find((o) => o.id === attack.attackId) ?? options[0]
   const isNormal = option.skill === null
   const buff = buffs.find((b) => b.id === attack.buffId)
   const effective: AttackSettings = { ...attack, attackId: option.id, buffId: buff?.id ?? '', critical: isNormal && attack.critical }
-  const enemy = findEnemy(target.enemyId)
+  const enemy = picked
   const prediction = predict(member, effective, target, difficulty)
   const result = prediction.result
 
@@ -111,10 +117,7 @@ export function DamagePanel({ member, members, difficulty, onApplySkills }: Prop
           <legend>敵</legend>
           <EnemySelect
             value={target.enemyId}
-            onChange={(id) => {
-              const picked = findEnemy(id)
-              setTarget(picked ? targetFromEnemy(picked, target.guarding) : { ...target, enemyId: null })
-            }}
+            onChange={onEnemyChange}
           />
           <NumberField label="レベル" value={target.level} min={1} max={99} disabled={!!enemy} onChange={(level) => setTarget({ ...target, level })} />
           <NumberField label="VIT" value={target.vit} min={0} max={999} disabled={!!enemy} onChange={(vit) => setTarget({ ...target, vit })} />
@@ -132,7 +135,7 @@ export function DamagePanel({ member, members, difficulty, onApplySkills }: Prop
             ))}
           </div>
           <label className="check">
-            <input type="checkbox" checked={target.guarding} onChange={(e) => setTarget({ ...target, guarding: e.target.checked })} />
+            <input type="checkbox" checked={target.guarding} onChange={(e) => setTarget({ ...manualTarget, guarding: e.target.checked })} />
             防御中
           </label>
           {enemy && (

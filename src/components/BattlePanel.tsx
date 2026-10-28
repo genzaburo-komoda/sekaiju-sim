@@ -15,6 +15,7 @@ import { EnemyBehaviorView } from './EnemyBehaviorView'
 import { EnemySelect } from './EnemySelect'
 import { NumberField } from './NumberField'
 import { PartySearchSection } from './PartySearchSection'
+import { Explain } from './Explain'
 
 const ELEMENTS: ElementId[] = ['slash', 'bash', 'pierce', 'fire', 'ice', 'volt']
 const TARGET_LABELS: Record<EnemyAction['target'], string> = { single: '単体', row: '一列', all: '全体' }
@@ -118,9 +119,9 @@ function TurnTable({ logs, members, showHp, both = false }: { logs: TurnLog[]; m
   )
 }
 
-export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyParty: (members: Member[]) => void }) {
+/** enemyId はダメージ計算と共通（開発計画 U10） */
+export function BattlePanel({ party, onApplyParty, enemyId, onEnemyChange }: { party: Party; onApplyParty: (members: Member[]) => void; enemyId: string | null; onEnemyChange: (id: string | null) => void }) {
   const members = party.members
-  const [enemyId, setEnemyId] = useState<string | null>(null)
   const [manual, setManual] = useState<Manual>(DEFAULT_MANUAL)
   const [plan, setPlan] = useState<Plan>([{}, {}, {}])
   const [maxTurns, setMaxTurns] = useState(15)
@@ -139,6 +140,13 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
   const [endurance, setEndurance] = useState<{ key: string; r: EnduranceResult; sample: TurnLog[] } | null>(null)
   const [busy, setBusy] = useState<{ label: string; progress: number } | null>(null)
   const cancelRef = useRef<() => void>(() => {})
+  // 敵が変わったら（ダメージ計算の欄で変えたときも）、敵の行動の表と選び方を初期値に戻す
+  const [seenEnemyId, setSeenEnemyId] = useState(enemyId)
+  if (seenEnemyId !== enemyId) {
+    setSeenEnemyId(enemyId)
+    setEnemyActions(null)
+    setEnemyModeSel(null)
+  }
 
   const enemy = findEnemy(enemyId) ?? null
   const actions = enemyActions ?? [normalAttack(enemy?.accuracy ?? 90)]
@@ -180,20 +188,16 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
   return (
     <section className="measure-panel battle-panel">
       <h2>戦闘シミュレーション</h2>
-      <p className="note">
+      <Explain lead="敵1体との戦いを、ターンごとに計算します。">
         敵1体との戦いを、ターンごとに計算します。行動順（AGI × 行動の速度補正）、強化・弱体の持続（使ったターンを含めて数える。バードの歌は戦闘終了まで）と3つまでの枠、TP の消費を追跡します。
         味方の攻撃の命中率は入れていません（味方の基礎命中が分からないため、当たった場合）。
-      </p>
+      </Explain>
 
       <fieldset className="battle-enemy">
         <legend>敵</legend>
         <EnemySelect
           value={enemyId}
-          onChange={(id) => {
-            setEnemyId(id)
-            setEnemyActions(null)
-            setEnemyModeSel(null)
-          }}
+          onChange={onEnemyChange}
         />
         {enemy ? (
           <p className="note wide">
@@ -232,11 +236,11 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
 
       <details open>
         <summary>撃破までのターン数と行動の計画</summary>
-        <p className="note">
+        <Explain lead="表で行動を選ぶと、撃破までのターン数が出ます。「最小ターン数を探す」で計画を自動で探せます。">
           表の行動を選ぶと、その計画を期待値で計算します。「最小ターン数を探す」は、期待値で最も早く倒せる計画を探します（近似解：1ターンに1〜2人の行動を変えた候補を試し、よいものを残して進める）。
           攻撃に効く強化・弱体（攻撃力・与ダメージ・敵の防御力）と攻撃だけを候補にします。TP が足りない・構えがない・封じられたときは通常攻撃になります。
           敵が行動するとき、期待値の計算では、敵は条件に当てはまった表の中で最も選ばれやすい技を使い、ダメージは狙われる確率で割り振り、状態異常は付けません（状態異常・封じ・即死は下の確率分布と耐久で乱数で判定します）。
-        </p>
+        </Explain>
         <div className="record-fields">
           <NumberField label="探すターン数の上限" value={maxTurns} min={1} max={50} onChange={setMaxTurns} />
           <button
@@ -257,10 +261,10 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
         {enemyActs && (
           <div className="optimize-result">
             <h3 className="score-h">全滅率の上限つきで最短を探す</h3>
-            <p className="note">
+            <Explain lead="全滅率が上限以下の計画のうち、最も早く倒せるものを探します。">
               敵が行動するときは、最短の計画が危ないことがあります。「味方の危なさ」をどれだけ重く見るかを5通りに変えて計画を作り（重いほど防御・回復・守りの強化を使う）、
               それぞれを乱数で戦わせて、全滅率が上限以下のうち倒すまでのターン数の期待値が最も短い計画を選びます（倒せなかった回は上限＋1 ターンとして数えます）。近似解です。
-            </p>
+            </Explain>
             <div className="record-fields">
               <NumberField label="全滅率の上限（%）" value={wipeLimit} min={0} max={100} onChange={setWipeLimit} />
               <NumberField label="試行回数（1計画あたり）" value={safeTrials} min={50} max={5000} onChange={setSafeTrials} />
@@ -360,10 +364,10 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
 
       <details>
         <summary>確率分布（乱数・クリティカル・状態異常の成否）</summary>
-        <p className="note">
+        <Explain lead="上の計画で何度も戦い、撃破までのターン数のばらつきを出します。">
           上の計画どおりに、乱数を引いて何度も戦います（モンテカルロ法）。同じシード・同じ条件なら同じ結果になります。
           状態異常は付与率で判定し、睡眠中の敵は物理攻撃を 1.5倍受け、攻撃を受けると起きるとしています。敵を倒したあとも計画のターン数まで続けて総ダメージを数えます。
-        </p>
+        </Explain>
         <div className="record-fields">
           <NumberField label="試行回数" value={trials} min={100} max={100000} onChange={setTrials} />
           <NumberField label="シード" value={seed} min={0} max={2147483647} onChange={setSeed} />
@@ -397,7 +401,7 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
 
       <details>
         <summary>耐久（敵の攻撃に何ターン耐えるか）</summary>
-        <p className="note">
+        <Explain lead="各メンバーが倒れるまでのターン数と、全滅する確率を出します。">
           各メンバーが倒れるまでのターン数と全滅する確率を、乱数で何度も戦って出します。敵の HP が 0 になっても敵は行動を続けます。
           敵の行動は、上の「敵の行動」で行動パターンを選んでいればそれを使い、それ以外は下の表（手入力。初期値は通常攻撃だけ）を使います。
           状態異常：睡眠は行動できず攻撃を 1.5倍受け、攻撃されると起きるがそのターンは行動できない。スタンはそのターンの残りだけ行動できない。麻痺・テラーは 50% で行動できない。混乱は 50% で敵に通常攻撃（残りは味方を攻撃するが、そのダメージは入れていない）。毒はターンの終わりにダメージ、呪いは与えたダメージの半分が返る、即死・石化は戦闘不能。
@@ -406,7 +410,7 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
           序曲・バインドリカバリ・アザーズステップは対象の味方を選べます（「→名前」）。パリング・一寸の見切り・チェイス・トラッピングはそのターンだけ、医術防御II は5ターン、序曲・子守唄は戦闘終了まで効きます。
           狙われ方は「前列 90%・後列 10%、列の中は HP が多い順に 60%／30%／10%」、挑発中は狙われ率の確率でその味方（EO Wiki の値。出典が確かめられていない）。
           防具の防御力と属性の耐性は、メンバーの装備から入れます（防具の耐性は属性倍率から引く）。蘇生と、味方の回避の強化は入れていません。
-        </p>
+        </Explain>
         <div className="table-scroll">
           <table className="score-table">
             <thead>
@@ -468,9 +472,9 @@ export function BattlePanel({ party, onApplyParty }: { party: Party; onApplyPart
             </span>
           ))}
         </div>
-        <p className="note">
+        <Explain lead="毎ターン、選んだ行動をします。">
           毎ターン選んだ行動をします。ただし、回復スキルは HP が 70% を下回る味方がいるときだけ、強化・弱体はかかっていないか切れるときだけ使い、それ以外と TP が足りないときは防御します。
-        </p>
+        </Explain>
         <div className="record-fields">
           <NumberField label="ターン数" value={endTurns} min={1} max={50} onChange={setEndTurns} />
           <NumberField label="試行回数" value={endTrials} min={100} max={50000} onChange={setEndTrials} />

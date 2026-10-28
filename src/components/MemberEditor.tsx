@@ -2,18 +2,16 @@
 import { findEquipment, findJob, jobs, rules, skillsByJob, weaponsFor } from '../data/gameData'
 import { weaponLabel } from '../logic/attack'
 import { ARMOR_SLOT_RULES, armorChoices, armorDefense, armorItems, equipBonuses, SLOT_LABELS, validArmorIds } from '../logic/equip'
-import { rowChangeError, type DifficultyId, type Member, type Row } from '../logic/party'
+import { rowChangeError, type Member, type Row } from '../logic/party'
 import { RETIRE_LEVEL_CHOICES, retireSpBonus, retireStatBonus } from '../logic/retire'
 import { spTotal, spUsed } from '../logic/skills'
 import { displayStats, STAT_KEYS } from '../logic/stats'
-import { DamagePanel } from './DamagePanel'
 import { SkillTree } from './SkillTree'
 
 interface Props {
   member: Member
   /** パーティ全員（隊列の人数の決まりを確かめるため） */
   members: Member[]
-  difficulty: DifficultyId
   onChange: (next: Member) => void
 }
 
@@ -22,7 +20,7 @@ const RESIST_LABEL: Record<string, string> = { slash: '斬', pierce: '突', bash
 /** 能力補正の名前（「slashResist」は「斬耐性%」） */
 const bonusLabel = (k: string) => (k.endsWith('Resist') ? `${RESIST_LABEL[k.slice(0, -6)] ?? k}耐性%` : k.toUpperCase())
 
-export function MemberEditor({ member, members, difficulty, onChange }: Props) {
+export function MemberEditor({ member, members, onChange }: Props) {
   const job = findJob(member.jobId)
   const skills = skillsByJob[member.jobId] ?? []
   const bonusSp = retireSpBonus(rules, member.retire)
@@ -192,13 +190,6 @@ export function MemberEditor({ member, members, difficulty, onChange }: Props) {
       </div>
 
       <SkillTree skills={skills} alloc={member.skills} spLeft={left} onChange={(next) => onChange({ ...member, skills: next })} />
-
-      <DamagePanel
-        member={member}
-        members={members}
-        difficulty={difficulty}
-        onApplySkills={(skills) => onChange({ ...member, skills })}
-      />
     </div>
   )
 }

@@ -1,19 +1,52 @@
-// 画面全体。左にパーティ一覧と保存・共有、右に選んだメンバーの編集画面を置く（スマホでは縦に並ぶ）
+// 画面全体。左に縦メニュー・パーティ一覧・保存・共有、右にメニューで選んだ画面を置く（スマホでは縦に並ぶ）。
+// 縦メニュー（開発計画 U12、2026-10-28 本人決定）：編成・スキル／ダメージ計算／採点・プラン／戦闘。
+// 画面を切り替えても入力や結果が消えないように、選んでいない画面も作ったまま隠しておく
 import { useEffect, useState } from 'react'
 import { BattlePanel } from './components/BattlePanel'
+import { DamagePanel } from './components/DamagePanel'
 import { HelpPanel } from './components/HelpPanel'
 import { LevelPlanPanel } from './components/LevelPlanPanel'
 import { MemberEditor } from './components/MemberEditor'
 import { PartyPanel } from './components/PartyPanel'
 import { ScorePanel } from './components/ScorePanel'
 import { ShareTools } from './components/ShareTools'
+import { Welcome } from './components/Welcome'
 import { equipment, jobs, rules, skillsByJob } from './data/gameData'
 import { MAX_MEMBERS, newMember, removeError, type Member, type Party } from './logic/party'
 import { ISSUES_URL } from './links'
+import { sampleParty } from './logic/sample'
 import { decodeParty, encodeParty } from './logic/share'
 import { loadCurrent, saveCurrent } from './logic/storage'
 
 const firstJob = jobs[0].id
+
+type View = 'build' | 'damage' | 'score' | 'battle'
+const VIEWS: { id: View; label: string }[] = [
+  { id: 'build', label: '編成・スキル' },
+  { id: 'damage', label: 'ダメージ計算' },
+  { id: 'score', label: '採点・プラン' },
+  { id: 'battle', label: '戦闘シミュレーション' },
+]
+
+// 選んでいた画面・敵・「はじめに」を閉じたかは、このブラウザに覚えておく（読み書きできなくても動く）
+const VIEW_KEY = 'sekaiju-sim:view'
+const ENEMY_KEY = 'sekaiju-sim:enemy'
+const WELCOME_KEY = 'sekaiju-sim:welcome-closed'
+function load(key: string): string | null {
+  try {
+    return localStorage.getItem(key)
+  } catch {
+    return null
+  }
+}
+function store(key: string, value: string | null) {
+  try {
+    if (value === null) localStorage.removeItem(key)
+    else localStorage.setItem(key, value)
+  } catch {
+    // 保存できなくても使える
+  }
+}
 const ctx = { jobs, skillsByJob, rules, equipment }
 
 /** 画面上部に出すお知らせ（読み込みの結果など） */
@@ -53,6 +86,30 @@ function App() {
   const [selectedId, setSelectedId] = useState(initial.party.members[0].id)
   const selected = party.members.find((m) => m.id === selectedId) ?? party.members[0]
   const [showHelp, setShowHelp] = useState(false)
+  const [view, setView] = useState<View>(() => (VIEWS.find((v) => v.id === load(VIEW_KEY))?.id ?? 'build'))
+  // 敵の選択はダメージ計算と戦闘シミュレーションで共通（開発計画 U10）
+  const [enemyId, setEnemyId] = useState<string | null>(() => load(ENEMY_KEY))
+  const [showWelcome, setShowWelcome] = useState(() => load(WELCOME_KEY) === null)
+
+  useEffect(() => store(VIEW_KEY, view), [view])
+  useEffect(() => store(ENEMY_KEY, enemyId), [enemyId])
+
+  const closeWelcome = () => {
+    setShowWelcome(false)
+    store(WELCOME_KEY, '1')
+  }
+  const loadSample = () => {
+    // 編集中のパーティ（2人以上か、スキルを振った人がいる）は消えてしまうので、確かめてから入れ替える
+    const editing = party.members.length > 1 || party.members.some((m) => Object.keys(m.skills).length > 0)
+    if (editing && !window.confirm('今のパーティをサンプルの編成に入れ替えます。よろしいですか？（今のパーティは「保存」していなければ消えます）')) return
+    const members = sampleParty(party.difficulty)
+    setParty({ ...party, members })
+    setSelectedId(members[0].id)
+    setNotice({ kind: 'info', lines: ['サンプルの編成（Lv70 の5人）を読み込みました。スキルと装備は自動で選んだ例で、役割に効くスキルだけを振っているので SP が残ります'] })
+    closeWelcome()
+  }
+  const applySkills = (memberId: string, skills: Member['skills']) =>
+    setParty((p) => ({ ...p, members: p.members.map((m) => (m.id === memberId ? { ...m, skills } : m)) }))
 
   // 編集のたびに自動保存（次に開いたときに続きから始められるように）
   useEffect(() => {
@@ -122,6 +179,13 @@ function App() {
 
       <main className="main layout">
         <div className="side">
+          <nav className="view-menu" aria-label="画面の切り替え">
+            {VIEWS.map((v) => (
+              <button key={v.id} type="button" aria-pressed={view === v.id} onClick={() => setView(v.id)}>
+                {v.label}
+              </button>
+            ))}
+          </nav>
           <PartyPanel
             party={party}
             selectedId={selected.id}
@@ -132,29 +196,43 @@ function App() {
           />
           <ShareTools party={party} ctx={ctx} onLoadCode={(code) => loadCode(code, '保存した構築')} />
         </div>
-        <MemberEditor
-          member={selected}
-          members={party.members}
-          difficulty={party.difficulty}
-          onChange={updateMember}
-        />
+
+        <div className="views">
+          {showWelcome && <Welcome onSample={loadSample} onClose={closeWelcome} onGoDamage={() => setView('damage')} />}
+
+          <div hidden={view !== 'build'}>
+            <MemberEditor member={selected} members={party.members} onChange={updateMember} />
+          </div>
+
+          <div hidden={view !== 'damage'} className="view-card">
+            <DamagePanel
+              member={selected}
+              members={party.members}
+              difficulty={party.difficulty}
+              onApplySkills={(skills) => applySkills(selected.id, skills)}
+              enemyId={enemyId}
+              onEnemyChange={setEnemyId}
+            />
+          </div>
+
+          <div hidden={view !== 'score'}>
+            <ScorePanel party={party} selectedId={selected.id} onApply={applySkills} />
+            <LevelPlanPanel party={party} member={selected} />
+          </div>
+
+          <div hidden={view !== 'battle'}>
+            <BattlePanel
+              party={party}
+              onApplyParty={(members) => {
+                setParty((p) => ({ ...p, members }))
+                setNotice({ kind: 'info', lines: ['探した編成をパーティに当てはめました'] })
+              }}
+              enemyId={enemyId}
+              onEnemyChange={setEnemyId}
+            />
+          </div>
+        </div>
       </main>
-
-      <ScorePanel
-        party={party}
-        selectedId={selected.id}
-        onApply={(memberId, skills) => setParty((p) => ({ ...p, members: p.members.map((m) => (m.id === memberId ? { ...m, skills } : m)) }))}
-      />
-
-      <LevelPlanPanel party={party} member={selected} />
-
-      <BattlePanel
-        party={party}
-        onApplyParty={(members) => {
-          setParty((p) => ({ ...p, members }))
-          setNotice({ kind: 'info', lines: ['探した編成をパーティに当てはめました'] })
-        }}
-      />
 
       {/* 仕様書11章：全画面に非公式である旨と権利表記を出す */}
       <footer className="footer">

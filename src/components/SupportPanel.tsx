@@ -17,6 +17,7 @@ import {
   type SupportCandidate,
 } from '../logic/support'
 import type { Allocation } from '../logic/skills'
+import { Explain } from './Explain'
 
 interface Props {
   member: Member
@@ -101,11 +102,11 @@ export function SupportPanel({ member, members, enemyId, difficulty, onApply }: 
     <>
       <details className="optimize">
         <summary>状態異常・封じを付ける確率が最大の振り方を探す</summary>
-        <p className="note">
+        <Explain lead="上で選んだ敵に、状態異常・封じを付ける確率が最大になる振り方を探します。">
           上で選んだ敵に、{who}が1回の行動で狙いの状態異常を付ける確率が最大になるスキルの振り方を、スキルごとに探します。
           付与率 ＝ 判定値 × 呪言マスタリー × 敵の耐性 × 難易度（100% で頭打ち。LUC は関係しない）。命中率は入れていません（当たった場合の確率）。
           封じの「失敗するたびに +25%」（HD版）は、1回目なので入れていません。
-        </p>
+        </Explain>
         <div className="record-fields">
           <label>
             狙う状態異常
@@ -143,10 +144,10 @@ export function SupportPanel({ member, members, enemyId, difficulty, onApply }: 
 
       <details className="optimize">
         <summary>回復の効率が最大の振り方を探す</summary>
-        <p className="note">
+        <Explain lead="回復スキルの効率が最大になる振り方を探します。">
           {who}の回復スキルについて、選んだ基準で最も良い振り方をスキルごとに探します。回復量はステータスに依存せず、メディックの回復マスタリーと難易度だけで変わります。
           継続回復（癒しの子守唄・リジェネレート）と蘇生（リザレクション）は対象外です。
-        </p>
+        </Explain>
         <div className="record-fields">
           <label>
             基準

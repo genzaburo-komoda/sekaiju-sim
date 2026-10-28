@@ -6,6 +6,7 @@ import { optimizeMaxDamage, optimizePartyMaxDamage, type Candidate } from '../lo
 import type { DifficultyId, Member } from '../logic/party'
 import type { TargetSettings } from '../logic/predict'
 import type { Allocation } from '../logic/skills'
+import { Explain } from './Explain'
 
 interface Props {
   member: Member
@@ -43,10 +44,10 @@ export function OptimizePanel({ member, members, target, difficulty, onApply }: 
   return (
     <details className="optimize">
       <summary>この敵への最大ダメージの振り方を探す</summary>
-      <p className="note">
+      <Explain lead="上で選んだ敵への1ターンのダメージが最大になる振り方を探します。">
         上で選んだ敵に、{member.name}（{findJob(member.jobId).name} Lv{member.level}・今の武器・今の隊列）が1ターンで与えるダメージの期待値が最大になるスキルの振り方を、攻撃ごとに探します。
         命中率は入れていません（命中した場合の期待値）。通常攻撃はクリティカル（5%）とダブルアタックを含みます。
-      </p>
+      </Explain>
       <div className="record-fields">
         <label>
           敵の数

@@ -58,7 +58,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 960px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -1108,4 +1108,115 @@ summary {
 .member-card:hover .over,
 .member-list li.selected .over {
   color: #9b1c13 !important;
+}
+
+/* ---- 画面の切り替え・道案内・説明（U9〜U12、2026-10-28） ---- */
+/* U12：ゲーム風の縦メニュー。緑の板を積み、選んでいる画面とマウスを乗せた所は黄緑（共通の規則） */
+.view-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.view-menu button {
+  text-align: left;
+  padding: 10px 18px;
+  border-radius: 6px 999px 999px 6px;
+  border-left: 6px solid var(--eo-row);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.views {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.views > div > .measure-panel:first-child {
+  margin-top: 0;
+}
+
+.view-card {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--eo-panel);
+}
+
+.view-card .damage-panel {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.view-card .damage-panel h2 {
+  margin-top: 0;
+}
+
+/* U11：はじめに */
+.welcome {
+  padding: 12px 16px;
+  border: 2px solid var(--eo-select);
+  border-radius: 8px;
+  background: var(--eo-panel);
+}
+
+.welcome h2 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  color: var(--eo-select);
+}
+
+.welcome ol {
+  margin: 4px 0 8px;
+  padding-left: 1.4em;
+}
+
+.welcome-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.link-button {
+  padding: 0 8px;
+  text-decoration: underline;
+}
+
+/* U9：説明は1行。「詳しく」を開いたときだけ全文 */
+.explain p {
+  margin: 0;
+}
+
+.explain {
+  margin: 4px 0 12px;
+}
+
+.explain-more summary {
+  font-size: 0.8rem;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.explain-more p {
+  margin-top: 4px;
+}
+
+/* スマホ幅：縦メニューは2列の板にする */
+@media (max-width: 720px) {
+  .view-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .view-menu button {
+    border-radius: 999px;
+    border-left-width: 1px;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 8px 6px;
+    white-space: nowrap;
+  }
 }

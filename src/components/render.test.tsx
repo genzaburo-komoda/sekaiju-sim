@@ -4,17 +4,19 @@ import { renderToString } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { jobs } from '../data/gameData'
 import { newMember } from '../logic/party'
+import { DamagePanel } from './DamagePanel'
 import { MemberEditor } from './MemberEditor'
 import { BattlePanel } from './BattlePanel'
 import { LevelPlanPanel } from './LevelPlanPanel'
 import { ScorePanel, ScoreResultView } from './ScorePanel'
 import { scoreAll, WEIGHT_PRESETS } from '../logic/score'
 
-describe('メンバー編集画面の表示', () => {
+describe('メンバー編集画面とダメージ計算の表示', () => {
   it.each(jobs.map((j) => j.id))('%s Lv30 で表示できる（状態異常・回復の最適化の欄を含む）', (jobId) => {
     const member = { ...newMember([], jobId), level: 30 }
+    expect(renderToString(<MemberEditor member={member} members={[member]} onChange={() => {}} />)).toContain('振り直す')
     const html = renderToString(
-      <MemberEditor member={member} members={[member]} difficulty="expert" onChange={() => {}} />,
+      <DamagePanel member={member} members={[member]} difficulty="expert" onApplySkills={() => {}} enemyId={null} onEnemyChange={() => {}} />,
     )
     expect(html).toContain('状態異常・封じを付ける確率が最大の振り方を探す')
     expect(html).toContain('回復の効率が最大の振り方を探す')
@@ -44,7 +46,7 @@ describe('採点の欄の表示', () => {
 describe('戦闘シミュレーションの欄の表示', () => {
   it('全ジョブ5人のパーティで、計画の表とターンごとの記録を表示できる', () => {
     const members = jobs.slice(0, 5).map((j) => ({ ...newMember([], j.id), level: 30 }))
-    const html = renderToString(<BattlePanel party={{ difficulty: 'expert', members }} onApplyParty={() => {}} />)
+    const html = renderToString(<BattlePanel party={{ difficulty: 'expert', members }} onApplyParty={() => {}} enemyId={null} onEnemyChange={() => {}} />)
     for (const text of ['戦闘シミュレーション', '最小ターン数を探す', '確率分布', '耐久', '1ターン目の', '最適な編成を探す', '使わないジョブ']) expect(html).toContain(text)
   })
 })
