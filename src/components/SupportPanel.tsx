@@ -118,8 +118,8 @@ export function SupportPanel({ member, members, enemyId, difficulty, onApply }: 
           <button type="button" onClick={runAilment}>探す</button>
         </div>
         <p className="note">
-          敵の耐性：{enemy ? `${enemy.name} ${inflictVuln(enemy, inflict)}%（DS版の解析値。未検証）` : '敵データを選んでいないので 100%'}
-          {inflict === 'petrify' && '。石化の耐性は即死と同じ列を使います（LP Archive Part 47。未検証）'}
+          敵の耐性：{enemy ? `${enemy.name} ${inflictVuln(enemy, inflict)}%` : '敵データを選んでいないので 100%'}
+          {inflict === 'petrify' && '。石化の耐性は即死と同じ列を使います'}
         </p>
         {ailmentResult && (
           <div className={`optimize-result${ailmentResult.key !== ailmentKey ? ' stale' : ''}`}>
@@ -145,7 +145,6 @@ export function SupportPanel({ member, members, enemyId, difficulty, onApply }: 
         <summary>回復の効率が最大の振り方を探す</summary>
         <p className="note">
           {who}の回復スキルについて、選んだ基準で最も良い振り方をスキルごとに探します。回復量はステータスに依存せず、メディックの回復マスタリーと難易度だけで変わります。
-          メディックの回復スキルの、マスタリーの途中のレベルでの回復量は、資料の2つの値（前提のレベルと Lv10）の間をマスタリーの倍率で補間した推定です。
           継続回復（癒しの子守唄・リジェネレート）と蘇生（リザレクション）は対象外です。
         </p>
         <div className="record-fields">

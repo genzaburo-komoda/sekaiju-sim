@@ -3,7 +3,6 @@ import { findEquipment, findJob, jobs, rules, skillsByJob, weaponsFor } from '..
 import { weaponLabel } from '../logic/attack'
 import { ARMOR_SLOT_RULES, armorChoices, armorDefense, armorItems, equipBonuses, SLOT_LABELS, validArmorIds } from '../logic/equip'
 import { rowChangeError, type DifficultyId, type Member, type Row } from '../logic/party'
-import type { AttackSettings, TargetSettings } from '../logic/predict'
 import { RETIRE_LEVEL_CHOICES, retireSpBonus, retireStatBonus } from '../logic/retire'
 import { spTotal, spUsed } from '../logic/skills'
 import { displayStats, STAT_KEYS } from '../logic/stats'
@@ -16,8 +15,6 @@ interface Props {
   members: Member[]
   difficulty: DifficultyId
   onChange: (next: Member) => void
-  onRecord: (attack: AttackSettings, target: TargetSettings, values: number[], gameVersion: string, note: string) => void
-  lastGameVersion: string
 }
 
 const STAT_LABEL = { hp: 'HP', tp: 'TP', str: 'STR', vit: 'VIT', agi: 'AGI', luc: 'LUC', tec: 'TEC' } as const
@@ -25,7 +22,7 @@ const RESIST_LABEL: Record<string, string> = { slash: '斬', pierce: '突', bash
 /** 能力補正の名前（「slashResist」は「斬耐性%」） */
 const bonusLabel = (k: string) => (k.endsWith('Resist') ? `${RESIST_LABEL[k.slice(0, -6)] ?? k}耐性%` : k.toUpperCase())
 
-export function MemberEditor({ member, members, difficulty, onChange, onRecord, lastGameVersion }: Props) {
+export function MemberEditor({ member, members, difficulty, onChange }: Props) {
   const job = findJob(member.jobId)
   const skills = skillsByJob[member.jobId] ?? []
   const bonusSp = retireSpBonus(rules, member.retire)
@@ -156,7 +153,7 @@ export function MemberEditor({ member, members, difficulty, onChange, onRecord, 
       {member.retire && (
         <p className="note">
           引退ボーナス：SP+{bonusSp}
-          {bonusStat && `・${STAT_LABEL[bonusStat.stat]}+${bonusStat.value}`}（値は資料からの引用で、ゲーム内で未確認）
+          {bonusStat && `・${STAT_LABEL[bonusStat.stat]}+${bonusStat.value}`}
         </p>
       )}
 
@@ -183,7 +180,7 @@ export function MemberEditor({ member, members, difficulty, onChange, onRecord, 
             .join('、')}
         </p>
       )}
-      <p className="note">HP・TP はブーストスキル込み。武器と防具の能力補正を含む。装備の数値は資料からの引用で、ゲーム内で未確認。</p>
+      <p className="note">HP・TP はブーストスキル込み。武器と防具の能力補正を含む。</p>
 
       <div className={`sp-counter${left < 0 ? ' over' : ''}`}>
         <span>SP</span>
@@ -200,8 +197,6 @@ export function MemberEditor({ member, members, difficulty, onChange, onRecord, 
         member={member}
         members={members}
         difficulty={difficulty}
-        onRecord={onRecord}
-        lastGameVersion={lastGameVersion}
         onApplySkills={(skills) => onChange({ ...member, skills })}
       />
     </div>

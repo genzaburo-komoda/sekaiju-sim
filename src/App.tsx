@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { BattlePanel } from './components/BattlePanel'
 import { HelpPanel } from './components/HelpPanel'
 import { LevelPlanPanel } from './components/LevelPlanPanel'
-import { MeasurementPanel } from './components/MeasurementPanel'
 import { MemberEditor } from './components/MemberEditor'
 import { PartyPanel } from './components/PartyPanel'
 import { ScorePanel } from './components/ScorePanel'
@@ -12,7 +11,6 @@ import { equipment, jobs, rules, skillsByJob } from './data/gameData'
 import { MAX_MEMBERS, newMember, removeError, type Member, type Party } from './logic/party'
 import { ISSUES_URL } from './links'
 import { decodeParty, encodeParty } from './logic/share'
-import { loadMeasurements, newMeasurement, saveMeasurements, type Measurement } from './logic/measure'
 import { loadCurrent, saveCurrent } from './logic/storage'
 
 const firstJob = jobs[0].id
@@ -54,18 +52,12 @@ function App() {
   const [notice, setNotice] = useState<Notice | null>(initial.notice)
   const [selectedId, setSelectedId] = useState(initial.party.members[0].id)
   const selected = party.members.find((m) => m.id === selectedId) ?? party.members[0]
-  const [records, setRecords] = useState<Measurement[]>(loadMeasurements)
   const [showHelp, setShowHelp] = useState(false)
 
   // 編集のたびに自動保存（次に開いたときに続きから始められるように）
   useEffect(() => {
     saveCurrent(encodeParty(party))
   }, [party])
-
-  // 実測記録も変わるたびに保存
-  useEffect(() => {
-    saveMeasurements(records)
-  }, [records])
 
   // 共有コードを読み込む（保存した構築の読み込みと、開いたまま別の共有 URL を貼られたとき）
   const loadCode = (code: string, source: string) => {
@@ -145,10 +137,6 @@ function App() {
           members={party.members}
           difficulty={party.difficulty}
           onChange={updateMember}
-          onRecord={(attack, target, values, gameVersion, note) =>
-            setRecords((rs) => [...rs, newMeasurement(selected, attack, target, party.difficulty, values, gameVersion, note)])
-          }
-          lastGameVersion={records.at(-1)?.gameVersion ?? ''}
         />
       </main>
 
@@ -167,8 +155,6 @@ function App() {
           setNotice({ kind: 'info', lines: ['探した編成をパーティに当てはめました'] })
         }}
       />
-
-      <MeasurementPanel records={records} onChange={setRecords} />
 
       {/* 仕様書11章：全画面に非公式である旨と権利表記を出す */}
       <footer className="footer">

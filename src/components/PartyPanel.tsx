@@ -47,7 +47,7 @@ export function PartyPanel({ party, selectedId, onSelect, onAdd, onRemove, onDif
                 className="remove"
                 onClick={() => onRemove(m.id)}
                 disabled={cannotRemove !== null}
-                title={cannotRemove ?? undefined}
+                title={cannotRemove ?? `${m.name}を外す`}
                 aria-label={`${m.name}を外す`}
               >
                 ×

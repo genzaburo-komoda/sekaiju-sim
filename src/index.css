@@ -13,6 +13,7 @@
   --eo-row: #1b3f55;
   --eo-row-2: #1b3c4a;
   --eo-row-learned: #235e80;
+  --eo-panel: #14324a;
   --eo-edge: #3c5a60;
   --eo-menu: #0d5e52;
   --eo-menu-2: #136b60;
@@ -143,7 +144,7 @@ select {
 /* ---- 全体のレイアウト：左にパーティ、右に編集画面 ---- */
 .layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 24px;
   align-items: start;
 }
@@ -528,7 +529,7 @@ select {
 }
 
 .damage-grid input[type='number'] {
-  width: 5em;
+  width: 5.5em;
 }
 
 .damage-grid label.check {
@@ -551,7 +552,7 @@ select {
 }
 
 .vuln-grid input[type='number'] {
-  width: 4.2em;
+  width: 5.5em;
 }
 
 .damage-result {
@@ -582,77 +583,12 @@ select {
   font-size: 0.9rem;
 }
 
-.basis {
-  margin-top: 8px;
-}
-
-.basis summary {
-  cursor: pointer;
-  color: var(--accent);
-  font-size: 0.9rem;
-}
-
-.basis ol {
-  margin: 8px 0;
-  padding-left: 1.4em;
-}
-
-.basis li {
-  margin-bottom: 8px;
-}
-
-.basis-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.basis-formula {
-  font-size: 0.85rem;
-  overflow-wrap: anywhere;
-  font-variant-numeric: tabular-nums;
-}
-
-.basis-note {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.badge {
-  font-size: 0.7rem;
-  padding: 0 6px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-}
-
-.badge.unverified,
-.badge.estimated {
-  background: var(--warn-soft);
-  color: var(--warn-text);
-  border-color: transparent;
-}
-
-.badge.confirmed {
-  color: var(--accent);
-}
-
 .damage-grid .wide,
 .record-fields .wide {
   width: 100%;
 }
 
-/* ---- 実測の記録 ---- */
-.record-form {
-  margin-top: 12px;
-}
-
-.record-form summary {
-  cursor: pointer;
-  color: var(--accent);
-  font-size: 0.9rem;
-}
-
+/* ---- 入力欄の並び（状態異常・回復の最適化） ---- */
 .record-fields {
   display: flex;
   flex-wrap: wrap;
@@ -678,7 +614,7 @@ select {
   padding: 16px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: var(--surface);
+  background: var(--eo-panel);
 }
 
 .measure-panel h2 {
@@ -686,25 +622,8 @@ select {
   margin: 0 0 8px;
 }
 
-.measure-summary .danger,
 .danger {
   color: var(--danger);
-}
-
-.measure-list {
-  list-style: none;
-  margin: 8px 0 12px;
-  padding: 0;
-}
-
-.measure-list li {
-  border-top: 1px solid var(--border);
-  padding: 8px 0;
-}
-
-.measure-list li.has-outlier {
-  border-left: 3px solid var(--danger);
-  padding-left: 8px;
 }
 
 .measure-head {
@@ -718,32 +637,10 @@ select {
   margin-left: auto;
 }
 
-.measure-cond,
-.measure-note {
+.measure-cond {
   font-size: 0.8rem;
   color: var(--muted);
   overflow-wrap: anywhere;
-}
-
-.measure-values {
-  font-size: 0.9rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.measure-values .value {
-  display: inline-block;
-  margin-right: 6px;
-}
-
-.measure-values .value.outside {
-  color: var(--danger);
-  font-weight: 700;
-  text-decoration: underline;
-}
-
-.import-box textarea {
-  width: 100%;
-  margin: 6px 0;
 }
 
 /* ---- 最適化 ---- */
@@ -1024,10 +921,6 @@ button {
   padding: 4px 14px;
 }
 
-button:hover:not(:disabled) {
-  background: var(--eo-menu-2);
-}
-
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
@@ -1087,4 +980,132 @@ summary:focus-visible {
   .skill-row {
     border-radius: 14px;
   }
+}
+
+/* ---- 画面の改良 U1〜U7（2026-10-28、開発計画 2.1） ---- */
+/* U7：上半分（パーティ・保存・メンバー編集）も、下半分と同じ板に載せる */
+.party-panel,
+.share-tools,
+.member-editor {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--eo-panel);
+}
+
+.party-panel h2:first-of-type,
+.share-tools h2 {
+  margin-top: 8px;
+}
+
+/* U7：PC 幅では、左の列（パーティ）をスクロールしても画面に残す */
+@media (min-width: 721px) {
+  .side {
+    position: sticky;
+    top: 8px;
+    max-height: calc(100vh - 16px);
+    overflow-y: auto;
+  }
+}
+
+/* U2：戦闘シミュレーションの「敵」欄を、ダメージ計算の欄とそろえる */
+.battle-enemy {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px 12px;
+  margin: 0 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: end;
+  min-width: 0;
+}
+
+.battle-enemy legend {
+  padding: 0 4px;
+  font-size: 0.9rem;
+}
+
+.battle-enemy label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  min-width: 0;
+}
+
+.battle-enemy select {
+  max-width: 100%;
+  font-size: 0.9rem;
+}
+
+.battle-enemy input[type='number'] {
+  width: 5.5em;
+}
+
+.battle-enemy .wide {
+  width: 100%;
+}
+
+/* U3：ボタンの文字を折り返さない */
+.share-buttons button {
+  white-space: nowrap;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+}
+
+/* U4：上に張り付いた SP の札を、浮いているように見せて下の文字と区別する */
+.sp-counter {
+  top: 4px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.45);
+}
+
+/* U5：「SP2」の表示の幅をいつも取っておき、行ごとのボタンの位置をそろえる */
+.skill-cost {
+  display: inline-block;
+  min-width: 2.6em;
+}
+
+/* U6：押せないボタンは塗りを無くして枠だけにし、押せるボタン（緑の塗り）と見分ける */
+button:disabled {
+  background: transparent;
+  border-color: var(--eo-edge);
+  opacity: 0.6;
+}
+
+.remove {
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+
+/*
+ * マウスを乗せた所も、選択中と同じ黄緑の塗り＋紺の文字にする（2026-10-28 本人の要望。ゲームのカーソルと同じ見え方）。
+ * 対象はクリックできるもの：ボタン（メンバーの札を含む）、隊列の選択、開閉する見出し。押せないものは変えない
+ */
+button:hover:not(:disabled),
+.row-toggle label:not(.disabled):hover,
+summary:hover {
+  background: var(--eo-select);
+  border-color: var(--eo-select);
+  color: var(--eo-select-text);
+}
+
+.member-card:hover .member-meta,
+.member-card:hover .member-sp {
+  color: var(--eo-select-text);
+}
+
+summary {
+  border-radius: 999px;
+  padding: 2px 10px;
+  margin-left: -10px;
+  width: fit-content;
+}
+
+/* 黄緑の上では、SP が足りない赤い文字を濃い赤にして読めるようにする */
+.member-card:hover .over,
+.member-list li.selected .over {
+  color: #9b1c13 !important;
 }

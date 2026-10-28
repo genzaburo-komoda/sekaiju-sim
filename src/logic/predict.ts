@@ -1,5 +1,5 @@
 // 「このメンバーがこの設定で、この敵を攻撃したら何ダメージか」を1つの関数で出す。
-// ダメージ計算欄（DamagePanel）と実測記録（measure.ts）の両方がこれを使い、同じ条件なら必ず同じ予測になるようにする。
+// ダメージ計算欄（DamagePanel）と最適化・シミュレーションがこれを使い、同じ条件なら必ず同じ予測になるようにする。
 import { findEnemy, findEquipment, findJob, formulas, rules, skillsByJob } from '../data/gameData'
 import type { Enemy } from '../data/schema'
 import { attackOptions, buildAttackInput, selfBuffOptions, type TargetSpec } from './attack'

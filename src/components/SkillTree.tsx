@@ -69,7 +69,7 @@ export function SkillTree({ skills, alloc, spLeft, onChange }: Props) {
           >
             最大
           </button>
-          {upCost > 1 && canUp && <span className="skill-cost">SP{upCost}</span>}
+          <span className="skill-cost">{upCost > 1 && canUp ? `SP${upCost}` : ''}</span>
         </div>
       </li>
     )

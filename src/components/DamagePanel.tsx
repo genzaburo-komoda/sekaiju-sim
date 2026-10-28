@@ -1,12 +1,11 @@
-// ダメージ計算と計算根拠（仕様書 C2・B4）、実測の記録（B5）。
-// 選んだメンバーの攻撃を、敵データから選んだ敵（または手入力の敵）に当てたときのダメージを出し、
-// 計算の手順を開いて見られるようにする。ゲームで実際に出た値をこの条件のまま記録できる。
+// ダメージ計算（仕様書 C2）。
+// 選んだメンバーの攻撃を、敵データから選んだ敵（または手入力の敵）に当てたときのダメージの範囲と期待値を出す。
+// 計算根拠の表示と実測の記録は、2026-10-28 に画面から外した（本人決定。冗長で使う人の役に立たないため。開発計画 U8）
 import { useEffect, useState } from 'react'
 import { findEnemy, findEquipment, skillsByJob } from '../data/gameData'
 import { attackOptions, ELEMENT_LABELS, selfBuffOptions } from '../logic/attack'
 import { hasShield } from '../logic/equip'
-import type { ConfidenceId, ElementId } from '../logic/damage'
-import { parseValues } from '../logic/measure'
+import type { ElementId } from '../logic/damage'
 import type { DifficultyId, Member } from '../logic/party'
 import { DEFAULT_ATTACK, DEFAULT_TARGET, predict, targetFromEnemy, type AttackSettings, type TargetSettings } from '../logic/predict'
 import type { Allocation } from '../logic/skills'
@@ -22,16 +21,11 @@ interface Props {
   difficulty: DifficultyId
   /** 最適化の結果をスキルの振り方に当てはめる */
   onApplySkills: (alloc: Allocation) => void
-  /** 実測を記録する（値・ゲームのバージョン・メモ） */
-  onRecord: (attack: AttackSettings, target: TargetSettings, values: number[], gameVersion: string, note: string) => void
-  /** 前回入力したゲームのバージョン */
-  lastGameVersion: string
 }
 
 const ELEMENTS: ElementId[] = ['slash', 'bash', 'pierce', 'fire', 'ice', 'volt']
-const CONFIDENCE_LABELS: Record<ConfidenceId, string> = { confirmed: '確認済み', estimated: '推定', unverified: '未検証' }
 
-// 攻撃と敵の設定は、再読み込みしても続きから測れるようにこのブラウザに覚えておく
+// 攻撃と敵の設定は、再読み込みしても続きから使えるようにこのブラウザに覚えておく
 const SETTINGS_KEY = 'sekaiju-sim:damage-settings'
 function loadSettings(): { attack: AttackSettings; target: TargetSettings } {
   try {
@@ -46,7 +40,7 @@ function loadSettings(): { attack: AttackSettings; target: TargetSettings } {
   return { attack: DEFAULT_ATTACK, target: DEFAULT_TARGET }
 }
 
-export function DamagePanel({ member, members, difficulty, onRecord, lastGameVersion, onApplySkills }: Props) {
+export function DamagePanel({ member, members, difficulty, onApplySkills }: Props) {
   const skills = skillsByJob[member.jobId] ?? []
   const weapon = findEquipment(member.weaponId)
   const options = attackOptions(skills, member.skills, weapon, hasShield(member))
@@ -62,10 +56,6 @@ export function DamagePanel({ member, members, difficulty, onRecord, lastGameVer
       // 保存できなくても計算はできる
     }
   }, [attack, target])
-  const [valuesText, setValuesText] = useState('')
-  const [gameVersion, setGameVersion] = useState(lastGameVersion)
-  const [note, setNote] = useState('')
-  const [recordMessage, setRecordMessage] = useState('')
 
   // メンバーを切り替えて選んでいた攻撃・強化が無くなったら、通常攻撃・強化なしとして扱う
   const option = options.find((o) => o.id === attack.attackId) ?? options[0]
@@ -78,17 +68,6 @@ export function DamagePanel({ member, members, difficulty, onRecord, lastGameVer
 
   const setA = (patch: Partial<AttackSettings>) => setAttack({ ...attack, ...patch })
 
-  const record = () => {
-    const values = parseValues(valuesText)
-    if (!values) {
-      setRecordMessage('ダメージを数字で入れてください（複数はスペースか「,」で区切る）')
-      return
-    }
-    onRecord(effective, target, values, gameVersion.trim(), note.trim())
-    setValuesText('')
-    setNote('')
-    setRecordMessage(`${values.length}件を記録しました`)
-  }
 
   return (
     <section className="damage-panel">
@@ -158,7 +137,7 @@ export function DamagePanel({ member, members, difficulty, onRecord, lastGameVer
           </label>
           {enemy && (
             <p className="note wide">
-              敵データは DS版の解析値（未検証）。値を変えるときは「手入力」にする。
+              値を変えるときは「手入力」にする。
               {enemy.notes && ` ${enemy.notes}`}
             </p>
           )}
@@ -175,26 +154,6 @@ export function DamagePanel({ member, members, difficulty, onRecord, lastGameVer
               {prediction.elemElement ? `＋${ELEMENT_LABELS[prediction.elemElement]}` : ''}
             </span>
           </p>
-          <details className="basis">
-            <summary>計算根拠を見る</summary>
-            <ol>
-              {result.steps.map((s, i) => (
-                <li key={i}>
-                  <div className="basis-head">
-                    <strong>{s.label}</strong>
-                    <span className={`badge ${s.confidence}`}>{CONFIDENCE_LABELS[s.confidence]}</span>
-                  </div>
-                  <div className="basis-formula">
-                    {s.formula} ＝ <strong>{s.value}</strong>
-                  </div>
-                  {s.note && <div className="basis-note">{s.note}</div>}
-                </li>
-              ))}
-            </ol>
-            <p className="note">
-              式は英語版 Etrian Odyssey Wiki（DS版の解析）による。物理の通常攻撃とスキルの一部は Steam版での実測33発と一致した（「推定」）。術式・難易度補正などは未検証。
-            </p>
-          </details>
         </div>
       ) : (
         <p className="note">この攻撃は計算できません。</p>
@@ -212,29 +171,6 @@ export function DamagePanel({ member, members, difficulty, onRecord, lastGameVer
       />
 
       <SupportPanel member={member} members={members} enemyId={target.enemyId} difficulty={difficulty} onApply={onApplySkills} />
-
-      <details className="record-form">
-        <summary>この条件で実測を記録する</summary>
-        <p className="note">
-          ゲームで上と同じ条件（メンバー・武器・スキル・敵・難易度）で攻撃し、出たダメージを入れます。1回の攻撃につき1つの値。複数回分はスペースか「,」で区切ります。
-        </p>
-        <div className="record-fields">
-          <label className="wide">
-            ダメージ
-            <input value={valuesText} placeholder="例：123 130 127" onChange={(e) => setValuesText(e.target.value)} />
-          </label>
-          <label>
-            ゲームのバージョン
-            <input value={gameVersion} maxLength={40} placeholder="例：1.0.3" onChange={(e) => setGameVersion(e.target.value)} />
-          </label>
-          <label className="wide">
-            メモ
-            <input value={note} maxLength={200} placeholder="例：中断再開で同じ乱数" onChange={(e) => setNote(e.target.value)} />
-          </label>
-          <button type="button" onClick={record}>記録</button>
-        </div>
-        <p className="share-message" aria-live="polite">{recordMessage}</p>
-      </details>
     </section>
   )
 }

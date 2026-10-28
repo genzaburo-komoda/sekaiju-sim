@@ -11,7 +11,6 @@ export function EnemyBehaviorView({ enemy }: { enemy: Enemy }) {
     <details>
       <summary>{enemy.name}の技と行動パターン</summary>
       <p className="note">
-        技の数値は LP Archive（DS版のデータの解析）、技の名前と行動の条件は atwiki と LP Archive によるもので、未検証です。
         「仮置き」と書いた行は、資料に確率が無いため、使える技を等しい確率で選ぶなど仮に決めたものです。
       </p>
       <div className="table-scroll">

@@ -14,7 +14,7 @@ describe('メンバー編集画面の表示', () => {
   it.each(jobs.map((j) => j.id))('%s Lv30 で表示できる（状態異常・回復の最適化の欄を含む）', (jobId) => {
     const member = { ...newMember([], jobId), level: 30 }
     const html = renderToString(
-      <MemberEditor member={member} members={[member]} difficulty="expert" onChange={() => {}} onRecord={() => {}} lastGameVersion="" />,
+      <MemberEditor member={member} members={[member]} difficulty="expert" onChange={() => {}} />,
     )
     expect(html).toContain('状態異常・封じを付ける確率が最大の振り方を探す')
     expect(html).toContain('回復の効率が最大の振り方を探す')
