@@ -1,9 +1,8 @@
-// 装備の枠（2026-10-18、本人がゲームの画面で確かめた決まり）。全部で4枠：
+// 装備の枠（2026-11-01、本人がゲームで確かめた決まり。2026-10-18 の「枠ごとに付けられる種類が違う」決まりを改めた）。全部で4枠：
 // - 1枠目：武器（Member.weaponId）
-// - 2枠目：服・盾・兜・小手・靴
-// - 3枠目：服・兜・小手・靴
-// - 4枠目：アクセサリ（楽器を含む）・服・盾・兜・小手・靴
-// 2〜4枠目は Member.armorIds の 0〜2 番目。同じ種類を2つの枠に付けられるかは未確認なので、枠の決まりだけで制限する
+// - 2〜4枠目：防具（服・盾・兜・小手・靴・アクセサリ（楽器を含む））。種類に関係なく、どの枠にも付けられる
+// - 防具は1種類につき1つだけ（服を2着、などはできない）
+// 2〜4枠目は Member.armorIds の 0〜2 番目
 import { equipment, findEquipment } from '../data/gameData'
 import type { Equipment } from '../data/schema'
 import type { ElementId } from './damage'
@@ -11,19 +10,22 @@ import type { Member } from './party'
 
 type ArmorSlot = Equipment['slot']
 
-/** 2〜4枠目に付けられる種類 */
-export const ARMOR_SLOT_RULES: ArmorSlot[][] = [
-  ['armor', 'shield', 'helmet', 'gloves', 'boots'],
-  ['armor', 'helmet', 'gloves', 'boots'],
-  ['accessory', 'armor', 'shield', 'helmet', 'gloves', 'boots'],
-]
+/** 防具の種類 */
+export const ARMOR_KINDS: ArmorSlot[] = ['armor', 'shield', 'helmet', 'gloves', 'boots', 'accessory']
+
+/** 2〜4枠目に付けられる種類（どの枠も同じ） */
+export const ARMOR_SLOT_RULES: ArmorSlot[][] = [ARMOR_KINDS, ARMOR_KINDS, ARMOR_KINDS]
 
 export const SLOT_LABELS: Record<ArmorSlot, string> = { weapon: '武器', armor: '服', shield: '盾', helmet: '兜', gloves: '小手', boots: '靴', accessory: 'アクセサリ' }
 
-/** i 番目の防具の枠（0〜2）に、そのジョブが付けられる防具 */
-export function armorChoices(index: number, jobId: string): Equipment[] {
+/**
+ * i 番目の防具の枠（0〜2）に、そのジョブが付けられる防具。
+ * others（ほかの枠の防具の ID）を渡すと、それと同じ種類の防具は除く（1種類につき1つ）
+ */
+export function armorChoices(index: number, jobId: string, others: (string | null)[] = []): Equipment[] {
   const kinds = ARMOR_SLOT_RULES[index]
-  return equipment.filter((e) => kinds.includes(e.slot) && e.jobs.includes(jobId))
+  const used = new Set(others.map((id) => findEquipment(id)?.slot).filter(Boolean))
+  return equipment.filter((e) => kinds.includes(e.slot) && e.jobs.includes(jobId) && !used.has(e.slot))
 }
 
 /** 付けている防具（空の枠は除く） */
@@ -31,12 +33,14 @@ export function armorItems(member: Member): Equipment[] {
   return (member.armorIds ?? []).map((id) => findEquipment(id)).filter((e): e is Equipment => !!e)
 }
 
-/** 枠の決まりとジョブに合わない防具を外す（ジョブを変えたとき・古いデータを読んだとき） */
+/** ジョブに合わない防具と、前の枠と同じ種類の防具を外す（ジョブを変えたとき・古いデータを読んだとき） */
 export function validArmorIds(armorIds: (string | null)[] | undefined, jobId: string): (string | null)[] {
-  return ARMOR_SLOT_RULES.map((_, i) => {
+  const out: (string | null)[] = []
+  ARMOR_SLOT_RULES.forEach((_, i) => {
     const id = armorIds?.[i] ?? null
-    return id && armorChoices(i, jobId).some((e) => e.id === id) ? id : null
+    out.push(id && armorChoices(i, jobId, out).some((e) => e.id === id) ? id : null)
   })
+  return out
 }
 
 /** 武器と防具の能力補正の合計（STR・HP など。耐性も含む） */

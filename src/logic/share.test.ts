@@ -74,15 +74,15 @@ describe('共有コード（A4）', () => {
     expect(result.warnings).toHaveLength(2)
   })
 
-  it('防具（装備2〜4）も戻り、枠に合わない防具は外して警告する', () => {
+  it('防具（装備2〜4）も戻り、同じ種類の2つ目は外して警告する', () => {
     const party = sampleParty()
     const mail = equipment.find((e) => e.name === 'バーサーカーメイル')!.id
     const shield = equipment.find((e) => e.name === 'タージェ')!.id
-    party.members[0].armorIds = [mail, shield, null] // 盾は3枠目に付けられない
+    party.members[0].armorIds = [mail, shield, mail] // 服は1つだけ（2026-11-01 本人確認。盾は3枠目でもよい）
     const result = decodeParty(encodeParty(party), ctx)
     expect(result.ok).toBe(true)
     if (!result.ok) return
-    expect(result.party.members[0].armorIds).toEqual([mail, null, null])
+    expect(result.party.members[0].armorIds).toEqual([mail, shield, null])
     expect(result.warnings).toHaveLength(1)
     expect(partyToText(result.party, ctx)).toContain('防具：バーサーカーメイル（防52）')
   })

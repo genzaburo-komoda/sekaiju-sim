@@ -6,6 +6,7 @@ import { rowChangeError, type Member, type Row } from '../logic/party'
 import { RETIRE_LEVEL_CHOICES, retireSpBonus, retireStatBonus } from '../logic/retire'
 import { spTotal, spUsed } from '../logic/skills'
 import { displayStats, STAT_KEYS } from '../logic/stats'
+import { ScreenshotImport } from './ScreenshotImport'
 import { SkillTree } from './SkillTree'
 
 interface Props {
@@ -41,6 +42,7 @@ export function MemberEditor({ member, members, onChange }: Props) {
 
   return (
     <div className="member-editor">
+      <ScreenshotImport member={member} onChange={onChange} />
       <div className="member-fields">
         <label>
           名前
@@ -103,12 +105,12 @@ export function MemberEditor({ member, members, onChange }: Props) {
         </label>
         {ARMOR_SLOT_RULES.map((kinds, i) => (
           <label key={i}>
-            装備{i + 2}（{kinds.map((k) => SLOT_LABELS[k]).join('・')}）
+            装備{i + 2}（防具）
             <select value={armorIds[i] ?? ''} onChange={(e) => setArmor(i, e.target.value || null)}>
               <option value="">なし</option>
               {kinds.map((k) => (
                 <optgroup key={k} label={SLOT_LABELS[k]}>
-                  {armorChoices(i, member.jobId)
+                  {armorChoices(i, member.jobId, armorIds.filter((_, j) => j !== i))
                     .filter((a) => a.slot === k)
                     .map((a) => (
                       <option key={a.id} value={a.id}>{`${a.name}（防${a.def ?? 0}）`}</option>

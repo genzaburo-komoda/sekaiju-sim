@@ -1,4 +1,4 @@
-// 装備の枠（ステップ4-4）。枠の決まりは 2026-10-18 に本人がゲームの画面で確かめたもの
+// 装備の枠（ステップ4-4）。枠の決まりは 2026-11-01 に本人がゲームで確かめたもの（防具はどの枠にも、1種類につき1つ）
 import { describe, expect, it } from 'vitest'
 import { equipment } from '../data/gameData'
 import { ARMOR_SLOT_RULES, armorChoices, armorDefense, equipBonuses, gearAllows, hasShield, validArmorIds } from './equip'
@@ -14,19 +14,23 @@ describe('装備の枠', () => {
     expect([count('armor'), count('shield'), count('helmet'), count('gloves'), count('boots'), count('accessory')]).toEqual([53, 13, 12, 16, 12, 40])
   })
 
-  it('枠ごとに付けられる種類：盾は2・4枠目、アクセサリは4枠目だけ', () => {
-    const kinds = (i: number) => new Set(armorChoices(i, 'paladin').map((e) => e.slot))
-    expect(kinds(0).has('shield')).toBe(true)
-    expect(kinds(1).has('shield')).toBe(false)
-    expect(kinds(2).has('shield')).toBe(true)
-    expect(kinds(0).has('accessory') || kinds(1).has('accessory')).toBe(false)
-    expect(kinds(2).has('accessory')).toBe(true)
-    expect(ARMOR_SLOT_RULES[1]).toEqual(['armor', 'helmet', 'gloves', 'boots'])
+  it('2〜4枠目はどの種類の防具も付けられる（2026-11-01 本人確認）', () => {
+    for (let i = 0; i < 3; i++) {
+      const kinds = new Set(armorChoices(i, 'paladin').map((e) => e.slot))
+      for (const k of ['armor', 'shield', 'helmet', 'gloves', 'boots', 'accessory']) expect(kinds.has(k as never)).toBe(true)
+    }
+    expect(ARMOR_SLOT_RULES.every((r) => r.length === 6)).toBe(true)
   })
 
-  it('ジョブが付けられない防具・枠に合わない防具は外れる', () => {
+  it('防具は1種類につき1つ：ほかの枠と同じ種類は選べない', () => {
+    const aspis = byName('アスピス').id
+    expect(armorChoices(1, 'paladin', [aspis, null]).some((e) => e.slot === 'shield')).toBe(false)
+    expect(armorChoices(1, 'paladin', [aspis, null]).some((e) => e.slot === 'armor')).toBe(true)
+  })
+
+  it('ジョブが付けられない防具・同じ種類の2つ目は外れる', () => {
     const aspis = byName('アスピス').id // パラディン専用の盾
-    expect(validArmorIds([aspis, aspis, aspis], 'paladin')).toEqual([aspis, null, aspis])
+    expect(validArmorIds([aspis, aspis, aspis], 'paladin')).toEqual([aspis, null, null])
     expect(validArmorIds([aspis, null, null], 'medic')).toEqual([null, null, null])
     expect(validArmorIds(undefined, 'medic')).toEqual([null, null, null])
   })
