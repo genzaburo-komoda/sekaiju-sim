@@ -41,6 +41,8 @@ export interface SearchConditions {
   noDuplicateJobs: boolean
   /** 使わないジョブ */
   excludedJobs: string[]
+  /** 必ず入れるジョブ（固定のメンバーも含めて数える。最大 MAX_REQUIRED_JOBS） */
+  requiredJobs: string[]
   /** パーティの誰かが Lv1 以上持っていなければならないスキル（スキル ID） */
   requiredSkills: string[]
   /** 重み（撃破・耐久） */
@@ -60,6 +62,7 @@ export interface SearchConditions {
 export const DEFAULT_CONDITIONS: Omit<SearchConditions, 'fixed'> = {
   noDuplicateJobs: true,
   excludedJobs: [],
+  requiredJobs: [],
   requiredSkills: [],
   weights: { kill: 50, endurance: 50 },
   maxTurns: 15,
@@ -251,6 +254,13 @@ export function searchParty(setup: BattleSetup, cond: SearchConditions, onProgre
   const fixedJobs = slots.filter((_, i) => cond.fixed[i]).map((m) => m.jobId)
   const jobs = allJobs.map((j) => j.id).filter((j) => !cond.excludedJobs.includes(j))
   if (cond.noDuplicateJobs && new Set(fixedJobs).size < fixedJobs.length) return { best: [], evaluated: 0, error: '固定したメンバーのジョブが重複しています' }
+  // 必須のジョブ（2026-11-01 本人の依頼）：どの段でも「まだ入っていない必須のジョブの数 ≦ 残りの枠の数」を守り、最後に必ずそろうようにする
+  const requiredJobs = [...new Set(cond.requiredJobs ?? [])]
+  if (requiredJobs.length > MAX_REQUIRED_JOBS) return { best: [], evaluated: 0, error: `必須のジョブは${MAX_REQUIRED_JOBS}つまでです` }
+  const bothJobs = requiredJobs.filter((j) => cond.excludedJobs.includes(j))
+  if (bothJobs.length) return { best: [], evaluated: 0, error: `${bothJobs.map((j) => findJob(j).name).join('・')}が「必須」と「使わない」の両方に入っています` }
+  const missingJobs = (used: Set<string>) => requiredJobs.filter((j) => !used.has(j)).length
+  if (missingJobs(new Set(fixedJobs)) > searchIdx.length) return { best: [], evaluated: 0, error: '必須のジョブが、固定していない枠の数より多いです（固定を外すか、必須のジョブを減らしてください）' }
 
   // 枠ごと・ジョブごとの振り方の候補（同じレベル・隊列の枠は使い回す）
   const cache = new Map<string, Build[]>()
@@ -295,6 +305,7 @@ export function searchParty(setup: BattleSetup, cond: SearchConditions, onProgre
       const used = new Set([...fixedJobs, ...[...st.picks.values()].map((p) => p.member.jobId)])
       for (const jobId of jobs) {
         if (cond.noDuplicateJobs && used.has(jobId)) continue
+        if (missingJobs(new Set([...used, jobId])) > searchIdx.length - step - 1) continue
         for (const b of builds(slots[i], jobId)) {
           const member: Member = { ...slots[i], name: findJob(jobId).name, jobId, skills: b.alloc, weaponId: b.weaponId, armorIds: strongestArmor(jobId), retire: null }
           const picks = new Map(st.picks)
@@ -357,9 +368,12 @@ export function searchParty(setup: BattleSetup, cond: SearchConditions, onProgre
     if (missingSkills(members, cond.requiredSkills).length) return { best: [], evaluated: 0, error: '固定したメンバーだけでは必須のスキルがそろいません' }
     return { best: [evaluateParty(setup, members, kinds, cond)], evaluated: 1, error: null }
   }
-  if (!beam.length) return { best: [], evaluated, error: '条件を満たす編成がありません（ジョブの除外・重複なし・必須のスキル・隊列を見直してください）' }
+  if (!beam.length) return { best: [], evaluated, error: '条件を満たす編成がありません（ジョブの除外・必須のジョブ・重複なし・必須のスキルを見直してください）' }
   return { best: beam.map((s) => s.eval!), evaluated, error: null }
 }
+
+/** 必須のジョブの数の上限（パーティの人数） */
+export const MAX_REQUIRED_JOBS = 5
 
 /** 隊列の探索で並べ直す、ジョブを決めた上位の編成の数 */
 const ROW_FINALISTS = 5

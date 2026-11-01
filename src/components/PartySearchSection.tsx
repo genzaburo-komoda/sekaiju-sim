@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { findJob, jobs, skillsByJob } from '../data/gameData'
 import type { BattleJob, JobResult } from '../logic/battleJob'
 import type { Member, Party } from '../logic/party'
-import { DEFAULT_CONDITIONS, describeMember, type SearchResult } from '../logic/partysearch'
+import { DEFAULT_CONDITIONS, describeMember, MAX_REQUIRED_JOBS, type SearchResult } from '../logic/partysearch'
 import type { BattleSetup } from '../logic/sim'
 import { NumberField } from './NumberField'
 import { Explain } from './Explain'
@@ -29,6 +29,7 @@ export function PartySearchSection({ party, setup, maxTurns, enduranceTurns, see
   const [fixed, setFixed] = useState<Record<string, boolean>>({})
   const [noDup, setNoDup] = useState(DEFAULT_CONDITIONS.noDuplicateJobs)
   const [excluded, setExcluded] = useState<string[]>([])
+  const [requiredJobs, setRequiredJobs] = useState<string[]>([])
   const [required, setRequired] = useState<string[]>([])
   const [weights, setWeights] = useState(DEFAULT_CONDITIONS.weights)
   const [trials, setTrials] = useState(DEFAULT_CONDITIONS.trials)
@@ -41,6 +42,7 @@ export function PartySearchSection({ party, setup, maxTurns, enduranceTurns, see
     fixed: members.map((m) => fixed[m.id] ?? false),
     noDuplicateJobs: noDup,
     excludedJobs: excluded,
+    requiredJobs,
     requiredSkills: required,
     weights,
     maxTurns,
@@ -59,7 +61,7 @@ export function PartySearchSection({ party, setup, maxTurns, enduranceTurns, see
       <summary>最適な編成を探す（条件付き）</summary>
       <Explain lead="撃破の速さと耐久のバランスが最も良い編成を探します。">
         上の敵に対して、「撃破までのターン数（期待値）」と「耐久（上の敵の行動に、決めたターン数のあと生き残る確率のメンバー平均）」の重み付き平均が最も高い編成を探します。
-        固定しないメンバーは、ジョブ・振り方（火力・支援・回復・盾の候補）・武器を探します。武器は入手時期に関係なく、そのジョブが持てる最も強いもの、防具は装備2〜4の枠ごとに、まだ使っていない種類で防御力が最も高いものです。レベルは今の枠のままです。
+        固定しないメンバーは、ジョブ・振り方（火力・支援・回復・盾の候補）・武器を探します。武器は入手時期に関係なく、そのジョブが持てる最も強いもの、防具は装備2〜4の枠ごとに、まだ使っていない種類で防御力が最も高いものです。レベルは今の枠のままです。「必須のジョブ」に入れたジョブは、結果の編成に必ず入ります（固定したメンバーのジョブも数えます）。
         「隊列も探す」を入れると、ジョブと振り方を決めた上位5つの編成について、固定しないメンバーの前列・後列の並べ方（前列1〜3人・後列0〜3人）をすべて試します。後列は、弓以外の物理攻撃の攻撃値が半分になり、物理攻撃に対して VIT＋防具が2倍になり、狙われにくくなります。入れないときは今の枠の隊列のままです。
         耐久の点は「生き残る確率 × 0.8 ＋ 最後に残った HP の割合 × 0.2」です（全員が生き残る敵でも、受けるダメージの少ない並べ方を高くするため）。
         撃破の点は「倒すまでのターン数の点 × 0.8 ＋ 余った火力 × 0.2」です。余った火力は、倒すまでのターンに敵が倒れても攻撃を続けたときの総ダメージが敵の HP を超えた分（敵の HP の2倍で頭打ち）で、すぐ倒せる敵でも火力の高い並べ方を高くします。
@@ -82,11 +84,42 @@ export function PartySearchSection({ party, setup, maxTurns, enduranceTurns, see
         </label>
       </div>
       <fieldset>
+        <legend>必須のジョブ（{MAX_REQUIRED_JOBS}つまで。固定したメンバーも含めて数える）</legend>
+        <div className="record-fields">
+          {jobs.map((j) => {
+            const on = requiredJobs.includes(j.id)
+            return (
+              <label key={j.id} className="check">
+                <input
+                  type="checkbox"
+                  checked={on}
+                  disabled={!on && requiredJobs.length >= MAX_REQUIRED_JOBS}
+                  onChange={() => {
+                    setRequiredJobs(toggle(requiredJobs, j.id))
+                    // 必須にしたジョブは「使わない」から外す
+                    if (!on) setExcluded(excluded.filter((x) => x !== j.id))
+                  }}
+                />
+                {j.name}
+              </label>
+            )
+          })}
+        </div>
+      </fieldset>
+      <fieldset>
         <legend>使わないジョブ</legend>
         <div className="record-fields">
           {jobs.map((j) => (
             <label key={j.id} className="check">
-              <input type="checkbox" checked={excluded.includes(j.id)} onChange={() => setExcluded(toggle(excluded, j.id))} />
+              <input
+                type="checkbox"
+                checked={excluded.includes(j.id)}
+                onChange={() => {
+                  setExcluded(toggle(excluded, j.id))
+                  // 使わないことにしたジョブは「必須」から外す
+                  if (!excluded.includes(j.id)) setRequiredJobs(requiredJobs.filter((x) => x !== j.id))
+                }}
+              />
               {j.name}
             </label>
           ))}

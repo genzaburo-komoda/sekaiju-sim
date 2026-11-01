@@ -126,6 +126,27 @@ describe('条件付き最適化・編成の探索（B10、5-2 の完了条件）
     for (const p of r.best) expect(p.killScore).toBeLessThanOrEqual(1)
   })
 
+  it('必須のジョブ：カースメーカー・ブシドーを必須にすると、結果のすべての編成に入る（2026-11-01）', () => {
+    const r = searchParty(setupOf(slots(5)), { ...cond, fixed: [false, false, false, false, false], requiredJobs: ['hexer', 'bushido'] })
+    expect(r.error).toBeNull()
+    expect(r.best.length).toBeGreaterThan(0)
+    for (const p of r.best) {
+      const ids = p.members.map((m) => m.jobId)
+      expect(ids).toContain('hexer')
+      expect(ids).toContain('bushido')
+    }
+  }, 120000)
+
+  it('必須のジョブ：5つ必須なら5つとも入る。固定の枠より多い・除外と重なる・6つ以上は理由を返す', () => {
+    const five = ['hexer', 'bushido', 'ranger', 'dark-hunter', 'bard']
+    const r = searchParty(setupOf(slots(5)), { ...cond, fixed: [false, false, false, false, false], requiredJobs: five })
+    expect(r.error).toBeNull()
+    for (const p of r.best) expect(p.members.map((m) => m.jobId).sort()).toEqual([...five].sort())
+    expect(searchParty(setupOf(slots(2)), { ...cond, fixed: [true, false], requiredJobs: ['hexer', 'bushido'] }).error).toMatch(/固定していない枠/)
+    expect(searchParty(setupOf(slots(2)), { ...cond, fixed: [false, false], requiredJobs: ['hexer'], excludedJobs: ['hexer'] }).error).toMatch(/両方/)
+    expect(searchParty(setupOf(slots(5)), { ...cond, fixed: [false, false, false, false, false], requiredJobs: [...five, 'medic'] }).error).toMatch(/5つまで/)
+  }, 120000)
+
   it('条件を満たせないときは理由を返す', () => {
     const r = searchParty(setupOf(slots(2)), { ...cond, fixed: [false, false], excludedJobs: jobs.map((j) => j.id).filter((j) => j !== 'medic') })
     expect(r.error).toContain('条件を満たす編成がありません')
