@@ -2,10 +2,15 @@
 //
 // 比べ方（2026-10-18 本人決定：撃破ターン＋耐久）：
 //   点数 ＝ 重み付き平均（撃破の点、耐久の点）。どちらも 0〜1
-//   - 撃破の点：選んだ敵を期待値で何ターンで倒せるか（B2 の最小ターン数）。k ターンで倒せたら (上限 − k + 1) ÷ 上限。
-//     ただし最後のターンは、倒すのに要ったダメージの割合だけ数える（同じターン数なら余裕のある方が高い）。
+//   - 撃破の点：選んだ敵を期待値で何ターンで倒せるか（B2 の最小ターン数）。k ターンで倒せたら (上限 + 1 − (k − 1 + 最後のターンの割合)) ÷ (上限 + 1)。
+//     最後のターンの割合は、倒すのに要ったダメージの割合（同じターン数なら余裕のある方が高い）。2026-11-01 に、1ターンで倒すと 1 を超えていたのを直した
 //     上限までに倒せなければ、削った HP の割合 ÷ (上限 + 1)（倒せた編成より必ず低い）
+//     2026-11-01（本人決定）：撃破の点 ＝ 上の速さの点 × 0.8 ＋ 余った火力 × 0.2。余った火力は、倒すまでのターンに敵が倒れても
+//     攻撃を続けたときの総ダメージが敵の HP を超えた分（0〜2倍を 0〜1 に。倒せなければ 0）。1〜2ターンで倒せる敵でも、
+//     倒すのに要らない人の火力が点数に出るようにするため（火力役が後列に置かれていた）
 //   - 耐久の点：敵の行動（B9 の表）に対して、決めたターン数のあと生き残っている確率の、メンバーの平均
+//     2026-11-01（Claude 決定、仮）：生き残る確率 × 0.8 ＋ 最後に残った HP の割合 × 0.2 にした。
+//     全員が生き残る敵では生き残る確率だけでは差が付かず、後列に置いて受けるダメージを減らす効果が点数に出なかったため
 // 探索するメンバーの武器（2026-10-18 本人決定）：入手時期に関係なく、そのジョブが持てる武器の種類ごとに最も攻撃力の高いものを試し、
 //   ダメージが最も大きくなるものを使う
 // 探索するメンバーの振り方（Claude 決定）：ジョブごとに次の候補を作る
@@ -14,12 +19,15 @@
 //   - 回復：1ターンの総回復量の最適化（C4）に、残りの SP で火力の振り方を足す
 //   - 盾：フロントガードと耐久に効くパッシブを先に上げ、残りの SP で火力の振り方を足す
 // 探し方：探索する枠を1つずつ埋めていくビームサーチ（近似解）。途中の編成もそのまま評価し、点数のよい beamWidth 個を残す
+// 隊列（2026-11-01 本人の指摘で追加）：searchRows なら、ジョブを決めた上位 ROW_FINALISTS 個の編成について、
+//   探索する枠の前列・後列の並べ方をすべて試す（前列1〜3人・後列0〜3人を守る）。
+//   後列は弓以外の物理攻撃の攻撃値が半分、物理攻撃に対して (VIT＋防具) が2倍、狙われにくい。それを撃破と耐久の評価で比べる
 import { equipment, findEquipment, findJob, jobs as allJobs, rules, skillsByJob } from '../data/gameData'
 import type { Skill } from '../data/schema'
-import { defaultPolicy, findMinTurns, runPlan, simulateEndurance, type Progress } from './battle'
+import { defaultPolicy, findMinTurns, planDamageRatio, runPlan, simulateEndurance, type Progress } from './battle'
 import { ARMOR_SLOT_RULES, armorChoices } from './equip'
 import { optimizeMaxDamage } from './optimize'
-import type { Member } from './party'
+import { MAX_BACK, MAX_FRONT, MIN_FRONT, type Member, type Row } from './party'
 import { retireSpBonus } from './retire'
 import { memberOptimum } from './score'
 import type { BattleSetup } from './sim'
@@ -45,6 +53,8 @@ export interface SearchConditions {
   seed: number
   /** ビームサーチで残す編成の数 */
   beamWidth: number
+  /** 探索する枠の隊列も探す（false なら今の枠の隊列のまま） */
+  searchRows: boolean
 }
 
 export const DEFAULT_CONDITIONS: Omit<SearchConditions, 'fixed'> = {
@@ -57,6 +67,7 @@ export const DEFAULT_CONDITIONS: Omit<SearchConditions, 'fixed'> = {
   trials: 200,
   seed: 1,
   beamWidth: 4,
+  searchRows: true,
 }
 
 export type BuildKind = 'damage' | 'support' | 'heal' | 'guard' | 'fixed'
@@ -186,6 +197,10 @@ export function buildsFor(slot: Member, jobId: string, setup: BattleSetup, requi
   })
 }
 
+/** 撃破の点のうち「余った火力」の重みと、頭打ちにする超過分（敵の HP の何倍まで数えるか）。2026-11-01 本人決定（値は Claude の仮置き） */
+const SURPLUS_WEIGHT = 0.2
+const SURPLUS_CAP = 2
+
 /** 編成の評価（撃破ターン＋耐久） */
 export function evaluateParty(setup: BattleSetup, members: Member[], kinds: BuildKind[], c: Omit<SearchConditions, 'fixed'>): PartyEval {
   const s: BattleSetup = { ...setup, members, enemyActions: [] }
@@ -199,20 +214,26 @@ export function evaluateParty(setup: BattleSetup, members: Member[], kinds: Buil
     const before = logs.length > 1 ? logs[logs.length - 2].enemyHp : run.state.enemy.maxHp
     const dealt = before - logs[logs.length - 1].enemyHp + Math.max(0, -run.state.enemy.hp)
     const frac = dealt > 0 ? Math.min(1, before / dealt) : 1
-    killScore = (c.maxTurns - (found.killTurn - 1 + frac) + 1) / c.maxTurns
+    const speed = (c.maxTurns + 1 - (found.killTurn - 1 + frac)) / (c.maxTurns + 1)
+    // 余った火力：倒すまでのターンに、敵が倒れても攻撃を続けたときの総ダメージが敵の HP を超えた分（敵の HP の2倍で頭打ち）
+    const surplus = Math.min(SURPLUS_CAP, Math.max(0, planDamageRatio(s, found.plan, found.killTurn) - 1)) / SURPLUS_CAP
+    killScore = (1 - SURPLUS_WEIGHT) * speed + SURPLUS_WEIGHT * surplus
   } else {
     hpDealt = Math.max(0, 1 - run.state.enemy.hp / run.state.enemy.maxHp)
-    killScore = hpDealt / (c.maxTurns + 1)
+    killScore = ((1 - SURPLUS_WEIGHT) * hpDealt) / (c.maxTurns + 1)
   }
   let survive = 1
-  if (setup.enemyActions.length) {
+  let enduranceScore = 1
+  if (setup.enemyActions.length || setup.enemyAi) {
     const policies = Object.fromEntries(members.map((m) => [m.id, defaultPolicy(m)]))
     const r = simulateEndurance({ ...setup, members }, policies, c.enduranceTurns, c.trials, c.seed)
     survive = r.members.reduce((a, x) => a + x.survive, 0) / r.members.length
+    const hp = r.members.reduce((a, x) => a + x.meanHpRatio, 0) / r.members.length
+    enduranceScore = 0.8 * survive + 0.2 * hp
   }
   const w = c.weights.kill + c.weights.endurance
-  const score = w > 0 ? (c.weights.kill * killScore + c.weights.endurance * survive) / w : 0
-  return { members, kinds, killTurn: found.killTurn, hpDealt, survive, killScore, enduranceScore: survive, score }
+  const score = w > 0 ? (c.weights.kill * killScore + c.weights.endurance * enduranceScore) / w : 0
+  return { members, kinds, killTurn: found.killTurn, hpDealt, survive, killScore, enduranceScore, score }
 }
 
 /** パーティの誰かが持っていなければならないスキルのうち、足りないもの */
@@ -292,9 +313,43 @@ export function searchParty(setup: BattleSetup, cond: SearchConditions, onProgre
       }
     }
     next.sort((a, b) => b.eval!.score - a.eval!.score)
-    beam = next.slice(0, last ? 5 : cond.beamWidth)
+    beam = next.slice(0, last ? (cond.searchRows ? ROW_FINALISTS : 5) : cond.beamWidth)
     onProgress?.(step + 1, totalSteps)
     if (!beam.length) break
+  }
+
+  // 隊列の探索（2段目）：ジョブと振り方の決まった上位の編成ごとに、探索する枠の前列・後列の並べ方をすべて試す。
+  // 枠を埋めながら隊列も選ぶと、途中の少人数の編成では後列が有利に見えて偏るため、ジョブを決めてから並べ直す
+  if (cond.searchRows && beam.length && searchIdx.length) {
+    const finals: PartyEval[] = []
+    const seen = new Set<string>()
+    for (const st of beam) {
+      for (const rows of rowAssignments(slots, cond.fixed)) {
+        const members: Member[] = []
+        const kinds: BuildKind[] = []
+        slots.forEach((m, i) => {
+          if (cond.fixed[i]) {
+            members.push(m)
+            kinds.push('fixed')
+            return
+          }
+          const p = st.picks.get(i)!
+          const slot: Member = { ...slots[i], row: rows[i] }
+          // 隊列が変わると武器（弓か）と振り方の最適が変わるので、同じ種類の振り方を作り直す
+          const b = rows[i] === p.member.row ? null : builds(slot, p.member.jobId).find((x) => x.kind === p.kind)
+          members.push(b ? { ...p.member, row: rows[i], skills: b.alloc, weaponId: b.weaponId } : { ...p.member, row: rows[i] })
+          kinds.push(p.kind)
+        })
+        const key = members.map((m, k) => `${m.row}:${m.jobId}:${kinds[k]}`).sort().join('|')
+        if (seen.has(key)) continue
+        seen.add(key)
+        if (missingSkills(members, cond.requiredSkills).length) continue
+        finals.push(evaluateParty(setup, members, kinds, cond))
+        evaluated++
+      }
+    }
+    finals.sort((a, b) => b.score - a.score)
+    return { best: finals.slice(0, 5), evaluated, error: finals.length ? null : '条件を満たす編成がありません（必須のスキルを見直してください）' }
   }
 
   if (searchIdx.length === 0) {
@@ -302,8 +357,24 @@ export function searchParty(setup: BattleSetup, cond: SearchConditions, onProgre
     if (missingSkills(members, cond.requiredSkills).length) return { best: [], evaluated: 0, error: '固定したメンバーだけでは必須のスキルがそろいません' }
     return { best: [evaluateParty(setup, members, kinds, cond)], evaluated: 1, error: null }
   }
-  if (!beam.length) return { best: [], evaluated, error: '条件を満たす編成がありません（ジョブの除外・重複なし・必須のスキルを見直してください）' }
+  if (!beam.length) return { best: [], evaluated, error: '条件を満たす編成がありません（ジョブの除外・重複なし・必須のスキル・隊列を見直してください）' }
   return { best: beam.map((s) => s.eval!), evaluated, error: null }
+}
+
+/** 隊列の探索で並べ直す、ジョブを決めた上位の編成の数 */
+const ROW_FINALISTS = 5
+
+/** 隊列の決まり（前列1〜3人・後列0〜3人）を守る並べ方。固定の枠は今の隊列のまま */
+export function rowAssignments(slots: Member[], fixed: boolean[]): Row[][] {
+  const out: Row[][] = []
+  const free = slots.map((_, i) => i).filter((i) => !fixed[i])
+  for (let mask = 0; mask < 1 << free.length; mask++) {
+    const rows = slots.map((m) => m.row)
+    free.forEach((i, k) => (rows[i] = mask & (1 << k) ? 'back' : 'front'))
+    const front = rows.filter((r) => r === 'front').length
+    if (front >= MIN_FRONT && front <= MAX_FRONT && rows.length - front <= MAX_BACK) out.push(rows)
+  }
+  return out
 }
 
 /** 結果の表示用：メンバーの説明（ジョブ・振り方の種類・武器） */

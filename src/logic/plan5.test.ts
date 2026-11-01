@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { enemies, jobs, rules } from '../data/gameData'
 import { levelPlan, planText } from './levelplan'
 import { newMember, type Member } from './party'
-import { buildsFor, DEFAULT_CONDITIONS, evaluateParty, missingSkills, searchParty, strongestArmor } from './partysearch'
+import { buildsFor, DEFAULT_CONDITIONS, evaluateParty, missingSkills, rowAssignments, searchParty, strongestArmor } from './partysearch'
 import { targetFromEnemy } from './predict'
 import { defaultRole, memberOptimum } from './score'
 import type { BattleSetup, EnemyAction } from './sim'
@@ -58,7 +58,7 @@ describe('条件付き最適化・編成の探索（B10、5-2 の完了条件）
   it('探す枠が1つなら、全部の候補（ジョブ×振り方）を評価した最良と一致する', () => {
     const members = slots(3)
     const setup = setupOf(members)
-    const r = searchParty(setup, { ...cond, noDuplicateJobs: false, fixed: [true, true, false] })
+    const r = searchParty(setup, { ...cond, noDuplicateJobs: false, searchRows: false, fixed: [true, true, false] })
     let best = -1
     for (const j of jobs) {
       for (const b of buildsFor(members[2], j.id, setup, [])) {
@@ -89,6 +89,41 @@ describe('条件付き最適化・編成の探索（B10、5-2 の完了条件）
     const r = searchParty(setupOf([fixed, members[1]]), { ...cond, fixed: [true, false] })
     expect(r.best[0].members[0]).toEqual(fixed)
     expect(r.best[0].kinds[0]).toBe('fixed')
+  })
+
+  it('隊列の並べ方：前列1〜3人・後列0〜3人を守り、固定の枠は動かさない', () => {
+    const members = slots(5)
+    const all = rowAssignments(members, [false, false, false, false, false])
+    // 5人：前列1人だと後列4人で不可。前列2人 10通り＋前列3人 10通り
+    expect(all.length).toBe(20)
+    const fixedFront = rowAssignments(members, [true, false, false, false, false])
+    for (const rows of fixedFront) expect(rows[0]).toBe(members[0].row)
+  })
+
+  it('隊列も探すと、隊列を固定したときより点数が下がらず、結果は隊列の決まりを守る（2026-11-01）', () => {
+    const setup = setupOf(slots(4))
+    const base = searchParty(setup, { ...cond, searchRows: false, fixed: [false, false, false, false] })
+    const rows = searchParty(setup, { ...cond, searchRows: true, fixed: [false, false, false, false] })
+    expect(rows.best[0].score).toBeGreaterThanOrEqual(base.best[0].score - 1e-9)
+    for (const p of rows.best) {
+      const front = p.members.filter((m) => m.row === 'front').length
+      expect(front).toBeGreaterThanOrEqual(1)
+      expect(front).toBeLessThanOrEqual(3)
+      expect(p.members.length - front).toBeLessThanOrEqual(3)
+    }
+  }, 120000)
+
+  it('余った火力：同じ編成なら、ソードマンが前列のほうが後列より撃破の点が高い（2026-11-01）', () => {
+    const [a, b] = slots(2)
+    const sword = { ...b, skills: {}, weaponId: 'sword-4' }
+    const front = evaluateParty(setupOf([a, { ...sword, row: 'front' }]), [a, { ...sword, row: 'front' }], ['damage', 'damage'], cond)
+    const back = evaluateParty(setupOf([a, { ...sword, row: 'back' }]), [a, { ...sword, row: 'back' }], ['damage', 'damage'], cond)
+    expect(front.killScore).toBeGreaterThan(back.killScore)
+  })
+
+  it('撃破の点は 1 を超えない', () => {
+    const r = searchParty(setupOf(slots(2)), { ...cond, fixed: [false, false] })
+    for (const p of r.best) expect(p.killScore).toBeLessThanOrEqual(1)
   })
 
   it('条件を満たせないときは理由を返す', () => {

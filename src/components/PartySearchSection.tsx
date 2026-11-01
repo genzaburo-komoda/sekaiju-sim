@@ -33,6 +33,7 @@ export function PartySearchSection({ party, setup, maxTurns, enduranceTurns, see
   const [weights, setWeights] = useState(DEFAULT_CONDITIONS.weights)
   const [trials, setTrials] = useState(DEFAULT_CONDITIONS.trials)
   const [beamWidth, setBeamWidth] = useState(DEFAULT_CONDITIONS.beamWidth)
+  const [searchRows, setSearchRows] = useState(DEFAULT_CONDITIONS.searchRows)
   const [result, setResult] = useState<{ key: string; r: SearchResult } | null>(null)
 
   const cond = {
@@ -47,6 +48,7 @@ export function PartySearchSection({ party, setup, maxTurns, enduranceTurns, see
     trials,
     seed,
     beamWidth,
+    searchRows,
   }
   const key = JSON.stringify([setup, cond])
   const stale = result !== null && result.key !== key
@@ -57,7 +59,10 @@ export function PartySearchSection({ party, setup, maxTurns, enduranceTurns, see
       <summary>最適な編成を探す（条件付き）</summary>
       <Explain lead="撃破の速さと耐久のバランスが最も良い編成を探します。">
         上の敵に対して、「撃破までのターン数（期待値）」と「耐久（上の敵の行動に、決めたターン数のあと生き残る確率のメンバー平均）」の重み付き平均が最も高い編成を探します。
-        固定しないメンバーは、ジョブ・振り方（火力・支援・回復・盾の候補）・武器を探します。武器は入手時期に関係なく、そのジョブが持てる最も強いもの、防具は装備2〜4の枠ごとに、まだ使っていない種類で防御力が最も高いものです。隊列とレベルは今の枠のままです。
+        固定しないメンバーは、ジョブ・振り方（火力・支援・回復・盾の候補）・武器を探します。武器は入手時期に関係なく、そのジョブが持てる最も強いもの、防具は装備2〜4の枠ごとに、まだ使っていない種類で防御力が最も高いものです。レベルは今の枠のままです。
+        「隊列も探す」を入れると、ジョブと振り方を決めた上位5つの編成について、固定しないメンバーの前列・後列の並べ方（前列1〜3人・後列0〜3人）をすべて試します。後列は、弓以外の物理攻撃の攻撃値が半分になり、物理攻撃に対して VIT＋防具が2倍になり、狙われにくくなります。入れないときは今の枠の隊列のままです。
+        耐久の点は「生き残る確率 × 0.8 ＋ 最後に残った HP の割合 × 0.2」です（全員が生き残る敵でも、受けるダメージの少ない並べ方を高くするため）。
+        撃破の点は「倒すまでのターン数の点 × 0.8 ＋ 余った火力 × 0.2」です。余った火力は、倒すまでのターンに敵が倒れても攻撃を続けたときの総ダメージが敵の HP を超えた分（敵の HP の2倍で頭打ち）で、すぐ倒せる敵でも火力の高い並べ方を高くします。
         枠を1つずつ埋めていく近似解です。耐久を見るターン数は上の「耐久」の欄、撃破のターン数の上限は上の「探すターン数の上限」を使います。
       </Explain>
       <div className="record-fields">
@@ -70,6 +75,10 @@ export function PartySearchSection({ party, setup, maxTurns, enduranceTurns, see
         <label className="check">
           <input type="checkbox" checked={noDup} onChange={(e) => setNoDup(e.target.checked)} />
           ジョブの重複なし
+        </label>
+        <label className="check">
+          <input type="checkbox" checked={searchRows} onChange={(e) => setSearchRows(e.target.checked)} />
+          隊列も探す
         </label>
       </div>
       <fieldset>

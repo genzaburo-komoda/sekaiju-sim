@@ -15,6 +15,18 @@ export type Plan = Record<string, string>[]
 /** 計画の t ターン目（計画より長く戦うときは最後のターンの行動を繰り返す） */
 const planAt = (plan: Plan, t: number): Record<string, string> => plan[Math.min(t, plan.length) - 1] ?? {}
 
+/**
+ * 予定の行動を turns ターン、敵が倒れても攻撃を続けたときの総ダメージ ÷ 敵の最大HP（期待値）。
+ * 編成の探索で「倒すのに要らない分の火力（余った火力）」を測るために使う（2026-11-01）
+ */
+export function planDamageRatio(setup: BattleSetup, plan: Plan, turns: number): number {
+  const ctx = new SimContext(setup)
+  let state = initialState(setup)
+  const maxHp = state.enemy.maxHp
+  for (let t = 1; t <= turns; t++) state = runTurn(ctx, state, { rng: null, plan: planAt(plan, t), fallback: 'normal', log: false, endless: true }).state
+  return maxHp > 0 ? (maxHp - state.enemy.hp) / maxHp : 0
+}
+
 export interface PlanRun {
   logs: TurnLog[]
   /** 倒したターン（倒せなければ null） */
@@ -480,6 +492,8 @@ export interface EnduranceResult {
     survive: number
     /** 倒れるまでのターン数の平均（最後まで生き残った回は turns として数える） */
     meanTurns: number
+    /** 最後に残った HP の割合の平均（倒れた回は 0） */
+    meanHpRatio: number
     /** n ターン目の終わりに生きている確率 */
     aliveBy: number[]
   }[]
@@ -493,6 +507,7 @@ export function simulateEndurance(setup: BattleSetup, policies: Record<string, s
   const wipes = new Array<number>(turns).fill(0)
   const alive = setup.members.map(() => new Array<number>(turns).fill(0))
   const sumTurns = setup.members.map(() => 0)
+  const sumHp = setup.members.map(() => 0)
   for (let i = 0; i < trials; i++) {
     let s = start
     let wiped = false
@@ -507,7 +522,10 @@ export function simulateEndurance(setup: BattleSetup, policies: Record<string, s
         wipes[t - 1] += 1
       }
     }
-    s.members.forEach((f, k) => (sumTurns[k] += f.downTurn ?? turns))
+    s.members.forEach((f, k) => {
+      sumTurns[k] += f.downTurn ?? turns
+      if (f.alive && f.maxHp > 0) sumHp[k] += Math.max(0, f.hp) / f.maxHp
+    })
     if (onProgress && (i + 1) % PROGRESS_EVERY === 0) onProgress(i + 1, trials)
   }
   const wipeBy: number[] = []
@@ -523,6 +541,7 @@ export function simulateEndurance(setup: BattleSetup, policies: Record<string, s
       name: m.name,
       survive: alive[k][turns - 1] / trials,
       meanTurns: sumTurns[k] / trials,
+      meanHpRatio: sumHp[k] / trials,
       aliveBy: alive[k].map((n) => n / trials),
     })),
   }
