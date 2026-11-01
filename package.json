@@ -11,6 +11,8 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@fontsource/biz-udpgothic": "5.3.0",
+    "@fontsource/libertinus-sans": "5.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "tesseract.js": "6.0.1",

@@ -42,6 +42,18 @@ export function MemberEditor({ member, members, onChange }: Props) {
 
   return (
     <div className="member-editor">
+      {/* 名前・ジョブ・Lv の帯（UI 案1：淡い水色の帯に名前、暗い台に Lv。ゲームのステータス画面の上の帯の型） */}
+      <div className="member-banner">
+        <div className="member-banner-name">
+          <span className="banner-name">{member.name}</span>
+          <span className="banner-job">{job.name}</span>
+        </div>
+        <div className="member-banner-lv">
+          <span className="lv-label">Lv</span>
+          <span className="lv-num">{member.level}</span>
+          <span className="banner-row">{member.row === 'front' ? '前列' : '後列'}</span>
+        </div>
+      </div>
       <ScreenshotImport member={member} onChange={onChange} />
       <div className="member-fields">
         <label>

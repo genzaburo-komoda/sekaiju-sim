@@ -11,6 +11,7 @@ import { PartyPanel } from './components/PartyPanel'
 import { ScorePanel } from './components/ScorePanel'
 import { PresetPicker } from './components/PresetPicker'
 import { ShareTools } from './components/ShareTools'
+import { Vine } from './components/Vine'
 import { Welcome } from './components/Welcome'
 import { equipment, jobs, rules, skillsByJob } from './data/gameData'
 import { MAX_MEMBERS, newMember, removeError, type Member, type Party } from './logic/party'
@@ -165,6 +166,7 @@ function App() {
 
   return (
     <div className="page">
+      <Vine />
       <header className="header">
         <h1>世界樹の迷宮Ⅰ HD REMASTER パーティ構築シミュレーター</h1>
         <p className="subtitle">

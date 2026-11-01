@@ -48,8 +48,10 @@ export function SkillTree({ skills, alloc, spLeft, onChange }: Props) {
           <button type="button" onClick={() => set(lv - 1)} disabled={lv === 0} aria-label={`${skill.name}を下げる`}>
             −
           </button>
-          <span className="skill-lv" aria-label={`${skill.name}のレベル`}>
-            {lv}<span className="skill-max">/{skill.maxLevel}</span>
+          {/* Lv の札：斜めの境目で左右2色に分け、境目を「／」の代わりにする（UI 案1。マスターは ★） */}
+          <span className="skill-lv" aria-label={`${skill.name}のレベル ${lv}／${skill.maxLevel}`}>
+            <span className="skill-lv-now" aria-hidden="true">{lv === skill.maxLevel ? '★' : lv}</span>
+            <span className="skill-max" aria-hidden="true">{skill.maxLevel}</span>
           </span>
           <button
             type="button"
