@@ -1,0 +1,1235 @@
+{
+  "sources": [
+    {
+      "kind": "atwiki",
+      "confidence": "unverified",
+      "url": "https://w.atwiki.jp/sekaiju_maze/pages/58.html",
+      "note": "武器の買値・必要素材・備考",
+      "checkedAt": "2026-10-28"
+    },
+    {
+      "kind": "atwiki",
+      "confidence": "unverified",
+      "url": "https://w.atwiki.jp/sekaiju_maze/pages/65.html",
+      "note": "防具の買値・必要素材・備考",
+      "checkedAt": "2026-10-28"
+    },
+    {
+      "kind": "atwiki",
+      "confidence": "unverified",
+      "url": "https://w.atwiki.jp/sekaiju_maze/pages/69.html",
+      "note": "雑魚の落とす素材と階層",
+      "checkedAt": "2026-10-28"
+    },
+    {
+      "kind": "atwiki",
+      "confidence": "unverified",
+      "url": "https://w.atwiki.jp/sekaiju_maze/pages/78.html",
+      "note": "FOE の落とす素材とフロア（79・744 のボスも同様）",
+      "checkedAt": "2026-10-28"
+    }
+  ],
+  "stratumConfidence": "estimated",
+  "items": {
+    "sword-1": {
+      "price": 100,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "sword-2": {
+      "price": 150,
+      "stratum": 1,
+      "basis": "chest"
+    },
+    "sword-3": {
+      "price": 250,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "sword-4": {
+      "price": 350,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "sword-5": {
+      "price": 720,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "sword-6": {
+      "price": 830,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "sword-7": {
+      "price": 1200,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "sword-8": {
+      "price": 1900,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "sword-9": {
+      "price": 2100,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "sword-10": {
+      "price": 2400,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "sword-11": {
+      "price": 3300,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "sword-12": {
+      "price": 3600,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "sword-13": {
+      "price": 4400,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "sword-14": {
+      "price": 6700,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "sword-15": {
+      "price": 7000,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "sword-16": {
+      "price": 8500,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "sword-17": {
+      "price": 12000,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "sword-18": {
+      "price": 250000,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "sword-19": {
+      "price": 95000,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "staff-1": {
+      "price": 90,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "staff-2": {
+      "price": 120,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "staff-3": {
+      "price": 200,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "staff-4": {
+      "price": 480,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "staff-5": {
+      "price": 670,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "staff-6": {
+      "price": 1360,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "staff-7": {
+      "price": 1520,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "staff-8": {
+      "price": 2320,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "staff-9": {
+      "price": 2640,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "staff-10": {
+      "price": 4480,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "staff-11": {
+      "price": 5600,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "staff-12": {
+      "price": 9600,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "staff-13": {
+      "price": 125000,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "staff-14": {
+      "price": 58000,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "axe-1": {
+      "price": 140,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "axe-2": {
+      "price": 180,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "axe-3": {
+      "price": 300,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "axe-4": {
+      "price": 500,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "axe-5": {
+      "price": 720,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "axe-6": {
+      "price": 996,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "axe-7": {
+      "price": 1440,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "axe-8": {
+      "price": 1800,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "axe-9": {
+      "price": 2280,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "axe-10": {
+      "price": 2880,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "axe-11": {
+      "price": 3200,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "axe-12": {
+      "price": 3960,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "axe-13": {
+      "price": 5280,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "axe-14": {
+      "price": 6400,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "axe-15": {
+      "price": 8400,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "axe-16": {
+      "price": 10200,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "axe-17": {
+      "price": 165000,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "axe-18": {
+      "price": 99000,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "katana-1": {
+      "price": 400,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "katana-2": {
+      "price": 1380,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "katana-3": {
+      "price": 2760,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "katana-4": {
+      "price": 3800,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "katana-5": {
+      "price": 6440,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "katana-6": {
+      "price": 8050,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "katana-7": {
+      "price": 18800,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "katana-8": {
+      "price": 24000,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "katana-9": {
+      "price": 179000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "katana-10": {
+      "price": 76000,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "bow-1": {
+      "price": 140,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "bow-2": {
+      "price": 170,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "bow-3": {
+      "price": 290,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "bow-4": {
+      "price": 700,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "bow-5": {
+      "price": 890,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "bow-6": {
+      "price": 1320,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "bow-7": {
+      "price": 1870,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "bow-8": {
+      "price": 2090,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "bow-9": {
+      "price": 2640,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "bow-10": {
+      "price": 3400,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "bow-11": {
+      "price": 3630,
+      "stratum": null,
+      "basis": "material"
+    },
+    "bow-12": {
+      "price": 4840,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "bow-13": {
+      "price": 6300,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "bow-14": {
+      "price": 7500,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "bow-15": {
+      "price": 9350,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "bow-16": {
+      "price": 13200,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "bow-17": {
+      "price": 114000,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "bow-18": {
+      "price": 65500,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "whip-1": {
+      "price": 135,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "whip-2": {
+      "price": 230,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "whip-3": {
+      "price": 320,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "whip-4": {
+      "price": 540,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "whip-5": {
+      "price": 750,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "whip-6": {
+      "price": 1080,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "whip-7": {
+      "price": 1540,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "whip-8": {
+      "price": 1710,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "whip-9": {
+      "price": 2160,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "whip-10": {
+      "price": 2610,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "whip-11": {
+      "price": 2970,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "whip-12": {
+      "price": 3960,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "whip-13": {
+      "price": 5040,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "whip-14": {
+      "price": 6300,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "whip-15": {
+      "price": 7650,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "whip-16": {
+      "price": 21500,
+      "stratum": null,
+      "basis": "material"
+    },
+    "whip-17": {
+      "price": 130000,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "whip-18": {
+      "price": 147000,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "whip-19": {
+      "price": 78000,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "armor-1": {
+      "price": 100,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-2": {
+      "price": 110,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "armor-3": {
+      "price": 120,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "armor-4": {
+      "price": 180,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "armor-6": {
+      "price": 210,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "armor-7": {
+      "price": 230,
+      "stratum": null,
+      "basis": "material"
+    },
+    "armor-8": {
+      "price": 250,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "armor-9": {
+      "price": 420,
+      "stratum": null,
+      "basis": "material"
+    },
+    "armor-10": {
+      "price": 650,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "armor-11": {
+      "price": 700,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "armor-12": {
+      "price": 900,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "armor-13": {
+      "price": 1000,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "armor-14": {
+      "price": 1050,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "armor-15": {
+      "price": 1150,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "armor-16": {
+      "price": 1250,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "armor-17": {
+      "price": 1560,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "armor-18": {
+      "price": 1680,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "armor-19": {
+      "price": 2000,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "armor-20": {
+      "price": 2160,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "armor-21": {
+      "price": 2340,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "armor-22": {
+      "price": 2400,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "armor-23": {
+      "price": 2520,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "armor-24": {
+      "price": 2520,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "armor-26": {
+      "price": 3000,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "armor-27": {
+      "price": 3240,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "armor-28": {
+      "price": 3600,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "armor-29": {
+      "price": 3640,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "armor-30": {
+      "price": 3920,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "armor-31": {
+      "price": 4140,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "armor-32": {
+      "price": 4500,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "armor-33": {
+      "price": 5040,
+      "stratum": null,
+      "basis": "material"
+    },
+    "armor-34": {
+      "price": 5600,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "armor-35": {
+      "price": 5880,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "armor-38": {
+      "price": 7200,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "armor-39": {
+      "price": 8100,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "armor-40": {
+      "price": 100000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "armor-41": {
+      "price": 100000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "armor-42": {
+      "price": 100000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "armor-43": {
+      "price": 125000,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "armor-44": {
+      "price": 75000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-45": {
+      "price": 99000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-46": {
+      "price": 81000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-47": {
+      "price": 80000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-48": {
+      "price": 89000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-49": {
+      "price": 95500,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-50": {
+      "price": 98000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-51": {
+      "price": 79000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-52": {
+      "price": 82000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "armor-53": {
+      "price": 25000,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "shield-1": {
+      "price": 110,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "shield-2": {
+      "price": 190,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "shield-3": {
+      "price": 260,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "shield-4": {
+      "price": 450,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "shield-5": {
+      "price": 550,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "shield-6": {
+      "price": 1080,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "shield-7": {
+      "price": 1620,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "shield-8": {
+      "price": 1980,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "shield-9": {
+      "price": 2100,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "shield-10": {
+      "price": 2520,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "shield-11": {
+      "price": 5200,
+      "stratum": null,
+      "basis": "material"
+    },
+    "shield-12": {
+      "price": 75000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "shield-13": {
+      "price": 64000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "helmet-1": {
+      "price": 70,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "helmet-2": {
+      "price": 160,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "helmet-3": {
+      "price": 325,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "helmet-4": {
+      "price": 380,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "helmet-5": {
+      "price": 780,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "helmet-6": {
+      "price": 900,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "helmet-7": {
+      "price": 1170,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "helmet-8": {
+      "price": 1250,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "helmet-9": {
+      "price": 1420,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "helmet-10": {
+      "price": 1820,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "helmet-11": {
+      "price": 2100,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "helmet-12": {
+      "price": 54000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "gloves-1": {
+      "price": 70,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "gloves-2": {
+      "price": 150,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "gloves-3": {
+      "price": 225,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "gloves-4": {
+      "price": 275,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "gloves-5": {
+      "price": 540,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "gloves-6": {
+      "price": 660,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "gloves-7": {
+      "price": 800,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "gloves-8": {
+      "price": 810,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "gloves-9": {
+      "price": 990,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "gloves-10": {
+      "price": 1260,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "gloves-11": {
+      "price": 1540,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "gloves-12": {
+      "price": 20000,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "gloves-13": {
+      "price": 65000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "gloves-14": {
+      "price": 46000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "gloves-15": {
+      "price": 55000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "gloves-16": {
+      "price": 63000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "boots-1": {
+      "price": 80,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "boots-2": {
+      "price": 140,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "boots-3": {
+      "price": 350,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "boots-4": {
+      "price": 385,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "boots-5": {
+      "price": 840,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "boots-6": {
+      "price": 924,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "boots-7": {
+      "price": 1260,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "boots-8": {
+      "price": 1386,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "boots-9": {
+      "price": 1800,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "boots-10": {
+      "price": 1960,
+      "stratum": null,
+      "basis": "material"
+    },
+    "boots-11": {
+      "price": 2156,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "boots-12": {
+      "price": 49000,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "accessory-1": {
+      "price": 200,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "accessory-2": {
+      "price": 240,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-3": {
+      "price": 280,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "accessory-4": {
+      "price": 310,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "accessory-5": {
+      "price": 400,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "accessory-6": {
+      "price": 400,
+      "stratum": 1,
+      "basis": "material"
+    },
+    "accessory-7": {
+      "price": 460,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-8": {
+      "price": 500,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "accessory-9": {
+      "price": 600,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "accessory-10": {
+      "price": 660,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "accessory-11": {
+      "price": 1200,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "accessory-12": {
+      "price": 1600,
+      "stratum": 2,
+      "basis": "material"
+    },
+    "accessory-13": {
+      "price": 2000,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-14": {
+      "price": 2800,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "accessory-15": {
+      "price": 3000,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-16": {
+      "price": 3800,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "accessory-17": {
+      "price": 4500,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "accessory-18": {
+      "price": 4500,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-19": {
+      "price": 5200,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "accessory-20": {
+      "price": 6000,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "accessory-21": {
+      "price": 6500,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "accessory-22": {
+      "price": 6500,
+      "stratum": 3,
+      "basis": "material"
+    },
+    "accessory-23": {
+      "price": 7000,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "accessory-24": {
+      "price": 8000,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-25": {
+      "price": 8600,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "accessory-26": {
+      "price": 10000,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-27": {
+      "price": 13000,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-28": {
+      "price": 14000,
+      "stratum": 5,
+      "basis": "material"
+    },
+    "accessory-29": {
+      "price": 20000,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-30": {
+      "price": 200000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "accessory-31": {
+      "price": 200000,
+      "stratum": 4,
+      "basis": "material"
+    },
+    "accessory-32": {
+      "price": 35000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "accessory-33": {
+      "price": 78000,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-34": {
+      "price": 130000,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-35": {
+      "price": 130000,
+      "stratum": null,
+      "basis": "material"
+    },
+    "accessory-36": {
+      "price": 100000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "accessory-37": {
+      "price": 100000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "accessory-38": {
+      "price": 100000,
+      "stratum": 6,
+      "basis": "material"
+    },
+    "accessory-39": {
+      "price": null,
+      "stratum": 1,
+      "basis": "no-material"
+    },
+    "accessory-40": {
+      "price": null,
+      "stratum": 1,
+      "basis": "no-material"
+    }
+  }
+}

@@ -588,6 +588,26 @@ export type Enemy = z.infer<typeof Enemy>
 export type EnemySkill = z.infer<typeof EnemySkill>
 export type EnemySkillEffect = z.infer<typeof EnemySkillEffect>
 export type EnemyBehavior = z.infer<typeof EnemyBehavior>
+/**
+ * 装備の価格と、作れる（買える）ようになる階層（2026-10-28、おすすめパーティ用）。
+ * 生成スクリプト 資料/生成スクリプト/equip_availability.js。階層は素材を落とす敵の階層からの推定
+ */
+export const EquipmentAvailabilityFile = z.object({
+  sources: z.array(Source).min(1),
+  stratumConfidence: Confidence,
+  items: z.record(
+    Id,
+    z.object({
+      /** 買値（en）。売っていない物は null */
+      price: z.number().int().nonnegative().nullable(),
+      /** 第何階層から手に入るか。分からなければ null */
+      stratum: z.number().int().min(1).max(6).nullable(),
+      /** 求め方：素材から／宝箱／素材なし（初期販売品など） */
+      basis: z.enum(['material', 'chest', 'no-material']),
+    }),
+  ),
+})
+
 export type AiRule = z.infer<typeof AiRule>
 export type EnemyFile = z.infer<typeof EnemyFile>
 export type Equipment = z.infer<typeof Equipment>

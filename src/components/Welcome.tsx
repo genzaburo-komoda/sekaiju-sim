@@ -1,5 +1,8 @@
-// 最初の画面の道案内（開発計画 U11）。閉じるまで「編成・スキル」などの上に出す
-export function Welcome({ onSample, onClose, onGoDamage }: { onSample: () => void; onClose: () => void; onGoDamage: () => void }) {
+// 最初の画面の道案内（開発計画 U11）。閉じるまで右側の上に出す
+import type { PresetLevel } from '../logic/presets'
+import { PresetPicker } from './PresetPicker'
+
+export function Welcome({ onPreset, busy, onClose, onGoDamage }: { onPreset: (level: PresetLevel) => void; busy: PresetLevel | null; onClose: () => void; onGoDamage: () => void }) {
   return (
     <section className="welcome" aria-labelledby="welcome-title">
       <h2 id="welcome-title">はじめに</h2>
@@ -11,11 +14,11 @@ export function Welcome({ onSample, onClose, onGoDamage }: { onSample: () => voi
           で敵を選ぶと、ダメージが出る
         </li>
       </ol>
+      <p>まずは、おすすめの編成を読み込んで試すこともできます（左の列の「おすすめの編成」からも読み込めます）。</p>
+      <PresetPicker onPick={onPreset} busy={busy} />
       <div className="welcome-buttons">
-        <button type="button" onClick={onSample}>サンプルの編成を読み込む</button>
         <button type="button" onClick={onClose}>閉じる</button>
       </div>
-      <p className="note">サンプルは Lv70 の5人（ソードマン・パラディン・メディック・アルケミスト・バード）で、今のパーティと入れ替わります。</p>
     </section>
   )
 }

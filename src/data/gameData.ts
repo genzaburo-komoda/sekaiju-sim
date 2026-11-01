@@ -1,7 +1,8 @@
 // 検査済みのゲームデータ。アプリの画面と計算はここから読む。
 // 起動時に validateData で検査し、エラーがあれば画面を出さずに止める（壊れたデータで計算しないため）。
 import { rawData } from './index'
-import { EnemyBehaviorFile, EnemyFile, EquipmentFile, FormulaSet, Job, ProgressionRules, SkillFile, type Skill } from './schema'
+import availabilityJson from './json/equipmentAvailability.json'
+import { EnemyBehaviorFile, EnemyFile, EquipmentAvailabilityFile, EquipmentFile, FormulaSet, Job, ProgressionRules, SkillFile, type Skill } from './schema'
 import { validateData } from './validate'
 
 const errors = validateData(rawData)
@@ -12,6 +13,8 @@ if (errors.length > 0) {
 export const jobs = rawData.jobs.map((j) => Job.parse(j))
 export const rules = ProgressionRules.parse(rawData.rules)
 export const equipment = EquipmentFile.parse(rawData.equipment).items
+/** 装備の価格と入手できる階層（おすすめパーティ用。階層は推定） */
+export const equipmentAvailability = EquipmentAvailabilityFile.parse(availabilityJson).items
 /** 敵（第1〜6階層の通常の敵・FOE・ボス、クエストなどで戦う敵。スプレッドシートの132体） */
 export const enemies = EnemyFile.parse(rawData.enemies).items
 /** FOE・ボスの技と行動パターン（ステップ4-5） */

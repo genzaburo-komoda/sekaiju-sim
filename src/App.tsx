@@ -9,12 +9,13 @@ import { LevelPlanPanel } from './components/LevelPlanPanel'
 import { MemberEditor } from './components/MemberEditor'
 import { PartyPanel } from './components/PartyPanel'
 import { ScorePanel } from './components/ScorePanel'
+import { PresetPicker } from './components/PresetPicker'
 import { ShareTools } from './components/ShareTools'
 import { Welcome } from './components/Welcome'
 import { equipment, jobs, rules, skillsByJob } from './data/gameData'
 import { MAX_MEMBERS, newMember, removeError, type Member, type Party } from './logic/party'
 import { ISSUES_URL } from './links'
-import { sampleParty } from './logic/sample'
+import { presetParty, type PresetLevel } from './logic/presets'
 import { decodeParty, encodeParty } from './logic/share'
 import { loadCurrent, saveCurrent } from './logic/storage'
 
@@ -98,15 +99,21 @@ function App() {
     setShowWelcome(false)
     store(WELCOME_KEY, '1')
   }
-  const loadSample = () => {
+  // おすすめの編成を読み込む。作るのに数秒かかるので、「作っています…」を出してから作る
+  const [presetBusy, setPresetBusy] = useState<PresetLevel | null>(null)
+  const loadPreset = (level: PresetLevel) => {
     // 編集中のパーティ（2人以上か、スキルを振った人がいる）は消えてしまうので、確かめてから入れ替える
     const editing = party.members.length > 1 || party.members.some((m) => Object.keys(m.skills).length > 0)
-    if (editing && !window.confirm('今のパーティをサンプルの編成に入れ替えます。よろしいですか？（今のパーティは「保存」していなければ消えます）')) return
-    const members = sampleParty(party.difficulty)
-    setParty({ ...party, members })
-    setSelectedId(members[0].id)
-    setNotice({ kind: 'info', lines: ['サンプルの編成（Lv70 の5人）を読み込みました。スキルと装備は自動で選んだ例で、役割に効くスキルだけを振っているので SP が残ります'] })
-    closeWelcome()
+    if (editing && !window.confirm(`今のパーティを Lv${level} のおすすめの編成に入れ替えます。よろしいですか？（今のパーティは「保存」していなければ消えます）`)) return
+    setPresetBusy(level)
+    setTimeout(() => {
+      const members = presetParty(level, party.difficulty)
+      setParty((p) => ({ ...p, members }))
+      setSelectedId(members[0].id)
+      setPresetBusy(null)
+      setNotice({ kind: 'info', lines: [`Lv${level} のおすすめの編成を読み込みました。装備はそのレベルで手に入る物（入手の階層と価格から推定）、スキルは自動で選んだ例です`] })
+      closeWelcome()
+    }, 30)
   }
   const applySkills = (memberId: string, skills: Member['skills']) =>
     setParty((p) => ({ ...p, members: p.members.map((m) => (m.id === memberId ? { ...m, skills } : m)) }))
@@ -194,11 +201,15 @@ function App() {
             onRemove={removeMember}
             onDifficulty={(difficulty) => setParty((p) => ({ ...p, difficulty }))}
           />
+          <section className="preset-section">
+            <h2>おすすめの編成</h2>
+            <PresetPicker onPick={loadPreset} busy={presetBusy} />
+          </section>
           <ShareTools party={party} ctx={ctx} onLoadCode={(code) => loadCode(code, '保存した構築')} />
         </div>
 
         <div className="views">
-          {showWelcome && <Welcome onSample={loadSample} onClose={closeWelcome} onGoDamage={() => setView('damage')} />}
+          {showWelcome && <Welcome onPreset={loadPreset} busy={presetBusy} onClose={closeWelcome} onGoDamage={() => setView('damage')} />}
 
           <div hidden={view !== 'build'}>
             <MemberEditor member={selected} members={party.members} onChange={updateMember} />

@@ -14,7 +14,7 @@
 //   - 回復：1ターンの総回復量の最適化（C4）に、残りの SP で火力の振り方を足す
 //   - 盾：フロントガードと耐久に効くパッシブを先に上げ、残りの SP で火力の振り方を足す
 // 探し方：探索する枠を1つずつ埋めていくビームサーチ（近似解）。途中の編成もそのまま評価し、点数のよい beamWidth 個を残す
-import { equipment, findJob, jobs as allJobs, rules, skillsByJob } from '../data/gameData'
+import { equipment, findEquipment, findJob, jobs as allJobs, rules, skillsByJob } from '../data/gameData'
 import type { Skill } from '../data/schema'
 import { defaultPolicy, findMinTurns, runPlan, simulateEndurance, type Progress } from './battle'
 import { ARMOR_SLOT_RULES, armorChoices } from './equip'
@@ -91,7 +91,7 @@ interface Build {
 }
 
 /** base に add のスキルを、SP が足りる範囲でできるだけ足す（前提スキルは自動で取る） */
-function mergeGreedy(skills: Skill[], base: Allocation, add: Allocation, total: number): Allocation {
+export function mergeGreedy(skills: Skill[], base: Allocation, add: Allocation, total: number): Allocation {
   let alloc = base
   for (const [id, lv] of Object.entries(add)) {
     for (let l = lv; l > (alloc[id] ?? 0); l--) {
@@ -109,11 +109,15 @@ function mergeGreedy(skills: Skill[], base: Allocation, add: Allocation, total: 
 const raiseAll = (skills: Skill[], base: Allocation, ids: string[], total: number) =>
   mergeGreedy(skills, base, Object.fromEntries(ids.map((id) => [id, skills.find((s) => s.id === id)!.maxLevel])), total)
 
+/** 装備を候補にしてよいか（おすすめパーティでは入手の階層と価格で絞る）。省略はすべて */
+export type EquipFilter = (id: string) => boolean
+const ALL: EquipFilter = () => true
+
 /** ジョブが持てる武器のうち、種類ごとに最も攻撃力が高いもの（盾は除く） */
-function strongestWeapons(jobId: string): (string | null)[] {
+function strongestWeapons(jobId: string, allow: EquipFilter = ALL): (string | null)[] {
   const best = new Map<string, { id: string; atk: number }>()
   for (const e of equipment) {
-    if (e.slot !== 'weapon' || !e.weaponType || e.weaponType === 'shield' || !e.jobs.includes(jobId)) continue
+    if (e.slot !== 'weapon' || !e.weaponType || e.weaponType === 'shield' || !e.jobs.includes(jobId) || !allow(e.id)) continue
     const cur = best.get(e.weaponType)
     if (!cur || (e.atk ?? 0) > cur.atk) best.set(e.weaponType, { id: e.id, atk: e.atk ?? 0 })
   }
@@ -124,11 +128,11 @@ function strongestWeapons(jobId: string): (string | null)[] {
  * 探索するメンバーの防具：枠ごとに、まだ使っていない種類のうち防御力が最も高いもの（2026-10-18、Claude 決定。
  * 武器を「全武器から最強」にしたのに合わせた）。意味が確かめられない特性の防具（殺戮の盾）は除く
  */
-export function strongestArmor(jobId: string): (string | null)[] {
+export function strongestArmor(jobId: string, allow: EquipFilter = ALL): (string | null)[] {
   const used = new Set<string>()
   return ARMOR_SLOT_RULES.map((_, i) => {
     const best = armorChoices(i, jobId)
-      .filter((e) => !used.has(e.slot) && !e.notes?.includes('意味が確かめられない'))
+      .filter((e) => !used.has(e.slot) && !e.notes?.includes('意味が確かめられない') && allow(e.id))
       .sort((a, b) => (b.def ?? 0) - (a.def ?? 0))[0]
     if (!best) return null
     used.add(best.slot)
@@ -137,7 +141,7 @@ export function strongestArmor(jobId: string): (string | null)[] {
 }
 
 /** 探索するメンバーの振り方の候補（ジョブ・レベル・隊列・敵ごと） */
-export function buildsFor(slot: Member, jobId: string, setup: BattleSetup, required: string[]): Build[] {
+export function buildsFor(slot: Member, jobId: string, setup: BattleSetup, required: string[], allow: EquipFilter = ALL): Build[] {
   const skills = skillsByJob[jobId] ?? []
   const total = spTotal(rules, slot.level, retireSpBonus(rules, null))
   const base = mergeGreedy(skills, {}, Object.fromEntries(required.filter((id) => skills.some((s) => s.id === id)).map((id) => [id, 1])), total)
@@ -145,12 +149,14 @@ export function buildsFor(slot: Member, jobId: string, setup: BattleSetup, requi
   const opts = { enemyCount: 1, preBuffed: true }
   // 武器：種類ごとの最強の武器で火力の最適化をして、最も大きいもの
   let damage: { alloc: Allocation; weaponId: string | null; expected: number } = { alloc: {}, weaponId: null, expected: -1 }
-  for (const weaponId of strongestWeapons(jobId)) {
-    const m: Member = { ...slot, jobId, weaponId, armorIds: strongestArmor(jobId), skills: {}, retire: null }
+  for (const weaponId of strongestWeapons(jobId, allow)) {
+    const m: Member = { ...slot, jobId, weaponId, armorIds: strongestArmor(jobId, allow), skills: {}, retire: null }
     const c = optimizeMaxDamage(m, target, setup.difficulty, opts)[0]
-    if (c && c.expected > damage.expected) damage = { alloc: c.alloc, weaponId, expected: c.expected }
+    // 同じ期待値なら攻撃力の高い武器（術式は武器の攻撃力を使わないので、どの杖でも同じ値になる）
+    const better = c && (c.expected > damage.expected || (c.expected === damage.expected && (findEquipment(weaponId)?.atk ?? 0) > (findEquipment(damage.weaponId)?.atk ?? 0)))
+    if (c && better) damage = { alloc: c.alloc, weaponId, expected: c.expected }
   }
-  const member: Member = { ...slot, jobId, weaponId: damage.weaponId, armorIds: strongestArmor(jobId), skills: {}, retire: null }
+  const member: Member = { ...slot, jobId, weaponId: damage.weaponId, armorIds: strongestArmor(jobId, allow), skills: {}, retire: null }
   const withDamage = (b: Allocation) => mergeGreedy(skills, b, damage.alloc, total)
   const builds: Build[] = [{ kind: 'damage', alloc: withDamage(base), weaponId: damage.weaponId }]
 

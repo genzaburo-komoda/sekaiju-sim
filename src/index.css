@@ -985,6 +985,7 @@ summary:focus-visible {
 /* ---- 画面の改良 U1〜U7（2026-10-28、開発計画 2.1） ---- */
 /* U7：上半分（パーティ・保存・メンバー編集）も、下半分と同じ板に載せる */
 .party-panel,
+.preset-section,
 .share-tools,
 .member-editor {
   padding: 16px;
@@ -1218,5 +1219,32 @@ summary {
     font-size: 0.85rem;
     padding: 8px 6px;
     white-space: nowrap;
+  }
+}
+
+/* おすすめの編成（Lv10〜60） */
+.preset-section h2 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+}
+
+.preset-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.preset-picker .note {
+  margin-bottom: 4px;
+}
+
+.welcome .preset-buttons {
+  grid-template-columns: repeat(6, auto);
+  justify-content: start;
+}
+
+@media (max-width: 720px) {
+  .welcome .preset-buttons {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
