@@ -1,8 +1,10 @@
 // レベル進行プラン（B7）と条件付き最適化・編成の探索（B10）のテスト（開発計画 5-1・5-2 の完了条件）
 import { describe, expect, it } from 'vitest'
-import { enemies, jobs, rules } from '../data/gameData'
+import { enemies, equipment, jobs, rules } from '../data/gameData'
 import { levelPlan, planText } from './levelplan'
 import { newMember, type Member } from './party'
+import { equipAllowsAtLevel } from './equipByLevel'
+import { presetAllows } from './presets'
 import { buildsFor, DEFAULT_CONDITIONS, evaluateParty, missingSkills, rowAssignments, searchParty, strongestArmor } from './partysearch'
 import { targetFromEnemy } from './predict'
 import { defaultRole, memberOptimum } from './score'
@@ -146,6 +148,28 @@ describe('条件付き最適化・編成の探索（B10、5-2 の完了条件）
     expect(searchParty(setupOf(slots(2)), { ...cond, fixed: [false, false], requiredJobs: ['hexer'], excludedJobs: ['hexer'] }).error).toMatch(/両方/)
     expect(searchParty(setupOf(slots(5)), { ...cond, fixed: [false, false, false, false, false], requiredJobs: [...five, 'medic'] }).error).toMatch(/5つまで/)
   }, 120000)
+
+  it('武器・防具を「レベルに応じた物」にすると、全員の装備がその枠のレベルで手に入る物になる（2026-11-01）', () => {
+    const r = searchParty(setupOf(slots(3)), { ...cond, fixed: [false, false, false], equipment: 'level' })
+    expect(r.error).toBeNull()
+    for (const p of r.best) {
+      for (const m of p.members) {
+        const ok = equipAllowsAtLevel(m.level)
+        if (m.weaponId) expect(ok(m.weaponId)).toBe(true)
+        for (const id of m.armorIds ?? []) if (id) expect(ok(id)).toBe(true)
+      }
+    }
+    // 「すべてから最強」では、Lv20 では手に入らない武器が選ばれる
+    const all = searchParty(setupOf(slots(3)), { ...cond, fixed: [false, false, false], equipment: 'all' })
+    expect(all.best[0].members.some((m) => m.weaponId && !equipAllowsAtLevel(m.level)(m.weaponId))).toBe(true)
+  }, 120000)
+
+  it('レベルに応じた装備の決まりは、おすすめの編成（Lv10〜60）と同じで、Lv10 未満も第1階層の物は使える', () => {
+    const ids = equipment.map((e) => e.id)
+    for (const lv of [10, 20, 30, 40, 50, 60] as const) expect(ids.filter(equipAllowsAtLevel(lv))).toEqual(ids.filter(presetAllows(lv)))
+    expect(ids.filter(equipAllowsAtLevel(5))).toEqual(ids.filter(presetAllows(10)))
+    expect(ids.filter(equipAllowsAtLevel(70))).toEqual(ids.filter(presetAllows(60)))
+  })
 
   it('条件を満たせないときは理由を返す', () => {
     const r = searchParty(setupOf(slots(2)), { ...cond, fixed: [false, false], excludedJobs: jobs.map((j) => j.id).filter((j) => j !== 'medic') })

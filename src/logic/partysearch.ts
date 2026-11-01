@@ -12,7 +12,7 @@
 //     2026-11-01（Claude 決定、仮）：生き残る確率 × 0.8 ＋ 最後に残った HP の割合 × 0.2 にした。
 //     全員が生き残る敵では生き残る確率だけでは差が付かず、後列に置いて受けるダメージを減らす効果が点数に出なかったため
 // 探索するメンバーの武器（2026-10-18 本人決定）：入手時期に関係なく、そのジョブが持てる武器の種類ごとに最も攻撃力の高いものを試し、
-//   ダメージが最も大きくなるものを使う
+//   ダメージが最も大きくなるものを使う。2026-11-01（本人の依頼）：「レベルに応じた装備」を選ぶと、枠のレベルで手に入る物（equipByLevel.ts）の中から同じように選ぶ
 // 探索するメンバーの振り方（Claude 決定）：ジョブごとに次の候補を作る
 //   - 火力：最大ダメージの最適化（C2。自己強化・構えも使う）
 //   - 支援：攻撃に効く強化・弱体（舞曲・軟身の呪言など）を先に上げ、残りの SP で火力の振り方を足す
@@ -26,6 +26,7 @@ import { equipment, findEquipment, findJob, jobs as allJobs, rules, skillsByJob 
 import type { Skill } from '../data/schema'
 import { defaultPolicy, findMinTurns, planDamageRatio, runPlan, simulateEndurance, type Progress } from './battle'
 import { ARMOR_SLOT_RULES, armorChoices } from './equip'
+import { equipAllowsAtLevel, type EquipFilter } from './equipByLevel'
 import { optimizeMaxDamage } from './optimize'
 import { MAX_BACK, MAX_FRONT, MIN_FRONT, type Member, type Row } from './party'
 import { retireSpBonus } from './retire'
@@ -55,6 +56,8 @@ export interface SearchConditions {
   seed: number
   /** ビームサーチで残す編成の数 */
   beamWidth: number
+  /** 武器・防具の選び方：all＝すべてから最強、level＝枠のレベルで手に入る物から（equipByLevel.ts。2026-11-01 追加） */
+  equipment: 'all' | 'level'
   /** 探索する枠の隊列も探す（false なら今の枠の隊列のまま） */
   searchRows: boolean
 }
@@ -70,6 +73,7 @@ export const DEFAULT_CONDITIONS: Omit<SearchConditions, 'fixed'> = {
   trials: 200,
   seed: 1,
   beamWidth: 4,
+  equipment: 'all',
   searchRows: true,
 }
 
@@ -123,8 +127,8 @@ export function mergeGreedy(skills: Skill[], base: Allocation, add: Allocation, 
 const raiseAll = (skills: Skill[], base: Allocation, ids: string[], total: number) =>
   mergeGreedy(skills, base, Object.fromEntries(ids.map((id) => [id, skills.find((s) => s.id === id)!.maxLevel])), total)
 
-/** 装備を候補にしてよいか（おすすめパーティでは入手の階層と価格で絞る）。省略はすべて */
-export type EquipFilter = (id: string) => boolean
+/** 装備を候補にしてよいか（おすすめパーティと「レベルに応じた装備」では入手の階層と価格で絞る。equipByLevel.ts）。省略はすべて */
+export type { EquipFilter }
 const ALL: EquipFilter = () => true
 
 /** ジョブが持てる武器のうち、種類ごとに最も攻撃力が高いもの（盾は除く） */
@@ -262,13 +266,16 @@ export function searchParty(setup: BattleSetup, cond: SearchConditions, onProgre
   const missingJobs = (used: Set<string>) => requiredJobs.filter((j) => !used.has(j)).length
   if (missingJobs(new Set(fixedJobs)) > searchIdx.length) return { best: [], evaluated: 0, error: '必須のジョブが、固定していない枠の数より多いです（固定を外すか、必須のジョブを減らしてください）' }
 
+  // 武器・防具の候補：すべて、または枠のレベルで手に入る物
+  const allowFor = (slot: Member): EquipFilter => (cond.equipment === 'level' ? equipAllowsAtLevel(slot.level) : ALL)
+
   // 枠ごと・ジョブごとの振り方の候補（同じレベル・隊列の枠は使い回す）
   const cache = new Map<string, Build[]>()
   const builds = (slot: Member, jobId: string) => {
     const key = `${jobId}|${slot.level}|${slot.row}`
     let b = cache.get(key)
     if (!b) {
-      b = buildsFor(slot, jobId, setup, cond.requiredSkills)
+      b = buildsFor(slot, jobId, setup, cond.requiredSkills, allowFor(slot))
       cache.set(key, b)
     }
     return b
@@ -307,7 +314,7 @@ export function searchParty(setup: BattleSetup, cond: SearchConditions, onProgre
         if (cond.noDuplicateJobs && used.has(jobId)) continue
         if (missingJobs(new Set([...used, jobId])) > searchIdx.length - step - 1) continue
         for (const b of builds(slots[i], jobId)) {
-          const member: Member = { ...slots[i], name: findJob(jobId).name, jobId, skills: b.alloc, weaponId: b.weaponId, armorIds: strongestArmor(jobId), retire: null }
+          const member: Member = { ...slots[i], name: findJob(jobId).name, jobId, skills: b.alloc, weaponId: b.weaponId, armorIds: strongestArmor(jobId, allowFor(slots[i])), retire: null }
           const picks = new Map(st.picks)
           picks.set(i, { member, kind: b.kind })
           const cand: State = { picks, eval: null }

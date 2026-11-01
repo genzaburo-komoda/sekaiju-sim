@@ -7,9 +7,10 @@
 // - 入手できる階層が「レベル ÷ 10」以下（ひとつ前の階層のボスの Lv 18・28・38・46・56 を目安にした）
 // - 買値が PRICE_CAP 以下（一番深い階層の装備の価格の上位 10% の境目を目安。Lv10 は第1階層の品が安いので 1,000 en）
 // - 売っていない物は使わない（宝箱で手に入る物は使う）。入手の階層が分からない物も使わない
-import { equipmentAvailability, rules, skillsByJob } from '../data/gameData'
+import { rules, skillsByJob } from '../data/gameData'
+import { equipAllowsAtLevel, type EquipFilter } from './equipByLevel'
 import { newMember, type DifficultyId, type Member, type Row } from './party'
-import { buildsFor, mergeGreedy, strongestArmor, type BuildKind, type EquipFilter } from './partysearch'
+import { buildsFor, mergeGreedy, strongestArmor, type BuildKind } from './partysearch'
 import { defaultRole, memberOptimum, standardTarget, type Role } from './score'
 import { optimizeMaxDamage } from './optimize'
 import type { BattleSetup } from './sim'
@@ -18,7 +19,6 @@ import { spTotal } from './skills'
 export const PRESET_LEVELS = [10, 20, 30, 40, 50, 60] as const
 export type PresetLevel = (typeof PRESET_LEVELS)[number]
 
-const PRICE_CAP: Record<PresetLevel, number> = { 10: 1000, 20: 2000, 30: 4000, 40: 8000, 50: 25000, 60: 200000 }
 
 const JOBS: [string, Row][] = [
   ['swordsman', 'front'],
@@ -29,14 +29,9 @@ const JOBS: [string, Row][] = [
 ]
 const KIND_FOR_ROLE: Record<Role, BuildKind> = { damage: 'damage', ailment: 'damage', heal: 'heal', endurance: 'guard', support: 'support' }
 
-/** そのレベルで使ってよい装備か */
+/** そのレベルで使ってよい装備か（決まりは equipByLevel.ts） */
 export function presetAllows(level: PresetLevel): EquipFilter {
-  return (id) => {
-    const a = equipmentAvailability[id]
-    if (!a || a.stratum === null || a.stratum > level / 10) return false
-    if (a.price === null) return a.basis === 'chest'
-    return a.price <= PRICE_CAP[level]
-  }
+  return equipAllowsAtLevel(level)
 }
 
 export function presetParty(level: PresetLevel, difficulty: DifficultyId): Member[] {
